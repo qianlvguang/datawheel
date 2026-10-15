@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "外部独立评测基准集合清单 (Evaluation & Benchmark Datasets Manifest)",
+  "version": "1.0.0",
+  "philosophy": "评测集是期末考试试卷，绝不混入合成训练集；专门检验在可控合成飞轮上中训练后的多模态大模型，迁移到真实世界自然场景时的真实泛化与细粒度辨析指标。",
+  "benchmarks": [
+    {
+      "benchmark_id": "logodet_3k",
+      "name": "LogoDet-3K 大规模真实场景商品标识检测基准",
+      "url": "https://github.com/Wangjing1551/LogoDet-3K-Dataset",
+      "scale": "3,000 类别、158,652 张真实场景图像、约 20 万个高精标注边界框",
+      "license": "学术研究用途 (Academic Research Only)",
+      "evaluation_focus": [
+        "真实电商货架与买家实拍图中的微小标识定位 (Small Object Grounding)",
+        "复杂商品材质反光与重叠遮挡下的鲁棒检测",
+        "Seen vs Unseen 类别的零样本迁移评测 (拆分 1000 个未见品牌作为纯开集测试)"
+      ]
+    },
+    {
+      "benchmark_id": "qmul_openlogo",
+      "name": "QMUL-OpenLogo 开集参考匹配基准",
+      "url": "https://hangsu0730.github.io/qmul-openlogo/",
+      "scale": "352 类商标、27,083 张真实场景图片",
+      "unique_value": "官方直接提供 Clean Logo Exemplars (干净的矢量/标准参考样例)，原生契合我们的‘参考图 <ref_image> 与实拍图 <query_image> 跨图匹配’任务。",
+      "evaluation_focus": [
+        "给定候选参考库 (Candidate Gallery) 时的 Top-1 / Top-5 检索定位准确率",
+        "细粒度同系列不同版本标识的甄别能力"
+      ]
+    },
+    {
+      "benchmark_id": "zaci_20",
+      "name": "ZACI-20 零样本动漫角色身份辨析基准",
+      "url": "https://github.com/kosuke1701/ZACI-20-dataset",
+      "scale": "3.9 万个角色、145 万张面部图像对",
+      "unique_value": "提供非重叠的身份划分，同时官方提供随机负样本与‘模型极易混淆的困难负样本配对 (Hard Negatives)’。",
+      "evaluation_focus": [
+        "跨不同画风、不同画师笔触下的角色身份一致性确认",
+        "困难相似角色（如双胞胎、同画风配角）的精准排他性"
+      ]
+    }
+  ],
+  "metrics_protocol": {
+    "grounding_metrics": [
+      "mAP @ IoU 0.5 (常规目标定位精度)",
+      "mAP @ IoU 0.75 (高精度紧凑边界框定位)"
+    ],
+    "reference_matching_metrics": [
+      "Open-Set Top-1 Accuracy (开集参考图匹配准确率)",
+      "Seen Class Acc vs Unseen Class Acc (泛化代差分析)"
+    ],
+    "safety_and_anti_hallucination_metrics": [
+      "Indeterminate Rejection Rate (重度模糊/缺失时，正确输出 insufficient_evidence 拒绝瞎猜的召回率)",
+      "Hard Distractor False Positive Rate (面对相似混淆干扰项时的误报率)"
+    ]
+  }
+}

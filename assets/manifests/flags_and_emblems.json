@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "权威国旗、国徽与地方旗帜资产清单 (Official Flags, Regional & Emblems Manifest)",
+  "version": "1.0.0",
+  "total_entries": 36,
+  "categories": [
+    {
+      "category_id": "national_flags_iso3166",
+      "description": "ISO 3166-1 权威标准国家与地区旗帜矢量",
+      "primary_source": "https://github.com/lipis/flag-icons",
+      "license": "MIT",
+      "items": [
+        {
+          "id": "cn",
+          "name_zh": "中国五星红旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/cn.svg",
+          "topology": "canton_stars",
+          "canonical_colors": ["#ee1c25", "#ffff00"],
+          "confusable_distractors": ["vn", "so"],
+          "discriminative_parts": ["大星五角正立", "四颗小星环拱朝心", "纯红背景非区分"]
+        },
+        {
+          "id": "us",
+          "name_zh": "美国星条旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
+          "topology": "canton_grid_stripes",
+          "canonical_colors": ["#b22234", "#ffffff", "#3c3b6e"],
+          "confusable_distractors": ["my", "lr", "gr"],
+          "discriminative_parts": ["50颗白星九排交错", "13道红白相间横条", "Canton深蓝矩形"]
+        },
+        {
+          "id": "eu",
+          "name_zh": "欧洲联盟盟旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/eu.svg",
+          "topology": "circle_stars",
+          "canonical_colors": ["#003399", "#ffcc00"],
+          "confusable_distractors": ["so", "cn", "cv"],
+          "discriminative_parts": ["12颗正立五角金星", "正圆均匀环形分布", "蔚蓝底色"]
+        },
+        {
+          "id": "vn",
+          "name_zh": "越南金星红旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/vn.svg",
+          "topology": "center_single_star",
+          "canonical_colors": ["#da251d", "#ffff00"],
+          "confusable_distractors": ["cn", "so"],
+          "discriminative_parts": ["正中央金黄色大五角星", "尖端严格垂直朝上"]
+        },
+        {
+          "id": "so",
+          "name_zh": "索马里单星旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/so.svg",
+          "topology": "center_single_star",
+          "canonical_colors": ["#4189dd", "#ffffff"],
+          "confusable_distractors": ["vn", "eu"],
+          "discriminative_parts": ["正中央纯白五角星", "天蓝色底板"]
+        },
+        {
+          "id": "fr",
+          "name_zh": "法国蓝白红三色旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/fr.svg",
+          "topology": "vertical_triband",
+          "canonical_colors": ["#002395", "#ffffff", "#ed2939"],
+          "confusable_distractors": ["it", "nl", "ru", "ie"],
+          "discriminative_parts": ["自左向右严格为蓝、白、红垂直均分"]
+        },
+        {
+          "id": "it",
+          "name_zh": "意大利绿白红三色旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/it.svg",
+          "topology": "vertical_triband",
+          "canonical_colors": ["#009246", "#ffffff", "#ce2b37"],
+          "confusable_distractors": ["fr", "ie", "mx"],
+          "discriminative_parts": ["自左向右严格为绿、白、红垂直均分"]
+        },
+        {
+          "id": "de",
+          "name_zh": "德国黑红金三色旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg",
+          "topology": "horizontal_triband",
+          "canonical_colors": ["#000000", "#dd0000", "#ffce00"],
+          "confusable_distractors": ["be", "pl", "ua"],
+          "discriminative_parts": ["自上向下严格为黑、红、金三等分横条"]
+        },
+        {
+          "id": "be",
+          "name_zh": "比利时黑黄红三色旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/be.svg",
+          "topology": "vertical_triband",
+          "canonical_colors": ["#000000", "#ffd90c", "#f31830"],
+          "confusable_distractors": ["de", "td", "ro"],
+          "discriminative_parts": ["自左向右垂直黑、黄、红三色"]
+        },
+        {
+          "id": "pl",
+          "name_zh": "波兰白红双色旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/pl.svg",
+          "topology": "horizontal_biband",
+          "canonical_colors": ["#ffffff", "#dc143c"],
+          "confusable_distractors": ["id", "mc", "ua"],
+          "discriminative_parts": ["上白下红横向平分"]
+        },
+        {
+          "id": "id",
+          "name_zh": "印度尼西亚红白双色旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/id.svg",
+          "topology": "horizontal_biband",
+          "canonical_colors": ["#ff0000", "#ffffff"],
+          "confusable_distractors": ["pl", "mc"],
+          "discriminative_parts": ["上红下白横向平分（与波兰完全倒置）"]
+        },
+        {
+          "id": "ua",
+          "name_zh": "乌克兰蓝黄双色旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/ua.svg",
+          "topology": "horizontal_biband",
+          "canonical_colors": ["#0057b7", "#ffd700"],
+          "confusable_distractors": ["pl", "se"],
+          "discriminative_parts": ["上蓝下黄横向平分"]
+        },
+        {
+          "id": "se",
+          "name_zh": "瑞典北欧十字旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/se.svg",
+          "topology": "nordic_cross",
+          "canonical_colors": ["#006aa7", "#fecc00"],
+          "confusable_distractors": ["fi", "dk", "no", "is"],
+          "discriminative_parts": ["黄十字横竖交织", "纵向条偏向旗杆侧 (Hoist)"]
+        },
+        {
+          "id": "ch",
+          "name_zh": "瑞士联邦正十字旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/ch.svg",
+          "topology": "center_cross",
+          "canonical_colors": ["#ff0000", "#ffffff"],
+          "confusable_distractors": ["dk", "to"],
+          "discriminative_parts": ["红色正方形底板", "中央正立体白十字"]
+        },
+        {
+          "id": "gb",
+          "name_zh": "英国米字旗 (联合杰克)",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/gb.svg",
+          "topology": "compound_crosses",
+          "canonical_colors": ["#012169", "#ffffff", "#c8102e"],
+          "confusable_distractors": ["au", "nz", "fj"],
+          "discriminative_parts": ["英格兰圣乔治红十字", "苏格兰圣安德鲁白斜十字", "爱尔兰圣帕特里克红斜十字交叠"]
+        },
+        {
+          "id": "jp",
+          "name_zh": "日本日之丸旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg",
+          "topology": "center_disc",
+          "canonical_colors": ["#ffffff", "#bc002d"],
+          "confusable_distractors": ["bd", "pw"],
+          "discriminative_parts": ["纯白底版", "正中心深红圆形日轮"]
+        },
+        {
+          "id": "kr",
+          "name_zh": "韩国太极旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/kr.svg",
+          "topology": "center_yin_yang_trigrams",
+          "canonical_colors": ["#ffffff", "#cd2e3a", "#0047a0", "#000000"],
+          "confusable_distractors": ["jp"],
+          "discriminative_parts": ["纯白底板", "中央红蓝太极双鱼图", "四角乾坤坎离黑色四卦"]
+        },
+        {
+          "id": "br",
+          "name_zh": "巴西国旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/br.svg",
+          "topology": "rhombus_globe_motto",
+          "canonical_colors": ["#009739", "#fed100", "#012169", "#ffffff"],
+          "confusable_distractors": ["es"],
+          "discriminative_parts": ["绿底黄正菱形", "深蓝天球仪27星", "ORDEM E PROGRESSO白色格言飘带"]
+        },
+        {
+          "id": "es",
+          "name_zh": "西班牙王国国旗 (带国徽官方版)",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg",
+          "topology": "stripes_with_emblem",
+          "canonical_colors": ["#aa151b", "#f1bf00"],
+          "confusable_distractors": ["mx", "de"],
+          "discriminative_parts": ["红黄红宽比 1:2:1 横条", "左偏位西班牙国徽", "海格力斯双柱与王冠"]
+        },
+        {
+          "id": "mx",
+          "name_zh": "墨西哥合众国国旗 (带金雕国徽)",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/mx.svg",
+          "topology": "vertical_triband_with_emblem",
+          "canonical_colors": ["#006847", "#ffffff", "#ce1126"],
+          "confusable_distractors": ["it", "es"],
+          "discriminative_parts": ["绿白红垂直三色", "中央白条内金雕伫立仙人掌吞噬响尾蛇国徽"]
+        },
+        {
+          "id": "ca",
+          "name_zh": "加拿大枫叶旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/ca.svg",
+          "topology": "canadian_pale",
+          "canonical_colors": ["#d80621", "#ffffff"],
+          "confusable_distractors": ["pe"],
+          "discriminative_parts": ["两侧红条中央白方", "正中11个角尖的红枫叶"]
+        },
+        {
+          "id": "au",
+          "name_zh": "澳大利亚国旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/au.svg",
+          "topology": "blue_ensign",
+          "canonical_colors": ["#00008b", "#ffffff", "#ff0000"],
+          "confusable_distractors": ["nz", "gb"],
+          "discriminative_parts": ["左上角米字旗", "左下联邦七角大星", "右侧南十字五星"]
+        },
+        {
+          "id": "nz",
+          "name_zh": "新西兰国旗",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/nz.svg",
+          "topology": "blue_ensign",
+          "canonical_colors": ["#00247d", "#ffffff", "#cc142b"],
+          "confusable_distractors": ["au", "gb"],
+          "discriminative_parts": ["左上角米字旗", "右侧四颗红心白边五角星（南十字）"]
+        }
+      ]
+    },
+    {
+      "category_id": "official_emblems_and_crests",
+      "description": "官方高精矢量国徽、王室纹章与国玺独立素材 (无旗面背景)",
+      "primary_source": "Wikimedia Commons (Category:Coats of arms)",
+      "license": "Public Domain / CC BY-SA",
+      "items": [
+        {
+          "id": "emblem_de_eagle",
+          "name_zh": "德意志联邦之鹰国徽",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Coat_of_arms_of_Germany.svg",
+          "discriminative_parts": ["金黄盾牌", "展翅单头黑鹰", "红喙红爪"]
+        },
+        {
+          "id": "emblem_es_royal",
+          "name_zh": "西班牙王国皇家盾徽与海格力斯双柱",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Escudo_de_Espa%C3%B1a_%28her%C3%A1ldico%29.svg",
+          "discriminative_parts": ["四分盾（卡斯蒂利亚城堡/莱昂狮子/阿拉贡条纹/纳瓦拉链条）", "波旁百合盾心", "PLVS VLTRA铭文飘带", "海格力斯柱"]
+        },
+        {
+          "id": "emblem_us_great_seal",
+          "name_zh": "美利坚合众国国玺白头海雕",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Great_Seal_of_the_United_States_%28obverse%29.svg",
+          "discriminative_parts": ["展翅白头海雕", "胸前盾牌", "左爪13支箭", "右爪橄榄枝", "E PLURIBUS UNUM飘带"]
+        },
+        {
+          "id": "emblem_ru_double_eagle",
+          "name_zh": "俄罗斯联邦双头鹰国徽",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Coat_of_Arms_of_the_Russian_Federation.svg",
+          "discriminative_parts": ["红色盾底", "金色双头鹰", "三顶皇冠", "圣乔治屠龙小盾徽"]
+        },
+        {
+          "id": "emblem_mx_eagle_snake",
+          "name_zh": "墨西哥金雕蛇仙人掌国徽",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Coat_of_arms_of_Mexico.svg",
+          "discriminative_parts": ["金雕立于仙人掌上", "雕喙撕咬响尾蛇", "下方橡树与月桂花环"]
+        },
+        {
+          "id": "emblem_br_republic",
+          "name_zh": "巴西联邦共和国国徽",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Coat_of_arms_of_Brazil.svg",
+          "discriminative_parts": ["中央南十字星座圆盾", "五角星芒外框", "周围咖啡与烟草枝叶环绕", "底部蓝色飘带国名"]
+        },
+        {
+          "id": "emblem_gb_royal",
+          "name_zh": "英国皇家徽章",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Royal_Coat_of_Arms_of_the_United_Kingdom.svg",
+          "discriminative_parts": ["左狮右独角兽扶盾", "四分盾徽", "HONI SOIT QUI MAL Y PENSE嘉德勋带", "DIEU ET MON DROIT格言"]
+        },
+        {
+          "id": "emblem_fr_diplomatic",
+          "name_zh": "法兰西共和国非正式国徽 (束棒与月桂)",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Armoiries_r%C3%A9publique_fran%C3%A7aise.svg",
+          "discriminative_parts": ["法西斯束棒 (Fasces)", "狮头装饰", "月桂与橡树枝", "宽飘带"]
+        }
+      ]
+    },
+    {
+      "category_id": "regional_flags_iso3166_2",
+      "description": "ISO 3166-2 地方行政州/省/郡旗帜",
+      "primary_source": "https://github.com/amckenna41/iso3166-flags",
+      "license": "MIT",
+      "items": [
+        {
+          "id": "us_ca",
+          "name_zh": "美国加利福尼亚州州旗 (熊旗)",
+          "source_url": "https://raw.githubusercontent.com/amckenna41/iso3166-flags/main/flags/svg/US-CA.svg",
+          "discriminative_parts": ["左上角五角红星", "漫步灰熊", "CALIFORNIA REPUBLIC文字", "底部红条"]
+        },
+        {
+          "id": "us_tx",
+          "name_zh": "美国得克萨斯州州旗 (孤星旗)",
+          "source_url": "https://raw.githubusercontent.com/amckenna41/iso3166-flags/main/flags/svg/US-TX.svg",
+          "discriminative_parts": ["左侧蓝竖条配大白星", "右侧上白下红横条"]
+        },
+        {
+          "id": "us_nm",
+          "name_zh": "美国新墨西哥州州旗 (Zia太阳)",
+          "source_url": "https://raw.githubusercontent.com/amckenna41/iso3166-flags/main/flags/svg/US-NM.svg",
+          "discriminative_parts": ["纯黄底版", "中央红色Zia太阳符号（四组光芒）"]
+        },
+        {
+          "id": "es_ct",
+          "name_zh": "西班牙加泰罗尼亚令旗 (Senyera)",
+          "source_url": "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es-ct.svg",
+          "discriminative_parts": ["黄底四道红竖条纹"]
+        },
+        {
+          "id": "ca_qc",
+          "name_zh": "加拿大魁北克省省旗 (百合十字旗)",
+          "source_url": "https://raw.githubusercontent.com/amckenna41/iso3166-flags/main/flags/svg/CA-QC.svg",
+          "discriminative_parts": ["蓝色底版", "白色正十字", "四个象限各有一朵白色百合花"]
+        }
+      ]
+    }
+  ]
+}

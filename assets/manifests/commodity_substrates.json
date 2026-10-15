@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "真实摄影级商品实拍底板库清单 (Real Commodity Photography Substrates Manifest)",
+  "version": "1.0.0",
+  "philosophy": "彻底杜绝矢量/简笔画假底板，全部采用真实相机拍摄、具备真实纺织微观纤维、自然悬垂褶皱与专业摄影棚光影的无印花素色商品图。",
+  "primary_sources": [
+    {
+      "source_id": "abo_dataset",
+      "name": "Amazon Berkeley Objects (ABO 数据集)",
+      "url": "https://amazon-berkeley-objects.s3.amazonaws.com/index.html",
+      "license": "CC BY 4.0 (允许商用、修改与再分发，需合规署名)",
+      "total_catalog_size": "147,702 个商品条目、398,212 张独立高分摄影实拍图",
+      "target_subsets_to_extract": [
+        {
+          "commodity_type": "apparel_blank_tshirt",
+          "query_keywords": ["blank t-shirt", "crewneck tee", "solid color t-shirt"],
+          "features": "真实平铺 (Flat-lay) 或隐形假人模特 (Ghost Mannequin) 纯白/纯黑/麻灰素色 T 恤"
+        },
+        {
+          "commodity_type": "apparel_blank_hoodie",
+          "query_keywords": ["pullover hoodie", "blank sweatshirt"],
+          "features": "厚实针织纯色套头卫衣，带真实抽绳与袋鼠口袋"
+        },
+        {
+          "commodity_type": "tote_bags",
+          "query_keywords": ["canvas tote bag", "cotton shopping bag"],
+          "features": "粗织米白色/黑色棉帆布托特包实物"
+        },
+        {
+          "commodity_type": "drinkware_mugs",
+          "query_keywords": ["ceramic coffee mug", "blank white mug"],
+          "features": "真实陶瓷釉面高光白底马克杯"
+        },
+        {
+          "commodity_type": "packaging_boxes",
+          "query_keywords": ["kraft cardboard box", "shipping carton"],
+          "features": "真实牛皮纸瓦楞纸盒包装"
+        }
+      ]
+    },
+    {
+      "source_id": "deepfashion2",
+      "name": "DeepFashion2 数据集 (服装专业分割与姿态库)",
+      "url": "https://github.com/switchablenorms/DeepFashion2",
+      "license": "学术申请协议 (非商业研究限定)",
+      "value": "提供 49.2 万张真实复杂穿着、走动、人体褶皱、肢体交叉遮挡下的真实衣服 Mask，最适合用来做中高阶遮挡与极端形变训练。"
+    },
+    {
+      "source_id": "studio_packshot_cc0",
+      "name": "专业商业摄影平铺样机库 (Studio Packshots CC0)",
+      "sources": ["Unsplash Commercial Free", "Pexels Public Domain", "RawPixel CC0 Flat-lay"],
+      "value": "高分辨率 (3000x3000+)、纯色背景、微距织物纤维细节、相机真实景深与柔光箱阴影。"
+    }
+  ],
+  "cleaning_and_verification_rules": [
+    {
+      "rule_id": "CLEAN_SURFACE_AUDIT",
+      "name": "底板清洁度排查",
+      "requirement": "待贴印花的核心区域必须经过无图案验证。若原图本身已有细小水洗标、胸针或小印花，必须通过掩模排除或选用纯净版本，杜绝未标注杂质进入训练集导致虚假负样本。"
+    },
+    {
+      "rule_id": "SURFACE_NORMAL_ANCHORS",
+      "name": "3D 贴附锚点规范",
+      "requirement": "每一张入库的真实商品图，人工或规则标定 3 组基准四边形锚点 (left_chest, center_chest, full_front)，并附带法线坡度参数，保证合成印花服帖于真实衣服起伏。"
+    }
+  ]
+}

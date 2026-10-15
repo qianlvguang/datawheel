@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "高频商业品牌与商标 Logo 清单 (Brand Logos Manifest)",
+  "version": "1.0.0",
+  "primary_source": "https://github.com/simple-icons/simple-icons",
+  "source_license": "CC0 1.0 (项目代码与SVG数据规范，商标归属各权利人)",
+  "total_curated_entries": 32,
+  "categories": [
+    {
+      "category_id": "sportswear_and_apparel",
+      "description": "运动与潮流服饰高频商标 (最适合 T 恤、连帽衫、帽子、球鞋印花场景)",
+      "brands": [
+        {
+          "slug": "nike",
+          "name": "耐克 (Nike)",
+          "hex": "#111111",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/nike.svg",
+          "geometric_features": "流畅弧形对勾 (Swoosh)，单侧翘起变细",
+          "confusable_distractors": ["generic_check", "offwhite", "underarmour"],
+          "confusable_reason": "普通对勾无翘角尖锐度变化；Off-White 交叉双向箭头与耐克经常联名但结构完全不同。"
+        },
+        {
+          "slug": "adidas",
+          "name": "阿迪达斯 (Adidas)",
+          "hex": "#000000",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/adidas.svg",
+          "geometric_features": "经典三道平行动态倾斜斜杠，从左至右阶梯升高",
+          "confusable_distractors": ["peak", "kswiss", "asics"],
+          "confusable_reason": "匹克 (Peak) 为三角形中空结构；K-Swiss 为五道斜杠；阿迪达斯严格为三等分阶梯斜杠。"
+        },
+        {
+          "slug": "puma",
+          "name": "彪马 (Puma)",
+          "hex": "#000000",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/puma.svg",
+          "geometric_features": "向左上方飞跃跳跃的美洲狮剪影",
+          "confusable_distractors": ["slazenger", "jaguar"],
+          "confusable_reason": "Slazenger 是向左平跃的黑豹，体态更瘦长；捷豹 (Jaguar) 是向右跳跃的猎豹且带金属立体感。"
+        },
+        {
+          "slug": "underarmour",
+          "name": "安德玛 (Under Armour)",
+          "hex": "#1D1D1D",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/underarmour.svg",
+          "geometric_features": "上下对称相互穿插锁扣的 U 与 A 弧线",
+          "confusable_distractors": ["chanel", "gucci"],
+          "confusable_reason": "香奈儿是横向互扣的双 C；安德玛是纵向穿插的 U 与反向 U。"
+        },
+        {
+          "slug": "thenorthface",
+          "name": "北面 (The North Face)",
+          "hex": "#000000",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/thenorthface.svg",
+          "geometric_features": "右上角圆弧形三道半截穹顶图案 (Half Dome 巨石轮廓)",
+          "confusable_distractors": ["patagonia", "columbia"],
+          "confusable_reason": "Patagonia 是多色山峰天际线；北面为三道圆弧线条。"
+        },
+        {
+          "slug": "newbalance",
+          "name": "新百伦 (New Balance)",
+          "hex": "#CE2724",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/newbalance.svg",
+          "geometric_features": "多条横向切痕切过 N 字，与 B 字形成速度感字母组合",
+          "confusable_distractors": ["generic_n"],
+          "confusable_reason": "普通大写 N 无倾斜切角条纹。"
+        },
+        {
+          "slug": "converse",
+          "name": "匡威 (Converse)",
+          "hex": "#000000",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/converse.svg",
+          "geometric_features": "圆环内嵌单颗正立五角星，右侧紧跟向左箭头",
+          "confusable_distractors": ["all_star"],
+          "confusable_reason": "经典 Chuck Taylor 圆标内含 All Star 文字与手写签名。"
+        },
+        {
+          "slug": "vans",
+          "name": "范斯 (Vans)",
+          "hex": "#C41230",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/vans.svg",
+          "geometric_features": "V 字右上长横线延伸覆盖整个 ANS 字母",
+          "confusable_distractors": ["generic_sans"]
+        }
+      ]
+    },
+    {
+      "category_id": "tech_and_consumer_electronics",
+      "description": "消费电子与科技数码品牌 (常用于手机壳、电脑包、数码配件实物场景)",
+      "brands": [
+        {
+          "slug": "apple",
+          "name": "苹果 (Apple)",
+          "hex": "#000000",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/apple.svg",
+          "geometric_features": "右侧带缺口咬痕的苹果轮廓，顶部倾斜椭圆叶子",
+          "confusable_distractors": ["unbitten_apple", "cherry"],
+          "confusable_reason": "完整无缺口的苹果不是 Apple 商标，咬痕与叶片角度为最关键区分性部件。"
+        },
+        {
+          "slug": "android",
+          "name": "安卓机器人 (Android)",
+          "hex": "#3DDC84",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/android.svg",
+          "geometric_features": "半球形头部配双倾斜触角与两个正圆小白眼",
+          "confusable_distractors": ["bug_droid", "alien"],
+          "confusable_reason": "眼球距离与触角角度为严格固定规范。"
+        },
+        {
+          "slug": "playstation",
+          "name": "索尼 PlayStation (PS)",
+          "hex": "#003791",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/playstation.svg",
+          "geometric_features": "直立的 P 字母与平躺投影在地面上的立体 S 字母组合",
+          "confusable_distractors": ["xbox", "nintendo"]
+        },
+        {
+          "slug": "xbox",
+          "name": "微软 Xbox",
+          "hex": "#107C10",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/xbox.svg",
+          "geometric_features": "正圆球体内深深刻削出白色镂空 X 字样",
+          "confusable_distractors": ["playstation"]
+        },
+        {
+          "slug": "github",
+          "name": "GitHub (Octocat)",
+          "hex": "#181717",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg",
+          "geometric_features": "正圆形内嵌章鱼猫猫头剪影，带两只尖猫耳",
+          "confusable_distractors": ["gitlab", "cat_head"]
+        },
+        {
+          "slug": "xiaomi",
+          "name": "小米 (Xiaomi)",
+          "hex": "#FF6900",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/xiaomi.svg",
+          "geometric_features": "圆角平滑超椭圆 (Superellipse) 方形底，内嵌 MI 字母几何线框",
+          "confusable_distractors": ["square_mi"]
+        }
+      ]
+    },
+    {
+      "category_id": "luxury_and_lifestyle",
+      "description": "奢侈时尚与生活方式商标 (适合高端皮具、托特包老花与刺绣实物场景)",
+      "brands": [
+        {
+          "slug": "louisvuitton",
+          "name": "路易威登 (Louis Vuitton - LV)",
+          "hex": "#000000",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/louisvuitton.svg",
+          "geometric_features": "斜切斜体的 L 与大写 V 穿插交叠，常伴随四瓣四角花纹老花 (Monogram)",
+          "confusable_distractors": ["monogram_clones", "gucci"],
+          "confusable_reason": "经典 Monogram 由 LV 字母组合、四叶花、四瓣尖星构成复合阵列。"
+        },
+        {
+          "slug": "chanel",
+          "name": "香奈儿 (Chanel)",
+          "hex": "#000000",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/chanel.svg",
+          "geometric_features": "两个粗细均匀、背对背水平镜像互扣的正圆 C 字母",
+          "confusable_distractors": ["gucci", "underarmour"],
+          "confusable_reason": "Gucci 是两个正立并面对面互扣的半圆 G；Chanel 是背对背双 C。"
+        },
+        {
+          "slug": "gucci",
+          "name": "古驰 (Gucci)",
+          "hex": "#000000",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gucci.svg",
+          "geometric_features": "面对面反向倒置互锁的双 G 徽标",
+          "confusable_distractors": ["chanel", "giorgioarmani"]
+        },
+        {
+          "slug": "starbucks",
+          "name": "星巴克 (Starbucks 双尾海妖)",
+          "hex": "#00704A",
+          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/starbucks.svg",
+          "geometric_features": "正圆双尾塞壬海妖面部剪影，头戴星王冠，两侧双手托起鱼尾",
+          "confusable_distractors": ["mermaid_generic", "costa"]
+        }
+      ]
+    }
+  ]
+}

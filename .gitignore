@@ -1,0 +1,22 @@
+# Operating System & IDE
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Project generated outputs
+output/*
+!output/.gitkeep
+assets/_temp_regional_git/

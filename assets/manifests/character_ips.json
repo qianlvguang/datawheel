@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "动漫角色与可拆解 IP 资产清单 (Character & Anime IPs Manifest)",
+  "version": "1.0.0",
+  "categories": [
+    {
+      "category_id": "pokeapi_sprites_benchmark",
+      "description": "基于 PokéAPI 结构化角色资产体系 (验证跨画风、多形态、异色身份恒常性)",
+      "primary_source": "https://github.com/PokeAPI/sprites",
+      "license": "Fair Use / Fan Community整理 (不可直接商用，专用于学术与技术验证)",
+      "data_hierarchy_schema": "species_id -> form_id -> artwork_version -> asset_role",
+      "selected_archetypes": [
+        {
+          "species_id": "025",
+          "name_zh": "皮卡丘 (Pikachu)",
+          "archetype": "高频核心标志角色",
+          "variants": [
+            {
+              "variant_id": "official_artwork_standard",
+              "role": "canonical_reference",
+              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+              "style": "官方高清单色背景立绘"
+            },
+            {
+              "variant_id": "official_artwork_shiny",
+              "role": "color_shifted_variant",
+              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/25.png",
+              "style": "异色闪光版 (偏深橙黄，测试对轻微色相偏移的容忍)"
+            },
+            {
+              "variant_id": "pixel_front_default",
+              "role": "cross_style_pixel",
+              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+              "style": "经典像素点阵版 (测试从矢量参考到复古像素的跨画风匹配)"
+            },
+            {
+              "variant_id": "pixel_back_default",
+              "role": "viewpoint_variant_back",
+              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
+              "style": "背影视角 (测试部件遮挡与姿态变化)"
+            }
+          ],
+          "discriminative_parts": ["黑色耳尖长耳朵", "两侧圆形红脸颊", "锯齿形闪电尾巴", "背部两条深褐色横条纹"],
+          "confusable_distractors": ["026_raichu", "172_pichu", "025_mimikyu"],
+          "distractor_reason": "皮丘 (Pichu) 耳廓全黑且体型小；雷丘 (Raichu) 为卷曲长尾与水滴形耳；谜拟Q (Mimikyu) 是布偶仿造体，眼睛画在肚子上。"
+        },
+        {
+          "species_id": "006",
+          "name_zh": "喷火龙 (Charizard)",
+          "archetype": "复杂翅膀与尾部火焰多部件组合",
+          "variants": [
+            {
+              "variant_id": "official_artwork_standard",
+              "role": "canonical_reference",
+              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+              "style": "官方立绘 (橙色双足飞龙，双角与尾尖燃烧火苗)"
+            },
+            {
+              "variant_id": "official_artwork_shiny",
+              "role": "color_inverted_hard_positive",
+              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/6.png",
+              "style": "异色闪光版 (全黑色身体与红青内翼，极端体色变体)"
+            }
+          ],
+          "discriminative_parts": ["后脑双钝角", "背部双巨大蝠翼", "尾尖恒定燃烧的火苗"],
+          "confusable_distractors": ["005_charmeleon", "149_dragonite"]
+        },
+        {
+          "species_id": "133",
+          "name_zh": "伊布 (Eevee) 家族分支测试群",
+          "archetype": "同底盘极高相似度进化链辨析 (最适合细粒度排他训练)",
+          "members": ["133_eevee", "134_vaporeon_水伊布", "135_jolteon_雷伊布", "136_flareon_火伊布", "196_espeon_太阳伊布", "197_umbreon_月亮伊布"],
+          "test_purpose": "身体轮廓高度同源，仅凭耳朵形状、领口毛发质感与额头花纹区分不同形态。"
+        }
+      ]
+    },
+    {
+      "category_id": "kenney_monster_modular_pack",
+      "description": "Kenney 原创可拆分部件积木库 (100% 规则可控，完全零版权争议)",
+      "primary_source": "https://kenney.nl/assets/monster-builder-pack",
+      "license": "CC0 1.0 Universal (Public Domain)",
+      "features": {
+        "modular_parts": {
+          "bodies": ["4 种基础几何形态 (圆角正方, 椭圆水滴, 六棱柱, 尖顶梯形) × 5 种配色"],
+          "eyes": ["单眼大眼球, 双对称正视眼, 三眼三角阵, 眯眯眼, 怒视眼, 睫毛眼"],
+          "mouths": ["张口露尖牙, 憨笑, 紧闭平线, 尖鸟喙, 舌头吐出"],
+          "accessories": ["弯角, 螺旋独角, 蝙蝠飞翼, 机械天线, 三齿王冠, 领结, 围巾"]
+        },
+        "purpose": "在不涉及现有知名商业 IP 法律纠纷的前提下，严格验证模型对‘加减法、数星星、找不同、部件拼接来源’的底层视觉理解能力。"
+      }
+    },
+    {
+      "category_id": "anime_segmentation_and_manga",
+      "description": "插画前景实例提取与黑白线稿数据集",
+      "resources": [
+        {
+          "id": "anime_instance_segmentation",
+          "source": "https://huggingface.co/datasets/dreMaz/AnimeInstanceSegmentationDataset",
+          "purpose": "从数十万张动漫插画中提取带有高质量 Alpha 前景掩码的角色实例，用于自动贴装合成。"
+        },
+        {
+          "id": "manga109_s",
+          "source": "http://www.manga109.org/en/",
+          "license": "学术研究与限定商业机器学习协议",
+          "purpose": "补充黑白单色线稿、漫画网点分格中的角色面部与文字定位能力。"
+        }
+      ]
+    }
+  ]
+}
