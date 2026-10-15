@@ -147,16 +147,27 @@
           "slug": "louisvuitton",
           "name": "路易威登 (Louis Vuitton - LV)",
           "hex": "#000000",
-          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/louisvuitton.svg",
+          "icon_svg_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Louis_Vuitton_logo_and_wordmark.svg",
+          "monogram_svg_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Louis_Vuitton_SVG_Monogram_Logo.svg",
           "geometric_features": "斜切斜体的 L 与大写 V 穿插交叠，常伴随四瓣四角花纹老花 (Monogram)",
           "confusable_distractors": ["monogram_clones", "gucci"],
           "confusable_reason": "经典 Monogram 由 LV 字母组合、四叶花、四瓣尖星构成复合阵列。"
         },
         {
+          "slug": "loewe",
+          "name": "罗意威 (LOEWE)",
+          "hex": "#000000",
+          "icon_svg_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Loewe_logo.svg",
+          "anagram_svg_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/LOEWE-Logo.svg",
+          "geometric_features": "经典字标与 Vicente Vela 设计、M/M Paris 现代重构的 4L 缠绕立体线条 Anagram",
+          "confusable_distractors": ["celtic_knot", "monogram_interlace"],
+          "confusable_reason": "四组两两对称反转的草写体 L 字母连续缠绕构成闭环拓扑。"
+        },
+        {
           "slug": "chanel",
           "name": "香奈儿 (Chanel)",
           "hex": "#000000",
-          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/chanel.svg",
+          "icon_svg_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Chanel_logo.svg",
           "geometric_features": "两个粗细均匀、背对背水平镜像互扣的正圆 C 字母",
           "confusable_distractors": ["gucci", "underarmour"],
           "confusable_reason": "Gucci 是两个正立并面对面互扣的半圆 G；Chanel 是背对背双 C。"
@@ -165,7 +176,7 @@
           "slug": "gucci",
           "name": "古驰 (Gucci)",
           "hex": "#000000",
-          "icon_svg_url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gucci.svg",
+          "icon_svg_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Gucci_logo.svg",
           "geometric_features": "面对面反向倒置互锁的双 G 徽标",
           "confusable_distractors": ["chanel", "giorgioarmani"]
         },

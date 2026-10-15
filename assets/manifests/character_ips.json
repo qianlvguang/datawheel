@@ -1,110 +1,270 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "动漫角色与可拆解 IP 资产清单 (Character & Anime IPs Manifest)",
-  "version": "1.0.0",
+  "title": "全球顶流动漫角色、游戏与跨界 IP 资产全景清单 (Global Anime, Gaming & Pop Culture IPs Manifest)",
+  "version": "2.0.0",
+  "description": "面向跨画风、多形态、局部部件拼接、异色变体与细粒度角色身份恒常性验证的结构化动漫 IP 知识库。覆盖热血少年漫、机甲科幻、萌系潮流、经典游戏四大宇宙，包含特征解构与混淆干扰对。所有条目支持按需在线流式调用，零本地存储占用。",
+  "total_archetypes": 18,
   "categories": [
     {
-      "category_id": "pokeapi_sprites_benchmark",
-      "description": "基于 PokéAPI 结构化角色资产体系 (验证跨画风、多形态、异色身份恒常性)",
-      "primary_source": "https://github.com/PokeAPI/sprites",
-      "license": "Fair Use / Fan Community整理 (不可直接商用，专用于学术与技术验证)",
-      "data_hierarchy_schema": "species_id -> form_id -> artwork_version -> asset_role",
-      "selected_archetypes": [
+      "category_id": "shonen_global_phenomena",
+      "category_name_zh": "热血少年漫与全球现象级巨头",
+      "description": "具有数十年全球知名度、高辨识度外貌轮廓与标志性服装纹样的头部经典动漫 IP",
+      "archetypes": [
         {
-          "species_id": "025",
-          "name_zh": "皮卡丘 (Pikachu)",
-          "archetype": "高频核心标志角色",
-          "variants": [
-            {
-              "variant_id": "official_artwork_standard",
-              "role": "canonical_reference",
-              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-              "style": "官方高清单色背景立绘"
-            },
-            {
-              "variant_id": "official_artwork_shiny",
-              "role": "color_shifted_variant",
-              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/25.png",
-              "style": "异色闪光版 (偏深橙黄，测试对轻微色相偏移的容忍)"
-            },
-            {
-              "variant_id": "pixel_front_default",
-              "role": "cross_style_pixel",
-              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
-              "style": "经典像素点阵版 (测试从矢量参考到复古像素的跨画风匹配)"
-            },
-            {
-              "variant_id": "pixel_back_default",
-              "role": "viewpoint_variant_back",
-              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
-              "style": "背影视角 (测试部件遮挡与姿态变化)"
-            }
+          "ip_id": "dragon_ball_goku",
+          "series_zh": "七龙珠 (Dragon Ball)",
+          "name_zh": "孙悟空 (Son Goku)",
+          "creator": "鸟山明 (Akira Toriyama)",
+          "canonical_remote_assets": {
+            "four_star_dragon_ball_svg": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Four-Star_Dragon_Ball.svg",
+            "kame_symbol_svg": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Kame_symbol.svg"
+          },
+          "discriminative_parts": [
+            "黑发阶段：不规则向右侧伸展的五簇粗壮尖锐刺猬发型，额头两侧垂落两道弧形细发丝",
+            "服装图腾：亮橙色配深蓝打底与护腕的龟仙流道服，胸前与背后圆形白色底衬黑楷书'龟'或'悟'字字徽",
+            "形态演化阶梯：常态黑发黑瞳 -> 超级赛亚人全金发倒竖与碧绿眼瞳 -> 超蓝 (SSGSS) -> 自在极意银白发"
           ],
-          "discriminative_parts": ["黑色耳尖长耳朵", "两侧圆形红脸颊", "锯齿形闪电尾巴", "背部两条深褐色横条纹"],
-          "confusable_distractors": ["026_raichu", "172_pichu", "025_mimikyu"],
-          "distractor_reason": "皮丘 (Pichu) 耳廓全黑且体型小；雷丘 (Raichu) 为卷曲长尾与水滴形耳；谜拟Q (Mimikyu) 是布偶仿造体，眼睛画在肚子上。"
+          "confusable_distractors": ["vegeta", "gohan_teen", "bardock"],
+          "distractor_reason": "贝吉塔为鲜明的 M 形高发际线与竖立火炬发型，穿赛亚人战斗服；巴达克左脸颊带有显著十字刀疤。"
         },
         {
-          "species_id": "006",
-          "name_zh": "喷火龙 (Charizard)",
-          "archetype": "复杂翅膀与尾部火焰多部件组合",
-          "variants": [
-            {
-              "variant_id": "official_artwork_standard",
-              "role": "canonical_reference",
-              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
-              "style": "官方立绘 (橙色双足飞龙，双角与尾尖燃烧火苗)"
-            },
-            {
-              "variant_id": "official_artwork_shiny",
-              "role": "color_inverted_hard_positive",
-              "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/6.png",
-              "style": "异色闪光版 (全黑色身体与红青内翼，极端体色变体)"
-            }
+          "ip_id": "one_piece_luffy",
+          "series_zh": "航海王 / 海贼王 (One Piece)",
+          "name_zh": "蒙奇·D·路飞 (Monkey D. Luffy)",
+          "creator": "尾田荣一郎 (Eiichiro Oda)",
+          "canonical_remote_assets": {
+            "straw_hat_jolly_roger_svg": "https://upload.wikimedia.org/wikipedia/commons/9/9f/One_Piece_Pirate_Flag.svg"
+          },
+          "discriminative_parts": [
+            "标志性草帽：黄色编织圆边草帽配红色缎带饰圈",
+            "身体伤痕：左眼正下方缝合线短刀疤、胸口巨大的 X 形交叉深红烧伤疤痕",
+            "服装搭配：无袖红色开襟马甲配蓝色牛仔卷边短裤与草鞋",
+            "五档太阳神尼卡形态：纯白如流云般的蓬松白发、漂浮于肩颈周围的祥云飘带、金色红瞳"
           ],
-          "discriminative_parts": ["后脑双钝角", "背部双巨大蝠翼", "尾尖恒定燃烧的火苗"],
-          "confusable_distractors": ["005_charmeleon", "149_dragonite"]
+          "confusable_distractors": ["shanks", "portgas_d_ace", "sabo"],
+          "distractor_reason": "红发香克斯同样佩戴过此草帽但左眼为三道深红抓痕刀疤；艾斯为橙色牛仔帽带哭笑脸徽章与雀斑。"
         },
         {
-          "species_id": "133",
-          "name_zh": "伊布 (Eevee) 家族分支测试群",
-          "archetype": "同底盘极高相似度进化链辨析 (最适合细粒度排他训练)",
-          "members": ["133_eevee", "134_vaporeon_水伊布", "135_jolteon_雷伊布", "136_flareon_火伊布", "196_espeon_太阳伊布", "197_umbreon_月亮伊布"],
-          "test_purpose": "身体轮廓高度同源，仅凭耳朵形状、领口毛发质感与额头花纹区分不同形态。"
+          "ip_id": "naruto_uzumaki",
+          "series_zh": "火影忍者 (Naruto)",
+          "name_zh": "旋涡鸣人 (Uzumaki Naruto)",
+          "creator": "岸本齐史 (Masashi Kishimoto)",
+          "canonical_remote_assets": {
+            "konoha_symbol_svg": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Konohagakure_Symbol.svg",
+            "akatsuki_cloud_svg": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Akatsuki_cloud.svg"
+          },
+          "discriminative_parts": [
+            "面部特征：双侧脸颊各三道左右对称的狐狸胡须状深色纹路（九尾封印标记）",
+            "发型与护额：凌乱金色短刺猬头配深蓝/黑色系带木叶铁板护额（正中刻印带尾小旋涡）",
+            "服装特征：高对比度纯橙色配深蓝/黑色立领运动夹克，背后印有红色旋涡一族家徽"
+          ],
+          "confusable_distractors": ["boruto", "minato_namikaze", "pain_yahiko"],
+          "distractor_reason": "博人脸颊仅有两道胡须纹且头顶有一根呆毛；水门为披白色'四代目火影'御神袍且脸颊无胡须。"
+        },
+        {
+          "ip_id": "demon_slayer_tanjiro",
+          "series_zh": "鬼灭之刃 (Demon Slayer: Kimetsu no Yaiba)",
+          "name_zh": "灶门炭治郎 (Tanjiro Kamado)",
+          "creator": "吾峠呼世晴 (Koyoharu Gotouge)",
+          "discriminative_parts": [
+            "市松羽织纹样 (Ichimatsu Pattern)：纯黑与翠绿相间的等宽正方形双色几何西洋棋盘格羽织外套",
+            "日轮花札耳坠：白色长方形纸牌耳坠，中央绘制带有向四周放射红黑光芒的红色朝阳，下方两道平行横线",
+            "额头斑痕：额头左上方暗红色的不规则硬化烫伤疤痕（后期觉醒为红色火炎斑纹）"
+          ],
+          "confusable_distractors": ["nezuko_kamado", "zenitsu_agatsuma", "giyu_tomioka"],
+          "distractor_reason": "祢豆子为粉色六角形麻之叶几何纹样配口衔绿竹筒；善逸为橙黄渐变底配白色小等边三角形鳞纹羽织；义勇为左右不对称拼接羽织。"
         }
       ]
     },
     {
-      "category_id": "kenney_monster_modular_pack",
-      "description": "Kenney 原创可拆分部件积木库 (100% 规则可控，完全零版权争议)",
+      "category_id": "mecha_and_cyberpunk",
+      "category_name_zh": "机甲传奇与科幻里程碑",
+      "description": "硬核工业造型、特定几何色块配色与精密外骨骼装甲系统",
+      "archetypes": [
+        {
+          "ip_id": "evangelion_unit_01",
+          "series_zh": "新世纪福音战士 (Neon Genesis Evangelion - EVA)",
+          "name_zh": "泛用人型决战兵器 EVA 初号机 (Test Type-01)",
+          "creator": "庵野秀明 (Hideaki Anno)",
+          "canonical_remote_assets": {
+            "nerv_logo_svg": "https://upload.wikimedia.org/wikipedia/commons/c/ce/NERV_Logo.svg"
+          },
+          "discriminative_parts": [
+            "标志性色彩拓扑：深紫色 (Purple) 主体装甲配荧光亮绿 (Neon Green) 与亮橙点缀",
+            "头部特征：向前伸展的刀刃状弯角独角头冠，深陷于眼窝的双眼绿色传感器与下颚可裂开的血盆大口",
+            "肩部塔楼：高耸垂直的武器拘束器塔架，侧面印有白色'EVA 01 TEST'文字标识"
+          ],
+          "confusable_distractors": ["eva_unit_02", "eva_unit_00", "gundam_barbatos"],
+          "distractor_reason": "二号机为纯鲜红涂装配四颗独立黄色圆眼；零号机为纯黄或纯蓝涂装配中央单眼大镜头。"
+        },
+        {
+          "ip_id": "gundam_rx_78_2",
+          "series_zh": "机动战士高达 (Mobile Suit Gundam)",
+          "name_zh": "元祖高达 RX-78-2",
+          "creator": "富野由悠季 (Yoshiyuki Tomino)",
+          "discriminative_parts": [
+            "经典三原色机体：纯白装甲主基调配胸部深蓝、驾驶舱门亮红、胸口排气格栅黄色",
+            "头部 V 形天线：额头中央凸起红色五边形传感器，两侧向斜上方对称展开长黄色 V 字天线",
+            "脸颊进气口：双眼下方红色下巴配两侧脸颊黑色凹槽斜切散热排气口"
+          ],
+          "confusable_distractors": ["gundam_mk2", "strike_gundam", "zaku_ii"],
+          "distractor_reason": "扎古 (Zaku II) 为绿色军绿色单眼红色导轨镜头机体，无 V 字天线；强袭高达胸部带有更复杂的折角装甲。"
+        }
+      ]
+    },
+    {
+      "category_id": "kawaii_and_pop_culture",
+      "category_name_zh": "全球潮流、萌系与治愈系图腾",
+      "description": "极简几何极度概括、风靡全球服装周边与文创二创的标志性文化符号",
+      "archetypes": [
+        {
+          "ip_id": "totoro",
+          "series_zh": "龙猫 (My Neighbor Totoro)",
+          "name_zh": "龙猫 (Totoro - 灰龙猫大トトロ)",
+          "creator": "宫崎骏 (Hayao Miyazaki) / 吉卜力工作室",
+          "discriminative_parts": [
+            "体型与面部：圆滚庞大的深灰色毛茸茸水滴体型，尖尖的小耳朵，两枚呆萌大圆眼与黑色扁鼻",
+            "腹部斑纹拓扑：纯米白色的圆鼓肚皮上方，整齐排列着数个倒 V 形（深灰色倒三角弯月牙状）羽状斑纹",
+            "胡须特征：脸颊两侧各有三根修长水平舒展的硬质胡须"
+          ],
+          "confusable_distractors": ["chinchilla_generic", "snorlax", "blue_totoro_chu_totoro"],
+          "distractor_reason": "中龙猫为纯天蓝色且身型偏小；卡比兽为深蓝青色体色配眯眯眼与下獠牙。"
+        },
+        {
+          "ip_id": "sanrio_hello_kitty",
+          "series_zh": "三丽鸥 (Sanrio)",
+          "name_zh": "凯蒂猫 (Hello Kitty)",
+          "creator": "清水侑子 (Yuko Shimizu)",
+          "discriminative_parts": [
+            "五官特征：**绝对无嘴设计 (No Mouth)**，仅有一枚横向椭圆形黄色小鼻子与两颗纯黑圆眼睛",
+            "配饰特征：左耳根部佩戴经典的饱和正红色五瓣胖蝴蝶结（或侧蝴蝶结）",
+            "脸型比例：横向椭圆的纯白猫形头部，脸颊两侧各有三道对称短黑胡须"
+          ],
+          "confusable_distractors": ["kuromi", "mymelody", "cinnamoroll"],
+          "distractor_reason": "美乐蒂佩戴粉色兔耳帽；酷洛米佩戴黑色小恶魔角头巾配粉色骷髅；玉桂狗为下垂大长耳配蓝色眼瞳。"
+        },
+        {
+          "ip_id": "sanrio_kuromi",
+          "series_zh": "三丽鸥 (Sanrio)",
+          "name_zh": "酷洛米 (Kuromi)",
+          "discriminative_parts": [
+            "头饰特征：纯黑色小恶魔尖角兜帽，额头正中央带有标志性的粉红色小骷髅头印记",
+            "颈部装饰：黑色锯齿状小丑风格伊丽莎白领圈，每个尖角末端带有粉红小圆球",
+            "表情特征：常常露出单侧斜挑的调皮坏笑"
+          ]
+        },
+        {
+          "ip_id": "sailor_moon_usagi",
+          "series_zh": "美少女战士 (Sailor Moon)",
+          "name_zh": "月野兔 (Sailor Moon / 月野うさぎ)",
+          "creator": "武内直子 (Naoko Takeuchi)",
+          "discriminative_parts": [
+            "发型发色：极长金色双马尾，头顶两侧配有红色宝石包头丸子头 (Odango)",
+            "额饰特征：纯金细金属月牙冠 (Tiara)，中央镶嵌红宝石",
+            "服装拓扑：白底水手服配深蓝水手领、胸口硕大红丝绸蝴蝶结与心形/金星变身胸针"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "gaming_phenomena_and_pokemon",
+      "category_name_zh": "游戏超级 IP 与精灵宝可梦生态",
+      "description": "跨越世代的殿堂级电子游戏角色，具备高度结构化的形态变体与多姿态对照图谱",
+      "archetypes": [
+        {
+          "ip_id": "super_mario",
+          "series_zh": "超级马力欧 (Super Mario)",
+          "name_zh": "马力欧 (Mario)",
+          "creator": "宫本茂 (Shigeru Miyamoto) / 任天堂",
+          "canonical_remote_assets": {
+            "mario_m_cap_logo_svg": "https://upload.wikimedia.org/wikipedia/commons/0/05/Mario_emblem.svg"
+          },
+          "discriminative_parts": [
+            "帽子标志：纯红鸭舌工装帽中央，印有白底红色大写英文字母'M'圆形布贴",
+            "面部毛发：圆球状大鼻子下方，留有一副边缘带有六道圆润波浪弧线的浓密黑色大八字胡",
+            "工装背带：纯红打底圆领衫配深蓝牛仔背带裤，双肩带有两颗醒目的亮黄色大圆纽扣与白手套"
+          ],
+          "confusable_distractors": ["luigi", "wario", "waluigi"],
+          "distractor_reason": "路易吉 (Luigi) 为绿色帽子配字母'L'且体型更修长；瓦力欧 (Wario) 为黄色帽子配大写'W'与锯齿形折角胡须。"
+        },
+        {
+          "ip_id": "genshin_paimon",
+          "series_zh": "原神 (Genshin Impact)",
+          "name_zh": "派蒙 (Paimon)",
+          "creator": "米哈游 (miHoYo / HoYoverse)",
+          "discriminative_parts": [
+            "悬浮光环：头顶上方常态悬浮一枚微带缺口的纯金色几何光环 (Halo)",
+            "发型与发饰：白色蓬松及肩短发，右侧发丝佩戴黑色莫比乌斯几何发夹",
+            "斗篷纹理：深蓝泛紫色连帽斗篷，内衬为浩瀚流动星空与星光粒子，胸前带有倒三角形玫瑰金金边几何搭扣"
+          ]
+        },
+        {
+          "ip_id": "pokemon_pikachu",
+          "series_zh": "精灵宝可梦 (Pokémon)",
+          "name_zh": "皮卡丘 (Pikachu - #025)",
+          "variants": [
+            {"style": "官方高清单色立绘", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"},
+            {"style": "异色闪光版 (深橙黄偏色)", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/25.png"},
+            {"style": "复古像素点阵版", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"},
+            {"style": "背影视角 (遮挡与姿态变化)", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png"}
+          ],
+          "discriminative_parts": ["黑色耳尖长耳朵", "双颊亮红色圆形蓄电颊囊", "锯齿形闪电尾巴", "背部两条深褐色横条纹"],
+          "confusable_distractors": ["raichu", "pichu", "mimikyu"]
+        },
+        {
+          "ip_id": "pokemon_charizard",
+          "series_zh": "精灵宝可梦 (Pokémon)",
+          "name_zh": "喷火龙 (Charizard - #006)",
+          "variants": [
+            {"style": "官方标准立绘", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"},
+            {"style": "异色闪光黑喷 (黑身红内翼)", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/6.png"}
+          ],
+          "discriminative_parts": ["后脑双钝角", "巨大龙蝠双翼", "尾尖恒定燃烧火苗"]
+        },
+        {
+          "ip_id": "pokemon_eevee_family",
+          "series_zh": "精灵宝可梦 (Pokémon)",
+          "name_zh": "伊布 (Eevee) 8 大属性进化分支同底盘辨析群",
+          "members": ["133_伊布", "134_水伊布", "135_雷伊布", "136_火伊布", "196_太阳伊布", "197_月亮伊布", "470_叶伊布", "471_冰伊布", "700_仙子伊布"],
+          "test_purpose": "高度相似的四足狐狸底盘轮廓，仅凭耳朵形状、领口毛发质感与额头花纹区分不同元素属性进化形态"
+        }
+      ]
+    },
+    {
+      "category_id": "modular_synthetic_pack",
+      "category_name_zh": "Kenney 原创无版权可拆解积木库",
+      "description": "100% 规则可控的纯数学积木部件，用于剥离大模型预训练死记硬背，纯粹检验底层图元计数与空间推理能力",
       "primary_source": "https://kenney.nl/assets/monster-builder-pack",
       "license": "CC0 1.0 Universal (Public Domain)",
-      "features": {
-        "modular_parts": {
-          "bodies": ["4 种基础几何形态 (圆角正方, 椭圆水滴, 六棱柱, 尖顶梯形) × 5 种配色"],
-          "eyes": ["单眼大眼球, 双对称正视眼, 三眼三角阵, 眯眯眼, 怒视眼, 睫毛眼"],
-          "mouths": ["张口露尖牙, 憨笑, 紧闭平线, 尖鸟喙, 舌头吐出"],
-          "accessories": ["弯角, 螺旋独角, 蝙蝠飞翼, 机械天线, 三齿王冠, 领结, 围巾"]
-        },
-        "purpose": "在不涉及现有知名商业 IP 法律纠纷的前提下，严格验证模型对‘加减法、数星星、找不同、部件拼接来源’的底层视觉理解能力。"
+      "modular_parts": {
+        "bodies": ["4 种基础几何形态 (圆角正方, 椭圆水滴, 六棱柱, 尖顶梯形) × 5 种配色"],
+        "eyes": ["单眼大眼球, 双对称正视眼, 三眼三角阵, 眯眯眼, 怒视眼, 睫毛眼"],
+        "mouths": ["张口露尖牙, 憨笑, 紧闭平线, 尖鸟喙, 舌头吐出"],
+        "accessories": ["弯角, 螺旋独角, 蝙蝠飞翼, 机械天线, 三齿王冠, 领结, 围巾"]
       }
+    }
+  ],
+  "remote_anime_dataset_references": [
+    {
+      "dataset_id": "danbooru_character_tags",
+      "title": "Danbooru 大规模动漫角色细粒度标签数据集",
+      "access_url": "https://huggingface.co/datasets/animelover/danbooru2021",
+      "total_images": 4500000,
+      "character_classes": 40000,
+      "usage_in_datawheel": "提供权威的全球角色名称、发色、瞳色、服装配件层级标签体系与跨作品对应关系"
     },
     {
-      "category_id": "anime_segmentation_and_manga",
-      "description": "插画前景实例提取与黑白线稿数据集",
-      "resources": [
-        {
-          "id": "anime_instance_segmentation",
-          "source": "https://huggingface.co/datasets/dreMaz/AnimeInstanceSegmentationDataset",
-          "purpose": "从数十万张动漫插画中提取带有高质量 Alpha 前景掩码的角色实例，用于自动贴装合成。"
-        },
-        {
-          "id": "manga109_s",
-          "source": "http://www.manga109.org/en/",
-          "license": "学术研究与限定商业机器学习协议",
-          "purpose": "补充黑白单色线稿、漫画网点分格中的角色面部与文字定位能力。"
-        }
-      ]
+      "dataset_id": "anime_instance_segmentation",
+      "title": "AnimeInstanceSegmentation (高精度 Alpha 透明角色前景提取库)",
+      "access_url": "https://huggingface.co/datasets/dreMaz/AnimeInstanceSegmentationDataset",
+      "usage_in_datawheel": "用于从动漫插画中直接提取无毛边的透明通道人物前景，用于商品贴图生成"
+    },
+    {
+      "dataset_id": "manga109_corpus",
+      "title": "Manga109 日本学术研究级黑白线稿与角色框标注库",
+      "access_url": "http://www.manga109.org/",
+      "total_pages": 10000,
+      "usage_in_datawheel": "用于黑白线稿到彩色商品二创的跨模态识别评测"
     }
   ]
 }

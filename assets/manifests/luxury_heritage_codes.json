@@ -1,0 +1,544 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "全球顶级奢侈品牌设计语言、图腾资产与权威参考台账 (Global Luxury Heritage Codes & Design Manifest)",
+  "version": "2.0.0",
+  "description": "面向奢侈品多模态整体性认知、设计语言归属与真伪辅助审核的全景台账。覆盖全球 16 大顶级奢侈品牌的核心设计图元、包型结构、材质表现、专利规范及通用设计对照组。所有直链均经可用性校验，支持纯远程按需流式调用，零本地磁盘占用。",
+  "dual_track_protocol": {
+    "track_1_attribution": "品牌关联与设计证据标注 (brand_attribution)，记录 house_codes、可见图元区域、辨识度权重与结构证据",
+    "track_2_authenticity": "真伪与来源置信度 (authenticity_state)，严格区分 verified_authentic (权威鉴定/品牌单据)、verified_counterfeit (查扣/司法判决)、programmatic_modified (算法可控扰动) 与 unknown_market (公开网络商品图)"
+  },
+  "total_brands": 16,
+  "brands": [
+    {
+      "brand_id": "louis_vuitton",
+      "brand_name_zh": "路易威登 (Louis Vuitton)",
+      "country": "France",
+      "founded_year": 1854,
+      "parent_group": "LVMH",
+      "canonical_remote_assets": {
+        "wordmark_svg": "https://upload.wikimedia.org/wikipedia/commons/7/76/Louis_Vuitton_logo_and_wordmark.svg",
+        "monogram_interlace_svg": "https://upload.wikimedia.org/wikipedia/commons/4/43/Louis_Vuitton_SVG_Monogram_Logo.svg",
+        "official_site_heritage": "https://us.louisvuitton.com/eng-us/stories/monogram130"
+      },
+      "motif_families": [
+        {
+          "family_id": "monogram_canvas",
+          "name_zh": "经典 Monogram 涂层帆布老花家族",
+          "created_year": 1896,
+          "design_elements": ["交错倾斜大写 LV 字母组合", "实心四角星镶嵌于菱形", "凹面四瓣尖角星芒", "正圆内嵌四瓣圆角花卉"],
+          "structural_rules": [
+            "单张连续帆布原则：Speedy、Keepall、Papillon 等包型由单片一体帆布裁切包裹，因此背面老花必须呈严格完全倒置状态",
+            "对花严格对称：两侧接缝处、袋盖边缘老花花纹呈几何镜像或严格同向平移",
+            "植鞣皮手缝针脚：天然 Vachetta 植鞣皮配黄色蜡线，马鞍双针缝线呈约 45 度微倾斜，手柄耳仔处通常为 5 针固定"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "四图元严格交替阵列、正圆内四叶花拓扑、烫金压印正圆 O 与尖锐底 V",
+            "generic": "普通棕黄复古提花、几何星芒花砖纹样"
+          },
+          "confusable_counterparts": ["mcm_cognac_visetos", "fendi_zucca_double_f", "generic_floral_plaid"]
+        },
+        {
+          "family_id": "damier_grid",
+          "name_zh": "Damier 棋盘格几何家族",
+          "created_year": 1888,
+          "variations": ["Damier Ebene (棕黑)", "Damier Azur (白蓝灰)", "Damier Graphite (黑灰)"],
+          "structural_rules": [
+            "方格微缩铭文：每隔固定格数（通常为纵横特定间隔）的方格内部精细印刷 'Louis Vuitton Paris' 正方形徽记",
+            "边缘裁切规则：包身正面边缘方格保持完整对称几何比例，不应出现不对称的随意切割"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "内嵌微缩 Paris 字符的等宽双色微细斜线方格",
+            "generic": "通用国际象棋双色棋盘格 (Checkerboard)、水牛格 (Buffalo check)"
+          }
+        },
+        {
+          "family_id": "twist_lock_mechanism",
+          "name_zh": "Twist 金属旋转机械锁扣",
+          "patent_reference": "US Design Patent D735,016 / EUIPO 002364842",
+          "mechanism_rule": "转动金属字母 L 使其滑入金属字母 V 的凹槽内，由两字母平行态转换为两字母重叠咬合的闭锁形态。"
+        }
+      ]
+    },
+    {
+      "brand_id": "loewe",
+      "brand_name_zh": "罗意威 (LOEWE)",
+      "country": "Spain",
+      "founded_year": 1846,
+      "parent_group": "LVMH",
+      "canonical_remote_assets": {
+        "wordmark_svg": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Loewe_logo.svg",
+        "anagram_svg": "https://upload.wikimedia.org/wikipedia/commons/c/c3/LOEWE-Logo.svg",
+        "official_site_craft": "https://www.loewe.com/int/en/women/anagram-edit"
+      },
+      "motif_families": [
+        {
+          "family_id": "anagram_insignia",
+          "name_zh": "Anagram 4L 缠绕徽标家族",
+          "origin": "1970年西班牙画家 Vicente Vela 原创，2014年 Jonathan Anderson 执掌时由 M/M (Paris) 现代精简重构",
+          "geometric_topology": "由四组两两水平及垂直镜像对称的草写大写 L 字符交缠成连续对称闭环",
+          "expressions": [
+            "包身右上切角/皮牌盲盒热压印 (Blind Debossing)",
+            "金属三维立体镂空搭扣/胸针 (Cut-out Hardware)",
+            "全包提花编织老花帆布 (Anagram Jacquard Canvas)"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "四重对称的 L 弧线末端微圆衬线、平滑倒角压痕",
+            "generic": "普通凯尔特绳结 (Celtic Knot)、传统四叶装饰花纹"
+          }
+        },
+        {
+          "family_id": "puzzle_geometry",
+          "name_zh": "Puzzle 几何多边形解构包型",
+          "created_year": 2014,
+          "designer": "Jonathan Anderson",
+          "patent_reference": "EUIPO Design No. 002553147-0001 / US Design Patent D749,320",
+          "structural_rules": [
+            "9 块精密裁切的几何皮革多边形裁片拼接，每块边缘经手工黑色油边 (Cova) 均匀封边",
+            "折纸仿生机械性能：包身沿裁片接缝受压时可无应力平整折叠为完全平面",
+            "右上角不对称三角形裁片中心热压印 Anagram 盲盒",
+            "版本差异：Puzzle Classic (显露外缝线与黑色油边凹槽) vs. Puzzle Edge (裁片边缘向内翻折滚边)"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "特定 9 片非对称比例角度的折纸裁片拼接拓扑、手绘边缘油边凹线",
+            "generic": "普通几何碎皮拼色包、对称多色拼接托特包"
+          }
+        },
+        {
+          "family_id": "flamenco_knots",
+          "name_zh": "Flamenco 标志性皮革螺旋卷结与抽绳",
+          "created_year": 1970,
+          "revived_year": 2014,
+          "structural_rules": [
+            "包口两侧抽绳末端收尾处，采用整条柔软纳帕皮手工同轴紧密盘绕而成的螺旋卷结 (Flamenco Knots)",
+            "优质超柔小牛皮 (Supple Nappa Calfskin) 抽紧时自重形成的优雅自然垂坠与抓褶"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "4~5 圈同轴致密紧束的真皮螺旋卷结配无五金外露抽绳",
+            "generic": "普通流苏抽绳、金属流苏扣、简单单圈平结"
+          }
+        }
+      ]
+    },
+    {
+      "brand_id": "hermes",
+      "brand_name_zh": "爱马仕 (Hermès)",
+      "country": "France",
+      "founded_year": 1837,
+      "parent_group": "Independent",
+      "canonical_remote_assets": {
+        "wordmark_svg": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Hermes_wordmark.svg",
+        "carriage_symbol_svg": "https://upload.wikimedia.org/wikipedia/commons/8/84/Hermes_symbol_%28fixed_width%29.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "birkin_kelly_architecture",
+          "name_zh": "Birkin & Kelly 建筑级马鞍结构",
+          "structural_rules": [
+            "马鞍双针斜向法式手缝 (Cousu Sellier / Saddle Stitch)：双蜡线交替穿孔，缝线呈严格约 45 度微斜朝向，机器平缝线则为水平直线",
+            "包盖两翼穿孔与三段式穿带 (Sanglon) 配中轴旋转锁柱 (Touret) 与金属牌 (Plaque de Sanglon)",
+            "刻印规范：'HERMÈS PARIS / MADE IN FRANCE' 烫印紧贴缝线下方，手工凿刻字体深浅温润"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "斜向双针马鞍手缝线痕、纯黄铜镀金/钯金五金倒角、底钉手工铆合",
+            "generic": "普通机缝翻盖托特包、五金粗糙倒角"
+          }
+        },
+        {
+          "family_id": "chaine_d_ancre",
+          "name_zh": "Chaîne d'ancre 锚链元素",
+          "created_year": 1938,
+          "structural_rules": ["中间横档将椭圆环平分为两个半环的船锚链环几何造型，常用于珠宝搭扣与包身皮革贴花。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "chanel",
+      "brand_name_zh": "香奈儿 (Chanel)",
+      "country": "France",
+      "founded_year": 1910,
+      "parent_group": "Independent",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/3/35/Chanel_logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "classic_flap_and_quilting",
+          "name_zh": "Classic Flap 菱格纹与双 C 锁扣",
+          "structural_rules": [
+            "菱格纹对齐 (Quilting Alignment)：袋盖与包身下半部分闭合时，菱格与人字纹缝线必须保持严格几何连贯延伸，不发生错位",
+            "双 C 旋转锁扣 (CC Turnlock)：右侧 C 顶部跨在左侧 C 之上，左侧 C 底部跨在右侧 C 之上；后方螺丝早期为一字螺丝，现代为专用内星形防拆螺丝",
+            "皮穿链条 (Leather-woven chain)：24K 镀金/浅金金属环间隙中手工穿插同色小羊皮/鱼子酱牛皮条带"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "闭合处完美延续的菱格缝线网络、双 C 右上左下互扣重叠规则",
+            "generic": "通用菱形车线格纹包、普通金属转锁"
+          }
+        }
+      ]
+    },
+    {
+      "brand_id": "gucci",
+      "brand_name_zh": "古驰 (Gucci)",
+      "country": "Italy",
+      "founded_year": 1921,
+      "parent_group": "Kering",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Gucci_logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "gg_supreme_and_interlocking",
+          "name_zh": "GG Supreme 老花与双 G 互扣",
+          "structural_rules": [
+            "双 G 面对面互扣：一个正立 G 与一个倒立反向 G 面对面相互嵌套，老花阵列由六个微小实心圆点连接各组 GG 图元",
+            "红绿织带 (Green-Red-Green Web Stripe)：源自马术腹带，两道宽绿条夹一道等宽红条的纯色罗缎织带"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "GG 点阵拓扑互锁与红绿/蓝红织带比例",
+            "generic": "普通单字母方块格纹、通用条纹帆布带"
+          }
+        },
+        {
+          "family_id": "horsebit_1955",
+          "name_zh": "Horsebit 马衔扣家族",
+          "created_year": 1953,
+          "structural_rules": ["由中间双圆环与两侧 D 形金属扣连接而成的马术嚼子金属结构。"]
+        },
+        {
+          "family_id": "bamboo_handle",
+          "name_zh": "Bamboo 竹节手柄工艺",
+          "created_year": 1947,
+          "structural_rules": ["天然日本竹节经火烤手工弯曲定型成半圆提手，保留自然竹节凸起与焦糖色光泽漆面。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "dior",
+      "brand_name_zh": "迪奥 (Christian Dior)",
+      "country": "France",
+      "founded_year": 1946,
+      "parent_group": "LVMH",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/5/56/Dior_Logo_2022.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "cannage_quilting",
+          "name_zh": "Cannage 藤格纹绗缝家族",
+          "origin": "源自拿破仑三世风格藤椅椅背编织纹理",
+          "structural_rules": [
+            "正方形与八边形几何交叉绗缝线，交汇处形成立体饱满的小凸起枕状浮雕效果",
+            "Lady Dior 悬挂 DIOR 字母吊坠 (Charms)，大写 D 字母最大，各字母边缘抛光圆滑，配圆形皮质小挂牌"
+          ]
+        },
+        {
+          "family_id": "dior_oblique",
+          "name_zh": "Dior Oblique 倾斜刺绣老花",
+          "created_year": 1967,
+          "structural_rules": ["大写 D 字母内嵌套小写 ior 字符，整体倾斜呈三色高密度多层次立体提花针织。"]
+        },
+        {
+          "family_id": "saddle_silhouette",
+          "name_zh": "Saddle 马鞍不规则不对称包型",
+          "created_year": 1999,
+          "designer": "John Galliano",
+          "structural_rules": ["底部呈流畅的弧形不对称马鞍轮廓，侧面连接处带有巨大金色金属 CD 环扣，正前方悬垂金色金属 D 字母马蹬挂件。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "prada",
+      "brand_name_zh": "普拉达 (Prada)",
+      "country": "Italy",
+      "founded_year": 1913,
+      "parent_group": "Prada Group",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Prada-Logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "triangle_enamel_plaque",
+          "name_zh": "倒三角金属珐琅标家族",
+          "structural_rules": [
+            "正等腰倒三角形金属铭牌，底板为高温烧结纯平珐琅",
+            "铭文四行排版：'PRADA' (大写粗体，R 字母右腿带有显著弧形缺口)、'MILANO'、'DAL 1913'、下方萨伏依王室结徽章",
+            "铆钉固定：三角形三颗顶角通过同色平头或微凸铆钉与皮革基底紧密铆合"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "PRADA 的 R 腿部断笔弧形、倒三角金属铭牌厚度与平整珐琅",
+            "generic": "普通三角皮标、无缺口粗体英文字标"
+          }
+        },
+        {
+          "family_id": "saffiano_leather",
+          "name_zh": "Saffiano 十字纹压印小牛皮",
+          "origin": "Mario Prada 于 1913 年申请专利",
+          "structural_rules": ["高温高压压印于精选小牛皮上的精细正交斜对角十字网格纹理，表面覆以极薄防水蜡层，具有标志性硬挺度与防刮性能。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "bottega_veneta",
+      "brand_name_zh": "葆蝶家 (Bottega Veneta)",
+      "country": "Italy",
+      "founded_year": 1966,
+      "parent_group": "Kering",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Logo_Bottega_Veneta.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "intrecciato_weaving",
+          "name_zh": "Intrecciato 皮革梭织编织工艺",
+          "core_philosophy": "'When your own initials are enough' (全包外观无任何外部 Logo，纯靠编织识别身份)",
+          "structural_rules": [
+            "人工以 45 度对角线双向手工穿插编织柔软超薄纳帕小羊皮条 (Fettucce)，形成无外露接缝的整块编织皮面",
+            "衍生变体：Macro Intrecciato (Cassette / Padded Cassette 宽幅编织)、Jodie 提手处单侧扭转皮革打结"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "无外露拼接线的纯手工双层 45 度纳帕皮真梭织，边缘收口隐蔽",
+            "generic": "单面机器压花仿编织纹理、廉价塑料仿编织"
+          }
+        }
+      ]
+    },
+    {
+      "brand_id": "saint_laurent",
+      "brand_name_zh": "圣罗兰 (Saint Laurent / YSL)",
+      "country": "France",
+      "founded_year": 1961,
+      "parent_group": "Kering",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Saint_Laurent_Paris_SVG_Logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "cassandre_monogram_hardware",
+          "name_zh": "Cassandre 纵向穿插金属 YSL 徽标",
+          "created_year": 1961,
+          "designer": "Adolphe Mouron Cassandre",
+          "structural_rules": [
+            "大写字母 Y、S、L 自上向下垂直叠扣穿插：Y 的右侧斜线穿过 S 内部，S 环绕 L 的直立竖杆",
+            "金属厚度微弧凸起，边缘倒角平滑如镜面，背面通过防转平头螺钉锁固于袋盖"
+          ]
+        },
+        {
+          "family_id": "chevron_quilting",
+          "name_zh": "Chevron V 形人字绗缝家族 (Loulou / College)",
+          "structural_rules": ["整齐对称的向下 V 字形密集绗缝，对称中轴线正对包盖正中央的 YSL 金属锁扣。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "celine",
+      "brand_name_zh": "思琳 (Celine)",
+      "country": "France",
+      "founded_year": 1945,
+      "parent_group": "LVMH",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/8/81/Celine_logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "triomphe_canvas_and_clasp",
+          "name_zh": "Triomphe 凯旋门双 C 浮雕金属锁扣与老花",
+          "origin": "1970年代创始人 Céline Vipiana 在巴黎星形广场凯旋门链条中汲取灵感，Hedi Slimane 于 2018 年重塑",
+          "structural_rules": [
+            "两个背对背紧密贴合的弧形镂空 C 字母，中间连接处带有精巧的向两侧凸起的锁簧结构",
+            "Triomphe Canvas 涂层帆布呈现密集的双向对称深棕黑底凯旋门图形阵列"
+          ]
+        },
+        {
+          "family_id": "luggage_and_belt",
+          "name_zh": "Luggage 笑脸包与 Belt 鲶鱼包结构",
+          "structural_rules": ["波浪形拼接前幅皮面配正前方拉链横袋构成'笑脸'，或两侧外露细长垂坠皮带扣（鲶鱼须）。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "fendi",
+      "brand_name_zh": "芬迪 (Fendi)",
+      "country": "Italy",
+      "founded_year": 1925,
+      "parent_group": "LVMH",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Fendi_logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "zucca_and_baguette",
+          "name_zh": "FF Zucca 老花与 Baguette 法棍包",
+          "created_year": 1965,
+          "designer": "Karl Lagerfeld (老佛爷原创倒置双F)",
+          "structural_rules": [
+            "一个正立大写 F 与一个倒立大写 F 紧凑拼接，两 F 横向笔画长度严格等宽且略微错位对齐",
+            "Baguette 包身修长小巧，正面翻盖中央配巨大金属或珐琅 FF 搭扣，单手腋下夹带设计"
+          ]
+        },
+        {
+          "family_id": "peekaboo_twistlock",
+          "name_zh": "Peekaboo 躲猫猫结构与中隔板",
+          "created_year": 2008,
+          "structural_rules": ["中央硬质金属/皮质隔离板，前后两面均配备独立的椭圆旋转转锁，解开后外侧自然垂落露出内部撞色衬里。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "goyard",
+      "brand_name_zh": "高雅德 (Goyard)",
+      "country": "France",
+      "founded_year": 1853,
+      "parent_group": "Independent",
+      "canonical_remote_assets": {
+        "wordmark_svg": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Goyard_wordmark.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "goyardine_dot_chevron",
+          "name_zh": "Goyardine 点阵 Y 字人字纹涂层亚麻帆布",
+          "created_year": 1892,
+          "designer": "Edmond Goyard",
+          "structural_rules": [
+            "由麻、棉和大麻纤维手工涂层编织底布，表面以三色微小凸起点阵 (Dots) 错落排列出立体人字齿轮 Y 字形阵列",
+            "特定行中印有两行微缩纯白小字：'E: GOYARD / HONORE / PARIS'"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "凸起可触知的微距点阵层次与 Y 字错位交叉规则",
+            "generic": "普通单色印刷平面人字纹、规则平铺锯齿纹"
+          }
+        }
+      ]
+    },
+    {
+      "brand_id": "balenciaga",
+      "brand_name_zh": "巴黎世家 (Balenciaga)",
+      "country": "France",
+      "founded_year": 1919,
+      "parent_group": "Kering",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Balenciaga_Logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "city_motorcycle_hardware",
+          "name_zh": "City 机车包五金与皮须家族",
+          "created_year": 2001,
+          "designer": "Nicolas Ghesquière",
+          "structural_rules": ["复古做旧摔纹羊皮，外露铜质半球/扁平铆钉，拉链头悬挂长皮须 (Tassels)，手工编织提手加固包芯。"]
+        },
+        {
+          "family_id": "hourglass_curved_base",
+          "name_zh": "Hourglass 沙漏包夸张凹弧底",
+          "structural_rules": ["底部呈极其鲜明的向下圆弧内收凹陷曲线，正面梯形翻盖悬垂悬挂金属粗线条大写 B 字母搭扣。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "burberry",
+      "brand_name_zh": "博柏利 (Burberry)",
+      "country": "United Kingdom",
+      "founded_year": 1856,
+      "parent_group": "Burberry Group",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Logo_Burberry_01.svg",
+        "nova_check_pattern_svg": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Burberry_pattern.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "vintage_nova_check",
+          "name_zh": "Vintage Nova Check 经典苏格兰格纹",
+          "created_year": 1920,
+          "structural_rules": [
+            "米驼色 (Camel) 底色上，由三等粗黑色宽横竖条、黑条中央夹两道极细白条，以及交叉贯穿的单道细红线构成严格比例正方形网格",
+            "包身与风衣内衬拼接缝处，格纹红线与黑线保持严格水平对齐延伸"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "米/黑/白/红四色严格比例交叉与中心对称红细线",
+            "generic": "通用红黑格纹、普通苏格兰格纹布料"
+          }
+        }
+      ]
+    },
+    {
+      "brand_id": "cartier",
+      "brand_name_zh": "卡地亚 (Cartier)",
+      "country": "France",
+      "founded_year": 1847,
+      "parent_group": "Richemont",
+      "canonical_remote_assets": {
+        "logo_svg": "https://upload.wikimedia.org/wikipedia/commons/8/86/Cartier_logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "love_screw_motifs",
+          "name_zh": "Love 系列外露螺丝钉刻印",
+          "created_year": 1969,
+          "designer": "Aldo Cipullo",
+          "structural_rules": ["手镯/戒指外表面等距分布的极浅内凹一字平头螺丝钉圆坑槽，螺丝凹槽中央横线与圆边严格相切垂直。"]
+        },
+        {
+          "family_id": "santos_exposed_screws",
+          "name_zh": "Santos 腕表八颗外露螺钉方形表圈",
+          "created_year": 1904,
+          "structural_rules": ["方形圆角表壳，表圈周围均匀对称铆接 8 颗外露微型一字螺丝钉，表冠镶嵌一颗多切面尖晶石/蓝宝石。"]
+        }
+      ]
+    },
+    {
+      "brand_id": "rolex",
+      "brand_name_zh": "劳力士 (Rolex)",
+      "country": "Switzerland",
+      "founded_year": 1905,
+      "parent_group": "Hans Wilsdorf Foundation",
+      "canonical_remote_assets": {
+        "wordmark_svg": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Rolex_wordmark_logo.svg"
+      },
+      "motif_families": [
+        {
+          "family_id": "oyster_architecture",
+          "name_zh": "Oyster 蚝式表壳与经典三角坑纹外圈 (狗牙圈)",
+          "structural_rules": [
+            "三角坑纹外圈 (Fluted Bezel)：等距精密数控车削的锋利棱面反射环形金属光泽",
+            "泡泡镜 (Cyclops Lens)：蓝宝石玻璃表镜日历窗上方粘贴凸透镜，必须具备真实 2.5 倍物理光学放大倍率",
+            "表盘刻字微距：12 点钟五角皇冠下方 'ROLEX / OYSTER PERPETUAL'，6 点钟微型瑞士防伪皇冠激光防伪标"
+          ],
+          "discriminative_vs_generic": {
+            "discriminative": "真实 2.5 倍泡泡镜屈光率、极度锐利的狗牙圈棱角、整块 904L 蚝式钢金属拉丝",
+            "generic": "平光玻璃贴片、钝化坑纹合金外壳"
+          }
+        }
+      ]
+    }
+  ],
+  "remote_multimodal_datasets": [
+    {
+      "dataset_id": "glami_1m",
+      "title": "GLAMI-1M 多语言百万级时装与商品图文数据集",
+      "license": "Apache-2.0",
+      "access_url": "https://huggingface.co/datasets/glami/glami-1m",
+      "total_items": 1100000,
+      "categories_count": 191,
+      "usage_in_datawheel": "提供箱包皮革与商品结构的工业级专业描述语料与真实商品摄影参考"
+    },
+    {
+      "dataset_id": "fashion_gen",
+      "title": "Fashion-Gen 高端买手电商多视角图文数据集",
+      "access_url": "https://arxiv.org/abs/1806.08317",
+      "total_items": 293000,
+      "usage_in_datawheel": "参考其全方位视角（正/背/侧/细节）与专业材质工艺术语标注规范"
+    },
+    {
+      "dataset_id": "europeana_fashion",
+      "title": "Europeana Fashion 欧洲时尚遗产数字化档案馆",
+      "access_url": "https://www.europeana.eu/en/collections/topic/12-fashion",
+      "total_items": 1000000,
+      "usage_in_datawheel": "调阅百年历史经典硬箱与工匠皮革原件的高清数字化档案"
+    },
+    {
+      "dataset_id": "wipo_global_design_database",
+      "title": "WIPO / EUIPO 外观设计公报与 3D 专利线框图数据库",
+      "access_url": "https://www.wipo.int/reference/en/designdb/",
+      "usage_in_datawheel": "在线检索品牌官方公开申请的包型正投影线框、裁片拓扑与装配工程图纸"
+    }
+  ]
+}

@@ -23,6 +23,7 @@ class AssetCatalogManager:
         self.manifest_files = {
             "flags_emblems": MANIFESTS_DIR / "flags_and_emblems.json",
             "brand_logos": MANIFESTS_DIR / "brand_logos.json",
+            "luxury_heritage": MANIFESTS_DIR / "luxury_heritage_codes.json",
             "character_ips": MANIFESTS_DIR / "character_ips.json",
             "commodity_substrates": MANIFESTS_DIR / "commodity_substrates.json",
             "evaluation_benchmarks": MANIFESTS_DIR / "evaluation_benchmarks.json"
@@ -86,7 +87,9 @@ class AssetCatalogManager:
             },
             "character_ips": {
                 "local_pokeapi_sprites": local_ips_count,
-                "primary_sources": ["PokéAPI (多形态/异色/像素/背影)", "Kenney Monster Pack (CC0)"]
+                "curated_archetypes": self.catalogs.get("character_ips", {}).get("total_archetypes", 18),
+                "categories_count": len(self.catalogs.get("character_ips", {}).get("categories", [])),
+                "remote_datasets": len(self.catalogs.get("character_ips", {}).get("remote_anime_dataset_references", []))
             },
             "commodity_substrates": {
                 "local_real_packshots": local_substrates_count,
@@ -95,6 +98,11 @@ class AssetCatalogManager:
             "evaluation_benchmarks": {
                 "curated_benchmarks": benchmarks_count,
                 "flagship_benchmarks": ["LogoDet-3K (15.8万图)", "QMUL-OpenLogo (2.7万图)", "ZACI-20 (145万对)"]
+            },
+            "luxury_heritage": {
+                "curated_brands": len(self.catalogs.get("luxury_heritage", {}).get("brands", [])),
+                "remote_multimodal_datasets": len(self.catalogs.get("luxury_heritage", {}).get("remote_multimodal_datasets", [])),
+                "access_mode": "流式在线直链访问 (无需本地预下载，随时可流式提取)"
             }
         }
 
@@ -113,20 +121,28 @@ class AssetCatalogManager:
         bl = summary["brand_logos"]
         print(f"\n[2. 商业品牌与商标 Logo 库 (全量已就绪)]")
         print(f"  - 本地入库品牌矢量: {bl['local_brand_svgs']} 款官方 SVG 图标 (Simple Icons 官方全集)")
-        print(f"  - 涵盖领域: 运动潮流 (Nike/Adidas/Puma)、数码科技 (Apple/Android/PS)、奢侈时尚 (LV/Chanel/Gucci)")
+        print(f"  - 涵盖领域: 运动潮流 (Nike/Adidas/Puma)、数码科技 (Apple/Android/PS)、奢侈时尚 (LV/LOEWE/Chanel/Gucci)")
+
+        lh = summary.get("luxury_heritage", {})
+        print(f"\n[3. 奢侈品设计语言、专利图式与权威参考清单 (按需在线访问就绪)]")
+        print(f"  - 顶级奢侈品牌台账: {lh.get('curated_brands', 0)} 大品牌全套设计家族 (覆盖 LV/Hermès/Chanel/Gucci/Dior/LOEWE/Prada/BV/YSL 等)")
+        print(f"  - 外部多模态数据源直链: {lh.get('remote_multimodal_datasets', 0)} 个 (GLAMI-1M / Fashion-Gen / Europeana / WIPO 3D专利)")
+        print(f"  - 存储模式: {lh.get('access_mode')} - 零本地磁盘占用，URL经高可用验证")
 
         ci = summary["character_ips"]
-        print(f"\n[3. 动漫与角色可拆解 IP 库 (精选已就绪)]")
-        print(f"  - PokéAPI 核心立绘: {ci['local_pokeapi_sprites']} 张 (皮卡丘、喷火龙、妙蛙种子、耿鬼、伊布全家族之官方/异色/像素/背影)")
-        print(f"  - 原创积木体系: Kenney Monster Pack (CC0 纯几何可拆解部件)")
+        print(f"\n[4. 动漫与角色可拆解 IP 库 (全景扩展就绪)]")
+        print(f"  - 覆盖四大宇宙经典角色: {ci['curated_archetypes']} 大核心原型 (热血少年漫 / 机甲科幻 / 萌系潮流 / 经典游戏)")
+        print(f"  - 核心 IP 覆盖: 龙珠 (悟空)、海贼王 (路飞/草帽旗)、火影 (鸣人/木叶/晓)、鬼灭 (炭治郎市松格)、EVA (初号机/NERV)、高达 (元祖RX-78-2)、龙猫、Hello Kitty、美少女战士、马力欧、原神 (派蒙)、宝可梦全系")
+        print(f"  - 外部免下载开源数据索引: {ci['remote_datasets']} 个 (Danbooru 450万图标签库 / dreMaz 透明前景分割库 / Manga109 线稿库)")
+        print(f"  - 原创规则积木体系: Kenney Monster Pack (CC0 纯几何可拆解部件，剥离死记硬背)")
 
         cs = summary["commodity_substrates"]
-        print(f"\n[4. 真实摄影级商品实拍底板库 (精选已就绪)]")
+        print(f"\n[5. 真实摄影级商品实拍底板库 (精选已就绪)]")
         print(f"  - 商业摄影平铺原图: {cs['local_real_packshots']} 张高清实拍底板 (纯白T恤、麻灰T恤、黑T恤、黑卫衣、灰卫衣、帆布包、马克杯)")
         print(f"  - 质检状态: 彻底告别手绘矢量假衣服，全部具备真实微距纤维细节与自然布料悬垂褶皱")
 
         eb = summary["evaluation_benchmarks"]
-        print(f"\n[5. 外部独立评测基准集合 (期末考试集)]")
+        print(f"\n[6. 外部独立评测基准集合 (期末考试集)]")
         print(f"  - 评测基准数量: {eb['curated_benchmarks']} 大标准数据集 (LogoDet-3K / QMUL-OpenLogo / ZACI-20)")
         print(f"  - 接入原则: 物理隔离，不混入训练，专做真实自然场景泛化测试")
 

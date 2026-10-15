@@ -76,3 +76,70 @@ def bbox_iou_1000(box1: List[int], box2: List[int]) -> float:
     if union_area <= 0:
         return 0.0
     return inter_area / float(union_area)
+
+
+def draw_debug_bboxes(image, boxes_or_annotations, label: str = None,
+                      thickness: int = 3, default_color: tuple = (0, 230, 118)):
+    """在图像副本上绘制相对坐标 0~1000 [ymin, xmin, ymax, xmax] 的标注框与文本标签。"""
+    from PIL import ImageDraw
+
+    img_copy = image.copy()
+    if boxes_or_annotations is None:
+        return img_copy
+
+    draw = ImageDraw.Draw(img_copy)
+    w, h = img_copy.size
+
+    items = []
+    if isinstance(boxes_or_annotations, dict):
+        items = [boxes_or_annotations]
+    elif isinstance(boxes_or_annotations, list):
+        if len(boxes_or_annotations) == 4 and all(isinstance(x, (int, float)) for x in boxes_or_annotations):
+            items = [{"bbox_1000": boxes_or_annotations, "label": label or ""}]
+        else:
+            for item in boxes_or_annotations:
+                if isinstance(item, dict):
+                    items.append(item)
+                elif isinstance(item, (list, tuple)) and len(item) == 4:
+                    items.append({"bbox_1000": list(item), "label": label or ""})
+
+    for item in items:
+        bbox = item.get("bbox_1000") or item.get("bbox")
+        if not bbox or len(bbox) != 4:
+            continue
+
+        ymin, xmin, ymax, xmax = bbox
+        item_label = item.get("label", label or "")
+        is_target = item.get("is_target", True)
+        match_status = item.get("match_status", "")
+
+        px_xmin = int((xmin / 1000.0) * w)
+        px_ymin = int((ymin / 1000.0) * h)
+        px_xmax = int((xmax / 1000.0) * w)
+        px_ymax = int((ymax / 1000.0) * h)
+
+        if not is_target or "mismatch" in item_label or "mismatch" in match_status:
+            color = (255, 60, 60)
+        elif "insufficient" in item_label or "insufficient" in match_status:
+            color = (255, 160, 0)
+        else:
+            color = default_color
+
+        for offset in range(thickness):
+            draw.rectangle(
+                [px_xmin - offset, px_ymin - offset, px_xmax + offset, px_ymax + offset],
+                outline=color
+            )
+
+        prefix = ""
+        if "is_target" in item:
+            prefix = "[TARGET] " if is_target else "[DISTRACTOR] "
+        status_suffix = f" ({match_status})" if match_status else ""
+        tag = f"{prefix}{item_label}{status_suffix} [{ymin},{xmin},{ymax},{xmax}]".strip()
+
+        font_w = len(tag) * 7 + 8
+        tag_bg_ymin = max(0, px_ymin - 20)
+        draw.rectangle([px_xmin, tag_bg_ymin, min(w, px_xmin + font_w), px_ymin], fill=(0, 0, 0, 200))
+        draw.text((px_xmin + 4, tag_bg_ymin + 3), tag, fill=(255, 255, 255))
+
+    return img_copy
