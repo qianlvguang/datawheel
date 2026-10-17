@@ -64,6 +64,7 @@ v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**�
 - **数据格式**：`messages / images / enable_thinking / sample_id / cate_id / variant`，`variant=6` 由现有插件自动映射为 `loss_V6`，无需改训练代码；图片路径相对 `/data/autovision-cfs/autovision-notebook`。
 - **能力定位**：不重复 V1–V4 的通用 caption，而是补 27B 中训练最缺的**细粒度视觉证据能力**：小目标定位、多图参考匹配、相似干扰排除、证据不足拒绝、结构化描述、视觉事实一致性判断。
 - **试点集**：`output/datawheel_v6_pilot/`（≈2,500 行：单图多轮 QA 1,200 / 结构化 caption 400 / 文本一致性 250 / 多图参考匹配 650；含远端上传包与 ms-swift 校验报告）。
+- **balanced-v1 扩数据**：`output/datawheel_v6_balanced/`（union 43,893 行 = 单图 37,186 + 多图参考 6,707；S1 18,438 / S2 15,656 / S3 19,164；实测 token 份额 ~2.08%/2.09%/2.06%；validator critical=0；上传包 314MB）。
 - **配比方案**：见 [MID_TRAIN_DATAWHEEL_PLAN.md](MID_TRAIN_DATAWHEEL_PLAN.md)（按 S1/S2/S3 的 token 份额而非行数配比，light/balanced/aggressive 三档）。
 
 ---
@@ -83,6 +84,9 @@ v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**�
 | [`tools/build_v6_reference_rows.py`](tools/build_v6_reference_rows.py) | v2 stage_d → V6 多图参考匹配行（商品图 + 2~3 候选参考图，train split only） |
 | [`tools/pack_v6_pilot.py`](tools/pack_v6_pilot.py) | 合并 V6 parts、统计 token/图片、生成远端上传包 |
 | [`tools/build_v6_stage_mixtures.py`](tools/build_v6_stage_mixtures.py) | 按 light 档 r=3/2/4 生成 S1/S2/S3 stage parquet（重复副本、SAVE_STEPS 估算）并打包上传 |
+| [`tools/build_v6_balanced_single.py`](tools/build_v6_balanced_single.py) | balanced 扩数据：37,186 行单图多任务行（8 cate 配额） |
+| [`tools/build_v6_balanced_reference.py`](tools/build_v6_balanced_reference.py) | balanced 扩数据：6,707 行多图参考匹配行 |
+| [`tools/assemble_v6_balanced.py`](tools/assemble_v6_balanced.py) | union → S1/S2/S3 stage 文件、validator、balanced 上传包 |
 | [`tools/validate_swift_v6.py`](tools/validate_swift_v6.py) | V6 数据契约校验（schema / messages / 图片 / 长度估算 / cate 分布） |
 | [`generate.py`](generate.py) | 统一 CLI：历史四维度（gallery/contrastive/density/demo）与 v2 全量（`v2` / `datawheel10k`） |
 

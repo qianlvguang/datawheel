@@ -39,6 +39,9 @@
   结构化视觉描述、视觉事实与文字描述的一致性判断。
 - **压低**：纯色块几何（A 阶段）对 27B 价值低，V6 全量中占比 ≤3%，仅作通道校准。
 - **不做**：业务规则背诵、V5 治理规则复刻、长 CoT thinking。
+- **注意 caption 稀释效应**：Cambrian-1 等工作的经验是"普通 caption 占比过高会稀释精确实体监督"。
+  因此 V6 的 structured_caption 只放在 S2（35% 行占比），S1/S3 以 grounding/参考匹配/负样本为主；
+  S2 的 JSON 占比与格式锁定风险要在评测中单独观察。
 
 ### 2.1 数据种类（6 类）与 `cate_id`
 
@@ -155,13 +158,37 @@ columns:
 > 试点轮**不按该表加权**（200 行小 cate 在 1% 份额下需 15~30×/epoch 重复），按整池均匀重复；
 > 该表用于扩数据后的自然配比。
 
-### 4.6 下一轮扩数据目标
+### 4.6 balanced-v1 实际生成结果（2026-10-18）
 
-- balanced 自然实现（repeat=1）所需唯一行数：**S1 ≈18,438 / S2 ≈15,657 / S3 ≈19,163**，
-  跨阶段 cate union ≈ **43,893 行**（`mix_plan.json.expansion_targets`）；
-- 数据源：v2 train 的 B/C/E 约 6k 图 + stage_d train 1.2k 图，每图 2~4 个任务视图（不同 QA 轮数/指令模板），
-  另加 structured_caption / text-compliance / reference_match 专项；
-- 生成参数化：`--rows-per-image`、`--max-turns`、`--cate-weights`（下一轮实现并重新生成 stage-specific parquet）。
+已按上面的 union 配额生成并组装（仅 v2 train split）：
+
+| 项 | 实际值 |
+|---|---|
+| union 唯一行 | **43,893**（单图 37,186 + 多图参考匹配 6,707） |
+| S1 stage 文件 | **18,438 行**（apparel 6,453 / flag-hard 6,453 / reference 2,766 / misleading 2,766） |
+| S2 stage 文件 | **15,656 行**（structured_caption 5,480 / text-compliance 3,914 / ip-brand 3,131 / anime-ip 3,131） |
+| S3 stage 文件 | **19,164 行**（reference 6,707 / misleading 4,791 / quantity 3,833 / text-compliance 3,833） |
+| 上传包 | `output/datawheel_v6_balanced/upload/`：s1/s2/s3.parquet + 7,982 张图片（314MB，前缀 `algo4/tpz/test/datawheel_v6_balanced`） |
+| 本地校验 | `validate_swift_v6.py`：**critical=0**、exit 0；单行最长 4,210 tokens（1024/图保守口径） |
+
+实测训练侧影响（512/图 token 估算，smoke 后以真实 ipe 复核）：
+
+| 阶段 | V6 tokens/epoch | 实际 token 份额 | Δwindows | ipe | Δ iters/epoch | 建议 SAVE_STEPS |
+|---|---:|---:|---:|---|---:|---:|
+| S1 | 14.18M | **2.08%** | +1,662 | 2,631.8→2,683.7 | +1.97% | 895 |
+| S2 | 9.99M | **2.09%** | +1,170 | 1,841.8→1,878.3 | +1.98% | 626 |
+| S3 | 19.90M | **2.06%** | +2,331 | 3,730.2→3,803.0 | +1.95% | 1,268 |
+
+**与目标的偏差与处理：**
+
+- S1/S2 精准命中 ~2% 目标；**S3 只到 2.06%，未达 3%**。原因：参考匹配行实际约 1,899 tok/行（比 mix plan
+  推导时的假设低），而 S3 的 token 预算高度依赖 reference 行。要到 3% 需要：
+  (a) 把 reference 行扩到约 9.7k（+3k 行），或 (b) 每行候选参考图 2~3 张 → 3~4 张、并增加第二轮问答，
+  把单行 token 提到 ~2,800。两者都留到下一轮（先看 smoke/eval 是否值得）。
+- balanced-v1 相对试点（2,500 行）已是 **17.6× 行放大**；关键不是立刻拉满 3%，而是先跑通 smoke 与短程，
+  用 eval 的 misleading / apparel / text-compliance / flag-hard 簇决定是否继续加量。
+- 生成工具：`tools/build_v6_balanced_single.py`、`tools/build_v6_balanced_reference.py`、
+  `tools/assemble_v6_balanced.py`（union → stage → validator → upload，一条命令可复现）。
 
 ---
 
@@ -233,23 +260,31 @@ SMOKE=1 bash train_sft_qwen3_5_27b_megatron_lora_h200_vis_double.sh
 
 1. **S3 行数口径（高）**：任务口径 1,217,530（不含 V5）vs `vis_s3.sh` 默认 1,277,530（含 V5 60k）；
    windows/iters/SAVE_STEPS 相差约 5%，发射前必须二选一。
-2. **重复/过拟合（高）**：light 档 S1/S2/S3 每行曝光 6/4/4 次；balanced 需 15~30×/epoch 重复，
-   必须先扩数据。监控 loss_V6 与 eval 背离，升档前先扩唯一行。
-3. **视觉 token 估算误差（中高）**：512 token/img、packing 折减均为假设；远端真实值可能让
+2. **重复/过拟合（高）**：light 档 S1/S2/S3 每行曝光 6/4/4 次；balanced-v1 已无重复（reference/misleading
+   在 S1/S3 各出现一次，属顺序训练两次曝光）。S3 实测仅 2.06% 份额，若强行拉到 3% 需加参考行/图数，
+   注意不要用简单重复去凑。
+3. **S3 份额偏差（中）**：balanced-v1 S3=2.06% vs 目标 3%；优先看评测收益再决定是否扩 reference。
+4. **视觉 token 估算误差（中高）**：512 token/img、packing 折减均为假设；远端真实值可能让
    Δwindows 偏移 ±20~30%，以 smoke 实测 ipe 为准。
-4. **图片路径 base**：images 前缀 `algo4/tpz/test/datawheel_v6/…`，训练 CWD 必须是
+5. **图片路径 base**：images 前缀 `algo4/tpz/test/datawheel_v6/…`，训练 CWD 必须是
    `/data/autovision-cfs/autovision-notebook`；首次编码会重新跑（几十分钟~小时级），需 NFS 缓存。
-5. **cate_id 对账（高）**：当前 cate_id 是 Datawheel 自建能力簇；正式训练前需映射到 eval_v3 108 task 的 cate 表，
+6. **cate_id 对账（高）**：当前 cate_id 是 Datawheel 自建能力簇；正式训练前需映射到 eval_v3 108 task 的 cate 表，
    否则分组指标无法对齐（reference_match 可能无直接 task，需用 Datawheel v2 held-out 自建指标）。
-6. **V5 replay 隔离**：V6 不切验证集；in-run val 保持关闭（split_dataset_ratio=0）。
-7. **行级键**：`(sample_id, cate_id, images)` 唯一；重复 key 会被预处理异常/去重，影响行数对账。
-8. **不要修改 Mid_train 历史脚本**：接入只是 TRAIN_FILES 追加 V6 parquet；配方/sweep 冻结。
+7. **V5 replay 隔离**：V6 不切验证集；in-run val 保持关闭（split_dataset_ratio=0）。
+8. **行级键**：`(sample_id, cate_id, images)` 唯一；重复 key 会被预处理异常/去重，影响行数对账。
+9. **不要修改 Mid_train 历史脚本**：接入只是 TRAIN_FILES 追加 V6 parquet；配方/sweep 冻结。
 
 ---
 
 ## 8. 本轮交付与下一轮
 
-**本轮（2026-10-18）已交付：**
+**本轮（goal round 2）已交付：**
+
+- balanced union **43,893 行**（单图 37,186 + 多图参考 6,707），S1/S2/S3 stage 文件与 314MB 上传包；
+- 本地 validator critical=0；S1/S2 实测 token 份额 2.08%/2.09%，S3 2.06%（3% 目标留待下一轮增强）；
+- 生成工具链 `build_v6_balanced_single.py` / `build_v6_balanced_reference.py` / `assemble_v6_balanced.py`。
+
+**上一轮（2026-10-18）已交付：**
 
 - 方案主文档（本文件）；
 - `tools/build_v6_single_image.py`：v2 → 单图多轮 QA / 结构化 JSON / 文本一致性行（1,850 行，确定性可复现）；
@@ -261,10 +296,10 @@ SMOKE=1 bash train_sft_qwen3_5_27b_megatron_lora_h200_vis_double.sh
 
 **下一轮：**
 
-1. 远端 smoke（10 iters）→ 确认 `loss_V6`、strict 不丢行、实际 ipe/视觉 token；
-2. 按 smoke 实测值重算 SAVE_STEPS，生成 light 档 S1/S2/S3 三份 stage-specific parquet（重复 r=3/2/4）；
-3. 跑一次短程 S1（如 1/10 epoch）评估 loss_V6 与 vision-strong 是否退化；
-4. 若方向正确，扩数据到 ≈43,893 行并升 balanced（S1 2% / S2 2% / S3 3%）；
+1. 远端 smoke（10 iters，建议先 s1.parquet）→ 确认 `loss_V6`、strict 不丢行、实际 ipe/视觉 token；
+2. smoke 通过后跑短程 S1（如 1/10 epoch）评估 loss_V6 与 vision-strong/misleading/apparel 是否退化；
+3. 若方向正确且需要 S3 3%：扩 reference 行到 ~9.7k 或提升单行参考图/问答密度；
+4. 修正少量 cate 语义混杂（如 quantity 行里混入 identify 问题）并复核；
 5. 补 eval_v3 108 task × cate 映射，建立 Datawheel v2 held-out 自建评测（reference_match/uncertain 无现成 task）。
 
 ---
