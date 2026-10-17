@@ -591,7 +591,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     if len(cross_states) > 1:
         for i in range(len(cross_states)):
             for j in range(i + 1, len(cross_states)):
-                overlap = cross_states[i]["sample_ids"] & cross_states[j]["sample_ids"]
+                ids_i = cross_states[i].get("sample_ids", set())
+                ids_j = cross_states[j].get("sample_ids", set())
+                if not ids_i or not ids_j:
+                    continue
+                overlap = ids_i & ids_j
                 if overlap:
                     path_i, path_j = metrics_list[i]["path"], metrics_list[j]["path"]
                     issue = {

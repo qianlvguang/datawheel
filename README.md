@@ -82,6 +82,7 @@ v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**�
 | [`tools/build_v6_single_image.py`](tools/build_v6_single_image.py) | v2 → V6 单图训练行（多轮 QA / 结构化 JSON caption / 文本一致性） |
 | [`tools/build_v6_reference_rows.py`](tools/build_v6_reference_rows.py) | v2 stage_d → V6 多图参考匹配行（商品图 + 2~3 候选参考图，train split only） |
 | [`tools/pack_v6_pilot.py`](tools/pack_v6_pilot.py) | 合并 V6 parts、统计 token/图片、生成远端上传包 |
+| [`tools/build_v6_stage_mixtures.py`](tools/build_v6_stage_mixtures.py) | 按 light 档 r=3/2/4 生成 S1/S2/S3 stage parquet（重复副本、SAVE_STEPS 估算）并打包上传 |
 | [`tools/validate_swift_v6.py`](tools/validate_swift_v6.py) | V6 数据契约校验（schema / messages / 图片 / 长度估算 / cate 分布） |
 | [`generate.py`](generate.py) | 统一 CLI：历史四维度（gallery/contrastive/density/demo）与 v2 全量（`v2` / `datawheel10k`） |
 

@@ -121,12 +121,16 @@ columns:
 
 | 阶段 | 重复 r | 加入行数 | V6 tokens/epoch | 实际份额 | Δwindows | ipe 变化 | Δ iters/epoch | SAVE_STEPS |
 |---|---:|---:|---:|---:|---:|---|---:|---:|
-| S1 | 3（2 epochs → 6 次曝光/行） | 7,500 | 7.02M | 1.018% | +902 | 2,631.8→2,660.0 | +1.07% | 887（原 512 为占位，不可沿用） |
-| S2 | 2（2 epochs → 4 次） | 5,000 | 4.68M | 0.969% | +602 | 1,841.8→1,860.6 | +1.02% | 620（原 612） |
-| S3 | 4（1 epoch → 4 次） | 10,000 | 9.36M | 0.959% | +1,203 | 3,730.2→3,767.8 | +1.01% | 1,256 |
+| S1 | 3（2 epochs → 6 次曝光/行） | 7,500 | 7.02M | 1.029% | +823 | 2,631.8→2,657.5 | +0.98% | 886（原 512 为占位，不可沿用） |
+| S2 | 2（2 epochs → 4 次） | 5,000 | 4.68M | 0.979% | +548 | 1,841.8→1,858.9 | +0.93% | 620（原 612） |
+| S3 | 4（1 epoch → 4 次） | 10,000 | 9.36M | 0.967% | +1,097 | 3,730.2→3,764.5 | +0.92% | 1,255 |
 
-- 实现：把 `dataset.parquet` 按阶段复制 r 份，副本 `sample_id` 加 `_rN` 后缀，保持行级键唯一；
-- 成本：合计 +131 iters ≈ +32 分钟（S1/S2 速度实测，S3 估算）；
+- 实现：`tools/build_v6_stage_mixtures.py` 把 `dataset.parquet` 按阶段复制 r 份，副本 `sample_id` 加 `_rN` 后缀，保持行级键唯一；
+- 已生成并校验（validator critical=0）：
+  `output/datawheel_v6_pilot/stage_files/s1.parquet`（7,500 行）/
+  `s2.parquet`（5,000）/ `s3.parquet`（10,000），
+  并已打包进 `output/datawheel_v6_pilot/upload/{s1,s2,s3}.parquet`（图片共用 upload/images，117MB）；
+- 成本：合计约 +100 iters ≈ +25 分钟（S1/S2 速度实测，S3 估算）；
 - **这些值都以 smoke 打印的真实 ipe 为准重新计算**，不要直接手写死。
 
 ### 4.4 扩数据后 balanced 的行数需求（按试点 936 tok/row@512）
@@ -204,9 +208,9 @@ SMOKE=1 bash train_sft_qwen3_5_27b_megatron_lora_h200_vis_double.sh
 
 | 阶段 | 原 total iters | 新增后 | 建议 SAVE_STEPS |
 |---|---:|---:|---:|
-| S1 | 5,263 | 5,319（+1.06%） | 887（/3 口径） |
-| S2 | 3,683 | 3,721（+1.03%） | 620（/3） |
-| S3 | 3,730 | 3,767（+0.99%） | 1,256（/3）；若按预检 /6 则 628 |
+| S1 | 5,263 | 5,315（+0.98%） | 886（/3 口径） |
+| S2 | 3,683 | 3,718（+0.93%） | 620（/3） |
+| S3 | 3,730 | 3,764（+0.92%） | 1,255（/3）；若按预检 /6 则 627 |
 
 ### 6.2 预期行数（light 推荐档）
 
@@ -252,7 +256,8 @@ SMOKE=1 bash train_sft_qwen3_5_27b_megatron_lora_h200_vis_double.sh
 - `tools/build_v6_reference_rows.py`：v2 stage_d → 多图参考匹配行（650 行，商品图 + 2~3 候选参考图）；
 - `tools/pack_v6_pilot.py`：parts 合并 / token 统计 / 远端上传包（2,500 行，3,225 图，117MB）；
 - `tools/validate_swift_v6.py`：V6 数据契约与长度校验（critical=0；坏样本 9 类 critical 全覆盖）；
-- `output/datawheel_v6_pilot/`：dataset.parquet + upload/ + validation/ + mix_analysis.md / mix_plan.json（本地）。
+- `tools/build_v6_stage_mixtures.py`：按 light 档 r=3/2/4 生成 S1/S2/S3 三份 stage parquet 并打包上传；
+- `output/datawheel_v6_pilot/`：dataset.parquet + upload/（dataset.parquet + s1/s2/s3.parquet + images）+ stage_files/ + validation/ + mix_analysis.md / mix_plan.json（本地）。
 
 **下一轮：**
 
