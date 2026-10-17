@@ -1,0 +1,4682 @@
+{
+  "meta": {
+    "description": "Datawheel 官方实体（国旗/国徽/地方旗）中文全称表",
+    "generated_at": "2026-10-17T23:39:51+08:00",
+    "generator": "tools/build_entity_name_table.py",
+    "node_bin": "/opt/homebrew/bin/node",
+    "sources": [
+      "Node.js Intl.DisplayNames(['zh-CN']/['en'], {type:'region'}) for ISO 3166-1 alpha-2",
+      "手工补录：非 ISO 代码（arab/asean/cefta/eac/pc/eu/un/es-ct/gb-eng/sh-ac/xk/xx 等）",
+      "手工补录：国际组织/特殊徽章（united_nations/nasa/olympic/sede_vacante/somaliland 等）",
+      "人工映射：assets/official_regional 190 条地方行政区划旗帜"
+    ],
+    "counts": {
+      "official_flags": 271,
+      "official_emblems": 121,
+      "official_regional": 190
+    },
+    "total": 582
+  },
+  "official_flags": {
+    "ad": {
+      "name_zh": "安道尔",
+      "name_en": "Andorra",
+      "title_zh": "安道尔国旗",
+      "title_en": "National Flag of Andorra",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ae": {
+      "name_zh": "阿拉伯联合酋长国",
+      "name_en": "United Arab Emirates",
+      "title_zh": "阿拉伯联合酋长国国旗",
+      "title_en": "National Flag of United Arab Emirates",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "af": {
+      "name_zh": "阿富汗",
+      "name_en": "Afghanistan",
+      "title_zh": "阿富汗国旗",
+      "title_en": "National Flag of Afghanistan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ag": {
+      "name_zh": "安提瓜和巴布达",
+      "name_en": "Antigua & Barbuda",
+      "title_zh": "安提瓜和巴布达国旗",
+      "title_en": "National Flag of Antigua & Barbuda",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ai": {
+      "name_zh": "安圭拉",
+      "name_en": "Anguilla",
+      "title_zh": "安圭拉旗帜",
+      "title_en": "Flag of Anguilla",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "al": {
+      "name_zh": "阿尔巴尼亚",
+      "name_en": "Albania",
+      "title_zh": "阿尔巴尼亚国旗",
+      "title_en": "National Flag of Albania",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "am": {
+      "name_zh": "亚美尼亚",
+      "name_en": "Armenia",
+      "title_zh": "亚美尼亚国旗",
+      "title_en": "National Flag of Armenia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ao": {
+      "name_zh": "安哥拉",
+      "name_en": "Angola",
+      "title_zh": "安哥拉国旗",
+      "title_en": "National Flag of Angola",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "aq": {
+      "name_zh": "南极洲",
+      "name_en": "Antarctica",
+      "title_zh": "南极洲非官方旗帜",
+      "title_en": "Unofficial Flag of Antarctica",
+      "entity_type_zh": "特殊/非官方象征旗帜 (Special / Unofficial Flag)",
+      "entity_type_en": "Special / Unofficial Flag"
+    },
+    "ar": {
+      "name_zh": "阿根廷共和国",
+      "name_en": "Argentine Republic",
+      "title_zh": "阿根廷共和国国旗（五月太阳旗）",
+      "title_en": "National Flag of Argentina",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "arab": {
+      "name_zh": "阿拉伯国家联盟（阿盟）",
+      "name_en": "League of Arab States (Arab League)",
+      "title_zh": "阿拉伯国家联盟旗帜",
+      "title_en": "Flag of the Arab League",
+      "entity_type_zh": "国际组织官方旗帜 (International Organization Flag)",
+      "entity_type_en": "International Organization Flag"
+    },
+    "as": {
+      "name_zh": "美属萨摩亚",
+      "name_en": "American Samoa",
+      "title_zh": "美属萨摩亚旗帜",
+      "title_en": "Flag of American Samoa",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "asean": {
+      "name_zh": "东南亚国家联盟（东盟）",
+      "name_en": "Association of Southeast Asian Nations (ASEAN)",
+      "title_zh": "东南亚国家联盟会旗",
+      "title_en": "Flag of ASEAN",
+      "entity_type_zh": "国际组织官方旗帜 (International Organization Flag)",
+      "entity_type_en": "International Organization Flag"
+    },
+    "at": {
+      "name_zh": "奥地利",
+      "name_en": "Austria",
+      "title_zh": "奥地利国旗",
+      "title_en": "National Flag of Austria",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "au": {
+      "name_zh": "澳大利亚联邦",
+      "name_en": "Commonwealth of Australia",
+      "title_zh": "澳大利亚联邦国旗",
+      "title_en": "National Flag of Australia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "aw": {
+      "name_zh": "阿鲁巴",
+      "name_en": "Aruba",
+      "title_zh": "阿鲁巴旗帜",
+      "title_en": "Flag of Aruba",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "ax": {
+      "name_zh": "奥兰群岛",
+      "name_en": "Åland Islands",
+      "title_zh": "奥兰群岛旗帜",
+      "title_en": "Flag of Åland Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "az": {
+      "name_zh": "阿塞拜疆",
+      "name_en": "Azerbaijan",
+      "title_zh": "阿塞拜疆国旗",
+      "title_en": "National Flag of Azerbaijan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ba": {
+      "name_zh": "波斯尼亚和黑塞哥维那",
+      "name_en": "Bosnia & Herzegovina",
+      "title_zh": "波斯尼亚和黑塞哥维那国旗",
+      "title_en": "National Flag of Bosnia & Herzegovina",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bb": {
+      "name_zh": "巴巴多斯",
+      "name_en": "Barbados",
+      "title_zh": "巴巴多斯国旗",
+      "title_en": "National Flag of Barbados",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bd": {
+      "name_zh": "孟加拉国",
+      "name_en": "Bangladesh",
+      "title_zh": "孟加拉国国旗",
+      "title_en": "National Flag of Bangladesh",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "be": {
+      "name_zh": "比利时",
+      "name_en": "Belgium",
+      "title_zh": "比利时国旗",
+      "title_en": "National Flag of Belgium",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bf": {
+      "name_zh": "布基纳法索",
+      "name_en": "Burkina Faso",
+      "title_zh": "布基纳法索国旗",
+      "title_en": "National Flag of Burkina Faso",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bg": {
+      "name_zh": "保加利亚",
+      "name_en": "Bulgaria",
+      "title_zh": "保加利亚国旗",
+      "title_en": "National Flag of Bulgaria",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bh": {
+      "name_zh": "巴林",
+      "name_en": "Bahrain",
+      "title_zh": "巴林国旗",
+      "title_en": "National Flag of Bahrain",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bi": {
+      "name_zh": "布隆迪",
+      "name_en": "Burundi",
+      "title_zh": "布隆迪国旗",
+      "title_en": "National Flag of Burundi",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bj": {
+      "name_zh": "贝宁",
+      "name_en": "Benin",
+      "title_zh": "贝宁国旗",
+      "title_en": "National Flag of Benin",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bl": {
+      "name_zh": "圣巴泰勒米",
+      "name_en": "St. Barthélemy",
+      "title_zh": "圣巴泰勒米旗帜",
+      "title_en": "Flag of St. Barthélemy",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "bm": {
+      "name_zh": "百慕大",
+      "name_en": "Bermuda",
+      "title_zh": "百慕大旗帜",
+      "title_en": "Flag of Bermuda",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "bn": {
+      "name_zh": "文莱",
+      "name_en": "Brunei",
+      "title_zh": "文莱国旗",
+      "title_en": "National Flag of Brunei",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bo": {
+      "name_zh": "玻利维亚",
+      "name_en": "Bolivia",
+      "title_zh": "玻利维亚国旗",
+      "title_en": "National Flag of Bolivia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bq": {
+      "name_zh": "荷属加勒比区",
+      "name_en": "Caribbean Netherlands",
+      "title_zh": "荷属加勒比区旗帜",
+      "title_en": "Flag of Caribbean Netherlands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "br": {
+      "name_zh": "巴西联邦共和国",
+      "name_en": "Federative Republic of Brazil",
+      "title_zh": "巴西联邦共和国国旗（金绿旗）",
+      "title_en": "National Flag of Brazil (Auriverde)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bs": {
+      "name_zh": "巴哈马",
+      "name_en": "Bahamas",
+      "title_zh": "巴哈马国旗",
+      "title_en": "National Flag of Bahamas",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bt": {
+      "name_zh": "不丹",
+      "name_en": "Bhutan",
+      "title_zh": "不丹国旗",
+      "title_en": "National Flag of Bhutan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bv": {
+      "name_zh": "布韦岛",
+      "name_en": "Bouvet Island",
+      "title_zh": "布韦岛旗帜",
+      "title_en": "Flag of Bouvet Island",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "bw": {
+      "name_zh": "博茨瓦纳",
+      "name_en": "Botswana",
+      "title_zh": "博茨瓦纳国旗",
+      "title_en": "National Flag of Botswana",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "by": {
+      "name_zh": "白俄罗斯",
+      "name_en": "Belarus",
+      "title_zh": "白俄罗斯国旗",
+      "title_en": "National Flag of Belarus",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "bz": {
+      "name_zh": "伯利兹",
+      "name_en": "Belize",
+      "title_zh": "伯利兹国旗",
+      "title_en": "National Flag of Belize",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ca": {
+      "name_zh": "加拿大",
+      "name_en": "Canada",
+      "title_zh": "加拿大国旗（枫叶旗）",
+      "title_en": "National Flag of Canada (Maple Leaf Flag)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cc": {
+      "name_zh": "科科斯（基林）群岛",
+      "name_en": "Cocos (Keeling) Islands",
+      "title_zh": "科科斯（基林）群岛旗帜",
+      "title_en": "Flag of Cocos (Keeling) Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "cd": {
+      "name_zh": "刚果民主共和国",
+      "name_en": "Democratic Republic of the Congo",
+      "title_zh": "刚果民主共和国国旗",
+      "title_en": "National Flag of the Democratic Republic of the Congo",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cefta": {
+      "name_zh": "中欧自由贸易协定",
+      "name_en": "Central European Free Trade Agreement (CEFTA)",
+      "title_zh": "中欧自由贸易协定旗帜",
+      "title_en": "Flag of CEFTA",
+      "entity_type_zh": "国际组织官方旗帜 (International Organization Flag)",
+      "entity_type_en": "International Organization Flag"
+    },
+    "cf": {
+      "name_zh": "中非共和国",
+      "name_en": "Central African Republic",
+      "title_zh": "中非共和国国旗",
+      "title_en": "National Flag of Central African Republic",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cg": {
+      "name_zh": "刚果共和国",
+      "name_en": "Republic of the Congo",
+      "title_zh": "刚果共和国国旗",
+      "title_en": "National Flag of the Republic of the Congo",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ch": {
+      "name_zh": "瑞士联邦",
+      "name_en": "Swiss Confederation",
+      "title_zh": "瑞士联邦国旗（红底正白十字旗）",
+      "title_en": "National Flag of Switzerland",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ci": {
+      "name_zh": "科特迪瓦",
+      "name_en": "Côte d’Ivoire",
+      "title_zh": "科特迪瓦国旗",
+      "title_en": "National Flag of Côte d’Ivoire",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ck": {
+      "name_zh": "库克群岛",
+      "name_en": "Cook Islands",
+      "title_zh": "库克群岛旗帜",
+      "title_en": "Flag of Cook Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "cl": {
+      "name_zh": "智利",
+      "name_en": "Chile",
+      "title_zh": "智利国旗",
+      "title_en": "National Flag of Chile",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cm": {
+      "name_zh": "喀麦隆",
+      "name_en": "Cameroon",
+      "title_zh": "喀麦隆国旗",
+      "title_en": "National Flag of Cameroon",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cn": {
+      "name_zh": "中华人民共和国",
+      "name_en": "People's Republic of China",
+      "title_zh": "中华人民共和国国旗（五星红旗）",
+      "title_en": "National Flag of the People's Republic of China (Five-star Red Flag)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "co": {
+      "name_zh": "哥伦比亚",
+      "name_en": "Colombia",
+      "title_zh": "哥伦比亚国旗",
+      "title_en": "National Flag of Colombia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cp": {
+      "name_zh": "克利珀顿岛（法属）",
+      "name_en": "Clipperton Island, France",
+      "title_zh": "克利珀顿岛旗帜",
+      "title_en": "Flag of Clipperton Island",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "cr": {
+      "name_zh": "哥斯达黎加",
+      "name_en": "Costa Rica",
+      "title_zh": "哥斯达黎加国旗",
+      "title_en": "National Flag of Costa Rica",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cu": {
+      "name_zh": "古巴",
+      "name_en": "Cuba",
+      "title_zh": "古巴国旗",
+      "title_en": "National Flag of Cuba",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cv": {
+      "name_zh": "佛得角",
+      "name_en": "Cape Verde",
+      "title_zh": "佛得角国旗",
+      "title_en": "National Flag of Cape Verde",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cw": {
+      "name_zh": "库拉索",
+      "name_en": "Curaçao",
+      "title_zh": "库拉索旗帜",
+      "title_en": "Flag of Curaçao",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "cx": {
+      "name_zh": "圣诞岛",
+      "name_en": "Christmas Island",
+      "title_zh": "圣诞岛旗帜",
+      "title_en": "Flag of Christmas Island",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "cy": {
+      "name_zh": "塞浦路斯",
+      "name_en": "Cyprus",
+      "title_zh": "塞浦路斯国旗",
+      "title_en": "National Flag of Cyprus",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "cz": {
+      "name_zh": "捷克",
+      "name_en": "Czechia",
+      "title_zh": "捷克国旗",
+      "title_en": "National Flag of Czechia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "de": {
+      "name_zh": "德意志联邦共和国（德国）",
+      "name_en": "Federal Republic of Germany",
+      "title_zh": "德意志联邦共和国国旗（黑红金三色旗）",
+      "title_en": "National Flag of Germany (Black-Red-Gold Tricolour)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "dg": {
+      "name_zh": "迪戈加西亚岛（英属印度洋领地）",
+      "name_en": "Diego Garcia, British Indian Ocean Territory",
+      "title_zh": "迪戈加西亚岛旗帜",
+      "title_en": "Flag of Diego Garcia",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "dj": {
+      "name_zh": "吉布提",
+      "name_en": "Djibouti",
+      "title_zh": "吉布提国旗",
+      "title_en": "National Flag of Djibouti",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "dk": {
+      "name_zh": "丹麦",
+      "name_en": "Denmark",
+      "title_zh": "丹麦国旗",
+      "title_en": "National Flag of Denmark",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "dm": {
+      "name_zh": "多米尼克",
+      "name_en": "Dominica",
+      "title_zh": "多米尼克国旗",
+      "title_en": "National Flag of Dominica",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "do": {
+      "name_zh": "多米尼加共和国",
+      "name_en": "Dominican Republic",
+      "title_zh": "多米尼加共和国国旗",
+      "title_en": "National Flag of Dominican Republic",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "dz": {
+      "name_zh": "阿尔及利亚",
+      "name_en": "Algeria",
+      "title_zh": "阿尔及利亚国旗",
+      "title_en": "National Flag of Algeria",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "eac": {
+      "name_zh": "东非共同体",
+      "name_en": "East African Community (EAC)",
+      "title_zh": "东非共同体旗帜",
+      "title_en": "Flag of the East African Community",
+      "entity_type_zh": "国际组织官方旗帜 (International Organization Flag)",
+      "entity_type_en": "International Organization Flag"
+    },
+    "ec": {
+      "name_zh": "厄瓜多尔",
+      "name_en": "Ecuador",
+      "title_zh": "厄瓜多尔国旗",
+      "title_en": "National Flag of Ecuador",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ee": {
+      "name_zh": "爱沙尼亚",
+      "name_en": "Estonia",
+      "title_zh": "爱沙尼亚国旗",
+      "title_en": "National Flag of Estonia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "eg": {
+      "name_zh": "埃及",
+      "name_en": "Egypt",
+      "title_zh": "埃及国旗",
+      "title_en": "National Flag of Egypt",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "eh": {
+      "name_zh": "西撒哈拉（阿拉伯撒哈拉民主共和国）",
+      "name_en": "Western Sahara (Sahrawi Arab Democratic Republic)",
+      "title_zh": "西撒哈拉旗帜",
+      "title_en": "Flag of Western Sahara",
+      "entity_type_zh": "特殊/非官方象征旗帜 (Special / Unofficial Flag)",
+      "entity_type_en": "Special / Unofficial Flag"
+    },
+    "er": {
+      "name_zh": "厄立特里亚",
+      "name_en": "Eritrea",
+      "title_zh": "厄立特里亚国旗",
+      "title_en": "National Flag of Eritrea",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "es": {
+      "name_zh": "西班牙王国",
+      "name_en": "Kingdom of Spain",
+      "title_zh": "西班牙王国国旗（红黄双色旗）",
+      "title_en": "National Flag of Spain (La Rojigualda)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "es-ct": {
+      "name_zh": "西班牙加泰罗尼亚自治区",
+      "name_en": "Catalonia, Spain",
+      "title_zh": "加泰罗尼亚自治区旗帜（塞尼耶拉旗）",
+      "title_en": "Flag of Catalonia (Senyera)",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "es-ga": {
+      "name_zh": "西班牙加利西亚自治区",
+      "name_en": "Galicia, Spain",
+      "title_zh": "加利西亚自治区旗帜",
+      "title_en": "Flag of Galicia",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "es-pv": {
+      "name_zh": "西班牙巴斯克自治区",
+      "name_en": "Basque Country, Spain",
+      "title_zh": "巴斯克自治区旗帜（伊库里尼亚旗）",
+      "title_en": "Flag of the Basque Country (Ikurriña)",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "et": {
+      "name_zh": "埃塞俄比亚",
+      "name_en": "Ethiopia",
+      "title_zh": "埃塞俄比亚国旗",
+      "title_en": "National Flag of Ethiopia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "eu": {
+      "name_zh": "欧洲联盟（欧盟）",
+      "name_en": "European Union",
+      "title_zh": "欧洲联盟旗帜（十二金星蓝旗）",
+      "title_en": "Flag of the European Union",
+      "entity_type_zh": "国际组织官方旗帜 (International Organization Flag)",
+      "entity_type_en": "International Organization Flag"
+    },
+    "fi": {
+      "name_zh": "芬兰",
+      "name_en": "Finland",
+      "title_zh": "芬兰国旗",
+      "title_en": "National Flag of Finland",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "fj": {
+      "name_zh": "斐济",
+      "name_en": "Fiji",
+      "title_zh": "斐济国旗",
+      "title_en": "National Flag of Fiji",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "fk": {
+      "name_zh": "福克兰群岛",
+      "name_en": "Falkland Islands",
+      "title_zh": "福克兰群岛旗帜",
+      "title_en": "Flag of Falkland Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "fm": {
+      "name_zh": "密克罗尼西亚联邦",
+      "name_en": "Federated States of Micronesia",
+      "title_zh": "密克罗尼西亚联邦国旗",
+      "title_en": "National Flag of the Federated States of Micronesia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "fo": {
+      "name_zh": "法罗群岛",
+      "name_en": "Faroe Islands",
+      "title_zh": "法罗群岛旗帜",
+      "title_en": "Flag of Faroe Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "fr": {
+      "name_zh": "法兰西共和国（法国）",
+      "name_en": "French Republic",
+      "title_zh": "法兰西共和国国旗（蓝白红三色旗）",
+      "title_en": "National Flag of France (Tricolour)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ga": {
+      "name_zh": "加蓬",
+      "name_en": "Gabon",
+      "title_zh": "加蓬国旗",
+      "title_en": "National Flag of Gabon",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gb": {
+      "name_zh": "大不列颠及北爱尔兰联合王国（英国）",
+      "name_en": "United Kingdom",
+      "title_zh": "联合王国国旗（米字旗）",
+      "title_en": "Flag of the United Kingdom (Union Jack)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gb-eng": {
+      "name_zh": "英格兰",
+      "name_en": "England",
+      "title_zh": "英格兰旗帜（圣乔治十字旗）",
+      "title_en": "Flag of England (St George's Cross)",
+      "entity_type_zh": "特殊/非官方象征旗帜 (Special / Unofficial Flag)",
+      "entity_type_en": "Special / Unofficial Flag"
+    },
+    "gb-nir": {
+      "name_zh": "北爱尔兰",
+      "name_en": "Northern Ireland",
+      "title_zh": "北爱尔兰旗帜（阿尔斯特旗）",
+      "title_en": "Flag of Northern Ireland (Ulster Banner)",
+      "entity_type_zh": "特殊/非官方象征旗帜 (Special / Unofficial Flag)",
+      "entity_type_en": "Special / Unofficial Flag"
+    },
+    "gb-sct": {
+      "name_zh": "苏格兰",
+      "name_en": "Scotland",
+      "title_zh": "苏格兰旗帜（圣安德鲁十字旗）",
+      "title_en": "Flag of Scotland (Saltire)",
+      "entity_type_zh": "特殊/非官方象征旗帜 (Special / Unofficial Flag)",
+      "entity_type_en": "Special / Unofficial Flag"
+    },
+    "gb-wls": {
+      "name_zh": "威尔士",
+      "name_en": "Wales",
+      "title_zh": "威尔士旗帜（红龙旗）",
+      "title_en": "Flag of Wales (Red Dragon)",
+      "entity_type_zh": "特殊/非官方象征旗帜 (Special / Unofficial Flag)",
+      "entity_type_en": "Special / Unofficial Flag"
+    },
+    "gd": {
+      "name_zh": "格林纳达",
+      "name_en": "Grenada",
+      "title_zh": "格林纳达国旗",
+      "title_en": "National Flag of Grenada",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ge": {
+      "name_zh": "格鲁吉亚",
+      "name_en": "Georgia",
+      "title_zh": "格鲁吉亚国旗",
+      "title_en": "National Flag of Georgia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gf": {
+      "name_zh": "法属圭亚那",
+      "name_en": "French Guiana",
+      "title_zh": "法属圭亚那旗帜",
+      "title_en": "Flag of French Guiana",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "gg": {
+      "name_zh": "根西岛",
+      "name_en": "Guernsey",
+      "title_zh": "根西岛旗帜",
+      "title_en": "Flag of Guernsey",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "gh": {
+      "name_zh": "加纳",
+      "name_en": "Ghana",
+      "title_zh": "加纳国旗",
+      "title_en": "National Flag of Ghana",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gi": {
+      "name_zh": "直布罗陀",
+      "name_en": "Gibraltar",
+      "title_zh": "直布罗陀旗帜",
+      "title_en": "Flag of Gibraltar",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "gl": {
+      "name_zh": "格陵兰",
+      "name_en": "Greenland",
+      "title_zh": "格陵兰旗帜",
+      "title_en": "Flag of Greenland",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "gm": {
+      "name_zh": "冈比亚",
+      "name_en": "Gambia",
+      "title_zh": "冈比亚国旗",
+      "title_en": "National Flag of Gambia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gn": {
+      "name_zh": "几内亚",
+      "name_en": "Guinea",
+      "title_zh": "几内亚国旗",
+      "title_en": "National Flag of Guinea",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gp": {
+      "name_zh": "瓜德罗普",
+      "name_en": "Guadeloupe",
+      "title_zh": "瓜德罗普旗帜",
+      "title_en": "Flag of Guadeloupe",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "gq": {
+      "name_zh": "赤道几内亚",
+      "name_en": "Equatorial Guinea",
+      "title_zh": "赤道几内亚国旗",
+      "title_en": "National Flag of Equatorial Guinea",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gr": {
+      "name_zh": "希腊",
+      "name_en": "Greece",
+      "title_zh": "希腊国旗",
+      "title_en": "National Flag of Greece",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gs": {
+      "name_zh": "南乔治亚和南桑威奇群岛",
+      "name_en": "South Georgia & South Sandwich Islands",
+      "title_zh": "南乔治亚和南桑威奇群岛旗帜",
+      "title_en": "Flag of South Georgia & South Sandwich Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "gt": {
+      "name_zh": "危地马拉",
+      "name_en": "Guatemala",
+      "title_zh": "危地马拉国旗",
+      "title_en": "National Flag of Guatemala",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gu": {
+      "name_zh": "关岛",
+      "name_en": "Guam",
+      "title_zh": "关岛旗帜",
+      "title_en": "Flag of Guam",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "gw": {
+      "name_zh": "几内亚比绍",
+      "name_en": "Guinea-Bissau",
+      "title_zh": "几内亚比绍国旗",
+      "title_en": "National Flag of Guinea-Bissau",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "gy": {
+      "name_zh": "圭亚那",
+      "name_en": "Guyana",
+      "title_zh": "圭亚那国旗",
+      "title_en": "National Flag of Guyana",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "hk": {
+      "name_zh": "中国香港特别行政区",
+      "name_en": "Hong Kong SAR, China",
+      "title_zh": "中国香港特别行政区区旗",
+      "title_en": "Regional Flag of the Hong Kong SAR of China",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "hm": {
+      "name_zh": "赫德岛和麦克唐纳群岛",
+      "name_en": "Heard & McDonald Islands",
+      "title_zh": "赫德岛和麦克唐纳群岛旗帜",
+      "title_en": "Flag of Heard & McDonald Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "hn": {
+      "name_zh": "洪都拉斯",
+      "name_en": "Honduras",
+      "title_zh": "洪都拉斯国旗",
+      "title_en": "National Flag of Honduras",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "hr": {
+      "name_zh": "克罗地亚",
+      "name_en": "Croatia",
+      "title_zh": "克罗地亚国旗",
+      "title_en": "National Flag of Croatia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ht": {
+      "name_zh": "海地",
+      "name_en": "Haiti",
+      "title_zh": "海地国旗",
+      "title_en": "National Flag of Haiti",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "hu": {
+      "name_zh": "匈牙利",
+      "name_en": "Hungary",
+      "title_zh": "匈牙利国旗",
+      "title_en": "National Flag of Hungary",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ic": {
+      "name_zh": "西班牙加那利群岛自治区",
+      "name_en": "Canary Islands, Spain",
+      "title_zh": "加那利群岛自治区旗帜",
+      "title_en": "Flag of the Canary Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "id": {
+      "name_zh": "印度尼西亚",
+      "name_en": "Indonesia",
+      "title_zh": "印度尼西亚国旗",
+      "title_en": "National Flag of Indonesia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ie": {
+      "name_zh": "爱尔兰",
+      "name_en": "Ireland",
+      "title_zh": "爱尔兰国旗",
+      "title_en": "National Flag of Ireland",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "il": {
+      "name_zh": "以色列",
+      "name_en": "Israel",
+      "title_zh": "以色列国旗",
+      "title_en": "National Flag of Israel",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "im": {
+      "name_zh": "马恩岛",
+      "name_en": "Isle of Man",
+      "title_zh": "马恩岛旗帜",
+      "title_en": "Flag of Isle of Man",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "in": {
+      "name_zh": "印度共和国",
+      "name_en": "Republic of India",
+      "title_zh": "印度共和国国旗（三色旗）",
+      "title_en": "National Flag of India (Tiranga)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "io": {
+      "name_zh": "英属印度洋领地",
+      "name_en": "British Indian Ocean Territory",
+      "title_zh": "英属印度洋领地旗帜",
+      "title_en": "Flag of British Indian Ocean Territory",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "iq": {
+      "name_zh": "伊拉克",
+      "name_en": "Iraq",
+      "title_zh": "伊拉克国旗",
+      "title_en": "National Flag of Iraq",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ir": {
+      "name_zh": "伊朗",
+      "name_en": "Iran",
+      "title_zh": "伊朗国旗",
+      "title_en": "National Flag of Iran",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "is": {
+      "name_zh": "冰岛",
+      "name_en": "Iceland",
+      "title_zh": "冰岛国旗",
+      "title_en": "National Flag of Iceland",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "it": {
+      "name_zh": "意大利共和国",
+      "name_en": "Italian Republic",
+      "title_zh": "意大利共和国国旗（绿白红三色旗）",
+      "title_en": "National Flag of Italy (Tricolore)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "je": {
+      "name_zh": "泽西岛",
+      "name_en": "Jersey",
+      "title_zh": "泽西岛旗帜",
+      "title_en": "Flag of Jersey",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "jm": {
+      "name_zh": "牙买加",
+      "name_en": "Jamaica",
+      "title_zh": "牙买加国旗",
+      "title_en": "National Flag of Jamaica",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "jo": {
+      "name_zh": "约旦",
+      "name_en": "Jordan",
+      "title_zh": "约旦国旗",
+      "title_en": "National Flag of Jordan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "jp": {
+      "name_zh": "日本国",
+      "name_en": "Japan",
+      "title_zh": "日本国国旗（日之丸旗）",
+      "title_en": "National Flag of Japan (Hinomaru)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ke": {
+      "name_zh": "肯尼亚",
+      "name_en": "Kenya",
+      "title_zh": "肯尼亚国旗",
+      "title_en": "National Flag of Kenya",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "kg": {
+      "name_zh": "吉尔吉斯斯坦",
+      "name_en": "Kyrgyzstan",
+      "title_zh": "吉尔吉斯斯坦国旗",
+      "title_en": "National Flag of Kyrgyzstan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "kh": {
+      "name_zh": "柬埔寨",
+      "name_en": "Cambodia",
+      "title_zh": "柬埔寨国旗",
+      "title_en": "National Flag of Cambodia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ki": {
+      "name_zh": "基里巴斯",
+      "name_en": "Kiribati",
+      "title_zh": "基里巴斯国旗",
+      "title_en": "National Flag of Kiribati",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "km": {
+      "name_zh": "科摩罗",
+      "name_en": "Comoros",
+      "title_zh": "科摩罗国旗",
+      "title_en": "National Flag of Comoros",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "kn": {
+      "name_zh": "圣基茨和尼维斯",
+      "name_en": "St. Kitts & Nevis",
+      "title_zh": "圣基茨和尼维斯国旗",
+      "title_en": "National Flag of St. Kitts & Nevis",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "kp": {
+      "name_zh": "朝鲜",
+      "name_en": "North Korea",
+      "title_zh": "朝鲜国旗",
+      "title_en": "National Flag of North Korea",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "kr": {
+      "name_zh": "大韩民国（韩国）",
+      "name_en": "Republic of Korea",
+      "title_zh": "大韩民国国旗（太极旗）",
+      "title_en": "National Flag of South Korea (Taegeukgi)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "kw": {
+      "name_zh": "科威特",
+      "name_en": "Kuwait",
+      "title_zh": "科威特国旗",
+      "title_en": "National Flag of Kuwait",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ky": {
+      "name_zh": "开曼群岛",
+      "name_en": "Cayman Islands",
+      "title_zh": "开曼群岛旗帜",
+      "title_en": "Flag of Cayman Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "kz": {
+      "name_zh": "哈萨克斯坦",
+      "name_en": "Kazakhstan",
+      "title_zh": "哈萨克斯坦国旗",
+      "title_en": "National Flag of Kazakhstan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "la": {
+      "name_zh": "老挝",
+      "name_en": "Laos",
+      "title_zh": "老挝国旗",
+      "title_en": "National Flag of Laos",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "lb": {
+      "name_zh": "黎巴嫩",
+      "name_en": "Lebanon",
+      "title_zh": "黎巴嫩国旗",
+      "title_en": "National Flag of Lebanon",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "lc": {
+      "name_zh": "圣卢西亚",
+      "name_en": "St. Lucia",
+      "title_zh": "圣卢西亚国旗",
+      "title_en": "National Flag of St. Lucia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "li": {
+      "name_zh": "列支敦士登",
+      "name_en": "Liechtenstein",
+      "title_zh": "列支敦士登国旗",
+      "title_en": "National Flag of Liechtenstein",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "lk": {
+      "name_zh": "斯里兰卡",
+      "name_en": "Sri Lanka",
+      "title_zh": "斯里兰卡国旗",
+      "title_en": "National Flag of Sri Lanka",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "lr": {
+      "name_zh": "利比里亚",
+      "name_en": "Liberia",
+      "title_zh": "利比里亚国旗",
+      "title_en": "National Flag of Liberia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ls": {
+      "name_zh": "莱索托",
+      "name_en": "Lesotho",
+      "title_zh": "莱索托国旗",
+      "title_en": "National Flag of Lesotho",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "lt": {
+      "name_zh": "立陶宛",
+      "name_en": "Lithuania",
+      "title_zh": "立陶宛国旗",
+      "title_en": "National Flag of Lithuania",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "lu": {
+      "name_zh": "卢森堡",
+      "name_en": "Luxembourg",
+      "title_zh": "卢森堡国旗",
+      "title_en": "National Flag of Luxembourg",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "lv": {
+      "name_zh": "拉脱维亚",
+      "name_en": "Latvia",
+      "title_zh": "拉脱维亚国旗",
+      "title_en": "National Flag of Latvia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ly": {
+      "name_zh": "利比亚",
+      "name_en": "Libya",
+      "title_zh": "利比亚国旗",
+      "title_en": "National Flag of Libya",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ma": {
+      "name_zh": "摩洛哥",
+      "name_en": "Morocco",
+      "title_zh": "摩洛哥国旗",
+      "title_en": "National Flag of Morocco",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mc": {
+      "name_zh": "摩纳哥",
+      "name_en": "Monaco",
+      "title_zh": "摩纳哥国旗",
+      "title_en": "National Flag of Monaco",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "md": {
+      "name_zh": "摩尔多瓦",
+      "name_en": "Moldova",
+      "title_zh": "摩尔多瓦国旗",
+      "title_en": "National Flag of Moldova",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "me": {
+      "name_zh": "黑山",
+      "name_en": "Montenegro",
+      "title_zh": "黑山国旗",
+      "title_en": "National Flag of Montenegro",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mf": {
+      "name_zh": "法属圣马丁",
+      "name_en": "St. Martin",
+      "title_zh": "法属圣马丁旗帜",
+      "title_en": "Flag of St. Martin",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "mg": {
+      "name_zh": "马达加斯加",
+      "name_en": "Madagascar",
+      "title_zh": "马达加斯加国旗",
+      "title_en": "National Flag of Madagascar",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mh": {
+      "name_zh": "马绍尔群岛",
+      "name_en": "Marshall Islands",
+      "title_zh": "马绍尔群岛国旗",
+      "title_en": "National Flag of Marshall Islands",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mk": {
+      "name_zh": "北马其顿",
+      "name_en": "North Macedonia",
+      "title_zh": "北马其顿国旗",
+      "title_en": "National Flag of North Macedonia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ml": {
+      "name_zh": "马里",
+      "name_en": "Mali",
+      "title_zh": "马里国旗",
+      "title_en": "National Flag of Mali",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mm": {
+      "name_zh": "缅甸",
+      "name_en": "Myanmar (Burma)",
+      "title_zh": "缅甸国旗",
+      "title_en": "National Flag of Myanmar (Burma)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mn": {
+      "name_zh": "蒙古",
+      "name_en": "Mongolia",
+      "title_zh": "蒙古国旗",
+      "title_en": "National Flag of Mongolia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mo": {
+      "name_zh": "中国澳门特别行政区",
+      "name_en": "Macao SAR, China",
+      "title_zh": "中国澳门特别行政区区旗",
+      "title_en": "Regional Flag of the Macao SAR of China",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "mp": {
+      "name_zh": "北马里亚纳群岛",
+      "name_en": "Northern Mariana Islands",
+      "title_zh": "北马里亚纳群岛旗帜",
+      "title_en": "Flag of Northern Mariana Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "mq": {
+      "name_zh": "马提尼克",
+      "name_en": "Martinique",
+      "title_zh": "马提尼克旗帜",
+      "title_en": "Flag of Martinique",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "mr": {
+      "name_zh": "毛里塔尼亚",
+      "name_en": "Mauritania",
+      "title_zh": "毛里塔尼亚国旗",
+      "title_en": "National Flag of Mauritania",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ms": {
+      "name_zh": "蒙特塞拉特",
+      "name_en": "Montserrat",
+      "title_zh": "蒙特塞拉特旗帜",
+      "title_en": "Flag of Montserrat",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "mt": {
+      "name_zh": "马耳他",
+      "name_en": "Malta",
+      "title_zh": "马耳他国旗",
+      "title_en": "National Flag of Malta",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mu": {
+      "name_zh": "毛里求斯",
+      "name_en": "Mauritius",
+      "title_zh": "毛里求斯国旗",
+      "title_en": "National Flag of Mauritius",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mv": {
+      "name_zh": "马尔代夫",
+      "name_en": "Maldives",
+      "title_zh": "马尔代夫国旗",
+      "title_en": "National Flag of Maldives",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mw": {
+      "name_zh": "马拉维",
+      "name_en": "Malawi",
+      "title_zh": "马拉维国旗",
+      "title_en": "National Flag of Malawi",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mx": {
+      "name_zh": "墨西哥合众国",
+      "name_en": "United Mexican States",
+      "title_zh": "墨西哥合众国国旗",
+      "title_en": "National Flag of Mexico",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "my": {
+      "name_zh": "马来西亚",
+      "name_en": "Malaysia",
+      "title_zh": "马来西亚国旗",
+      "title_en": "National Flag of Malaysia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "mz": {
+      "name_zh": "莫桑比克",
+      "name_en": "Mozambique",
+      "title_zh": "莫桑比克国旗",
+      "title_en": "National Flag of Mozambique",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "na": {
+      "name_zh": "纳米比亚",
+      "name_en": "Namibia",
+      "title_zh": "纳米比亚国旗",
+      "title_en": "National Flag of Namibia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "nc": {
+      "name_zh": "新喀里多尼亚",
+      "name_en": "New Caledonia",
+      "title_zh": "新喀里多尼亚旗帜",
+      "title_en": "Flag of New Caledonia",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "ne": {
+      "name_zh": "尼日尔",
+      "name_en": "Niger",
+      "title_zh": "尼日尔国旗",
+      "title_en": "National Flag of Niger",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "nf": {
+      "name_zh": "诺福克岛",
+      "name_en": "Norfolk Island",
+      "title_zh": "诺福克岛旗帜",
+      "title_en": "Flag of Norfolk Island",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "ng": {
+      "name_zh": "尼日利亚",
+      "name_en": "Nigeria",
+      "title_zh": "尼日利亚国旗",
+      "title_en": "National Flag of Nigeria",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ni": {
+      "name_zh": "尼加拉瓜",
+      "name_en": "Nicaragua",
+      "title_zh": "尼加拉瓜国旗",
+      "title_en": "National Flag of Nicaragua",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "nl": {
+      "name_zh": "荷兰王国",
+      "name_en": "Kingdom of the Netherlands",
+      "title_zh": "荷兰王国国旗（红白蓝三色旗）",
+      "title_en": "National Flag of the Netherlands",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "no": {
+      "name_zh": "挪威王国",
+      "name_en": "Kingdom of Norway",
+      "title_zh": "挪威王国国旗",
+      "title_en": "National Flag of Norway",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "np": {
+      "name_zh": "尼泊尔",
+      "name_en": "Nepal",
+      "title_zh": "尼泊尔国旗",
+      "title_en": "National Flag of Nepal",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "nr": {
+      "name_zh": "瑙鲁",
+      "name_en": "Nauru",
+      "title_zh": "瑙鲁国旗",
+      "title_en": "National Flag of Nauru",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "nu": {
+      "name_zh": "纽埃",
+      "name_en": "Niue",
+      "title_zh": "纽埃旗帜",
+      "title_en": "Flag of Niue",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "nz": {
+      "name_zh": "新西兰",
+      "name_en": "New Zealand",
+      "title_zh": "新西兰国旗",
+      "title_en": "National Flag of New Zealand",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "om": {
+      "name_zh": "阿曼",
+      "name_en": "Oman",
+      "title_zh": "阿曼国旗",
+      "title_en": "National Flag of Oman",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "pa": {
+      "name_zh": "巴拿马",
+      "name_en": "Panama",
+      "title_zh": "巴拿马国旗",
+      "title_en": "National Flag of Panama",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "pc": {
+      "name_zh": "太平洋共同体",
+      "name_en": "Pacific Community (SPC)",
+      "title_zh": "太平洋共同体旗帜",
+      "title_en": "Flag of the Pacific Community",
+      "entity_type_zh": "国际组织官方旗帜 (International Organization Flag)",
+      "entity_type_en": "International Organization Flag"
+    },
+    "pe": {
+      "name_zh": "秘鲁",
+      "name_en": "Peru",
+      "title_zh": "秘鲁国旗",
+      "title_en": "National Flag of Peru",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "pf": {
+      "name_zh": "法属波利尼西亚",
+      "name_en": "French Polynesia",
+      "title_zh": "法属波利尼西亚旗帜",
+      "title_en": "Flag of French Polynesia",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "pg": {
+      "name_zh": "巴布亚新几内亚",
+      "name_en": "Papua New Guinea",
+      "title_zh": "巴布亚新几内亚国旗",
+      "title_en": "National Flag of Papua New Guinea",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ph": {
+      "name_zh": "菲律宾",
+      "name_en": "Philippines",
+      "title_zh": "菲律宾国旗",
+      "title_en": "National Flag of Philippines",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "pk": {
+      "name_zh": "巴基斯坦",
+      "name_en": "Pakistan",
+      "title_zh": "巴基斯坦国旗",
+      "title_en": "National Flag of Pakistan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "pl": {
+      "name_zh": "波兰",
+      "name_en": "Poland",
+      "title_zh": "波兰国旗",
+      "title_en": "National Flag of Poland",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "pm": {
+      "name_zh": "圣皮埃尔和密克隆群岛",
+      "name_en": "St. Pierre & Miquelon",
+      "title_zh": "圣皮埃尔和密克隆群岛旗帜",
+      "title_en": "Flag of St. Pierre & Miquelon",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "pn": {
+      "name_zh": "皮特凯恩群岛",
+      "name_en": "Pitcairn Islands",
+      "title_zh": "皮特凯恩群岛旗帜",
+      "title_en": "Flag of Pitcairn Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "pr": {
+      "name_zh": "波多黎各",
+      "name_en": "Puerto Rico",
+      "title_zh": "波多黎各旗帜",
+      "title_en": "Flag of Puerto Rico",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "ps": {
+      "name_zh": "巴勒斯坦国",
+      "name_en": "State of Palestine",
+      "title_zh": "巴勒斯坦国国旗",
+      "title_en": "National Flag of the State of Palestine",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "pt": {
+      "name_zh": "葡萄牙",
+      "name_en": "Portugal",
+      "title_zh": "葡萄牙国旗",
+      "title_en": "National Flag of Portugal",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "pw": {
+      "name_zh": "帕劳",
+      "name_en": "Palau",
+      "title_zh": "帕劳国旗",
+      "title_en": "National Flag of Palau",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "py": {
+      "name_zh": "巴拉圭",
+      "name_en": "Paraguay",
+      "title_zh": "巴拉圭国旗",
+      "title_en": "National Flag of Paraguay",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "qa": {
+      "name_zh": "卡塔尔",
+      "name_en": "Qatar",
+      "title_zh": "卡塔尔国旗",
+      "title_en": "National Flag of Qatar",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "re": {
+      "name_zh": "留尼汪",
+      "name_en": "Réunion",
+      "title_zh": "留尼汪旗帜",
+      "title_en": "Flag of Réunion",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "ro": {
+      "name_zh": "罗马尼亚",
+      "name_en": "Romania",
+      "title_zh": "罗马尼亚国旗",
+      "title_en": "National Flag of Romania",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "rs": {
+      "name_zh": "塞尔维亚",
+      "name_en": "Serbia",
+      "title_zh": "塞尔维亚国旗",
+      "title_en": "National Flag of Serbia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ru": {
+      "name_zh": "俄罗斯联邦",
+      "name_en": "Russian Federation",
+      "title_zh": "俄罗斯联邦国旗（白蓝红三色旗）",
+      "title_en": "National Flag of the Russian Federation",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "rw": {
+      "name_zh": "卢旺达",
+      "name_en": "Rwanda",
+      "title_zh": "卢旺达国旗",
+      "title_en": "National Flag of Rwanda",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sa": {
+      "name_zh": "沙特阿拉伯",
+      "name_en": "Saudi Arabia",
+      "title_zh": "沙特阿拉伯国旗",
+      "title_en": "National Flag of Saudi Arabia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sb": {
+      "name_zh": "所罗门群岛",
+      "name_en": "Solomon Islands",
+      "title_zh": "所罗门群岛国旗",
+      "title_en": "National Flag of Solomon Islands",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sc": {
+      "name_zh": "塞舌尔",
+      "name_en": "Seychelles",
+      "title_zh": "塞舌尔国旗",
+      "title_en": "National Flag of Seychelles",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sd": {
+      "name_zh": "苏丹",
+      "name_en": "Sudan",
+      "title_zh": "苏丹国旗",
+      "title_en": "National Flag of Sudan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "se": {
+      "name_zh": "瑞典王国",
+      "name_en": "Kingdom of Sweden",
+      "title_zh": "瑞典王国国旗（黄蓝北欧十字旗）",
+      "title_en": "National Flag of Sweden",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sg": {
+      "name_zh": "新加坡",
+      "name_en": "Singapore",
+      "title_zh": "新加坡国旗",
+      "title_en": "National Flag of Singapore",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sh": {
+      "name_zh": "圣赫勒拿",
+      "name_en": "St. Helena",
+      "title_zh": "圣赫勒拿旗帜",
+      "title_en": "Flag of St. Helena",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "sh-ac": {
+      "name_zh": "阿森松岛（英国海外领地）",
+      "name_en": "Ascension Island, United Kingdom",
+      "title_zh": "阿森松岛旗帜",
+      "title_en": "Flag of Ascension Island",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "sh-hl": {
+      "name_zh": "圣赫勒拿（英国海外领地）",
+      "name_en": "Saint Helena, United Kingdom",
+      "title_zh": "圣赫勒拿旗帜",
+      "title_en": "Flag of Saint Helena",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "sh-ta": {
+      "name_zh": "特里斯坦-达库尼亚群岛（英国海外领地）",
+      "name_en": "Tristan da Cunha, United Kingdom",
+      "title_zh": "特里斯坦-达库尼亚群岛旗帜",
+      "title_en": "Flag of Tristan da Cunha",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "si": {
+      "name_zh": "斯洛文尼亚",
+      "name_en": "Slovenia",
+      "title_zh": "斯洛文尼亚国旗",
+      "title_en": "National Flag of Slovenia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sj": {
+      "name_zh": "斯瓦尔巴和扬马延",
+      "name_en": "Svalbard & Jan Mayen",
+      "title_zh": "斯瓦尔巴和扬马延旗帜",
+      "title_en": "Flag of Svalbard & Jan Mayen",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "sk": {
+      "name_zh": "斯洛伐克",
+      "name_en": "Slovakia",
+      "title_zh": "斯洛伐克国旗",
+      "title_en": "National Flag of Slovakia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sl": {
+      "name_zh": "塞拉利昂",
+      "name_en": "Sierra Leone",
+      "title_zh": "塞拉利昂国旗",
+      "title_en": "National Flag of Sierra Leone",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sm": {
+      "name_zh": "圣马力诺",
+      "name_en": "San Marino",
+      "title_zh": "圣马力诺国旗",
+      "title_en": "National Flag of San Marino",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sn": {
+      "name_zh": "塞内加尔",
+      "name_en": "Senegal",
+      "title_zh": "塞内加尔国旗",
+      "title_en": "National Flag of Senegal",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "so": {
+      "name_zh": "索马里",
+      "name_en": "Somalia",
+      "title_zh": "索马里国旗",
+      "title_en": "National Flag of Somalia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sr": {
+      "name_zh": "苏里南",
+      "name_en": "Suriname",
+      "title_zh": "苏里南国旗",
+      "title_en": "National Flag of Suriname",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ss": {
+      "name_zh": "南苏丹",
+      "name_en": "South Sudan",
+      "title_zh": "南苏丹国旗",
+      "title_en": "National Flag of South Sudan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "st": {
+      "name_zh": "圣多美和普林西比",
+      "name_en": "São Tomé & Príncipe",
+      "title_zh": "圣多美和普林西比国旗",
+      "title_en": "National Flag of São Tomé & Príncipe",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sv": {
+      "name_zh": "萨尔瓦多",
+      "name_en": "El Salvador",
+      "title_zh": "萨尔瓦多国旗",
+      "title_en": "National Flag of El Salvador",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sx": {
+      "name_zh": "荷属圣马丁",
+      "name_en": "Sint Maarten",
+      "title_zh": "荷属圣马丁旗帜",
+      "title_en": "Flag of Sint Maarten",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "sy": {
+      "name_zh": "叙利亚",
+      "name_en": "Syria",
+      "title_zh": "叙利亚国旗",
+      "title_en": "National Flag of Syria",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "sz": {
+      "name_zh": "斯威士兰",
+      "name_en": "Eswatini",
+      "title_zh": "斯威士兰国旗",
+      "title_en": "National Flag of Eswatini",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tc": {
+      "name_zh": "特克斯和凯科斯群岛",
+      "name_en": "Turks & Caicos Islands",
+      "title_zh": "特克斯和凯科斯群岛旗帜",
+      "title_en": "Flag of Turks & Caicos Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "td": {
+      "name_zh": "乍得",
+      "name_en": "Chad",
+      "title_zh": "乍得国旗",
+      "title_en": "National Flag of Chad",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tf": {
+      "name_zh": "法属南部领地",
+      "name_en": "French Southern Territories",
+      "title_zh": "法属南部领地旗帜",
+      "title_en": "Flag of French Southern Territories",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "tg": {
+      "name_zh": "多哥",
+      "name_en": "Togo",
+      "title_zh": "多哥国旗",
+      "title_en": "National Flag of Togo",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "th": {
+      "name_zh": "泰国",
+      "name_en": "Thailand",
+      "title_zh": "泰国国旗",
+      "title_en": "National Flag of Thailand",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tj": {
+      "name_zh": "塔吉克斯坦",
+      "name_en": "Tajikistan",
+      "title_zh": "塔吉克斯坦国旗",
+      "title_en": "National Flag of Tajikistan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tk": {
+      "name_zh": "托克劳",
+      "name_en": "Tokelau",
+      "title_zh": "托克劳旗帜",
+      "title_en": "Flag of Tokelau",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "tl": {
+      "name_zh": "东帝汶",
+      "name_en": "Timor-Leste",
+      "title_zh": "东帝汶国旗",
+      "title_en": "National Flag of Timor-Leste",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tm": {
+      "name_zh": "土库曼斯坦",
+      "name_en": "Turkmenistan",
+      "title_zh": "土库曼斯坦国旗",
+      "title_en": "National Flag of Turkmenistan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tn": {
+      "name_zh": "突尼斯",
+      "name_en": "Tunisia",
+      "title_zh": "突尼斯国旗",
+      "title_en": "National Flag of Tunisia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "to": {
+      "name_zh": "汤加",
+      "name_en": "Tonga",
+      "title_zh": "汤加国旗",
+      "title_en": "National Flag of Tonga",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tr": {
+      "name_zh": "土耳其",
+      "name_en": "Türkiye",
+      "title_zh": "土耳其国旗",
+      "title_en": "National Flag of Türkiye",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tt": {
+      "name_zh": "特立尼达和多巴哥",
+      "name_en": "Trinidad & Tobago",
+      "title_zh": "特立尼达和多巴哥国旗",
+      "title_en": "National Flag of Trinidad & Tobago",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tv": {
+      "name_zh": "图瓦卢",
+      "name_en": "Tuvalu",
+      "title_zh": "图瓦卢国旗",
+      "title_en": "National Flag of Tuvalu",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "tw": {
+      "name_zh": "中国台湾地区",
+      "name_en": "Taiwan Region of China",
+      "title_zh": "中国台湾地区旗帜",
+      "title_en": "Flag of the Taiwan Region of China",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "tz": {
+      "name_zh": "坦桑尼亚",
+      "name_en": "Tanzania",
+      "title_zh": "坦桑尼亚国旗",
+      "title_en": "National Flag of Tanzania",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ua": {
+      "name_zh": "乌克兰",
+      "name_en": "Ukraine",
+      "title_zh": "乌克兰国旗",
+      "title_en": "National Flag of Ukraine",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ug": {
+      "name_zh": "乌干达",
+      "name_en": "Uganda",
+      "title_zh": "乌干达国旗",
+      "title_en": "National Flag of Uganda",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "um": {
+      "name_zh": "美国本土外小岛屿",
+      "name_en": "U.S. Outlying Islands",
+      "title_zh": "美国本土外小岛屿旗帜",
+      "title_en": "Flag of the U.S. Outlying Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "un": {
+      "name_zh": "联合国组织",
+      "name_en": "United Nations",
+      "title_zh": "联合国会旗",
+      "title_en": "Flag of the United Nations",
+      "entity_type_zh": "国际组织官方旗帜 (International Organization Flag)",
+      "entity_type_en": "International Organization Flag"
+    },
+    "us": {
+      "name_zh": "美利坚合众国",
+      "name_en": "United States of America",
+      "title_zh": "美利坚合众国国旗（星条旗）",
+      "title_en": "Flag of the United States (Stars and Stripes)",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "uy": {
+      "name_zh": "乌拉圭",
+      "name_en": "Uruguay",
+      "title_zh": "乌拉圭国旗",
+      "title_en": "National Flag of Uruguay",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "uz": {
+      "name_zh": "乌兹别克斯坦",
+      "name_en": "Uzbekistan",
+      "title_zh": "乌兹别克斯坦国旗",
+      "title_en": "National Flag of Uzbekistan",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "va": {
+      "name_zh": "梵蒂冈城国",
+      "name_en": "Vatican City State",
+      "title_zh": "梵蒂冈城国国旗",
+      "title_en": "National Flag of Vatican City State",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "vc": {
+      "name_zh": "圣文森特和格林纳丁斯",
+      "name_en": "St. Vincent & Grenadines",
+      "title_zh": "圣文森特和格林纳丁斯国旗",
+      "title_en": "National Flag of St. Vincent & Grenadines",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "ve": {
+      "name_zh": "委内瑞拉",
+      "name_en": "Venezuela",
+      "title_zh": "委内瑞拉国旗",
+      "title_en": "National Flag of Venezuela",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "vg": {
+      "name_zh": "英属维尔京群岛",
+      "name_en": "British Virgin Islands",
+      "title_zh": "英属维尔京群岛旗帜",
+      "title_en": "Flag of British Virgin Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "vi": {
+      "name_zh": "美属维尔京群岛",
+      "name_en": "U.S. Virgin Islands",
+      "title_zh": "美属维尔京群岛旗帜",
+      "title_en": "Flag of U.S. Virgin Islands",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "vn": {
+      "name_zh": "越南",
+      "name_en": "Vietnam",
+      "title_zh": "越南国旗",
+      "title_en": "National Flag of Vietnam",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "vu": {
+      "name_zh": "瓦努阿图",
+      "name_en": "Vanuatu",
+      "title_zh": "瓦努阿图国旗",
+      "title_en": "National Flag of Vanuatu",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "wf": {
+      "name_zh": "瓦利斯和富图纳",
+      "name_en": "Wallis & Futuna",
+      "title_zh": "瓦利斯和富图纳旗帜",
+      "title_en": "Flag of Wallis & Futuna",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "ws": {
+      "name_zh": "萨摩亚",
+      "name_en": "Samoa",
+      "title_zh": "萨摩亚国旗",
+      "title_en": "National Flag of Samoa",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "xk": {
+      "name_zh": "科索沃地区",
+      "name_en": "Kosovo",
+      "title_zh": "科索沃地区旗帜",
+      "title_en": "Flag of Kosovo",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "xx": {
+      "name_zh": "未知地区",
+      "name_en": "Unknown Region",
+      "title_zh": "未知地区占位旗帜",
+      "title_en": "Placeholder Flag for an Unknown Region",
+      "entity_type_zh": "特殊/非官方象征旗帜 (Special / Unofficial Flag)",
+      "entity_type_en": "Special / Unofficial Flag"
+    },
+    "ye": {
+      "name_zh": "也门",
+      "name_en": "Yemen",
+      "title_zh": "也门国旗",
+      "title_en": "National Flag of Yemen",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "yt": {
+      "name_zh": "马约特",
+      "name_en": "Mayotte",
+      "title_zh": "马约特旗帜",
+      "title_en": "Flag of Mayotte",
+      "entity_type_zh": "地区/属地官方旗帜 (Territorial / Dependency Flag)",
+      "entity_type_en": "Territorial / Dependency Flag"
+    },
+    "za": {
+      "name_zh": "南非共和国",
+      "name_en": "Republic of South Africa",
+      "title_zh": "南非共和国国旗（彩虹之国六色旗）",
+      "title_en": "National Flag of South Africa",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "zm": {
+      "name_zh": "赞比亚",
+      "name_en": "Zambia",
+      "title_zh": "赞比亚国旗",
+      "title_en": "National Flag of Zambia",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    },
+    "zw": {
+      "name_zh": "津巴布韦",
+      "name_en": "Zimbabwe",
+      "title_zh": "津巴布韦国旗",
+      "title_en": "National Flag of Zimbabwe",
+      "entity_type_zh": "国家/地区主权旗帜 (National Flag)",
+      "entity_type_en": "Sovereign National Flag"
+    }
+  },
+  "official_emblems": {
+    "badge_nasa_meatball_insignia": {
+      "name_zh": "美国国家航空航天局（NASA）",
+      "name_en": "National Aeronautics and Space Administration (NASA)",
+      "title_zh": "美国国家航空航天局（NASA）肉丸徽标",
+      "title_en": "NASA Meatball Insignia",
+      "entity_type_zh": "国际组织/航天机构官方徽记 (International Organization Insignia)",
+      "entity_type_en": "International Organization / Space Agency Insignia"
+    },
+    "badge_olympic_rings": {
+      "name_zh": "国际奥林匹克委员会",
+      "name_en": "International Olympic Committee",
+      "title_zh": "奥林匹克五环标志",
+      "title_en": "The Olympic Rings",
+      "entity_type_zh": "国际组织/航天机构官方徽记 (International Organization Insignia)",
+      "entity_type_en": "International Organization / Space Agency Insignia"
+    },
+    "badge_united_nations": {
+      "name_zh": "联合国",
+      "name_en": "United Nations",
+      "title_zh": "联合国徽记（橄榄枝世界地图）",
+      "title_en": "Emblem of the United Nations",
+      "entity_type_zh": "国际组织/航天机构官方徽记 (International Organization Insignia)",
+      "entity_type_en": "International Organization / Space Agency Insignia"
+    },
+    "cn_stars": {
+      "name_zh": "中华人民共和国",
+      "name_en": "People's Republic of China",
+      "title_zh": "中华人民共和国五星红旗（五星图案）",
+      "title_en": "Five-Star Pattern of the National Flag of the People's Republic of China",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_albania": {
+      "name_zh": "阿尔巴尼亚",
+      "name_en": "Albania",
+      "title_zh": "阿尔巴尼亚国徽",
+      "title_en": "National Emblem of Albania",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_algeria": {
+      "name_zh": "阿尔及利亚",
+      "name_en": "Algeria",
+      "title_zh": "阿尔及利亚国徽",
+      "title_en": "National Emblem of Algeria",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_andorra": {
+      "name_zh": "安道尔",
+      "name_en": "Andorra",
+      "title_zh": "安道尔国徽",
+      "title_en": "National Emblem of Andorra",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_angola": {
+      "name_zh": "安哥拉",
+      "name_en": "Angola",
+      "title_zh": "安哥拉国徽",
+      "title_en": "National Emblem of Angola",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_antigua_and_barbuda": {
+      "name_zh": "安提瓜和巴布达",
+      "name_en": "Antigua & Barbuda",
+      "title_zh": "安提瓜和巴布达国徽",
+      "title_en": "National Emblem of Antigua & Barbuda",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_argentina": {
+      "name_zh": "阿根廷",
+      "name_en": "Argentina",
+      "title_zh": "阿根廷国徽",
+      "title_en": "National Emblem of Argentina",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_armenia": {
+      "name_zh": "亚美尼亚",
+      "name_en": "Armenia",
+      "title_zh": "亚美尼亚国徽",
+      "title_en": "National Emblem of Armenia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_armoiries_du_togo": {
+      "name_zh": "多哥共和国",
+      "name_en": "Togolese Republic",
+      "title_zh": "多哥共和国国徽",
+      "title_en": "Coat of Arms of Togo",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_austria_bundesadler": {
+      "name_zh": "奥地利共和国",
+      "name_en": "Republic of Austria",
+      "title_zh": "奥地利共和国国徽（联邦之鹰）",
+      "title_en": "Coat of Arms of Austria (Bundesadler)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_azerbaijan": {
+      "name_zh": "阿塞拜疆",
+      "name_en": "Azerbaijan",
+      "title_zh": "阿塞拜疆国徽",
+      "title_en": "National Emblem of Azerbaijan",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_bangladesh": {
+      "name_zh": "孟加拉人民共和国",
+      "name_en": "People's Republic of Bangladesh",
+      "title_zh": "孟加拉国国徽",
+      "title_en": "National Emblem of Bangladesh",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_barbados__3_": {
+      "name_zh": "巴巴多斯",
+      "name_en": "Barbados",
+      "title_zh": "巴巴多斯国徽",
+      "title_en": "National Emblem of Barbados",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_bhutan": {
+      "name_zh": "不丹",
+      "name_en": "Bhutan",
+      "title_zh": "不丹国徽",
+      "title_en": "National Emblem of Bhutan",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_bosnia_and_herzegovina": {
+      "name_zh": "波斯尼亚和黑塞哥维那",
+      "name_en": "Bosnia & Herzegovina",
+      "title_zh": "波斯尼亚和黑塞哥维那国徽",
+      "title_en": "National Emblem of Bosnia & Herzegovina",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_botswana": {
+      "name_zh": "博茨瓦纳",
+      "name_en": "Botswana",
+      "title_zh": "博茨瓦纳国徽",
+      "title_en": "National Emblem of Botswana",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_brazil": {
+      "name_zh": "巴西联邦共和国",
+      "name_en": "Federative Republic of Brazil",
+      "title_zh": "巴西联邦共和国国徽",
+      "title_en": "Coat of Arms of Brazil",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_brunei": {
+      "name_zh": "文莱",
+      "name_en": "Brunei",
+      "title_zh": "文莱国徽",
+      "title_en": "National Emblem of Brunei",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_burkina_faso__2025-present_": {
+      "name_zh": "布基纳法索",
+      "name_en": "Burkina Faso",
+      "title_zh": "布基纳法索国徽",
+      "title_en": "National Emblem of Burkina Faso",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_burundi": {
+      "name_zh": "布隆迪",
+      "name_en": "Burundi",
+      "title_zh": "布隆迪国徽",
+      "title_en": "National Emblem of Burundi",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_cameroon": {
+      "name_zh": "喀麦隆",
+      "name_en": "Cameroon",
+      "title_zh": "喀麦隆国徽",
+      "title_en": "National Emblem of Cameroon",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_chad": {
+      "name_zh": "乍得",
+      "name_en": "Chad",
+      "title_zh": "乍得国徽",
+      "title_en": "National Emblem of Chad",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_colombia": {
+      "name_zh": "哥伦比亚",
+      "name_en": "Colombia",
+      "title_zh": "哥伦比亚国徽",
+      "title_en": "National Emblem of Colombia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_croatia": {
+      "name_zh": "克罗地亚",
+      "name_en": "Croatia",
+      "title_zh": "克罗地亚国徽",
+      "title_en": "National Emblem of Croatia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_east_timor": {
+      "name_zh": "东帝汶民主共和国",
+      "name_en": "Democratic Republic of Timor-Leste",
+      "title_zh": "东帝汶民主共和国国徽",
+      "title_en": "National Emblem of Timor-Leste",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_ecuador": {
+      "name_zh": "厄瓜多尔",
+      "name_en": "Ecuador",
+      "title_zh": "厄瓜多尔国徽",
+      "title_en": "National Emblem of Ecuador",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_egypt__official_": {
+      "name_zh": "阿拉伯埃及共和国",
+      "name_en": "Arab Republic of Egypt",
+      "title_zh": "阿拉伯埃及共和国国徽（萨拉丁之鹰）",
+      "title_en": "Coat of Arms of Egypt",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_el_salvador": {
+      "name_zh": "萨尔瓦多",
+      "name_en": "El Salvador",
+      "title_zh": "萨尔瓦多国徽",
+      "title_en": "National Emblem of El Salvador",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_equatorial_guinea": {
+      "name_zh": "赤道几内亚",
+      "name_en": "Equatorial Guinea",
+      "title_zh": "赤道几内亚国徽",
+      "title_en": "National Emblem of Equatorial Guinea",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_eritrea__or_argent_azur_": {
+      "name_zh": "厄立特里亚",
+      "name_en": "Eritrea",
+      "title_zh": "厄立特里亚国徽",
+      "title_en": "National Emblem of Eritrea",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_escudo_de_espa_a__mazonado_": {
+      "name_zh": "西班牙王国",
+      "name_en": "Kingdom of Spain",
+      "title_zh": "西班牙王国国徽（盾徽版）",
+      "title_en": "Coat of Arms of Spain (Escudo de España)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_escudo_nacional_del_per_": {
+      "name_zh": "秘鲁共和国",
+      "name_en": "Republic of Peru",
+      "title_zh": "秘鲁共和国国徽（国家盾徽）",
+      "title_en": "National Coat of Arms of Peru",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_estonia": {
+      "name_zh": "爱沙尼亚",
+      "name_en": "Estonia",
+      "title_zh": "爱沙尼亚国徽",
+      "title_en": "National Emblem of Estonia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_gabon": {
+      "name_zh": "加蓬",
+      "name_en": "Gabon",
+      "title_zh": "加蓬国徽",
+      "title_en": "National Emblem of Gabon",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_germany": {
+      "name_zh": "德意志联邦共和国（德国）",
+      "name_en": "Federal Republic of Germany",
+      "title_zh": "德意志联邦共和国国徽（联邦之鹰）",
+      "title_en": "Coat of Arms of Germany (Bundesadler)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_ghana": {
+      "name_zh": "加纳",
+      "name_en": "Ghana",
+      "title_zh": "加纳国徽",
+      "title_en": "National Emblem of Ghana",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_government_seal_of_bangladesh": {
+      "name_zh": "孟加拉人民共和国",
+      "name_en": "People's Republic of Bangladesh",
+      "title_zh": "孟加拉国政府印章（国徽）",
+      "title_en": "Government Seal of Bangladesh (National Emblem)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_greater_coat_of_arms_of_georgia": {
+      "name_zh": "格鲁吉亚",
+      "name_en": "Georgia",
+      "title_zh": "格鲁吉亚国徽",
+      "title_en": "National Emblem of Georgia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_greece": {
+      "name_zh": "希腊",
+      "name_en": "Greece",
+      "title_zh": "希腊国徽",
+      "title_en": "National Emblem of Greece",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_grenada": {
+      "name_zh": "格林纳达",
+      "name_en": "Grenada",
+      "title_zh": "格林纳达国徽",
+      "title_en": "National Emblem of Grenada",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_guatemala_with_background": {
+      "name_zh": "危地马拉",
+      "name_en": "Guatemala",
+      "title_zh": "危地马拉国徽",
+      "title_en": "National Emblem of Guatemala",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_guinea": {
+      "name_zh": "几内亚",
+      "name_en": "Guinea",
+      "title_zh": "几内亚国徽",
+      "title_en": "National Emblem of Guinea",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_haiti": {
+      "name_zh": "海地",
+      "name_en": "Haiti",
+      "title_zh": "海地国徽",
+      "title_en": "National Emblem of Haiti",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_imperial_seal_of_japan": {
+      "name_zh": "日本国",
+      "name_en": "Japan",
+      "title_zh": "日本皇室菊花纹章（十六瓣八重表菊纹）",
+      "title_en": "Imperial Seal of Japan (Chrysanthemum Seal)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_india": {
+      "name_zh": "印度",
+      "name_en": "India",
+      "title_zh": "印度国徽",
+      "title_en": "National Emblem of India",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_indonesia_garuda_pancasila": {
+      "name_zh": "印度尼西亚共和国",
+      "name_en": "Republic of Indonesia",
+      "title_zh": "印度尼西亚国徽（金翅鸟潘查希拉）",
+      "title_en": "National Emblem of Indonesia (Garuda Pancasila)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_iraq": {
+      "name_zh": "伊拉克",
+      "name_en": "Iraq",
+      "title_zh": "伊拉克国徽",
+      "title_en": "National Emblem of Iraq",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_jamaica": {
+      "name_zh": "牙买加",
+      "name_en": "Jamaica",
+      "title_zh": "牙买加国徽",
+      "title_en": "National Emblem of Jamaica",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_jordan": {
+      "name_zh": "约旦",
+      "name_en": "Jordan",
+      "title_zh": "约旦国徽",
+      "title_en": "National Emblem of Jordan",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_laos__2025-_": {
+      "name_zh": "老挝",
+      "name_en": "Laos",
+      "title_zh": "老挝国徽",
+      "title_en": "National Emblem of Laos",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_lesser_coat_of_arms_of_ukraine": {
+      "name_zh": "乌克兰",
+      "name_en": "Ukraine",
+      "title_zh": "乌克兰国徽",
+      "title_en": "National Emblem of Ukraine",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_lithuania": {
+      "name_zh": "立陶宛",
+      "name_en": "Lithuania",
+      "title_zh": "立陶宛国徽",
+      "title_en": "National Emblem of Lithuania",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_malaysia": {
+      "name_zh": "马来西亚",
+      "name_en": "Malaysia",
+      "title_zh": "马来西亚国徽",
+      "title_en": "National Emblem of Malaysia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_maldives": {
+      "name_zh": "马尔代夫",
+      "name_en": "Maldives",
+      "title_zh": "马尔代夫国徽",
+      "title_en": "National Emblem of Maldives",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_mexico": {
+      "name_zh": "墨西哥合众国",
+      "name_en": "United Mexican States",
+      "title_zh": "墨西哥合众国国徽（雄鹰叼蛇）",
+      "title_en": "Coat of Arms of Mexico",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_monaco": {
+      "name_zh": "摩纳哥",
+      "name_en": "Monaco",
+      "title_zh": "摩纳哥国徽",
+      "title_en": "National Emblem of Monaco",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_namibia": {
+      "name_zh": "纳米比亚",
+      "name_en": "Namibia",
+      "title_zh": "纳米比亚国徽",
+      "title_en": "National Emblem of Namibia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_national_seal_of_brazil__color_": {
+      "name_zh": "巴西联邦共和国",
+      "name_en": "Federative Republic of Brazil",
+      "title_zh": "巴西国家印章（彩色版）",
+      "title_en": "National Seal of Brazil (Color Version)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_nepal": {
+      "name_zh": "尼泊尔",
+      "name_en": "Nepal",
+      "title_zh": "尼泊尔国徽",
+      "title_en": "National Emblem of Nepal",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_new_zealand": {
+      "name_zh": "新西兰",
+      "name_en": "New Zealand",
+      "title_zh": "新西兰国徽",
+      "title_en": "National Emblem of New Zealand",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_nicaragua": {
+      "name_zh": "尼加拉瓜",
+      "name_en": "Nicaragua",
+      "title_zh": "尼加拉瓜国徽",
+      "title_en": "National Emblem of Nicaragua",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_niger": {
+      "name_zh": "尼日尔",
+      "name_en": "Niger",
+      "title_zh": "尼日尔国徽",
+      "title_en": "National Emblem of Niger",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_nigeria": {
+      "name_zh": "尼日利亚",
+      "name_en": "Nigeria",
+      "title_zh": "尼日利亚国徽",
+      "title_en": "National Emblem of Nigeria",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_north_macedonia": {
+      "name_zh": "北马其顿",
+      "name_en": "North Macedonia",
+      "title_zh": "北马其顿国徽",
+      "title_en": "National Emblem of North Macedonia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_norway": {
+      "name_zh": "挪威",
+      "name_en": "Norway",
+      "title_zh": "挪威国徽",
+      "title_en": "National Emblem of Norway",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_oman": {
+      "name_zh": "阿曼",
+      "name_en": "Oman",
+      "title_zh": "阿曼国徽",
+      "title_en": "National Emblem of Oman",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_palestine": {
+      "name_zh": "巴勒斯坦国",
+      "name_en": "State of Palestine",
+      "title_zh": "巴勒斯坦国国徽",
+      "title_en": "Coat of Arms of Palestine",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_papua_new_guinea": {
+      "name_zh": "巴布亚新几内亚",
+      "name_en": "Papua New Guinea",
+      "title_zh": "巴布亚新几内亚国徽",
+      "title_en": "National Emblem of Papua New Guinea",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_paraguay": {
+      "name_zh": "巴拉圭",
+      "name_en": "Paraguay",
+      "title_zh": "巴拉圭国徽",
+      "title_en": "National Emblem of Paraguay",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_peoples_republic_of_china": {
+      "name_zh": "中华人民共和国",
+      "name_en": "People's Republic of China",
+      "title_zh": "中华人民共和国国徽",
+      "title_en": "National Emblem of the People's Republic of China",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_portugal": {
+      "name_zh": "葡萄牙",
+      "name_en": "Portugal",
+      "title_zh": "葡萄牙国徽",
+      "title_en": "National Emblem of Portugal",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_public_seal_of_samoa": {
+      "name_zh": "萨摩亚",
+      "name_en": "Samoa",
+      "title_zh": "萨摩亚国徽",
+      "title_en": "National Emblem of Samoa",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_qatar-2022": {
+      "name_zh": "卡塔尔国",
+      "name_en": "State of Qatar",
+      "title_zh": "卡塔尔国国徽（2022 年版）",
+      "title_en": "Emblem of Qatar (2022 Version)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_royal_arms_of_cambodia": {
+      "name_zh": "柬埔寨",
+      "name_en": "Cambodia",
+      "title_zh": "柬埔寨国徽",
+      "title_en": "National Emblem of Cambodia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_royal_coat_of_arms_of_denmark__2024_": {
+      "name_zh": "丹麦",
+      "name_en": "Denmark",
+      "title_zh": "丹麦国徽",
+      "title_en": "National Emblem of Denmark",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_royal_coat_of_arms_of_the_netherlands": {
+      "name_zh": "荷兰",
+      "name_en": "Netherlands",
+      "title_zh": "荷兰国徽",
+      "title_en": "National Emblem of Netherlands",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_rwanda": {
+      "name_zh": "卢旺达",
+      "name_en": "Rwanda",
+      "title_zh": "卢旺达国徽",
+      "title_en": "National Emblem of Rwanda",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_saudi_arabia": {
+      "name_zh": "沙特阿拉伯",
+      "name_en": "Saudi Arabia",
+      "title_zh": "沙特阿拉伯国徽",
+      "title_en": "National Emblem of Saudi Arabia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_sede_vacante": {
+      "name_zh": "梵蒂冈城国（圣座）",
+      "name_en": "Vatican City (Holy See)",
+      "title_zh": "宗座空缺期教廷徽记",
+      "title_en": "Sede Vacante Coat of Arms of the Holy See",
+      "entity_type_zh": "国际组织/航天机构官方徽记 (International Organization Insignia)",
+      "entity_type_en": "International Organization / Space Agency Insignia"
+    },
+    "emblem_serbia": {
+      "name_zh": "塞尔维亚",
+      "name_en": "Serbia",
+      "title_zh": "塞尔维亚国徽",
+      "title_en": "National Emblem of Serbia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_slovakia": {
+      "name_zh": "斯洛伐克",
+      "name_en": "Slovakia",
+      "title_zh": "斯洛伐克国徽",
+      "title_en": "National Emblem of Slovakia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_slovenia": {
+      "name_zh": "斯洛文尼亚",
+      "name_en": "Slovenia",
+      "title_zh": "斯洛文尼亚国徽",
+      "title_en": "National Emblem of Slovenia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_somaliland": {
+      "name_zh": "索马里兰",
+      "name_en": "Somaliland",
+      "title_zh": "索马里兰地区徽记",
+      "title_en": "Emblem of Somaliland",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_south_korea": {
+      "name_zh": "韩国",
+      "name_en": "South Korea",
+      "title_zh": "韩国国徽",
+      "title_en": "National Emblem of South Korea",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_sri_lanka": {
+      "name_zh": "斯里兰卡",
+      "name_en": "Sri Lanka",
+      "title_zh": "斯里兰卡国徽",
+      "title_en": "National Emblem of Sri Lanka",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_staatswappen-liechtensteins": {
+      "name_zh": "列支敦士登公国",
+      "name_en": "Principality of Liechtenstein",
+      "title_zh": "列支敦士登公国国徽",
+      "title_en": "Coat of Arms of Liechtenstein",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_state_emblem_of_mongolia": {
+      "name_zh": "蒙古",
+      "name_en": "Mongolia",
+      "title_zh": "蒙古国徽",
+      "title_en": "National Emblem of Mongolia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_state_emblem_of_pakistan": {
+      "name_zh": "巴基斯坦",
+      "name_en": "Pakistan",
+      "title_zh": "巴基斯坦国徽",
+      "title_en": "National Emblem of Pakistan",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_state_seal_of_the_republic_of_the_union_of_myanmar": {
+      "name_zh": "缅甸",
+      "name_en": "Myanmar (Burma)",
+      "title_zh": "缅甸国徽",
+      "title_en": "National Emblem of Myanmar (Burma)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_sudan": {
+      "name_zh": "苏丹",
+      "name_en": "Sudan",
+      "title_zh": "苏丹国徽",
+      "title_en": "National Emblem of Sudan",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_syria__2025_present_": {
+      "name_zh": "叙利亚",
+      "name_en": "Syria",
+      "title_zh": "叙利亚国徽",
+      "title_en": "National Emblem of Syria",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_tajikistan": {
+      "name_zh": "塔吉克斯坦",
+      "name_en": "Tajikistan",
+      "title_zh": "塔吉克斯坦国徽",
+      "title_en": "National Emblem of Tajikistan",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_tanzania": {
+      "name_zh": "坦桑尼亚",
+      "name_en": "Tanzania",
+      "title_zh": "坦桑尼亚国徽",
+      "title_en": "National Emblem of Tanzania",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_thailand": {
+      "name_zh": "泰国",
+      "name_en": "Thailand",
+      "title_zh": "泰国国徽",
+      "title_en": "National Emblem of Thailand",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_bahamas": {
+      "name_zh": "巴哈马",
+      "name_en": "Bahamas",
+      "title_zh": "巴哈马国徽",
+      "title_en": "National Emblem of Bahamas",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_commonwealth_of_australia": {
+      "name_zh": "澳大利亚",
+      "name_en": "Australia",
+      "title_zh": "澳大利亚国徽",
+      "title_en": "National Emblem of Australia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_federated_states_of_micronesia": {
+      "name_zh": "密克罗尼西亚",
+      "name_en": "Micronesia",
+      "title_zh": "密克罗尼西亚国徽",
+      "title_en": "National Emblem of Micronesia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_gambia": {
+      "name_zh": "冈比亚",
+      "name_en": "Gambia",
+      "title_zh": "冈比亚国徽",
+      "title_en": "National Emblem of Gambia",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_islamic_emirate_of_afghanistan": {
+      "name_zh": "阿富汗",
+      "name_en": "Afghanistan",
+      "title_zh": "阿富汗国徽",
+      "title_en": "National Emblem of Afghanistan",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_kingdom_of_bahrain": {
+      "name_zh": "巴林",
+      "name_en": "Bahrain",
+      "title_zh": "巴林国徽",
+      "title_en": "National Emblem of Bahrain",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_philippines": {
+      "name_zh": "菲律宾",
+      "name_en": "Philippines",
+      "title_zh": "菲律宾国徽",
+      "title_en": "National Emblem of Philippines",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_republic_of_china": {
+      "name_zh": "中国台湾地区",
+      "name_en": "Taiwan Region of China",
+      "title_zh": "中国台湾地区徽记",
+      "title_en": "Emblem of the Taiwan Region of China",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_state_of_kuwait": {
+      "name_zh": "科威特",
+      "name_en": "Kuwait",
+      "title_zh": "科威特国徽",
+      "title_en": "National Emblem of Kuwait",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_united_arab_emirates": {
+      "name_zh": "阿拉伯联合酋长国",
+      "name_en": "United Arab Emirates",
+      "title_zh": "阿拉伯联合酋长国国徽",
+      "title_en": "National Emblem of United Arab Emirates",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_united_kingdom__2022__variant_2_": {
+      "name_zh": "大不列颠及北爱尔兰联合王国（英国）",
+      "name_en": "United Kingdom",
+      "title_zh": "英国国徽（2022 年版）",
+      "title_en": "Royal Coat of Arms of the United Kingdom (2022 Version)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_the_united_states__reverse_": {
+      "name_zh": "美利坚合众国（美国）",
+      "name_en": "United States of America",
+      "title_zh": "美国国徽（大印章背面）",
+      "title_en": "Great Seal of the United States (Reverse)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_tuvalu": {
+      "name_zh": "图瓦卢",
+      "name_en": "Tuvalu",
+      "title_zh": "图瓦卢国徽",
+      "title_en": "National Emblem of Tuvalu",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_uganda": {
+      "name_zh": "乌干达",
+      "name_en": "Uganda",
+      "title_zh": "乌干达国徽",
+      "title_en": "National Emblem of Uganda",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_uzbekistan": {
+      "name_zh": "乌兹别克斯坦",
+      "name_en": "Uzbekistan",
+      "title_zh": "乌兹别克斯坦国徽",
+      "title_en": "National Emblem of Uzbekistan",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_vanuatu": {
+      "name_zh": "瓦努阿图",
+      "name_en": "Vanuatu",
+      "title_zh": "瓦努阿图国徽",
+      "title_en": "National Emblem of Vanuatu",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_vietnam": {
+      "name_zh": "越南",
+      "name_en": "Vietnam",
+      "title_zh": "越南国徽",
+      "title_en": "National Emblem of Vietnam",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "emblem_yemen__2_": {
+      "name_zh": "也门",
+      "name_en": "Yemen",
+      "title_zh": "也门国徽",
+      "title_en": "National Emblem of Yemen",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "es_shield": {
+      "name_zh": "西班牙王国",
+      "name_en": "Kingdom of Spain",
+      "title_zh": "西班牙王国国徽盾徽图案",
+      "title_en": "Coat of Arms Shield of the Kingdom of Spain",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "eu_stars": {
+      "name_zh": "欧洲联盟（欧盟）",
+      "name_en": "European Union",
+      "title_zh": "欧洲联盟盟徽（十二金星环）",
+      "title_en": "Emblem of the European Union (Circle of Twelve Stars)",
+      "entity_type_zh": "国际组织/航天机构官方徽记 (International Organization Insignia)",
+      "entity_type_en": "International Organization / Space Agency Insignia"
+    },
+    "fr_diplomatic": {
+      "name_zh": "法兰西共和国（法国）",
+      "name_en": "French Republic",
+      "title_zh": "法兰西共和国外交徽记",
+      "title_en": "Diplomatic Emblem of France",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "mx_eagle": {
+      "name_zh": "墨西哥合众国",
+      "name_en": "United Mexican States",
+      "title_zh": "墨西哥合众国国徽雄鹰图案",
+      "title_en": "Eagle Motif of the Coat of Arms of Mexico",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "ru_double_eagle": {
+      "name_zh": "俄罗斯联邦",
+      "name_en": "Russian Federation",
+      "title_zh": "俄罗斯联邦国徽（双头鹰）",
+      "title_en": "Coat of Arms of Russia (Double-headed Eagle)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    },
+    "us_great_seal": {
+      "name_zh": "美利坚合众国（美国）",
+      "name_en": "United States of America",
+      "title_zh": "美国国徽（大印章正面）",
+      "title_en": "Great Seal of the United States (Obverse)",
+      "entity_type_zh": "国家/权威官方徽记 (Official State Emblem)",
+      "entity_type_en": "Official State Emblem"
+    }
+  },
+  "official_regional": {
+    "au_australian_capital_territory": {
+      "name_zh": "澳大利亚首都领地",
+      "name_en": "Australian Capital Territory, Australia",
+      "title_zh": "澳大利亚首都领地旗帜",
+      "title_en": "Flag of the Australian Capital Territory",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "au_new_south_wales": {
+      "name_zh": "澳大利亚新南威尔士州",
+      "name_en": "New South Wales, Australia",
+      "title_zh": "新南威尔士州州旗",
+      "title_en": "Flag of New South Wales",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "au_norfolk_island": {
+      "name_zh": "澳大利亚诺福克岛",
+      "name_en": "Norfolk Island, Australia",
+      "title_zh": "诺福克岛旗帜",
+      "title_en": "Flag of Norfolk Island",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "au_northern_territory": {
+      "name_zh": "澳大利亚北领地",
+      "name_en": "Northern Territory, Australia",
+      "title_zh": "北领地旗帜",
+      "title_en": "Flag of the Northern Territory",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "au_queensland": {
+      "name_zh": "澳大利亚昆士兰州",
+      "name_en": "Queensland, Australia",
+      "title_zh": "昆士兰州州旗",
+      "title_en": "Flag of Queensland",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "au_south_australia": {
+      "name_zh": "澳大利亚南澳大利亚州",
+      "name_en": "South Australia, Australia",
+      "title_zh": "南澳大利亚州州旗",
+      "title_en": "Flag of South Australia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "au_tasmania": {
+      "name_zh": "澳大利亚塔斯马尼亚州",
+      "name_en": "Tasmania, Australia",
+      "title_zh": "塔斯马尼亚州州旗",
+      "title_en": "Flag of Tasmania",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "au_victoria__australia_": {
+      "name_zh": "澳大利亚维多利亚州",
+      "name_en": "Victoria, Australia",
+      "title_zh": "维多利亚州州旗",
+      "title_en": "Flag of Victoria",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "au_western_australia": {
+      "name_zh": "澳大利亚西澳大利亚州",
+      "name_en": "Western Australia, Australia",
+      "title_zh": "西澳大利亚州州旗",
+      "title_en": "Flag of Western Australia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_alberta": {
+      "name_zh": "加拿大阿尔伯塔省",
+      "name_en": "Alberta, Canada",
+      "title_zh": "阿尔伯塔省省旗",
+      "title_en": "Flag of Alberta",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_british_columbia": {
+      "name_zh": "加拿大不列颠哥伦比亚省",
+      "name_en": "British Columbia, Canada",
+      "title_zh": "不列颠哥伦比亚省省旗",
+      "title_en": "Flag of British Columbia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_manitoba": {
+      "name_zh": "加拿大曼尼托巴省",
+      "name_en": "Manitoba, Canada",
+      "title_zh": "曼尼托巴省省旗",
+      "title_en": "Flag of Manitoba",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_new_brunswick": {
+      "name_zh": "加拿大新不伦瑞克省",
+      "name_en": "New Brunswick, Canada",
+      "title_zh": "新不伦瑞克省省旗",
+      "title_en": "Flag of New Brunswick",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_newfoundland_and_labrador": {
+      "name_zh": "加拿大纽芬兰与拉布拉多省",
+      "name_en": "Newfoundland and Labrador, Canada",
+      "title_zh": "纽芬兰与拉布拉多省省旗",
+      "title_en": "Flag of Newfoundland and Labrador",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_northwest_territories": {
+      "name_zh": "加拿大西北地区",
+      "name_en": "Northwest Territories, Canada",
+      "title_zh": "西北地区区旗",
+      "title_en": "Flag of the Northwest Territories",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "ca_nova_scotia": {
+      "name_zh": "加拿大新斯科舍省",
+      "name_en": "Nova Scotia, Canada",
+      "title_zh": "新斯科舍省省旗",
+      "title_en": "Flag of Nova Scotia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_nunavut": {
+      "name_zh": "加拿大努纳武特地区",
+      "name_en": "Nunavut, Canada",
+      "title_zh": "努纳武特地区区旗",
+      "title_en": "Flag of Nunavut",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "ca_ontario": {
+      "name_zh": "加拿大安大略省",
+      "name_en": "Ontario, Canada",
+      "title_zh": "安大略省省旗",
+      "title_en": "Flag of Ontario",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_prince_edward_island": {
+      "name_zh": "加拿大爱德华王子岛省",
+      "name_en": "Prince Edward Island, Canada",
+      "title_zh": "爱德华王子岛省省旗",
+      "title_en": "Flag of Prince Edward Island",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_quebec": {
+      "name_zh": "加拿大魁北克省",
+      "name_en": "Quebec, Canada",
+      "title_zh": "魁北克省省旗",
+      "title_en": "Flag of Quebec",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "ca_saskatchewan": {
+      "name_zh": "加拿大萨斯喀彻温省",
+      "name_en": "Saskatchewan, Canada",
+      "title_zh": "萨斯喀彻温省省旗",
+      "title_en": "Flag of Saskatchewan",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_bavaria__lozengy_": {
+      "name_zh": "德国巴伐利亚自由邦",
+      "name_en": "Free State of Bavaria, Germany",
+      "title_zh": "巴伐利亚自由邦菱格州旗",
+      "title_en": "Flag of Bavaria (Lozengy Variant)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_bavaria__striped_": {
+      "name_zh": "德国巴伐利亚自由邦",
+      "name_en": "Free State of Bavaria, Germany",
+      "title_zh": "巴伐利亚自由邦条纹州旗",
+      "title_en": "Flag of Bavaria (Striped Variant)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_berlin": {
+      "name_zh": "德国柏林州",
+      "name_en": "Berlin, Germany",
+      "title_zh": "柏林州州旗",
+      "title_en": "Flag of Berlin",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_brandenburg": {
+      "name_zh": "德国勃兰登堡州",
+      "name_en": "Brandenburg, Germany",
+      "title_zh": "勃兰登堡州州旗",
+      "title_en": "Flag of Brandenburg",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_bremen": {
+      "name_zh": "德国不来梅州",
+      "name_en": "Bremen, Germany",
+      "title_zh": "不来梅州民用旗（红白条纹旗）",
+      "title_en": "Civil Flag of Bremen",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_civil_flag_of_prussia_1701-1935": {
+      "name_zh": "普鲁士王国（历史政区）",
+      "name_en": "Kingdom of Prussia (Historical)",
+      "title_zh": "普鲁士王国历史民用旗（1701–1935）",
+      "title_en": "Historical Civil Flag of Prussia (1701–1935)",
+      "entity_type_zh": "历史政区/民族官方旗帜 (Historical Administrative / Ethnic Flag)",
+      "entity_type_en": "Historical Administrative / Ethnic Flag"
+    },
+    "de_germany__3-2_": {
+      "name_zh": "德意志联邦共和国（德国）",
+      "name_en": "Federal Republic of Germany",
+      "title_zh": "德国国旗（3:2 比例版）",
+      "title_en": "National Flag of Germany (3:2 Variant)",
+      "entity_type_zh": "国家旗帜特殊版式 (National Flag Variant)",
+      "entity_type_en": "National Flag Variant"
+    },
+    "de_hamburg": {
+      "name_zh": "德国汉堡州",
+      "name_en": "Hamburg, Germany",
+      "title_zh": "汉堡州州旗",
+      "title_en": "Flag of Hamburg",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_hesse": {
+      "name_zh": "德国黑森州",
+      "name_en": "Hesse, Germany",
+      "title_zh": "黑森州民用旗（红白双色旗）",
+      "title_en": "Civil Flag of Hesse",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_hesse__state_": {
+      "name_zh": "德国黑森州",
+      "name_en": "Hesse, Germany",
+      "title_zh": "黑森州州旗（带州徽版）",
+      "title_en": "State Service Flag of Hesse",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_lower_saxony": {
+      "name_zh": "德国下萨克森州",
+      "name_en": "Lower Saxony, Germany",
+      "title_zh": "下萨克森州州旗",
+      "title_en": "Flag of Lower Saxony",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_mecklenburg-western_pomerania__state_": {
+      "name_zh": "德国梅克伦堡-前波美拉尼亚州",
+      "name_en": "Mecklenburg-Western Pomerania, Germany",
+      "title_zh": "梅克伦堡-前波美拉尼亚州州旗",
+      "title_en": "Flag of Mecklenburg-Western Pomerania",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_north_rhine-westphalia": {
+      "name_zh": "德国北莱茵-威斯特法伦州",
+      "name_en": "North Rhine-Westphalia, Germany",
+      "title_zh": "北莱茵-威斯特法伦州民用旗",
+      "title_en": "Civil Flag of North Rhine-Westphalia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_north_rhine-westphalia__state_": {
+      "name_zh": "德国北莱茵-威斯特法伦州",
+      "name_en": "North Rhine-Westphalia, Germany",
+      "title_zh": "北莱茵-威斯特法伦州州旗（带州徽版）",
+      "title_en": "State Service Flag of North Rhine-Westphalia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_prussia__1892-1918_": {
+      "name_zh": "普鲁士王国（历史政区）",
+      "name_en": "Kingdom of Prussia (Historical)",
+      "title_zh": "普鲁士王国国旗（1892–1918）",
+      "title_en": "Flag of the Kingdom of Prussia (1892–1918)",
+      "entity_type_zh": "历史政区/民族官方旗帜 (Historical Administrative / Ethnic Flag)",
+      "entity_type_en": "Historical Administrative / Ethnic Flag"
+    },
+    "de_prussia__1918_1933_": {
+      "name_zh": "普鲁士自由邦（历史政区）",
+      "name_en": "Free State of Prussia (Historical)",
+      "title_zh": "普鲁士自由邦旗帜（1918–1933）",
+      "title_en": "Flag of the Free State of Prussia (1918–1933)",
+      "entity_type_zh": "历史政区/民族官方旗帜 (Historical Administrative / Ethnic Flag)",
+      "entity_type_en": "Historical Administrative / Ethnic Flag"
+    },
+    "de_rhineland-palatinate": {
+      "name_zh": "德国莱茵兰-普法尔茨州",
+      "name_en": "Rhineland-Palatinate, Germany",
+      "title_zh": "莱茵兰-普法尔茨州州旗",
+      "title_en": "Flag of Rhineland-Palatinate",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_saxony-anhalt__state_": {
+      "name_zh": "德国萨克森-安哈尔特州",
+      "name_en": "Saxony-Anhalt, Germany",
+      "title_zh": "萨克森-安哈尔特州州旗",
+      "title_en": "Flag of Saxony-Anhalt",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_saxony__state_": {
+      "name_zh": "德国萨克森州",
+      "name_en": "Saxony, Germany",
+      "title_zh": "萨克森州州旗",
+      "title_en": "Flag of Saxony",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_schleswig-holstein": {
+      "name_zh": "德国石勒苏益格-荷尔斯泰因州",
+      "name_en": "Schleswig-Holstein, Germany",
+      "title_zh": "石勒苏益格-荷尔斯泰因州民用旗",
+      "title_en": "Civil Flag of Schleswig-Holstein",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_schleswig-holstein__state_": {
+      "name_zh": "德国石勒苏益格-荷尔斯泰因州",
+      "name_en": "Schleswig-Holstein, Germany",
+      "title_zh": "石勒苏益格-荷尔斯泰因州州旗（带州徽版）",
+      "title_en": "State Service Flag of Schleswig-Holstein",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_sorbs": {
+      "name_zh": "德国索布族（文德族）",
+      "name_en": "Sorbs (Wends), Germany",
+      "title_zh": "索布族民族旗帜",
+      "title_en": "Flag of the Sorbs",
+      "entity_type_zh": "历史政区/民族官方旗帜 (Historical Administrative / Ethnic Flag)",
+      "entity_type_en": "Historical Administrative / Ethnic Flag"
+    },
+    "de_state_flag_of_bremen": {
+      "name_zh": "德国不来梅州",
+      "name_en": "Bremen, Germany",
+      "title_zh": "不来梅州州旗（带市徽钥匙版）",
+      "title_en": "State Flag of Bremen",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_the_free_city_of_l_beck": {
+      "name_zh": "吕贝克自由市（历史汉萨城市）",
+      "name_en": "Free City of Lübeck (Historical)",
+      "title_zh": "吕贝克自由市旗帜",
+      "title_en": "Flag of the Free City of Lübeck",
+      "entity_type_zh": "历史政区/民族官方旗帜 (Historical Administrative / Ethnic Flag)",
+      "entity_type_en": "Historical Administrative / Ethnic Flag"
+    },
+    "de_thuringia": {
+      "name_zh": "德国图林根州",
+      "name_en": "Thuringia, Germany",
+      "title_zh": "图林根州民用旗（红白双色旗）",
+      "title_en": "Civil Flag of Thuringia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "de_thuringia__state_": {
+      "name_zh": "德国图林根州",
+      "name_en": "Thuringia, Germany",
+      "title_zh": "图林根州州旗（带州徽版）",
+      "title_en": "State Service Flag of Thuringia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_andaluc_a": {
+      "name_zh": "西班牙安达卢西亚自治区",
+      "name_en": "Andalusia, Spain",
+      "title_zh": "安达卢西亚自治区区旗",
+      "title_en": "Flag of Andalusia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_aragon": {
+      "name_zh": "西班牙阿拉贡自治区",
+      "name_en": "Aragon, Spain",
+      "title_zh": "阿拉贡自治区区旗",
+      "title_en": "Flag of Aragon",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_asturias": {
+      "name_zh": "西班牙阿斯图里亚斯自治区",
+      "name_en": "Asturias, Spain",
+      "title_zh": "阿斯图里亚斯自治区区旗",
+      "title_en": "Flag of Asturias",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_balearic_islands": {
+      "name_zh": "西班牙巴利阿里群岛自治区",
+      "name_en": "Balearic Islands, Spain",
+      "title_zh": "巴利阿里群岛自治区区旗",
+      "title_en": "Flag of the Balearic Islands",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_basque_country": {
+      "name_zh": "西班牙巴斯克自治区",
+      "name_en": "Basque Country, Spain",
+      "title_zh": "巴斯克自治区区旗（伊库里尼亚旗）",
+      "title_en": "Flag of the Basque Country (Ikurriña)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_canary_islands": {
+      "name_zh": "西班牙加那利群岛自治区",
+      "name_en": "Canary Islands, Spain",
+      "title_zh": "加那利群岛自治区区旗",
+      "title_en": "Flag of the Canary Islands",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_catalonia": {
+      "name_zh": "西班牙加泰罗尼亚自治区",
+      "name_en": "Catalonia, Spain",
+      "title_zh": "加泰罗尼亚自治区区旗（塞尼耶拉旗）",
+      "title_en": "Flag of Catalonia (Senyera)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_ceuta": {
+      "name_zh": "西班牙休达自治市",
+      "name_en": "Ceuta, Spain",
+      "title_zh": "休达自治市市旗",
+      "title_en": "Flag of Ceuta",
+      "entity_type_zh": "联邦特区/特殊行政区旗帜 (Federal District / Special Administrative Flag)",
+      "entity_type_en": "Federal District / Special Administrative Flag"
+    },
+    "es_community_of_madrid": {
+      "name_zh": "西班牙马德里自治区",
+      "name_en": "Community of Madrid, Spain",
+      "title_zh": "马德里自治区区旗",
+      "title_en": "Flag of the Community of Madrid",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_galicia": {
+      "name_zh": "西班牙加利西亚自治区",
+      "name_en": "Galicia, Spain",
+      "title_zh": "加利西亚自治区区旗",
+      "title_en": "Flag of Galicia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_region_of_murcia": {
+      "name_zh": "西班牙穆尔西亚自治区",
+      "name_en": "Region of Murcia, Spain",
+      "title_zh": "穆尔西亚自治区区旗",
+      "title_en": "Flag of the Region of Murcia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "es_valencian_community__2x3_": {
+      "name_zh": "西班牙巴伦西亚自治区",
+      "name_en": "Valencian Community, Spain",
+      "title_zh": "巴伦西亚自治区区旗",
+      "title_en": "Flag of the Valencian Community",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "fr_brittany__gwenn_ha_du_": {
+      "name_zh": "法国布列塔尼大区",
+      "name_en": "Brittany, France",
+      "title_zh": "布列塔尼大区区旗（格温哈杜旗）",
+      "title_en": "Flag of Brittany (Gwenn-ha-du)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "fr_centre-val_de_loire": {
+      "name_zh": "法国中央-卢瓦尔河谷大区",
+      "name_en": "Centre-Val de Loire, France",
+      "title_zh": "中央-卢瓦尔河谷大区区旗",
+      "title_en": "Flag of Centre-Val de Loire",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "fr_corsica": {
+      "name_zh": "法国科西嘉大区",
+      "name_en": "Corsica, France",
+      "title_zh": "科西嘉大区区旗（摩尔人头像旗）",
+      "title_en": "Flag of Corsica (Moor's Head)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "fr_hauts-de-france": {
+      "name_zh": "法国上法兰西大区",
+      "name_en": "Hauts-de-France, France",
+      "title_zh": "上法兰西大区区旗",
+      "title_en": "Flag of Hauts-de-France",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "fr_region_auvergne-rh_ne-alpes": {
+      "name_zh": "法国奥弗涅-罗讷-阿尔卑斯大区",
+      "name_en": "Auvergne-Rhône-Alpes, France",
+      "title_zh": "奥弗涅-罗讷-阿尔卑斯大区区旗",
+      "title_en": "Flag of Auvergne-Rhône-Alpes",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "gb_bermuda": {
+      "name_zh": "英国百慕大群岛（海外领地）",
+      "name_en": "Bermuda, United Kingdom",
+      "title_zh": "百慕大群岛旗帜",
+      "title_en": "Flag of Bermuda",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "gb_cayman_islands": {
+      "name_zh": "英国开曼群岛（海外领地）",
+      "name_en": "Cayman Islands, United Kingdom",
+      "title_zh": "开曼群岛旗帜",
+      "title_en": "Flag of the Cayman Islands",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "gb_falkland_islands": {
+      "name_zh": "英国福克兰群岛（海外领地）",
+      "name_en": "Falkland Islands, United Kingdom",
+      "title_zh": "福克兰群岛旗帜",
+      "title_en": "Flag of the Falkland Islands",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "gb_gibraltar": {
+      "name_zh": "英国直布罗陀（海外领地）",
+      "name_en": "Gibraltar, United Kingdom",
+      "title_zh": "直布罗陀旗帜",
+      "title_en": "Flag of Gibraltar",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "gb_guernsey": {
+      "name_zh": "英国根西岛（王室属地）",
+      "name_en": "Guernsey, United Kingdom",
+      "title_zh": "根西岛旗帜",
+      "title_en": "Flag of Guernsey",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "gb_isle_of_mann": {
+      "name_zh": "英国马恩岛（王室属地）",
+      "name_en": "Isle of Man, United Kingdom",
+      "title_zh": "马恩岛旗帜",
+      "title_en": "Flag of the Isle of Man",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "gb_jersey": {
+      "name_zh": "英国泽西岛（王室属地）",
+      "name_en": "Jersey, United Kingdom",
+      "title_zh": "泽西岛旗帜",
+      "title_en": "Flag of Jersey",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "gb_northern_ireland__1953_1972_": {
+      "name_zh": "英国北爱尔兰",
+      "name_en": "Northern Ireland, United Kingdom",
+      "title_zh": "北爱尔兰阿尔斯特旗（1953–1972）",
+      "title_en": "Ulster Banner of Northern Ireland (1953–1972)",
+      "entity_type_zh": "构成国官方旗帜 (Constituent Country Flag)",
+      "entity_type_en": "Constituent Country Flag"
+    },
+    "gb_scotland": {
+      "name_zh": "英国苏格兰",
+      "name_en": "Scotland, United Kingdom",
+      "title_zh": "苏格兰旗帜（圣安德鲁十字旗）",
+      "title_en": "Flag of Scotland (Saltire)",
+      "entity_type_zh": "构成国官方旗帜 (Constituent Country Flag)",
+      "entity_type_en": "Constituent Country Flag"
+    },
+    "gb_wales": {
+      "name_zh": "英国威尔士",
+      "name_en": "Wales, United Kingdom",
+      "title_zh": "威尔士旗帜（红龙旗）",
+      "title_en": "Flag of Wales (Red Dragon)",
+      "entity_type_zh": "构成国官方旗帜 (Constituent Country Flag)",
+      "entity_type_en": "Constituent Country Flag"
+    },
+    "it_abruzzo": {
+      "name_zh": "意大利阿布鲁佐大区",
+      "name_en": "Abruzzo, Italy",
+      "title_zh": "阿布鲁佐大区区旗",
+      "title_en": "Flag of Abruzzo",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_apulia": {
+      "name_zh": "意大利普利亚大区",
+      "name_en": "Apulia, Italy",
+      "title_zh": "普利亚大区区旗",
+      "title_en": "Flag of Apulia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_basilicata": {
+      "name_zh": "意大利巴西利卡塔大区",
+      "name_en": "Basilicata, Italy",
+      "title_zh": "巴西利卡塔大区区旗",
+      "title_en": "Flag of Basilicata",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_campania": {
+      "name_zh": "意大利坎帕尼亚大区",
+      "name_en": "Campania, Italy",
+      "title_zh": "坎帕尼亚大区区旗",
+      "title_en": "Flag of Campania",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_emilia-romagna__de_facto_": {
+      "name_zh": "意大利艾米利亚-罗马涅大区",
+      "name_en": "Emilia-Romagna, Italy",
+      "title_zh": "艾米利亚-罗马涅大区区旗（事实使用版）",
+      "title_en": "Flag of Emilia-Romagna (De Facto)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_friuli-venezia_giulia": {
+      "name_zh": "意大利弗留利-威尼斯朱利亚大区",
+      "name_en": "Friuli-Venezia Giulia, Italy",
+      "title_zh": "弗留利-威尼斯朱利亚大区区旗",
+      "title_en": "Flag of Friuli-Venezia Giulia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_lombardy": {
+      "name_zh": "意大利伦巴第大区",
+      "name_en": "Lombardy, Italy",
+      "title_zh": "伦巴第大区区旗",
+      "title_en": "Flag of Lombardy",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_marche": {
+      "name_zh": "意大利马尔凯大区",
+      "name_en": "Marche, Italy",
+      "title_zh": "马尔凯大区区旗",
+      "title_en": "Flag of Marche",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_molise": {
+      "name_zh": "意大利莫利塞大区",
+      "name_en": "Molise, Italy",
+      "title_zh": "莫利塞大区区旗",
+      "title_en": "Flag of Molise",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_piedmont": {
+      "name_zh": "意大利皮埃蒙特大区",
+      "name_en": "Piedmont, Italy",
+      "title_zh": "皮埃蒙特大区区旗",
+      "title_en": "Flag of Piedmont",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_sardinia__italy": {
+      "name_zh": "意大利撒丁尼亚大区",
+      "name_en": "Sardinia, Italy",
+      "title_zh": "撒丁尼亚大区区旗",
+      "title_en": "Flag of Sardinia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_sicily": {
+      "name_zh": "意大利西西里大区",
+      "name_en": "Sicily, Italy",
+      "title_zh": "西西里大区区旗",
+      "title_en": "Flag of Sicily",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_tuscany": {
+      "name_zh": "意大利托斯卡纳大区",
+      "name_en": "Tuscany, Italy",
+      "title_zh": "托斯卡纳大区区旗",
+      "title_en": "Flag of Tuscany",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "it_umbria": {
+      "name_zh": "意大利翁布里亚大区",
+      "name_en": "Umbria, Italy",
+      "title_zh": "翁布里亚大区区旗",
+      "title_en": "Flag of Umbria",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_aichi_prefecture": {
+      "name_zh": "日本爱知县",
+      "name_en": "Aichi Prefecture, Japan",
+      "title_zh": "爱知县县旗",
+      "title_en": "Flag of Aichi Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_akita_prefecture": {
+      "name_zh": "日本秋田县",
+      "name_en": "Akita Prefecture, Japan",
+      "title_zh": "秋田县县旗",
+      "title_en": "Flag of Akita Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_aomori_prefecture": {
+      "name_zh": "日本青森县",
+      "name_en": "Aomori Prefecture, Japan",
+      "title_zh": "青森县县旗",
+      "title_en": "Flag of Aomori Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_chiba_prefecture": {
+      "name_zh": "日本千叶县",
+      "name_en": "Chiba Prefecture, Japan",
+      "title_zh": "千叶县县旗",
+      "title_en": "Flag of Chiba Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_ehime_prefecture": {
+      "name_zh": "日本爱媛县",
+      "name_en": "Ehime Prefecture, Japan",
+      "title_zh": "爱媛县县旗",
+      "title_en": "Flag of Ehime Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_fukui_prefecture": {
+      "name_zh": "日本福井县",
+      "name_en": "Fukui Prefecture, Japan",
+      "title_zh": "福井县县旗",
+      "title_en": "Flag of Fukui Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_fukuoka_prefecture": {
+      "name_zh": "日本福冈县",
+      "name_en": "Fukuoka Prefecture, Japan",
+      "title_zh": "福冈县县旗",
+      "title_en": "Flag of Fukuoka Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_fukushima_prefecture": {
+      "name_zh": "日本福岛县",
+      "name_en": "Fukushima Prefecture, Japan",
+      "title_zh": "福岛县县旗",
+      "title_en": "Flag of Fukushima Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_gunma_prefecture": {
+      "name_zh": "日本群马县",
+      "name_en": "Gunma Prefecture, Japan",
+      "title_zh": "群马县县旗",
+      "title_en": "Flag of Gunma Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_hiroshima_prefecture": {
+      "name_zh": "日本广岛县",
+      "name_en": "Hiroshima Prefecture, Japan",
+      "title_zh": "广岛县县旗",
+      "title_en": "Flag of Hiroshima Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_hokkaido_prefecture": {
+      "name_zh": "日本北海道",
+      "name_en": "Hokkaido, Japan",
+      "title_zh": "北海道道旗",
+      "title_en": "Flag of Hokkaido",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_hyogo_prefecture": {
+      "name_zh": "日本兵库县",
+      "name_en": "Hyogo Prefecture, Japan",
+      "title_zh": "兵库县县旗",
+      "title_en": "Flag of Hyogo Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_ibaraki_prefecture": {
+      "name_zh": "日本茨城县",
+      "name_en": "Ibaraki Prefecture, Japan",
+      "title_zh": "茨城县县旗",
+      "title_en": "Flag of Ibaraki Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_ishikawa_prefecture": {
+      "name_zh": "日本石川县",
+      "name_en": "Ishikawa Prefecture, Japan",
+      "title_zh": "石川县县旗",
+      "title_en": "Flag of Ishikawa Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_iwate_prefecture": {
+      "name_zh": "日本岩手县",
+      "name_en": "Iwate Prefecture, Japan",
+      "title_zh": "岩手县县旗",
+      "title_en": "Flag of Iwate Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_kagawa_prefecture": {
+      "name_zh": "日本香川县",
+      "name_en": "Kagawa Prefecture, Japan",
+      "title_zh": "香川县县旗",
+      "title_en": "Flag of Kagawa Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_kagoshima_prefecture": {
+      "name_zh": "日本鹿儿岛县",
+      "name_en": "Kagoshima Prefecture, Japan",
+      "title_zh": "鹿儿岛县县旗",
+      "title_en": "Flag of Kagoshima Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_kanagawa_prefecture": {
+      "name_zh": "日本神奈川县",
+      "name_en": "Kanagawa Prefecture, Japan",
+      "title_zh": "神奈川县县旗",
+      "title_en": "Flag of Kanagawa Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_kochi_prefecture": {
+      "name_zh": "日本高知县",
+      "name_en": "Kochi Prefecture, Japan",
+      "title_zh": "高知县县旗",
+      "title_en": "Flag of Kochi Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_kumamoto_prefecture": {
+      "name_zh": "日本熊本县",
+      "name_en": "Kumamoto Prefecture, Japan",
+      "title_zh": "熊本县县旗",
+      "title_en": "Flag of Kumamoto Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_kyoto_prefecture": {
+      "name_zh": "日本京都府",
+      "name_en": "Kyoto Prefecture, Japan",
+      "title_zh": "京都府府旗",
+      "title_en": "Flag of Kyoto Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_mie_prefecture": {
+      "name_zh": "日本三重县",
+      "name_en": "Mie Prefecture, Japan",
+      "title_zh": "三重县县旗",
+      "title_en": "Flag of Mie Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_miyagi_prefecture": {
+      "name_zh": "日本宫城县",
+      "name_en": "Miyagi Prefecture, Japan",
+      "title_zh": "宫城县县旗",
+      "title_en": "Flag of Miyagi Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_miyazaki_prefecture": {
+      "name_zh": "日本宫崎县",
+      "name_en": "Miyazaki Prefecture, Japan",
+      "title_zh": "宫崎县县旗",
+      "title_en": "Flag of Miyazaki Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_nagano_prefecture": {
+      "name_zh": "日本长野县",
+      "name_en": "Nagano Prefecture, Japan",
+      "title_zh": "长野县县旗",
+      "title_en": "Flag of Nagano Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_nagasaki_prefecture": {
+      "name_zh": "日本长崎县",
+      "name_en": "Nagasaki Prefecture, Japan",
+      "title_zh": "长崎县县旗",
+      "title_en": "Flag of Nagasaki Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_nara_prefecture": {
+      "name_zh": "日本奈良县",
+      "name_en": "Nara Prefecture, Japan",
+      "title_zh": "奈良县县旗",
+      "title_en": "Flag of Nara Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_niigata_prefecture": {
+      "name_zh": "日本新潟县",
+      "name_en": "Niigata Prefecture, Japan",
+      "title_zh": "新潟县县旗",
+      "title_en": "Flag of Niigata Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_oita_prefecture": {
+      "name_zh": "日本大分县",
+      "name_en": "Oita Prefecture, Japan",
+      "title_zh": "大分县县旗",
+      "title_en": "Flag of Oita Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_okayama_prefecture": {
+      "name_zh": "日本冈山县",
+      "name_en": "Okayama Prefecture, Japan",
+      "title_zh": "冈山县县旗",
+      "title_en": "Flag of Okayama Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_okinawa_prefecture": {
+      "name_zh": "日本冲绳县",
+      "name_en": "Okinawa Prefecture, Japan",
+      "title_zh": "冲绳县县旗",
+      "title_en": "Flag of Okinawa Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_osaka_prefecture": {
+      "name_zh": "日本大阪府",
+      "name_en": "Osaka Prefecture, Japan",
+      "title_zh": "大阪府府旗",
+      "title_en": "Flag of Osaka Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_saga_prefecture": {
+      "name_zh": "日本佐贺县",
+      "name_en": "Saga Prefecture, Japan",
+      "title_zh": "佐贺县县旗",
+      "title_en": "Flag of Saga Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_saitama_prefecture": {
+      "name_zh": "日本埼玉县",
+      "name_en": "Saitama Prefecture, Japan",
+      "title_zh": "埼玉县县旗",
+      "title_en": "Flag of Saitama Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_shiga_prefecture": {
+      "name_zh": "日本滋贺县",
+      "name_en": "Shiga Prefecture, Japan",
+      "title_zh": "滋贺县县旗",
+      "title_en": "Flag of Shiga Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_shimane_prefecture": {
+      "name_zh": "日本岛根县",
+      "name_en": "Shimane Prefecture, Japan",
+      "title_zh": "岛根县县旗",
+      "title_en": "Flag of Shimane Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_shizuoka_prefecture": {
+      "name_zh": "日本静冈县",
+      "name_en": "Shizuoka Prefecture, Japan",
+      "title_zh": "静冈县县旗",
+      "title_en": "Flag of Shizuoka Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_tochigi_prefecture": {
+      "name_zh": "日本栃木县",
+      "name_en": "Tochigi Prefecture, Japan",
+      "title_zh": "栃木县县旗",
+      "title_en": "Flag of Tochigi Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_tokushima_prefecture": {
+      "name_zh": "日本德岛县",
+      "name_en": "Tokushima Prefecture, Japan",
+      "title_zh": "德岛县县旗",
+      "title_en": "Flag of Tokushima Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_tokyo_metropolis": {
+      "name_zh": "日本东京都",
+      "name_en": "Tokyo Metropolis, Japan",
+      "title_zh": "东京都都旗（江户紫太阳徽）",
+      "title_en": "Flag of Tokyo Metropolis",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_tokyo_metropolis__symbol_": {
+      "name_zh": "日本东京都",
+      "name_en": "Tokyo Metropolis, Japan",
+      "title_zh": "东京都都徽旗（白底紫徽版）",
+      "title_en": "Symbol Flag of Tokyo Metropolis",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_toyama_prefecture": {
+      "name_zh": "日本富山县",
+      "name_en": "Toyama Prefecture, Japan",
+      "title_zh": "富山县县旗",
+      "title_en": "Flag of Toyama Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_wakayama_prefecture": {
+      "name_zh": "日本和歌山县",
+      "name_en": "Wakayama Prefecture, Japan",
+      "title_zh": "和歌山县县旗",
+      "title_en": "Flag of Wakayama Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_yamagata_prefecture": {
+      "name_zh": "日本山形县",
+      "name_en": "Yamagata Prefecture, Japan",
+      "title_zh": "山形县县旗",
+      "title_en": "Flag of Yamagata Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_yamaguchi_prefecture": {
+      "name_zh": "日本山口县",
+      "name_en": "Yamaguchi Prefecture, Japan",
+      "title_zh": "山口县县旗",
+      "title_en": "Flag of Yamaguchi Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "jp_yamanashi_prefecture": {
+      "name_zh": "日本山梨县",
+      "name_en": "Yamanashi Prefecture, Japan",
+      "title_zh": "山梨县县旗",
+      "title_en": "Flag of Yamanashi Prefecture",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_alabama": {
+      "name_zh": "美国亚拉巴马州",
+      "name_en": "Alabama, United States",
+      "title_zh": "亚拉巴马州州旗",
+      "title_en": "Flag of Alabama",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_alaska": {
+      "name_zh": "美国阿拉斯加州",
+      "name_en": "Alaska, United States",
+      "title_zh": "阿拉斯加州州旗",
+      "title_en": "Flag of Alaska",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_american_samoa": {
+      "name_zh": "美国美属萨摩亚",
+      "name_en": "American Samoa, United States",
+      "title_zh": "美属萨摩亚旗帜",
+      "title_en": "Flag of American Samoa",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "us_arizona": {
+      "name_zh": "美国亚利桑那州",
+      "name_en": "Arizona, United States",
+      "title_zh": "亚利桑那州州旗",
+      "title_en": "Flag of Arizona",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_arkansas": {
+      "name_zh": "美国阿肯色州",
+      "name_en": "Arkansas, United States",
+      "title_zh": "阿肯色州州旗",
+      "title_en": "Flag of Arkansas",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_california": {
+      "name_zh": "美国加利福尼亚州（熊旗共和国）",
+      "name_en": "State of California, United States",
+      "title_zh": "加利福尼亚州州旗（加州熊旗）",
+      "title_en": "California State Flag (Bear Flag)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_colorado_designed_by_andrew_carlisle_carson": {
+      "name_zh": "美国科罗拉多州",
+      "name_en": "Colorado, United States",
+      "title_zh": "科罗拉多州州旗",
+      "title_en": "Flag of Colorado",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_connecticut": {
+      "name_zh": "美国康涅狄格州",
+      "name_en": "Connecticut, United States",
+      "title_zh": "康涅狄格州州旗",
+      "title_en": "Flag of Connecticut",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_delaware": {
+      "name_zh": "美国特拉华州",
+      "name_en": "Delaware, United States",
+      "title_zh": "特拉华州州旗",
+      "title_en": "Flag of Delaware",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_florida": {
+      "name_zh": "美国佛罗里达州",
+      "name_en": "Florida, United States",
+      "title_zh": "佛罗里达州州旗",
+      "title_en": "Flag of Florida",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_georgia_": {
+      "name_zh": "美国佐治亚州",
+      "name_en": "Georgia, United States",
+      "title_zh": "佐治亚州州旗",
+      "title_en": "Flag of Georgia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_guam": {
+      "name_zh": "美国关岛",
+      "name_en": "Guam, United States",
+      "title_zh": "关岛旗帜",
+      "title_en": "Flag of Guam",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "us_hawaii": {
+      "name_zh": "美国夏威夷州",
+      "name_en": "Hawaii, United States",
+      "title_zh": "夏威夷州州旗",
+      "title_en": "Flag of Hawaii",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_idaho": {
+      "name_zh": "美国爱达荷州",
+      "name_en": "Idaho, United States",
+      "title_zh": "爱达荷州州旗",
+      "title_en": "Flag of Idaho",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_illinois": {
+      "name_zh": "美国伊利诺伊州",
+      "name_en": "Illinois, United States",
+      "title_zh": "伊利诺伊州州旗",
+      "title_en": "Flag of Illinois",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_indiana": {
+      "name_zh": "美国印第安纳州",
+      "name_en": "Indiana, United States",
+      "title_zh": "印第安纳州州旗",
+      "title_en": "Flag of Indiana",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_iowa": {
+      "name_zh": "美国艾奥瓦州",
+      "name_en": "Iowa, United States",
+      "title_zh": "艾奥瓦州州旗",
+      "title_en": "Flag of Iowa",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_kansas": {
+      "name_zh": "美国堪萨斯州",
+      "name_en": "Kansas, United States",
+      "title_zh": "堪萨斯州州旗",
+      "title_en": "Flag of Kansas",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_kentucky": {
+      "name_zh": "美国肯塔基州",
+      "name_en": "Kentucky, United States",
+      "title_zh": "肯塔基州州旗",
+      "title_en": "Flag of Kentucky",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_louisiana": {
+      "name_zh": "美国路易斯安那州",
+      "name_en": "Louisiana, United States",
+      "title_zh": "路易斯安那州州旗",
+      "title_en": "Flag of Louisiana",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_maine": {
+      "name_zh": "美国缅因州",
+      "name_en": "Maine, United States",
+      "title_zh": "缅因州州旗",
+      "title_en": "Flag of Maine",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_maryland": {
+      "name_zh": "美国马里兰州",
+      "name_en": "Maryland, United States",
+      "title_zh": "马里兰州州旗",
+      "title_en": "Flag of Maryland",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_massachusetts": {
+      "name_zh": "美国马萨诸塞州",
+      "name_en": "Massachusetts, United States",
+      "title_zh": "马萨诸塞州州旗",
+      "title_en": "Flag of Massachusetts",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_michigan": {
+      "name_zh": "美国密歇根州",
+      "name_en": "Michigan, United States",
+      "title_zh": "密歇根州州旗",
+      "title_en": "Flag of Michigan",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_minnesota": {
+      "name_zh": "美国明尼苏达州",
+      "name_en": "Minnesota, United States",
+      "title_zh": "明尼苏达州州旗",
+      "title_en": "Flag of Minnesota",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_mississippi": {
+      "name_zh": "美国密西西比州",
+      "name_en": "Mississippi, United States",
+      "title_zh": "密西西比州州旗",
+      "title_en": "Flag of Mississippi",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_missouri": {
+      "name_zh": "美国密苏里州",
+      "name_en": "Missouri, United States",
+      "title_zh": "密苏里州州旗",
+      "title_en": "Flag of Missouri",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_montana": {
+      "name_zh": "美国蒙大拿州",
+      "name_en": "Montana, United States",
+      "title_zh": "蒙大拿州州旗",
+      "title_en": "Flag of Montana",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_nebraska": {
+      "name_zh": "美国内布拉斯加州",
+      "name_en": "Nebraska, United States",
+      "title_zh": "内布拉斯加州州旗",
+      "title_en": "Flag of Nebraska",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_nevada": {
+      "name_zh": "美国内华达州",
+      "name_en": "Nevada, United States",
+      "title_zh": "内华达州州旗",
+      "title_en": "Flag of Nevada",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_new_hampshire": {
+      "name_zh": "美国新罕布什尔州",
+      "name_en": "New Hampshire, United States",
+      "title_zh": "新罕布什尔州州旗",
+      "title_en": "Flag of New Hampshire",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_new_jersey": {
+      "name_zh": "美国新泽西州",
+      "name_en": "New Jersey, United States",
+      "title_zh": "新泽西州州旗",
+      "title_en": "Flag of New Jersey",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_new_mexico": {
+      "name_zh": "美国新墨西哥州",
+      "name_en": "New Mexico, United States",
+      "title_zh": "新墨西哥州州旗",
+      "title_en": "Flag of New Mexico",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_new_york": {
+      "name_zh": "美国纽约州",
+      "name_en": "New York, United States",
+      "title_zh": "纽约州州旗",
+      "title_en": "Flag of New York",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_north_carolina": {
+      "name_zh": "美国北卡罗来纳州",
+      "name_en": "North Carolina, United States",
+      "title_zh": "北卡罗来纳州州旗",
+      "title_en": "Flag of North Carolina",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_north_dakota": {
+      "name_zh": "美国北达科他州",
+      "name_en": "North Dakota, United States",
+      "title_zh": "北达科他州州旗",
+      "title_en": "Flag of North Dakota",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_ohio": {
+      "name_zh": "美国俄亥俄州",
+      "name_en": "Ohio, United States",
+      "title_zh": "俄亥俄州州旗",
+      "title_en": "Flag of Ohio",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_oklahoma": {
+      "name_zh": "美国俄克拉何马州",
+      "name_en": "Oklahoma, United States",
+      "title_zh": "俄克拉何马州州旗",
+      "title_en": "Flag of Oklahoma",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_oregon": {
+      "name_zh": "美国俄勒冈州",
+      "name_en": "Oregon, United States",
+      "title_zh": "俄勒冈州州旗",
+      "title_en": "Flag of Oregon",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_pennsylvania": {
+      "name_zh": "美国宾夕法尼亚州",
+      "name_en": "Pennsylvania, United States",
+      "title_zh": "宾夕法尼亚州州旗",
+      "title_en": "Flag of Pennsylvania",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_puerto_rico": {
+      "name_zh": "美国波多黎各",
+      "name_en": "Puerto Rico, United States",
+      "title_zh": "波多黎各旗帜",
+      "title_en": "Flag of Puerto Rico",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "us_rhode_island": {
+      "name_zh": "美国罗得岛州",
+      "name_en": "Rhode Island, United States",
+      "title_zh": "罗得岛州州旗",
+      "title_en": "Flag of Rhode Island",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_south_carolina": {
+      "name_zh": "美国南卡罗来纳州",
+      "name_en": "South Carolina, United States",
+      "title_zh": "南卡罗来纳州州旗",
+      "title_en": "Flag of South Carolina",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_south_dakota": {
+      "name_zh": "美国南达科他州",
+      "name_en": "South Dakota, United States",
+      "title_zh": "南达科他州州旗",
+      "title_en": "Flag of South Dakota",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_tennessee": {
+      "name_zh": "美国田纳西州",
+      "name_en": "Tennessee, United States",
+      "title_zh": "田纳西州州旗",
+      "title_en": "Flag of Tennessee",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_texas": {
+      "name_zh": "美国德克萨斯州（孤星之州）",
+      "name_en": "State of Texas, United States",
+      "title_zh": "德克萨斯州州旗（孤星旗）",
+      "title_en": "Texas State Flag (Lone Star Flag)",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_the_district_of_columbia": {
+      "name_zh": "美国哥伦比亚特区",
+      "name_en": "District of Columbia, United States",
+      "title_zh": "哥伦比亚特区区旗",
+      "title_en": "Flag of the District of Columbia",
+      "entity_type_zh": "联邦特区/特殊行政区旗帜 (Federal District / Special Administrative Flag)",
+      "entity_type_en": "Federal District / Special Administrative Flag"
+    },
+    "us_the_northern_mariana_islands": {
+      "name_zh": "美国北马里亚纳群岛",
+      "name_en": "Northern Mariana Islands, United States",
+      "title_zh": "北马里亚纳群岛旗帜",
+      "title_en": "Flag of the Northern Mariana Islands",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "us_the_united_states_virgin_islands": {
+      "name_zh": "美国美属维尔京群岛",
+      "name_en": "United States Virgin Islands",
+      "title_zh": "美属维尔京群岛旗帜",
+      "title_en": "Flag of the United States Virgin Islands",
+      "entity_type_zh": "地区/海外领地法定官方旗帜 (Territory / Dependency Flag)",
+      "entity_type_en": "Territory / Dependency Flag"
+    },
+    "us_utah": {
+      "name_zh": "美国犹他州",
+      "name_en": "Utah, United States",
+      "title_zh": "犹他州州旗",
+      "title_en": "Flag of Utah",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_vermont": {
+      "name_zh": "美国佛蒙特州",
+      "name_en": "Vermont, United States",
+      "title_zh": "佛蒙特州州旗",
+      "title_en": "Flag of Vermont",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_virginia": {
+      "name_zh": "美国弗吉尼亚州",
+      "name_en": "Virginia, United States",
+      "title_zh": "弗吉尼亚州州旗",
+      "title_en": "Flag of Virginia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_washington": {
+      "name_zh": "美国华盛顿州",
+      "name_en": "Washington, United States",
+      "title_zh": "华盛顿州州旗",
+      "title_en": "Flag of Washington",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_west_virginia": {
+      "name_zh": "美国西弗吉尼亚州",
+      "name_en": "West Virginia, United States",
+      "title_zh": "西弗吉尼亚州州旗",
+      "title_en": "Flag of West Virginia",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_wisconsin": {
+      "name_zh": "美国威斯康星州",
+      "name_en": "Wisconsin, United States",
+      "title_zh": "威斯康星州州旗",
+      "title_en": "Flag of Wisconsin",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    },
+    "us_wyoming": {
+      "name_zh": "美国怀俄明州",
+      "name_en": "Wyoming, United States",
+      "title_zh": "怀俄明州州旗",
+      "title_en": "Flag of Wyoming",
+      "entity_type_zh": "行政州/省级法定官方旗帜 (State / Provincial Flag)",
+      "entity_type_en": "State / Provincial Flag"
+    }
+  }
+}

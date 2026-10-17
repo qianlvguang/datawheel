@@ -1,33 +1,89 @@
 # Datawheel (多模态视觉数据飞轮与工业级实物微调评测系统)
 
-面向多模态大模型视觉对齐、细粒度图元定位 (Visual Grounding)、主体身份识别与商品级实物合成评测的**程序化数据飞轮系统**。
+面向多模态大模型视觉对齐、细粒度图元定位 (Visual Grounding)、主体身份识别、参考图匹配与商品级实物合成评测的**程序化数据飞轮系统**。
+
+> **当前迭代：v2** —— 10,000 条**全量渲染**的图文数据（每条样本 1 张实拍合成图 + 真值 BBox + 多类型 QA + 实体/底板隔离 split），并配套质检审计与训练导出工具链，可直接进入多模态中训练 / SFT 流水线。
 
 ---
 
 ## 🎯 系统定位与设计哲学
 
-传统视觉微调面临**真实样本采集昂贵、边界框人工标注误差大、合成服装过于虚假（矢量课设简笔画）**等瓶颈。
-Datawheel 采取**素材供应链与资产台账先行**原则，结合**纯程序化数学透视合成**，实现 100% 绝对数学真理的零幻觉数据生成：
+传统视觉微调面临**真实样本采集昂贵、边界框人工标注误差大、合成服装过于虚假（矢量课设简笔画）**等瓶颈。Datawheel 采取**素材供应链与资产台账先行**原则，结合**纯程序化数学透视合成**，实现 100% 绝对数学真理的零幻觉数据生成：
 
-1. **绝对数学真理 (Zero Hallucination)**：坐标系统一采用以**左上角为原点 (0, 0)** 的归一化相对坐标系，纵横范围均为 **0～1000**，格式严格为 `[ymin, xmin, ymax, xmax]`。
-2. **摄影级真实商品底板**：彻底摒弃低保真手绘矢量假衣服，全面接入真实单反相机实拍的白底商品平铺大图（纯棉 T 恤、连帽卫衣、帆布托特包、陶瓷马克杯），具备真实微距纤维细节与自然悬垂褶皱。
-3. **海量权威矢量图元**：覆盖全球标准国旗、全量商业品牌、主权国家国徽与世界主要地方行政区旗。
+1. **绝对数学真理 (Zero Hallucination)**：坐标统一采用以**左上角为原点 (0, 0)** 的归一化相对坐标系，纵横范围均为 **0～1000**，格式严格为 `[ymin, xmin, ymax, xmax]`；BBox 由形变后的真实 Alpha 掩模反算，而非理论矩形。
+2. **摄影级真实商品底板**：彻底摒弃低保真手绘矢量假衣服，接入真实电商实拍/影棚底料图（上装、裙装、箱包、鞋履、帽饰等），保留真实褶皱、面料纹理与光照。
+3. **海量权威矢量图元**：覆盖全球标准国旗、国徽/纹章、地方行政区旗、商业品牌、高奢与 IP 品牌、动漫角色、亚文化符号。
+4. **面向"聚焦能力"的课程设计**：不仅生成 caption，更生成**参考图匹配、困难负样本、证据不足、条件计数、空间关系**等能力导向任务，抑制名称/位置/模板捷径。
 
 ---
 
-## 📦 六大核心资产台账 (Asset Ledger)
+## 🚀 v2 数据集（当前主线，10,000 条）
 
-| 资产类别 | 规模与覆盖 | 核心来源与规范 |
+### 1. 五阶段课程
+
+| 阶段 | 样本数 | 能力目标 | 关键设计 |
+|---|---:|---|---|
+| `stage_a_geometry` | 1,000 | 颜色/几何/计数基础感知 | 程序化色块、三色旗、四宫格、向心圆盘；BBox 绝对精确 |
+| `stage_b_single_element` | 4,000 | 单图元定位 + 属性识别 | 真实商品单图元贴附；按品类生成前胸/下摆/包盖/鞋帮等位置 |
+| `stage_c_multi_element` | 2,500 | 多图元组合、计数、空间关系 | 2~3 个图元、5 类布局、非重叠约束、相对方位问答 |
+| `stage_d_reference_match` | 1,500 | 参考图驱动的跨域身份匹配 | 顶部 2~4 张候选参考图 + 下方商品图；match / no_match / 困难负样本 |
+| `stage_e_negative_evidence` | 1,000 | 正确否定与证据不足 | 无目标 clean、完全遮挡（uncertain）、高相似干扰图元 |
+
+### 2. Split 与泛化隔离（实体级 + 底板级）
+
+| split | 训练可见实体 | 训练可见底板 | 用途 |
+|---|---|---|---|
+| `train` | ✅ | ✅ | 训练 |
+| `val` | ❌（held-out 实体） | ✅ | 模型选择 |
+| `test_unseen_entity` | ❌（held-out 实体） | ✅ | 未见实体泛化 |
+| `test_unseen_substrate` | ✅ | ❌（held-out 底板） | 未见商品底板泛化 |
+| `test_unseen_both` | ❌ | ❌ | 双重分布外泛化 |
+
+split 通过实体/底板 ID 的稳定哈希分桶实现，生成时直接按配额构造，保证 train 与各 test 轨的实体/底板集合无交叉。
+
+### 3. 数据质量机制
+
+- **保真底图排版**：非方形商品图按原始宽高比 letterbox，不再拉伸变形。
+- **可印性质检**：对 1,500 张真实底板计算可印花区面积/纹理/明暗/肤色/背景占比，筛出 **447 张可印底板**，并按 easy/medium/hard 分档。
+- **防语义错误区位词**：平铺底图使用「前胸/下摆/包盖/鞋帮/帽面」等工艺位置；真人上身图自动改用「画面相对位置」描述，避免"鞋子上胸前印花"这类错误断言。
+- **小目标保底**：最小 BBox 面积重试（目标 ≥0.15% 画布），并通过 1.3× 扩张重渲染兜底。
+- **物理融合**：单应性透视 + Sobel 折痕置换 + `Albedo × Shading` 混合；深色/繁复面料自动切换不透明塑胶浆模式保证可辨认度。
+- **可复现**：每条样本由 `seed + sample_id` 派生确定性随机流；`image_sha256`、`content_hash`、`render_meta_json`、`quality_json` 全记录。
+- **全量渲染**：10,000 条记录与 10,000 张图像一一对应（不再是 250 张预览图）。
+
+### 4. QA 答案类型
+
+每条样本 2~7 条 QA，答案类型覆盖：`bbox`（定位）、`name`（识别）、`color`、`count`（计数）、`relation`（方位）、`location`（工艺位置）、`yes_no`（存在性/是否匹配）、`uncertain`（证据不足）。每条 QA 附 `answer_bbox_1000`（如适用）与 `evidence_zh` 依据说明。
+
+---
+
+## 🧰 工具链
+
+| 工具 | 作用 |
+|---|---|
+| [`tools/build_asset_index.py`](tools/build_asset_index.py) | 离线构建 982 个前景图元的视觉索引（主导色/几何/dHash 近邻），供困难负样本选择 |
+| [`tools/build_entity_name_table.py`](tools/build_entity_name_table.py) | 生成 582 条官方实体中英名表（271 国旗 / 121 国徽 / 190 地方旗），消除 raw code 与英文 fallback |
+| [`tools/verify_entity_names.py`](tools/verify_entity_names.py) | 校验三大官方域 100% 中文命名覆盖 |
+| [`tools/build_substrate_quality.py`](tools/build_substrate_quality.py) | 1,500 张真实底板的可印性/难度/区位索引（输出 `substrate_quality.json`） |
+| [`tools/generate_datawheel_v2.py`](tools/generate_datawheel_v2.py) | v2 五阶段 10k 数据生成器（支持分片、预览、合并、报告、contact sheet） |
+| [`tools/flywheel_audit.py`](tools/flywheel_audit.py) | 数据集质检审计：schema/bbox/图片/sha/重复率/split 泄漏/分布/小目标，输出报告三件套 |
+| [`tools/export_training_data.py`](tools/export_training_data.py) | 按 split 导出 ShareGPT / ms-swift JSONL + dataset card + export manifest |
+| [`generate.py`](generate.py) | 统一 CLI：历史四维度（gallery/contrastive/density/demo）与 v2 全量（`v2` / `datawheel10k`） |
+
+---
+
+## 📦 资产台账（v2 实测）
+
+| 资产类别 | 规模与覆盖 | 来源与规范 |
 |---|---|---|
-| **1. 官方国旗 / 国徽 / 地方行政旗帜** | **271** 款国旗 + **125** 款国徽/纹章 + **195** 款全球地方旗 | ISO 3166-1 权威矢量、Armorial of Sovereign States、美/加/德/西/日/澳/英/法/意/瑞各地方旗 |
-| **2. 商业品牌与商标 Logo 库** | **3,466** 款官方商业品牌矢量 | Simple Icons 全量收录（运动潮流、数码科技、商业零售） |
-| **3. 奢侈品牌设计语言与权威参考清单** | **16** 大全球顶奢全套设计家族 | LV/Hermès/Chanel/Gucci/Dior/LOEWE 等 16 品牌设计语言、专利图纸与在线免下载数据源 |
-| **4. 动漫与角色 IP 库** | **18** 大核心原型 (四大宇宙全覆盖) | 龙珠/海贼/火影/鬼灭/EVA/高达/吉卜力/三丽鸥/美战/马力欧/原神/宝可梦，接入 Danbooru/Manga109 |
-| **5. 真实摄影级商品实拍底板库** | **9** 款高保真平铺原图 | 真实影棚微距实拍（黑/白/麻灰 T 恤、黑/灰卫衣、帆布包、马克杯） |
-| **6. 外部独立评测基准集合** | **3** 大基准 (18 万+ 图像) | LogoDet-3K、QMUL-OpenLogo、ZACI-20 (物理隔离，专做泛化测试) |
+| 官方国旗 / 国徽 / 地方旗 | **271** 国旗 + **121** 国徽/纹章 + **190** 地方行政区旗 | ISO 3166-1、Armorial of Sovereign States、各州/省/县官方旗帜（严格去重） |
+| 商业品牌与商标 | **3,466** 通用品牌 + **100** 高奢品牌 + **100** 经典 IP 品牌 | Simple Icons 全量 + 高奢/IP 精选（纯矢量 SVG） |
+| 动漫与角色 IP | **87** 款透明立绘（JUMP/原神/星铁/吉卜力/宝可梦全明星） | 官方立绘/精灵图，纯净 Alpha 通道 |
+| 亚文化元素 | **115** 款（3D/扁平 Emoji、街头哥特、Y2K、Meme） | Fluent/Twemoji/game-icons/Slackmoji，含低分辨率参考图标记 |
+| 真实商品底板 | 1,500 张实拍底料 → **447 张通过可印性质检** | 电商影棚实拍 / 时装周街拍（fashion_products / fashionpedia） |
+| 外部独立评测基准 | 3 大基准（LogoDet-3K / QMUL-OpenLogo / ZACI-20） | 物理隔离，不混入训练，专做真实自然场景泛化 |
 
-> 资产全景详见文档：[`assets/ASSET_CATALOG.md`](assets/ASSET_CATALOG.md)  
-> 结构化 JSON 清单：[`assets/manifests/`](assets/manifests/)
+> 资产全景详见 [`assets/ASSET_CATALOG.md`](assets/ASSET_CATALOG.md)，结构化清单见 [`assets/manifests/`](assets/manifests/)。
 
 ---
 
@@ -35,68 +91,118 @@ Datawheel 采取**素材供应链与资产台账先行**原则，结合**纯程�
 
 ```
 Coding/datawheel/
-├── assets/                       # 核心多模态图元与底板资产库
-│   ├── official_flags/           # 271 款 ISO 3166-1 权威矢量国旗
-│   ├── official_emblems/         # 125 款全球独立国徽、纹章与航天/组织勋章
-│   ├── official_regional/        # 195 款全球省州地方行政旗帜 (美/加/德/西/日/英等)
-│   ├── brand_logos/              # 3,466 款商业品牌官方矢量 (Simple Icons)
-│   ├── character_ips/            # 动漫角色多姿态精灵图 (PokéAPI)
-│   ├── commodity_substrates/     # 真实单反实拍商品平铺底板 (T恤/卫衣/包/杯)
-│   └── manifests/                # 5 大资产结构化 JSON Schema 清单
-├── engine/                       # 几何、色彩与物理合成引擎
-│   ├── palette.py                # 纹章标准色彩字典
-│   ├── geometry.py               # 矢量多边形与极坐标绘制
-│   ├── builder.py                # 底板排版与图元组装
-│   └── modifiers.py              # 挖空、撕裂与异构混合扰动器
-├── synthesizer/                  # 标注与语义合成器
-│   ├── ground_truth.py           # 0~1000 相对 BBox、密集 Caption 与多维视觉 QA
-│   └── reference_qa.py           # 跨图多模态参考检索与接地对话协议
-├── tools/                        # 资产拉取与台账总控工具
-│   ├── asset_catalog_manager.py  # 资产巡检总控台账
-│   ├── batch_asset_downloader.py # 批量轻量化资产拉取器
-│   └── download_full_emblems_and_regional.py # 国徽与全球地方旗爬取器
-├── output/                       # 合成产物输出 (按维度结构化落盘)
-│   ├── gallery/                  # 官方 SVG 画廊图像与 gallery_dataset.jsonl
-│   ├── contrastive/              # 七态物理商品实物图、参考卡与 SFT 对话数据集
-│   ├── density/                  # 浓度阶梯实物图、积木实体卡与阶梯数据集
-│   ├── demo/                     # 经典 Demo 图像与 demo_dataset.jsonl
-│   └── datawheel_master_dataset.jsonl # 汇总全域 60 条样本的总微调训练集
-├── generate.py                   # 🌟 统一全量生成总控脚本 (整合四大维度与 CLI 参数)
-├── pipeline.py                   # 数据飞轮流水线主入口
-└── README.md                     # 本项目技术总览
+├── assets/                       # 多模态图元与底板资产库
+│   ├── official_flags/           # 271 款 ISO 国旗 SVG
+│   ├── official_emblems/         # 121 款国徽/纹章/组织徽记 SVG
+│   ├── official_regional/        # 190 款地方行政区旗 SVG
+│   ├── brand_logos/              # 3,466 通用品牌 + 100 高奢 + 100 IP 品牌
+│   ├── character_ips/            # 87 款动漫透明立绘
+│   ├── subculture_elements/      # 115 款亚文化样张
+│   ├── commodity_substrates/     # 1,500 张真实商品底板（real_1500/）
+│   └── manifests/                # 结构化清单 + 视觉索引 + 底板质检 + 实体名表
+├── engine/                       # 几何、色彩、合成与知识扩写引擎
+│   ├── compositor.py             # 保真排版、单应性、折痕置换、丝印/塑胶浆融合
+│   ├── knowledge_expander.py     # 中英知识扩写（含 582 条官方实体名表接入）
+│   ├── coords.py                 # 0~1000 相对坐标与 BBox 工具
+│   └── ...                       # 历史 v1 引擎（geometry/builder/density 等）
+├── synthesizer/                  # 标注与语义合成器（v1 遗留能力）
+├── tools/                        # 资产构建、v2 生成、质检、导出工具
+│   ├── generate_datawheel_v2.py  # 🌟 v2 五阶段 10k 生成器
+│   ├── flywheel_audit.py         # 质检审计
+│   ├── export_training_data.py   # 训练数据导出
+│   ├── build_asset_index.py      # 图元视觉索引
+│   ├── build_substrate_quality.py# 底板可印性质检
+│   ├── build_entity_name_table.py# 官方实体中文名表
+│   └── verify_entity_names.py    # 命名覆盖率校验
+├── output/                       # 生成产物（已被 .gitignore 忽略，本地保留）
+│   └── datawheel_v2/             # 🌟 10k 图像 + dataset.parquet + report.md + sft/
+├── generate.py                   # 统一生成 CLI（含 v2 全量模式）
+├── pipeline.py                   # 历史流水线入口
+└── README.md
 ```
 
 ---
 
-## 🚀 快速启动
+## ⚡ 快速开始
 
-### 1. 资产台账巡检
+> 环境：项目自带 `.venv`（Python 3.14，numpy / opencv / pillow / resvg-py / pyarrow），无需联网。
+> 所有命令均在 `Coding/datawheel/` 下执行。
+
 ```bash
-python3 tools/asset_catalog_manager.py
+# 0) 资产品质索引（首次或资产变更后执行，约 20s）
+.venv/bin/python tools/build_asset_index.py
+.venv/bin/python tools/build_substrate_quality.py
+.venv/bin/python tools/build_entity_name_table.py
+.venv/bin/python tools/verify_entity_names.py
+
+# 1) 全量生成 v2 10,000 样本（4 分片并行 + 自动合并，约 5~10 分钟）
+.venv/bin/python generate.py v2
+# 或直接调用生成器（可指定 --start/--end/--shards/--seed）
+.venv/bin/python tools/generate_datawheel_v2.py --start 1 --end 10000 --shards 4
+
+# 2) 快速预览（每阶段 2 张，带 BBox 调试图，几秒完成）
+.venv/bin/python tools/generate_datawheel_v2.py --preview --out-dir /tmp/v2_preview
+
+# 3) 数据集质检审计
+.venv/bin/python tools/flywheel_audit.py \
+    --dataset output/datawheel_v2/dataset.parquet --images-root . \
+    --out output/datawheel_v2/audit/
+
+# 4) 导出训练数据（ShareGPT / ms-swift，按 split 分文件）
+.venv/bin/python tools/export_training_data.py \
+    --dataset output/datawheel_v2/dataset.parquet \
+    --out-dir output/datawheel_v2/sft/ --formats sharegpt,ms-swift --seed 42
 ```
 
-### 2. 启动数据飞轮合成流水线 (支持统一总控与各维度细分)
+### 历史版本（v1 演示流水线，仍可运行）
 
-#### 一键执行全量 4 大生成维度流水线并生成合并总数据集：
 ```bash
-python3 generate.py
-# 或使用经典流水线命令
-python3 pipeline.py
+.venv/bin/python generate.py            # 一键生成 gallery/contrastive/density/demo 并汇总
+.venv/bin/python generate.py gallery    # 官方 SVG 8 大认知任务画廊
+.venv/bin/python tools/generate_10k_parquet.py  # v1 10k caption parquet（仅 250 张预览图）
 ```
 
-#### 按需生成指定维度数据集：
-```bash
-# 官方 SVG 8 大认知任务画廊 (数星星、找不同、视觉加减法、多增少补、国徽文字OCR等 24 样本)
-python3 generate.py --mode gallery
+---
 
-# 七态物理融合实物对比矩阵 (T恤、马克杯、牛皮纸包装 21 样本)
-python3 generate.py --mode contrastive
+## 🧾 v2 数据 Schema 摘要
 
-# 原创积木实体与 5 梯度空间与物理做旧浓度阶梯实验 (5 样本)
-python3 generate.py --mode density
+`dataset.parquet` 主要列：
 
-# 快速冒烟验证 Demo (10 样本)
-python3 generate.py --mode demo
-```
+| 列 | 说明 |
+|---|---|
+| `sample_id` / `dataset_version` | 样本 ID / 版本号 |
+| `task_stage` / `stage_title_zh` / `task_family` | 阶段、任务族 |
+| `difficulty` / `split` / `domain` | 难度、数据划分、实体域 |
+| `entity_ids_json` | 监督实体来源（domain + stem + role + 中英名） |
+| `substrate_id` / `substrate_category_zh/en` / `substrate_source` | 商品底板与品类 |
+| `placement_zone` / `print_technique_zh` | 工艺位置与印制工艺 |
+| `bboxes_norm_1000` / `entities_json` | 正向实例 BBox 与实体明细 |
+| `ref_candidates_json` | 参考图匹配阶段的候选参考框与正负角色 |
+| `match_label` | `match` / `no_match` / `insufficient_evidence` / `not_applicable` |
+| `caption_zh` / `caption_en` | 双语稠密描述 |
+| `qa_pairs_json` | 多类型 QA（question/answer/answer_type/answer_bbox/evidence） |
+| `image_path` / `image_sha256` / `image_width` / `image_height` | 图像与校验信息 |
+| `render_meta_json` / `quality_json` / `content_hash` | 渲染参数、可见度/面积质检、内容哈希 |
 
-产物将自动结构化落盘至 `output/` 对应子目录，生成实拍图、0~1000 相对坐标 BBox 质检可视化图，并导出符合 ShareGPT / ms-swift 规范的 JSONL 数据集。
+---
+
+## 🔬 验证与已知限制
+
+- **验证**：所有工具均 `py_compile` 通过；v2 生成后由 `flywheel_audit.py` 对 schema、BBox、图片 sha、split 泄漏、分布与小目标做自动审计（报告见 `output/datawheel_v2/audit/`），本轮结果：**critical = 0**，warning 4 项（562 个小目标 0.1%~0.2%、caption 完全重复 6.7%、QA 模板对重复 56.5%、程序化底板共享 info），exit code 0。
+- **人工抽检**：每阶段 4 个样本的 contact sheet 见 `output/datawheel_v2/contact_sheet.jpg`；D 阶段候选框与商品实例框一致性、候选 pane 区域校验 0 异常。
+- **训练导出**：`export_training_data.py` 已产出 5 split × 2 格式（ShareGPT / ms-swift），每格式 **47,882 行**（QA 45,882 + dense caption 2,000），bbox 结构化行 12,895，全部 JSONL 逐行可解析、10,000 张图片引用 0 缺失。
+- **已知限制**：
+  1. 可印底板 447 张，长尾品类（裙装/裤装/大衣）覆盖仍少于上装/箱包/鞋履；
+  2. 真人上身底图无法保证"服装部位"语义，已改用画面相对位置描述；
+  3. 参考图匹配的困难负样本基于 dHash 视觉近邻，尚未引入更细的属性级对比；
+  4. QA 为模板化生成，跨样本 exact pair 重复率偏高（56.5%），caption 完全重复 6.7%、归一化近重复 10.1%，后续需注入更多问法变体、样本特有细节与图片 pHash 近重复检查；
+  5. 当前数据飞轮闭环止于"生成→质检→导出"；真实 VLM 训练反馈/失败样本回流将在下一轮接入。
+- **下一轮飞轮改进门禁（计划）**：`qa_pair_dup_rate ≤ 15%` 设为硬门禁；caption/图片近重复（pHash）纳入审计；`val↔train` 泄漏与 split 配额偏差纳入 CI；按 VLM 失败样本回流定向补数据。
+
+---
+
+## 📎 相关文档
+
+- [资产全景台账](assets/ASSET_CATALOG.md)
+- [v2 数据集报告](output/datawheel_v2/report.md)（生成后自动创建）
+- [v1 10K 数据集报告](output/DATASET_10K_REPORT.md)（历史）

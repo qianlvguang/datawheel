@@ -337,7 +337,9 @@ GENERATORS_MAP = {
 ALIASES = {
     "flywheel": "contrastive",
     "flywheel_v2": "contrastive",
-    "v2": "contrastive",
+    "v2": "datawheel10k",
+    "10k": "datawheel10k",
+    "v2k": "datawheel10k",
     "experiments": "density",
     "classic": "demo",
     "v1": "demo",
@@ -369,6 +371,23 @@ def run_all(output_dir: Path = None, debug: bool = True, seed: Optional[int] = N
     return {"results": results, "total_samples": len(master_records), "master_dataset_path": master_path}
 
 
+def generate_datawheel_v2(output_dir: Path = None, debug: bool = True, seed: Optional[int] = None,
+                          shards: int = 4, start: int = 1, end: int = 10000) -> Dict[str, Any]:
+    """v2 全量 10,000 样本多模态数据集：分片渲染 + 合并 Parquet + 生成报告。"""
+    import subprocess
+    base_out = Path(output_dir) if output_dir else DEFAULT_OUTPUT_DIR / "datawheel_v2"
+    script = BASE_DIR / "tools" / "generate_datawheel_v2.py"
+    cmd = [sys.executable, str(script), "--start", str(start), "--end", str(end),
+           "--out-dir", str(base_out), "--shards", str(shards)]
+    if seed is not None:
+        cmd += ["--seed", str(seed)]
+    print(f"[v2] 启动 Datawheel v2 全量生成: start={start} end={end} shards={shards}")
+    subprocess.run(cmd, check=True)
+    return {"name": "datawheel10k", "samples_count": end - start + 1,
+            "images_dir": str(base_out / "images"),
+            "dataset_path": str(base_out / "dataset.parquet"), "records": []}
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Datawheel 程序化多模态数据飞轮统一生成流水线",
@@ -380,6 +399,8 @@ def parse_args():
   contrastive  七态物理商品对比矩阵与参考检索微调集 (21 样本)
   density      原创积木实体与 5 梯度空间与做旧浓度阶梯实验 (5 样本)
   demo         经典几何与认知任务冒烟验证 (10 样本)
+  datawheel10k v2 全量 10,000 样本五阶段多模态数据集 (全量渲染 + Parquet + 报告)
+               别名: v2 / 10k / v2k
         """
     )
     parser.add_argument("mode", nargs="?", default=None, help="生成模式: all, gallery, contrastive, density, demo")
@@ -388,6 +409,9 @@ def parse_args():
     parser.add_argument("--debug", action=argparse.BooleanOptionalAction, default=True, help="是否绘制带 0~1000 相对 BBox 的质检图")
     parser.add_argument("--seed", type=int, default=None, help="随机数种子")
     parser.add_argument("--merge", action=argparse.BooleanOptionalAction, default=True, help="全量运行时是否导出 master_dataset.jsonl")
+    parser.add_argument("--shards", type=int, default=4, help="datawheel10k 模式下的并行分片数 (默认 4)")
+    parser.add_argument("--start", type=int, default=1, help="datawheel10k 模式起始样本编号")
+    parser.add_argument("--end", type=int, default=10000, help="datawheel10k 模式结束样本编号")
     return parser.parse_args()
 
 
@@ -403,6 +427,12 @@ def main():
         print(f" 📦 总样本条数: {res['total_samples']}")
         if res["master_dataset_path"]:
             print(f" 📄 统一总微调数据集: {res['master_dataset_path']}")
+        print("================================================================================")
+    elif mode == "datawheel10k":
+        res = generate_datawheel_v2(output_dir=args.output_dir / "datawheel_v2", debug=args.debug,
+                                    seed=args.seed, shards=args.shards, start=args.start, end=args.end)
+        print("\n================================================================================")
+        print(f" ✨ [datawheel10k] 生成完毕！样本数: {res['samples_count']} | 数据集: {res['dataset_path']}")
         print("================================================================================")
     elif mode in GENERATORS_MAP:
         fn = GENERATORS_MAP[mode]

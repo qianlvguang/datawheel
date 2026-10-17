@@ -1,270 +1,971 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "全球顶流动漫角色、游戏与跨界 IP 资产全景清单 (Global Anime, Gaming & Pop Culture IPs Manifest)",
+  "": "./schemas/character_ips.schema.json",
+  "title": "Datawheel 多模态全景动漫与跨界 IP 角色样张清单",
   "version": "2.0.0",
-  "description": "面向跨画风、多形态、局部部件拼接、异色变体与细粒度角色身份恒常性验证的结构化动漫 IP 知识库。覆盖热血少年漫、机甲科幻、萌系潮流、经典游戏四大宇宙，包含特征解构与混淆干扰对。所有条目支持按需在线流式调用，零本地存储占用。",
-  "total_archetypes": 18,
-  "categories": [
-    {
-      "category_id": "shonen_global_phenomena",
-      "category_name_zh": "热血少年漫与全球现象级巨头",
-      "description": "具有数十年全球知名度、高辨识度外貌轮廓与标志性服装纹样的头部经典动漫 IP",
-      "archetypes": [
-        {
-          "ip_id": "dragon_ball_goku",
-          "series_zh": "七龙珠 (Dragon Ball)",
-          "name_zh": "孙悟空 (Son Goku)",
-          "creator": "鸟山明 (Akira Toriyama)",
-          "canonical_remote_assets": {
-            "four_star_dragon_ball_svg": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Four-Star_Dragon_Ball.svg",
-            "kame_symbol_svg": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Kame_symbol.svg"
-          },
-          "discriminative_parts": [
-            "黑发阶段：不规则向右侧伸展的五簇粗壮尖锐刺猬发型，额头两侧垂落两道弧形细发丝",
-            "服装图腾：亮橙色配深蓝打底与护腕的龟仙流道服，胸前与背后圆形白色底衬黑楷书'龟'或'悟'字字徽",
-            "形态演化阶梯：常态黑发黑瞳 -> 超级赛亚人全金发倒竖与碧绿眼瞳 -> 超蓝 (SSGSS) -> 自在极意银白发"
-          ],
-          "confusable_distractors": ["vegeta", "gohan_teen", "bardock"],
-          "distractor_reason": "贝吉塔为鲜明的 M 形高发际线与竖立火炬发型，穿赛亚人战斗服；巴达克左脸颊带有显著十字刀疤。"
-        },
-        {
-          "ip_id": "one_piece_luffy",
-          "series_zh": "航海王 / 海贼王 (One Piece)",
-          "name_zh": "蒙奇·D·路飞 (Monkey D. Luffy)",
-          "creator": "尾田荣一郎 (Eiichiro Oda)",
-          "canonical_remote_assets": {
-            "straw_hat_jolly_roger_svg": "https://upload.wikimedia.org/wikipedia/commons/9/9f/One_Piece_Pirate_Flag.svg"
-          },
-          "discriminative_parts": [
-            "标志性草帽：黄色编织圆边草帽配红色缎带饰圈",
-            "身体伤痕：左眼正下方缝合线短刀疤、胸口巨大的 X 形交叉深红烧伤疤痕",
-            "服装搭配：无袖红色开襟马甲配蓝色牛仔卷边短裤与草鞋",
-            "五档太阳神尼卡形态：纯白如流云般的蓬松白发、漂浮于肩颈周围的祥云飘带、金色红瞳"
-          ],
-          "confusable_distractors": ["shanks", "portgas_d_ace", "sabo"],
-          "distractor_reason": "红发香克斯同样佩戴过此草帽但左眼为三道深红抓痕刀疤；艾斯为橙色牛仔帽带哭笑脸徽章与雀斑。"
-        },
-        {
-          "ip_id": "naruto_uzumaki",
-          "series_zh": "火影忍者 (Naruto)",
-          "name_zh": "旋涡鸣人 (Uzumaki Naruto)",
-          "creator": "岸本齐史 (Masashi Kishimoto)",
-          "canonical_remote_assets": {
-            "konoha_symbol_svg": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Konohagakure_Symbol.svg",
-            "akatsuki_cloud_svg": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Akatsuki_cloud.svg"
-          },
-          "discriminative_parts": [
-            "面部特征：双侧脸颊各三道左右对称的狐狸胡须状深色纹路（九尾封印标记）",
-            "发型与护额：凌乱金色短刺猬头配深蓝/黑色系带木叶铁板护额（正中刻印带尾小旋涡）",
-            "服装特征：高对比度纯橙色配深蓝/黑色立领运动夹克，背后印有红色旋涡一族家徽"
-          ],
-          "confusable_distractors": ["boruto", "minato_namikaze", "pain_yahiko"],
-          "distractor_reason": "博人脸颊仅有两道胡须纹且头顶有一根呆毛；水门为披白色'四代目火影'御神袍且脸颊无胡须。"
-        },
-        {
-          "ip_id": "demon_slayer_tanjiro",
-          "series_zh": "鬼灭之刃 (Demon Slayer: Kimetsu no Yaiba)",
-          "name_zh": "灶门炭治郎 (Tanjiro Kamado)",
-          "creator": "吾峠呼世晴 (Koyoharu Gotouge)",
-          "discriminative_parts": [
-            "市松羽织纹样 (Ichimatsu Pattern)：纯黑与翠绿相间的等宽正方形双色几何西洋棋盘格羽织外套",
-            "日轮花札耳坠：白色长方形纸牌耳坠，中央绘制带有向四周放射红黑光芒的红色朝阳，下方两道平行横线",
-            "额头斑痕：额头左上方暗红色的不规则硬化烫伤疤痕（后期觉醒为红色火炎斑纹）"
-          ],
-          "confusable_distractors": ["nezuko_kamado", "zenitsu_agatsuma", "giyu_tomioka"],
-          "distractor_reason": "祢豆子为粉色六角形麻之叶几何纹样配口衔绿竹筒；善逸为橙黄渐变底配白色小等边三角形鳞纹羽织；义勇为左右不对称拼接羽织。"
-        }
-      ]
-    },
-    {
-      "category_id": "mecha_and_cyberpunk",
-      "category_name_zh": "机甲传奇与科幻里程碑",
-      "description": "硬核工业造型、特定几何色块配色与精密外骨骼装甲系统",
-      "archetypes": [
-        {
-          "ip_id": "evangelion_unit_01",
-          "series_zh": "新世纪福音战士 (Neon Genesis Evangelion - EVA)",
-          "name_zh": "泛用人型决战兵器 EVA 初号机 (Test Type-01)",
-          "creator": "庵野秀明 (Hideaki Anno)",
-          "canonical_remote_assets": {
-            "nerv_logo_svg": "https://upload.wikimedia.org/wikipedia/commons/c/ce/NERV_Logo.svg"
-          },
-          "discriminative_parts": [
-            "标志性色彩拓扑：深紫色 (Purple) 主体装甲配荧光亮绿 (Neon Green) 与亮橙点缀",
-            "头部特征：向前伸展的刀刃状弯角独角头冠，深陷于眼窝的双眼绿色传感器与下颚可裂开的血盆大口",
-            "肩部塔楼：高耸垂直的武器拘束器塔架，侧面印有白色'EVA 01 TEST'文字标识"
-          ],
-          "confusable_distractors": ["eva_unit_02", "eva_unit_00", "gundam_barbatos"],
-          "distractor_reason": "二号机为纯鲜红涂装配四颗独立黄色圆眼；零号机为纯黄或纯蓝涂装配中央单眼大镜头。"
-        },
-        {
-          "ip_id": "gundam_rx_78_2",
-          "series_zh": "机动战士高达 (Mobile Suit Gundam)",
-          "name_zh": "元祖高达 RX-78-2",
-          "creator": "富野由悠季 (Yoshiyuki Tomino)",
-          "discriminative_parts": [
-            "经典三原色机体：纯白装甲主基调配胸部深蓝、驾驶舱门亮红、胸口排气格栅黄色",
-            "头部 V 形天线：额头中央凸起红色五边形传感器，两侧向斜上方对称展开长黄色 V 字天线",
-            "脸颊进气口：双眼下方红色下巴配两侧脸颊黑色凹槽斜切散热排气口"
-          ],
-          "confusable_distractors": ["gundam_mk2", "strike_gundam", "zaku_ii"],
-          "distractor_reason": "扎古 (Zaku II) 为绿色军绿色单眼红色导轨镜头机体，无 V 字天线；强袭高达胸部带有更复杂的折角装甲。"
-        }
-      ]
-    },
-    {
-      "category_id": "kawaii_and_pop_culture",
-      "category_name_zh": "全球潮流、萌系与治愈系图腾",
-      "description": "极简几何极度概括、风靡全球服装周边与文创二创的标志性文化符号",
-      "archetypes": [
-        {
-          "ip_id": "totoro",
-          "series_zh": "龙猫 (My Neighbor Totoro)",
-          "name_zh": "龙猫 (Totoro - 灰龙猫大トトロ)",
-          "creator": "宫崎骏 (Hayao Miyazaki) / 吉卜力工作室",
-          "discriminative_parts": [
-            "体型与面部：圆滚庞大的深灰色毛茸茸水滴体型，尖尖的小耳朵，两枚呆萌大圆眼与黑色扁鼻",
-            "腹部斑纹拓扑：纯米白色的圆鼓肚皮上方，整齐排列着数个倒 V 形（深灰色倒三角弯月牙状）羽状斑纹",
-            "胡须特征：脸颊两侧各有三根修长水平舒展的硬质胡须"
-          ],
-          "confusable_distractors": ["chinchilla_generic", "snorlax", "blue_totoro_chu_totoro"],
-          "distractor_reason": "中龙猫为纯天蓝色且身型偏小；卡比兽为深蓝青色体色配眯眯眼与下獠牙。"
-        },
-        {
-          "ip_id": "sanrio_hello_kitty",
-          "series_zh": "三丽鸥 (Sanrio)",
-          "name_zh": "凯蒂猫 (Hello Kitty)",
-          "creator": "清水侑子 (Yuko Shimizu)",
-          "discriminative_parts": [
-            "五官特征：**绝对无嘴设计 (No Mouth)**，仅有一枚横向椭圆形黄色小鼻子与两颗纯黑圆眼睛",
-            "配饰特征：左耳根部佩戴经典的饱和正红色五瓣胖蝴蝶结（或侧蝴蝶结）",
-            "脸型比例：横向椭圆的纯白猫形头部，脸颊两侧各有三道对称短黑胡须"
-          ],
-          "confusable_distractors": ["kuromi", "mymelody", "cinnamoroll"],
-          "distractor_reason": "美乐蒂佩戴粉色兔耳帽；酷洛米佩戴黑色小恶魔角头巾配粉色骷髅；玉桂狗为下垂大长耳配蓝色眼瞳。"
-        },
-        {
-          "ip_id": "sanrio_kuromi",
-          "series_zh": "三丽鸥 (Sanrio)",
-          "name_zh": "酷洛米 (Kuromi)",
-          "discriminative_parts": [
-            "头饰特征：纯黑色小恶魔尖角兜帽，额头正中央带有标志性的粉红色小骷髅头印记",
-            "颈部装饰：黑色锯齿状小丑风格伊丽莎白领圈，每个尖角末端带有粉红小圆球",
-            "表情特征：常常露出单侧斜挑的调皮坏笑"
-          ]
-        },
-        {
-          "ip_id": "sailor_moon_usagi",
-          "series_zh": "美少女战士 (Sailor Moon)",
-          "name_zh": "月野兔 (Sailor Moon / 月野うさぎ)",
-          "creator": "武内直子 (Naoko Takeuchi)",
-          "discriminative_parts": [
-            "发型发色：极长金色双马尾，头顶两侧配有红色宝石包头丸子头 (Odango)",
-            "额饰特征：纯金细金属月牙冠 (Tiara)，中央镶嵌红宝石",
-            "服装拓扑：白底水手服配深蓝水手领、胸口硕大红丝绸蝴蝶结与心形/金星变身胸针"
-          ]
-        }
-      ]
-    },
-    {
-      "category_id": "gaming_phenomena_and_pokemon",
-      "category_name_zh": "游戏超级 IP 与精灵宝可梦生态",
-      "description": "跨越世代的殿堂级电子游戏角色，具备高度结构化的形态变体与多姿态对照图谱",
-      "archetypes": [
-        {
-          "ip_id": "super_mario",
-          "series_zh": "超级马力欧 (Super Mario)",
-          "name_zh": "马力欧 (Mario)",
-          "creator": "宫本茂 (Shigeru Miyamoto) / 任天堂",
-          "canonical_remote_assets": {
-            "mario_m_cap_logo_svg": "https://upload.wikimedia.org/wikipedia/commons/0/05/Mario_emblem.svg"
-          },
-          "discriminative_parts": [
-            "帽子标志：纯红鸭舌工装帽中央，印有白底红色大写英文字母'M'圆形布贴",
-            "面部毛发：圆球状大鼻子下方，留有一副边缘带有六道圆润波浪弧线的浓密黑色大八字胡",
-            "工装背带：纯红打底圆领衫配深蓝牛仔背带裤，双肩带有两颗醒目的亮黄色大圆纽扣与白手套"
-          ],
-          "confusable_distractors": ["luigi", "wario", "waluigi"],
-          "distractor_reason": "路易吉 (Luigi) 为绿色帽子配字母'L'且体型更修长；瓦力欧 (Wario) 为黄色帽子配大写'W'与锯齿形折角胡须。"
-        },
-        {
-          "ip_id": "genshin_paimon",
-          "series_zh": "原神 (Genshin Impact)",
-          "name_zh": "派蒙 (Paimon)",
-          "creator": "米哈游 (miHoYo / HoYoverse)",
-          "discriminative_parts": [
-            "悬浮光环：头顶上方常态悬浮一枚微带缺口的纯金色几何光环 (Halo)",
-            "发型与发饰：白色蓬松及肩短发，右侧发丝佩戴黑色莫比乌斯几何发夹",
-            "斗篷纹理：深蓝泛紫色连帽斗篷，内衬为浩瀚流动星空与星光粒子，胸前带有倒三角形玫瑰金金边几何搭扣"
-          ]
-        },
-        {
-          "ip_id": "pokemon_pikachu",
-          "series_zh": "精灵宝可梦 (Pokémon)",
-          "name_zh": "皮卡丘 (Pikachu - #025)",
-          "variants": [
-            {"style": "官方高清单色立绘", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"},
-            {"style": "异色闪光版 (深橙黄偏色)", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/25.png"},
-            {"style": "复古像素点阵版", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"},
-            {"style": "背影视角 (遮挡与姿态变化)", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png"}
-          ],
-          "discriminative_parts": ["黑色耳尖长耳朵", "双颊亮红色圆形蓄电颊囊", "锯齿形闪电尾巴", "背部两条深褐色横条纹"],
-          "confusable_distractors": ["raichu", "pichu", "mimikyu"]
-        },
-        {
-          "ip_id": "pokemon_charizard",
-          "series_zh": "精灵宝可梦 (Pokémon)",
-          "name_zh": "喷火龙 (Charizard - #006)",
-          "variants": [
-            {"style": "官方标准立绘", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"},
-            {"style": "异色闪光黑喷 (黑身红内翼)", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/6.png"}
-          ],
-          "discriminative_parts": ["后脑双钝角", "巨大龙蝠双翼", "尾尖恒定燃烧火苗"]
-        },
-        {
-          "ip_id": "pokemon_eevee_family",
-          "series_zh": "精灵宝可梦 (Pokémon)",
-          "name_zh": "伊布 (Eevee) 8 大属性进化分支同底盘辨析群",
-          "members": ["133_伊布", "134_水伊布", "135_雷伊布", "136_火伊布", "196_太阳伊布", "197_月亮伊布", "470_叶伊布", "471_冰伊布", "700_仙子伊布"],
-          "test_purpose": "高度相似的四足狐狸底盘轮廓，仅凭耳朵形状、领口毛发质感与额头花纹区分不同元素属性进化形态"
-        }
-      ]
-    },
-    {
-      "category_id": "modular_synthetic_pack",
-      "category_name_zh": "Kenney 原创无版权可拆解积木库",
-      "description": "100% 规则可控的纯数学积木部件，用于剥离大模型预训练死记硬背，纯粹检验底层图元计数与空间推理能力",
-      "primary_source": "https://kenney.nl/assets/monster-builder-pack",
-      "license": "CC0 1.0 Universal (Public Domain)",
-      "modular_parts": {
-        "bodies": ["4 种基础几何形态 (圆角正方, 椭圆水滴, 六棱柱, 尖顶梯形) × 5 种配色"],
-        "eyes": ["单眼大眼球, 双对称正视眼, 三眼三角阵, 眯眯眼, 怒视眼, 睫毛眼"],
-        "mouths": ["张口露尖牙, 憨笑, 紧闭平线, 尖鸟喙, 舌头吐出"],
-        "accessories": ["弯角, 螺旋独角, 蝙蝠飞翼, 机械天线, 三齿王冠, 领结, 围巾"]
-      }
-    }
+  "total_curated": 87,
+  "franchises": [
+    "少年JUMP热血经典 (龙珠/航海王/火影/鬼灭/猎人/进击的巨人)",
+    "米哈游开放世界宇宙 (原神/崩坏：星穹铁道)",
+    "吉卜力工作室与国民殿堂 (龙猫/哆啦A梦)",
+    "精灵宝可梦全明星家族 (初代核心名将/伊布进化链/异色与像素变体)"
   ],
-  "remote_anime_dataset_references": [
+  "items": [
     {
-      "dataset_id": "danbooru_character_tags",
-      "title": "Danbooru 大规模动漫角色细粒度标签数据集",
-      "access_url": "https://huggingface.co/datasets/animelover/danbooru2021",
-      "total_images": 4500000,
-      "character_classes": 40000,
-      "usage_in_datawheel": "提供权威的全球角色名称、发色、瞳色、服装配件层级标签体系与跨作品对应关系"
+      "id": "anime_shonen_jump_01_dragonball_goku",
+      "universe": "龙珠 (Dragon Ball)",
+      "name_zh": "孙悟空",
+      "name_en": "Son Goku",
+      "attributes": "Saiyan / Super Saiyan",
+      "role": "Protagonist",
+      "local_path": "assets/character_ips/shonen_jump/01_dragonball_goku.png",
+      "format": "transparent_png",
+      "resolution": "3892x3944"
     },
     {
-      "dataset_id": "anime_instance_segmentation",
-      "title": "AnimeInstanceSegmentation (高精度 Alpha 透明角色前景提取库)",
-      "access_url": "https://huggingface.co/datasets/dreMaz/AnimeInstanceSegmentationDataset",
-      "usage_in_datawheel": "用于从动漫插画中直接提取无毛边的透明通道人物前景，用于商品贴图生成"
+      "id": "anime_shonen_jump_02_onepiece_luffy",
+      "universe": "航海王 (One Piece)",
+      "name_zh": "蒙奇·D·路飞",
+      "name_en": "Monkey D. Luffy",
+      "attributes": "Straw Hat Pirates",
+      "role": "Captain",
+      "local_path": "assets/character_ips/shonen_jump/02_onepiece_luffy.png",
+      "format": "transparent_png",
+      "resolution": "3312x3080"
     },
     {
-      "dataset_id": "manga109_corpus",
-      "title": "Manga109 日本学术研究级黑白线稿与角色框标注库",
-      "access_url": "http://www.manga109.org/",
-      "total_pages": 10000,
-      "usage_in_datawheel": "用于黑白线稿到彩色商品二创的跨模态识别评测"
+      "id": "anime_shonen_jump_03_onepiece_luffy_gear5",
+      "universe": "航海王 (One Piece)",
+      "name_zh": "路飞 (五档尼卡)",
+      "name_en": "Luffy (Gear 5 Nika)",
+      "attributes": "Sun God Nika",
+      "role": "Awakening",
+      "local_path": "assets/character_ips/shonen_jump/03_onepiece_luffy_gear5.png",
+      "format": "transparent_png",
+      "resolution": "1024x796"
+    },
+    {
+      "id": "anime_shonen_jump_04_onepiece_luffy_chibi",
+      "universe": "航海王 (One Piece)",
+      "name_zh": "路飞 (Q版)",
+      "name_en": "Luffy (Chibi)",
+      "attributes": "Straw Hat Pirates",
+      "role": "Chibi Variant",
+      "local_path": "assets/character_ips/shonen_jump/04_onepiece_luffy_chibi.png",
+      "format": "transparent_png",
+      "resolution": "667x1024"
+    },
+    {
+      "id": "anime_shonen_jump_05_onepiece_zoro",
+      "universe": "航海王 (One Piece)",
+      "name_zh": "罗罗诺亚·索隆",
+      "name_en": "Roronoa Zoro",
+      "attributes": "Three Sword Style",
+      "role": "Swordsman",
+      "local_path": "assets/character_ips/shonen_jump/05_onepiece_zoro.png",
+      "format": "transparent_png",
+      "resolution": "2812x3456"
+    },
+    {
+      "id": "anime_shonen_jump_06_onepiece_zoro_wano",
+      "universe": "航海王 (One Piece)",
+      "name_zh": "索隆 (和之国篇)",
+      "name_en": "Zoro (Wano Country)",
+      "attributes": "Enma / Wano Kimono",
+      "role": "Swordsman",
+      "local_path": "assets/character_ips/shonen_jump/06_onepiece_zoro_wano.png",
+      "format": "transparent_png",
+      "resolution": "3960x4188"
+    },
+    {
+      "id": "anime_shonen_jump_07_naruto_sasuke",
+      "universe": "火影忍者 (Naruto)",
+      "name_zh": "宇智波佐助",
+      "name_en": "Sasuke Uchiha",
+      "attributes": "Sharingan / Rinnegan",
+      "role": "Shinobi",
+      "local_path": "assets/character_ips/shonen_jump/07_naruto_sasuke.png",
+      "format": "transparent_png",
+      "resolution": "2832x4264"
+    },
+    {
+      "id": "anime_shonen_jump_08_naruto_uzumaki",
+      "universe": "火影忍者 (Naruto)",
+      "name_zh": "漩涡鸣人",
+      "name_en": "Naruto Uzumaki",
+      "attributes": "Nine-Tails Jinchuriki",
+      "role": "Hokage",
+      "local_path": "assets/character_ips/shonen_jump/08_naruto_uzumaki.png",
+      "format": "transparent_png",
+      "resolution": "300x228"
+    },
+    {
+      "id": "anime_shonen_jump_09_demonslayer_tanjiro_water",
+      "universe": "鬼灭之刃 (Demon Slayer)",
+      "name_zh": "灶门炭治郎 (水之呼吸)",
+      "name_en": "Tanjiro Kamado (Water)",
+      "attributes": "Water Breathing",
+      "role": "Demon Slayer",
+      "local_path": "assets/character_ips/shonen_jump/09_demonslayer_tanjiro_water.png",
+      "format": "transparent_png",
+      "resolution": "3244x4268"
+    },
+    {
+      "id": "anime_shonen_jump_10_demonslayer_tanjiro_hinokami",
+      "universe": "鬼灭之刃 (Demon Slayer)",
+      "name_zh": "灶门炭治郎 (火之神神乐)",
+      "name_en": "Tanjiro (Hinokami Kagura)",
+      "attributes": "Sun Breathing",
+      "role": "Demon Slayer",
+      "local_path": "assets/character_ips/shonen_jump/10_demonslayer_tanjiro_hinokami.png",
+      "format": "transparent_png",
+      "resolution": "4176x4300"
+    },
+    {
+      "id": "anime_shonen_jump_11_demonslayer_nezuko",
+      "universe": "鬼灭之刃 (Demon Slayer)",
+      "name_zh": "灶门祢豆子",
+      "name_en": "Nezuko Kamado",
+      "attributes": "Blood Demon Art",
+      "role": "Demon Heroine",
+      "local_path": "assets/character_ips/shonen_jump/11_demonslayer_nezuko.png",
+      "format": "transparent_png",
+      "resolution": "4256x4116"
+    },
+    {
+      "id": "anime_shonen_jump_12_demonslayer_zenitsu",
+      "universe": "鬼灭之刃 (Demon Slayer)",
+      "name_zh": "我妻善逸",
+      "name_en": "Zenitsu Agatsuma",
+      "attributes": "Thunder Breathing",
+      "role": "Demon Slayer",
+      "local_path": "assets/character_ips/shonen_jump/12_demonslayer_zenitsu.png",
+      "format": "transparent_png",
+      "resolution": "2724x3972"
+    },
+    {
+      "id": "anime_shonen_jump_13_demonslayer_rengoku",
+      "universe": "鬼灭之刃 (Demon Slayer)",
+      "name_zh": "炼狱杏寿郎 (炎柱)",
+      "name_en": "Kyojuro Rengoku",
+      "attributes": "Flame Hashira",
+      "role": "Flame Breathing",
+      "local_path": "assets/character_ips/shonen_jump/13_demonslayer_rengoku.png",
+      "format": "transparent_png",
+      "resolution": "4152x4084"
+    },
+    {
+      "id": "anime_shonen_jump_14_demonslayer_kokushibo",
+      "universe": "鬼灭之刃 (Demon Slayer)",
+      "name_zh": "黑死牟 (上弦之一)",
+      "name_en": "Kokushibo",
+      "attributes": "Moon Breathing",
+      "role": "Upper Rank One",
+      "local_path": "assets/character_ips/shonen_jump/14_demonslayer_kokushibo.png",
+      "format": "transparent_png",
+      "resolution": "2712x3020"
+    },
+    {
+      "id": "anime_shonen_jump_15_hunter_gon",
+      "universe": "全职猎人 (Hunter x Hunter)",
+      "name_zh": "杰·富力士",
+      "name_en": "Gon Freecss",
+      "attributes": "Enhancer / Jajanken",
+      "role": "Hunter",
+      "local_path": "assets/character_ips/shonen_jump/15_hunter_gon.png",
+      "format": "transparent_png",
+      "resolution": "2768x4164"
+    },
+    {
+      "id": "anime_shonen_jump_16_aot_levi_ackerman",
+      "universe": "进击的巨人 (Attack on Titan)",
+      "name_zh": "利威尔·阿克曼",
+      "name_en": "Levi Ackerman",
+      "attributes": "Survey Corps Captain",
+      "role": "Humanity Strongest Soldier",
+      "local_path": "assets/character_ips/shonen_jump/16_aot_levi_ackerman.png",
+      "format": "transparent_png",
+      "resolution": "512x512"
+    },
+    {
+      "id": "anime_genshin_01_zhongli",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "钟离",
+      "name_en": "Zhongli",
+      "attributes": "Geo / Liyue Archon",
+      "role": "Polearm",
+      "local_path": "assets/character_ips/genshin/01_zhongli.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_02_raiden_shogun",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "雷电将军",
+      "name_en": "Raiden Shogun",
+      "attributes": "Electro / Inazuma Archon",
+      "role": "Polearm",
+      "local_path": "assets/character_ips/genshin/02_raiden_shogun.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_03_furina",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "芙宁娜",
+      "name_en": "Furina",
+      "attributes": "Hydro / Fontaine Archon",
+      "role": "Sword",
+      "local_path": "assets/character_ips/genshin/03_furina.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_04_neuvillette",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "那维莱特",
+      "name_en": "Neuvillette",
+      "attributes": "Hydro / Dragon Sovereign",
+      "role": "Catalyst",
+      "local_path": "assets/character_ips/genshin/04_neuvillette.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_05_nahida",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "纳西妲",
+      "name_en": "Nahida",
+      "attributes": "Dendro / Sumeru Archon",
+      "role": "Catalyst",
+      "local_path": "assets/character_ips/genshin/05_nahida.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_06_hu_tao",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "胡桃",
+      "name_en": "Hu Tao",
+      "attributes": "Pyro / Wangsheng Parlor",
+      "role": "Polearm",
+      "local_path": "assets/character_ips/genshin/06_hu_tao.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_07_kaedehara_kazuha",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "枫原万叶",
+      "name_en": "Kaedehara Kazuha",
+      "attributes": "Anemo / Wandering Samurai",
+      "role": "Sword",
+      "local_path": "assets/character_ips/genshin/07_kaedehara_kazuha.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_08_xiao",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "魈",
+      "name_en": "Xiao",
+      "attributes": "Anemo / Adeptus",
+      "role": "Polearm",
+      "local_path": "assets/character_ips/genshin/08_xiao.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_09_ganyu",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "甘雨",
+      "name_en": "Ganyu",
+      "attributes": "Cryo / Half-Qilin",
+      "role": "Bow",
+      "local_path": "assets/character_ips/genshin/09_ganyu.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_10_kamisato_ayaka",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "神里绫华",
+      "name_en": "Kamisato Ayaka",
+      "attributes": "Cryo / Yashiro Commission",
+      "role": "Sword",
+      "local_path": "assets/character_ips/genshin/10_kamisato_ayaka.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_11_diluc",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "迪卢克",
+      "name_en": "Diluc",
+      "attributes": "Pyro / Dawn Winery",
+      "role": "Claymore",
+      "local_path": "assets/character_ips/genshin/11_diluc.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_12_venti",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "温迪",
+      "name_en": "Venti",
+      "attributes": "Anemo / Mondstadt Archon",
+      "role": "Bow",
+      "local_path": "assets/character_ips/genshin/12_venti.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_13_yae_miko",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "八重神子",
+      "name_en": "Yae Miko",
+      "attributes": "Electro / Grand Narukami Shrine",
+      "role": "Catalyst",
+      "local_path": "assets/character_ips/genshin/13_yae_miko.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_14_klee",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "可莉",
+      "name_en": "Klee",
+      "attributes": "Pyro / Spark Knight",
+      "role": "Catalyst",
+      "local_path": "assets/character_ips/genshin/14_klee.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_15_tartaglia_childe",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "达达利亚",
+      "name_en": "Tartaglia (Childe)",
+      "attributes": "Hydro / Fatui Harbinger",
+      "role": "Bow",
+      "local_path": "assets/character_ips/genshin/15_tartaglia_childe.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_16_wanderer",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "流浪者 (散兵)",
+      "name_en": "Wanderer",
+      "attributes": "Anemo / Former Harbinger",
+      "role": "Catalyst",
+      "local_path": "assets/character_ips/genshin/16_wanderer.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_17_alhaitham",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "艾尔海森",
+      "name_en": "Alhaitham",
+      "attributes": "Dendro / Akademiya Scribe",
+      "role": "Sword",
+      "local_path": "assets/character_ips/genshin/17_alhaitham.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_18_yelan",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "夜兰",
+      "name_en": "Yelan",
+      "attributes": "Hydro / Ministry of Civil Affairs",
+      "role": "Bow",
+      "local_path": "assets/character_ips/genshin/18_yelan.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_19_navia",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "娜维娅",
+      "name_en": "Navia",
+      "attributes": "Geo / Spina di Rosula President",
+      "role": "Claymore",
+      "local_path": "assets/character_ips/genshin/19_navia.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_20_arlecchino",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "阿蕾奇诺 (仆人)",
+      "name_en": "Arlecchino",
+      "attributes": "Pyro / The Knave Harbinger",
+      "role": "Polearm",
+      "local_path": "assets/character_ips/genshin/20_arlecchino.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_21_clorinde",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "克洛琳德",
+      "name_en": "Clorinde",
+      "attributes": "Electro / Champion Duelist",
+      "role": "Sword",
+      "local_path": "assets/character_ips/genshin/21_clorinde.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_22_keqing",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "刻晴",
+      "name_en": "Keqing",
+      "attributes": "Electro / Yuheng of Liyue Qixing",
+      "role": "Sword",
+      "local_path": "assets/character_ips/genshin/22_keqing.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_23_mona",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "莫娜",
+      "name_en": "Mona Megistus",
+      "attributes": "Hydro / Astrologist",
+      "role": "Catalyst",
+      "local_path": "assets/character_ips/genshin/23_mona.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_24_yoimiya",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "宵宫",
+      "name_en": "Yoimiya",
+      "attributes": "Pyro / Naganohara Fireworks",
+      "role": "Bow",
+      "local_path": "assets/character_ips/genshin/24_yoimiya.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_genshin_25_jean",
+      "universe": "原神 (Genshin Impact)",
+      "name_zh": "琴",
+      "name_en": "Jean Gunnhildr",
+      "attributes": "Anemo / Acting Grand Master",
+      "role": "Sword",
+      "local_path": "assets/character_ips/genshin/25_jean.png",
+      "format": "transparent_png",
+      "resolution": "2048x1024"
+    },
+    {
+      "id": "anime_starrail_01_acheron",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "黄泉",
+      "name_en": "Acheron",
+      "attributes": "Nihility / Lightning",
+      "role": "Galaxy Ranger",
+      "local_path": "assets/character_ips/starrail/01_acheron.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_02_firefly",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "流萤 (萨姆)",
+      "name_en": "Firefly (SAM)",
+      "attributes": "Destruction / Fire",
+      "role": "Iron Cavalry",
+      "local_path": "assets/character_ips/starrail/02_firefly.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_03_kafka",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "卡芙卡",
+      "name_en": "Kafka",
+      "attributes": "Nihility / Lightning",
+      "role": "Stellaron Hunter",
+      "local_path": "assets/character_ips/starrail/03_kafka.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_04_jing_yuan",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "景元",
+      "name_en": "Jing Yuan",
+      "attributes": "Erudition / Lightning",
+      "role": "Xianzhou Luofu General",
+      "local_path": "assets/character_ips/starrail/04_jing_yuan.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_05_black_swan",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "黑天鹅",
+      "name_en": "Black Swan",
+      "attributes": "Nihility / Wind",
+      "role": "Memokeeper",
+      "local_path": "assets/character_ips/starrail/05_black_swan.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_06_dan_heng_il",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "丹恒·饮月",
+      "name_en": "Dan Heng - Imbibitor Lunae",
+      "attributes": "Destruction / Imaginary",
+      "role": "Vidyadhara High Elder",
+      "local_path": "assets/character_ips/starrail/06_dan_heng_il.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_07_blade",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "刃",
+      "name_en": "Blade",
+      "attributes": "Destruction / Wind",
+      "role": "Stellaron Hunter",
+      "local_path": "assets/character_ips/starrail/07_blade.png",
+      "format": "transparent_png",
+      "resolution": "1994x2042"
+    },
+    {
+      "id": "anime_starrail_08_silver_wolf",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "银狼",
+      "name_en": "Silver Wolf",
+      "attributes": "Nihility / Quantum",
+      "role": "Stellaron Hunter Hacker",
+      "local_path": "assets/character_ips/starrail/08_silver_wolf.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_09_aventurine",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "砂金",
+      "name_en": "Aventurine",
+      "attributes": "Preservation / Imaginary",
+      "role": "IPC Senior Manager",
+      "local_path": "assets/character_ips/starrail/09_aventurine.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_10_seele",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "希儿",
+      "name_en": "Seele",
+      "attributes": "Hunt / Quantum",
+      "role": "Wildfire",
+      "local_path": "assets/character_ips/starrail/10_seele.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_11_march_7th",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "三月七",
+      "name_en": "March 7th",
+      "attributes": "Preservation / Ice",
+      "role": "Astral Express",
+      "local_path": "assets/character_ips/starrail/11_march_7th.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_12_sparkle",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "花火",
+      "name_en": "Sparkle",
+      "attributes": "Harmony / Quantum",
+      "role": "Masked Fool",
+      "local_path": "assets/character_ips/starrail/12_sparkle.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_13_robin",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "知更鸟",
+      "name_en": "Robin",
+      "attributes": "Harmony / Physical",
+      "role": "Halovian Singer",
+      "local_path": "assets/character_ips/starrail/13_robin.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_14_topaz",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "托帕&账账",
+      "name_en": "Topaz & Numby",
+      "attributes": "Hunt / Fire",
+      "role": "IPC Senior Manager",
+      "local_path": "assets/character_ips/starrail/14_topaz.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_starrail_15_dan_heng",
+      "universe": "崩坏：星穹铁道 (Honkai: Star Rail)",
+      "name_zh": "丹恒",
+      "name_en": "Dan Heng",
+      "attributes": "Hunt / Wind",
+      "role": "Astral Express Guard",
+      "local_path": "assets/character_ips/starrail/15_dan_heng.png",
+      "format": "transparent_png",
+      "resolution": "2048x2048"
+    },
+    {
+      "id": "anime_classics_01_ghibli_totoro",
+      "universe": "吉卜力 (Studio Ghibli)",
+      "name_zh": "龙猫",
+      "name_en": "Totoro",
+      "attributes": "Forest Spirit",
+      "role": "Mascot Icon",
+      "local_path": "assets/character_ips/classics/01_ghibli_totoro.png",
+      "format": "transparent_png",
+      "resolution": "513x706"
+    },
+    {
+      "id": "anime_classics_02_doraemon",
+      "universe": "哆啦A梦 (Doraemon)",
+      "name_zh": "哆啦A梦",
+      "name_en": "Doraemon",
+      "attributes": "22nd Century Cat Robot",
+      "role": "Universal Cultural Icon",
+      "local_path": "assets/character_ips/classics/02_doraemon.png",
+      "format": "transparent_png",
+      "resolution": "208x243"
+    },
+    {
+      "id": "anime_pokemon_001_bulbasaur",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "妙蛙种子",
+      "name_en": "Bulbasaur",
+      "attributes": "Grass / Poison",
+      "role": "Seed Pokémon",
+      "local_path": "assets/character_ips/pokemon/001_bulbasaur.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_001_bulbasaur_shiny",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "妙蛙种子 (异色)",
+      "name_en": "Bulbasaur (Shiny)",
+      "attributes": "Grass / Poison",
+      "role": "Shiny Variant",
+      "local_path": "assets/character_ips/pokemon/001_bulbasaur_shiny.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_006_charizard",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "喷火龙 (官方立绘)",
+      "name_en": "Charizard (Official)",
+      "attributes": "Fire / Flying",
+      "role": "Flame Pokémon",
+      "local_path": "assets/character_ips/pokemon/006_charizard.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_006_charizard_shiny",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "喷火龙 (黑异色)",
+      "name_en": "Charizard (Shiny Black)",
+      "attributes": "Fire / Flying",
+      "role": "Shiny Variant",
+      "local_path": "assets/character_ips/pokemon/006_charizard_shiny.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_009_blastoise",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "水箭龟",
+      "name_en": "Blastoise",
+      "attributes": "Water",
+      "role": "Shellfish Pokémon",
+      "local_path": "assets/character_ips/pokemon/009_blastoise.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_009_blastoise_shiny",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "水箭龟 (异色)",
+      "name_en": "Blastoise (Shiny)",
+      "attributes": "Water",
+      "role": "Shiny Variant",
+      "local_path": "assets/character_ips/pokemon/009_blastoise_shiny.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_025_pikachu",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "皮卡丘 (官方立绘)",
+      "name_en": "Pikachu (Official)",
+      "attributes": "Electric",
+      "role": "Mouse Pokémon",
+      "local_path": "assets/character_ips/pokemon/025_pikachu.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_025_pikachu_back",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "皮卡丘 (对战背影)",
+      "name_en": "Pikachu (Back Sprite)",
+      "attributes": "Electric",
+      "role": "Combat Perspective",
+      "local_path": "assets/character_ips/pokemon/025_pikachu_back.png",
+      "format": "transparent_png",
+      "resolution": "96x96"
+    },
+    {
+      "id": "anime_pokemon_025_pikachu_pixel",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "皮卡丘 (像素点阵)",
+      "name_en": "Pikachu (Pixel)",
+      "attributes": "Electric",
+      "role": "Retro Pixel Sprite",
+      "local_path": "assets/character_ips/pokemon/025_pikachu_pixel.png",
+      "format": "transparent_png",
+      "resolution": "96x96"
+    },
+    {
+      "id": "anime_pokemon_025_pikachu_shiny",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "皮卡丘 (异色变体)",
+      "name_en": "Pikachu (Shiny)",
+      "attributes": "Electric",
+      "role": "Shiny Variant",
+      "local_path": "assets/character_ips/pokemon/025_pikachu_shiny.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_039_jigglypuff",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "胖丁",
+      "name_en": "Jigglypuff",
+      "attributes": "Normal / Fairy",
+      "role": "Balloon Pokémon",
+      "local_path": "assets/character_ips/pokemon/039_jigglypuff.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_052_meowth",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "喵喵",
+      "name_en": "Meowth",
+      "attributes": "Normal",
+      "role": "Scratch Cat Pokémon",
+      "local_path": "assets/character_ips/pokemon/052_meowth.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_054_psyduck",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "可达鸭",
+      "name_en": "Psyduck",
+      "attributes": "Water",
+      "role": "Duck Pokémon",
+      "local_path": "assets/character_ips/pokemon/054_psyduck.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_059_arcanine",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "风速狗",
+      "name_en": "Arcanine",
+      "attributes": "Fire",
+      "role": "Legendary Pokémon",
+      "local_path": "assets/character_ips/pokemon/059_arcanine.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_065_alakazam",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "胡地",
+      "name_en": "Alakazam",
+      "attributes": "Psychic",
+      "role": "Psi Pokémon",
+      "local_path": "assets/character_ips/pokemon/065_alakazam.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_068_machamp",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "怪力",
+      "name_en": "Machamp",
+      "attributes": "Fighting",
+      "role": "Superpower Pokémon",
+      "local_path": "assets/character_ips/pokemon/068_machamp.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_074_geodude",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "小拳石",
+      "name_en": "Geodude",
+      "attributes": "Rock / Ground",
+      "role": "Rock Pokémon",
+      "local_path": "assets/character_ips/pokemon/074_geodude.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_077_ponyta",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "小火马",
+      "name_en": "Ponyta",
+      "attributes": "Fire",
+      "role": "Fire Horse Pokémon",
+      "local_path": "assets/character_ips/pokemon/077_ponyta.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_079_slowpoke",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "呆呆兽",
+      "name_en": "Slowpoke",
+      "attributes": "Water / Psychic",
+      "role": "Dopey Pokémon",
+      "local_path": "assets/character_ips/pokemon/079_slowpoke.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_094_gengar",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "耿鬼",
+      "name_en": "Gengar",
+      "attributes": "Ghost / Poison",
+      "role": "Shadow Pokémon",
+      "local_path": "assets/character_ips/pokemon/094_gengar.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_094_gengar_shiny",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "耿鬼 (异色白耿鬼)",
+      "name_en": "Gengar (Shiny)",
+      "attributes": "Ghost / Poison",
+      "role": "Shiny Variant",
+      "local_path": "assets/character_ips/pokemon/094_gengar_shiny.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_095_onix",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "大岩蛇",
+      "name_en": "Onix",
+      "attributes": "Rock / Ground",
+      "role": "Rock Snake Pokémon",
+      "local_path": "assets/character_ips/pokemon/095_onix.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_133_eevee",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "伊布",
+      "name_en": "Eevee",
+      "attributes": "Normal",
+      "role": "Evolution Pokémon",
+      "local_path": "assets/character_ips/pokemon/133_eevee.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_133_eevee_shiny",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "伊布 (银白异色)",
+      "name_en": "Eevee (Shiny)",
+      "attributes": "Normal",
+      "role": "Shiny Variant",
+      "local_path": "assets/character_ips/pokemon/133_eevee_shiny.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_134_vaporeon",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "水伊布",
+      "name_en": "Vaporeon",
+      "attributes": "Water",
+      "role": "Bubble Jet Pokémon",
+      "local_path": "assets/character_ips/pokemon/134_vaporeon.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_135_jolteon",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "雷伊布",
+      "name_en": "Jolteon",
+      "attributes": "Electric",
+      "role": "Lightning Pokémon",
+      "local_path": "assets/character_ips/pokemon/135_jolteon.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_136_flareon",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "火伊布",
+      "name_en": "Flareon",
+      "attributes": "Fire",
+      "role": "Flame Pokémon",
+      "local_path": "assets/character_ips/pokemon/136_flareon.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_196_espeon",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "太阳伊布",
+      "name_en": "Espeon",
+      "attributes": "Psychic",
+      "role": "Sun Pokémon",
+      "local_path": "assets/character_ips/pokemon/196_espeon.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
+    },
+    {
+      "id": "anime_pokemon_197_umbreon",
+      "universe": "宝可梦 (Pokémon)",
+      "name_zh": "月亮伊布",
+      "name_en": "Umbreon",
+      "attributes": "Dark",
+      "role": "Moonlight Pokémon",
+      "local_path": "assets/character_ips/pokemon/197_umbreon.png",
+      "format": "transparent_png",
+      "resolution": "475x475"
     }
   ]
 }

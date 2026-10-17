@@ -84,8 +84,51 @@ class CommodityCompositor:
 
         return rgb, lighting_map
 
+    def load_real_packshot(self, packshot_path: str) -> Tuple[np.ndarray, np.ndarray]:
+        """加载真实单反实拍商品底图，并提取局部归一化织物光影场 (lighting_map)。
+        通过局部低频环境光除法，无论白 T 恤、麻灰 T 恤还是纯黑卫衣，均能精准提取真实褶皱明暗与织物纹理。
+        """
+        pil_bg = Image.open(packshot_path).convert("RGB")
+        if pil_bg.size != (self.width, self.height):
+            pil_bg = pil_bg.resize((self.width, self.height), Image.Resampling.LANCZOS)
+        rgb = np.array(pil_bg, dtype=np.uint8)
+
+        gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY).astype(np.float32)
+        # 大尺度高斯平滑估计局部基础环境光，避免黑色衣物绝对亮度低导致印花全黑
+        ambient = cv2.GaussianBlur(gray, (0, 0), sigmaX=45.0, sigmaY=45.0)
+        lighting_map = (gray + 15.0) / (ambient + 15.0)
+        lighting_map = np.clip(lighting_map, 0.68, 1.22).astype(np.float32)
+        return rgb, lighting_map
+
+    def load_real_packshot_letterboxed(self, packshot_path: str,
+                                       bg_color: Tuple[int, int, int] = (255, 255, 255)):
+        """保真加载真实商品底板：按原始宽高比 letterbox 居中放置，绝不拉伸商品。
+
+        返回 (rgb, lighting_map, meta)；meta 含 scale/new_w/new_h/ox/oy/src_w/src_h，
+        用于把底板上原有标注（printable_bbox_norm）精确映射到 640 画布坐标。
+        """
+        pil_bg = Image.open(packshot_path).convert("RGB")
+        src_w, src_h = pil_bg.size
+        scale = min(self.width / float(src_w), self.height / float(src_h))
+        new_w = max(1, int(round(src_w * scale)))
+        new_h = max(1, int(round(src_h * scale)))
+        ox = (self.width - new_w) // 2
+        oy = (self.height - new_h) // 2
+        canvas = Image.new("RGB", (self.width, self.height), bg_color)
+        canvas.paste(pil_bg.resize((new_w, new_h), Image.Resampling.LANCZOS), (ox, oy))
+        rgb = np.array(canvas, dtype=np.uint8)
+
+        gray = cv2.cvtColor(rgb, cv2.COLOR_RGB2GRAY).astype(np.float32)
+        ambient = cv2.GaussianBlur(gray, (0, 0), sigmaX=45.0, sigmaY=45.0)
+        lighting_map = (gray + 15.0) / (ambient + 15.0)
+        lighting_map = np.clip(lighting_map, 0.68, 1.22).astype(np.float32)
+        meta = {"scale": round(scale, 5), "new_w": new_w, "new_h": new_h,
+                "ox": ox, "oy": oy, "src_w": src_w, "src_h": src_h,
+                "canvas_w": self.width, "canvas_h": self.height}
+        return rgb, lighting_map, meta
+
     # -------------------------------------------------------------------------
-    # 2. 单应性透视贴附与 Mask 提取 (Perspective Homography & Mask Tracking)
+    # 2. 单应性透视贴附与真实折痕置换 (Homography + Fold Displacement Mapping)
     # -------------------------------------------------------------------------
     def apply_homography_warp(self, element_rgba: Image.Image,
                               quad_dst: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
@@ -111,26 +154,81 @@ class CommodityCompositor:
         alpha_mask = warped_rgba[:, :, 3]
         return warped_rgba, alpha_mask
 
+    def apply_fold_displacement(self, warped_rgba: np.ndarray, bg_rgb: np.ndarray,
+                                displacement_scale: float = 4.5) -> Tuple[np.ndarray, np.ndarray]:
+        """双向折痕置换贴图 (Fold Displacement Mapping)：
+        根据实拍底图的明暗梯度场 (Sobel 导数) 计算布料起伏法向量，使印花随真实衣服褶皱自然弯曲。
+        """
+        h, w = bg_rgb.shape[:2]
+        gray = cv2.cvtColor(bg_rgb, cv2.COLOR_RGB2GRAY).astype(np.float32)
+        # 中尺度平滑，提取宏观布料折痕而非单根纱线噪点
+        smooth = cv2.GaussianBlur(gray, (0, 0), sigmaX=6.0, sigmaY=6.0)
+        gx = cv2.Sobel(smooth, cv2.CV_32F, 1, 0, ksize=3)
+        gy = cv2.Sobel(smooth, cv2.CV_32F, 0, 1, ksize=3)
+
+        # 归一化梯度并按位移强度缩放
+        norm = max(float(np.percentile(np.hypot(gx, gy), 98)), 1e-3)
+        dx = (gx / norm) * displacement_scale
+        dy = (gy / norm) * displacement_scale
+
+        grid_x, grid_y = np.meshgrid(np.arange(w, dtype=np.float32), np.arange(h, dtype=np.float32))
+        map_x = (grid_x - dx).astype(np.float32)
+        map_y = (grid_y - dy).astype(np.float32)
+
+        displaced_rgba = cv2.remap(
+            warped_rgba, map_x, map_y,
+            interpolation=cv2.INTER_LINEAR,
+            borderMode=cv2.BORDER_CONSTANT,
+            borderValue=(0, 0, 0, 0)
+        )
+        return displaced_rgba, displaced_rgba[:, :, 3]
+
     # -------------------------------------------------------------------------
     # 3. 物理贴附融合 (Physical Material Blending)
     # -------------------------------------------------------------------------
     def blend_onto_substrate(self, bg_rgb: np.ndarray, lighting_map: np.ndarray,
                              warped_rgba: np.ndarray,
-                             blend_mode: str = "silk_screen") -> np.ndarray:
+                             blend_mode: str = "silk_screen",
+                             ink_opacity: float = 0.94,
+                             weave_strength: float = 0.65) -> np.ndarray:
         """根据材质特性进行光照调制与图层混合。
-        silk_screen: 丝网印刷（保留印花固有色，但受底板光照阴影和粗糙度调制）
+        - silk_screen: 基础丝网印刷
+        - real_garment_screenprint: 实拍衣物物理胶印融合（褶皱阴影乘算 + 微距纱线渗透 + 边缘光学柔化）
+        - opaque_screenprint: 不透明塑胶浆印花（深色/繁复面料上保证图案可辨认）
         """
         result = bg_rgb.copy().astype(np.float32)
         fg_rgb = warped_rgba[:, :, :3].astype(np.float32)
-        alpha = (warped_rgba[:, :, 3].astype(np.float32) / 255.0)[:, :, np.newaxis]
+        raw_alpha = warped_rgba[:, :, 3].astype(np.float32) / 255.0
+        light_3d = lighting_map[:, :, np.newaxis]
 
-        if blend_mode == "silk_screen":
-            # 印花油墨受表面光照图 (lighting_map) 乘算
+        if blend_mode == "real_garment_screenprint":
+            # 边缘做 0.6px 轻微光学柔化，消除数字生硬切边，融入棉质纤维
+            soft_alpha = cv2.GaussianBlur(raw_alpha, (3, 3), sigmaX=0.55)[:, :, np.newaxis]
+
+            # 提取底板微距高频织物纹理 (Weave micro-texture)
+            gray_bg = cv2.cvtColor(bg_rgb, cv2.COLOR_RGB2GRAY).astype(np.float32)
+            blur_micro = cv2.GaussianBlur(gray_bg, (0, 0), sigmaX=1.5)
+            weave_detail = np.clip((gray_bg - blur_micro) * weave_strength, -12.0, 12.0)[:, :, np.newaxis]
+
+            # Albedo × Shading 物理乘算 + 织物微纹理透出
+            modulated_fg = np.clip(fg_rgb * (0.22 + 0.78 * light_3d) + weave_detail, 0, 255)
+            ink_alpha = soft_alpha * ink_opacity
+            result = modulated_fg * ink_alpha + result * (1.0 - ink_alpha)
+
+        elif blend_mode == "opaque_screenprint":
+            soft_alpha = cv2.GaussianBlur(raw_alpha, (3, 3), sigmaX=0.45)[:, :, np.newaxis]
+            # 塑胶浆遮盖力强：墨色基本保留原色，仅随布料明暗轻微起伏
+            modulated_fg = np.clip(fg_rgb * (0.62 + 0.38 * light_3d), 0, 255)
+            ink_alpha = soft_alpha * ink_opacity
+            result = modulated_fg * ink_alpha + result * (1.0 - ink_alpha)
+
+        elif blend_mode == "silk_screen":
+            alpha = raw_alpha[:, :, np.newaxis]
             light_3d = lighting_map[:, :, np.newaxis]
             modulated_fg = np.clip(fg_rgb * (0.85 + 0.15 * light_3d), 0, 255)
-            # Alpha 正常融合
             result = modulated_fg * alpha + result * (1.0 - alpha)
         else:
+            alpha = raw_alpha[:, :, np.newaxis]
             result = fg_rgb * alpha + result * (1.0 - alpha)
 
         return np.clip(result, 0, 255).astype(np.uint8)
@@ -179,12 +277,17 @@ class CommodityCompositor:
     # -------------------------------------------------------------------------
     # 5. 对称相机传感器与压缩处理 (Symmetric Post-Processing)
     # -------------------------------------------------------------------------
-    def finalize_image_symmetric(self, img_rgb: np.ndarray, quality: int = 88) -> Image.Image:
+    def finalize_image_symmetric(self, img_rgb: np.ndarray, quality: int = 88,
+                                 seed: Optional[int] = None) -> Image.Image:
         """所有样本（正负样本、退化样本、空底图）必须经历完全相同的保存与压缩管线，
         杜绝让模型通过边缘微弱锯齿或重采样伪影作弊。
+        seed 不为空时使用确定性噪声，保证数据集可复现。
         """
         # 添加极微弱传感器模拟噪点 (Sensor Noise, sigma=1.0)
-        noise = np.random.normal(0, 1.0, img_rgb.shape).astype(np.float32)
+        if seed is None:
+            noise = np.random.normal(0, 1.0, img_rgb.shape).astype(np.float32)
+        else:
+            noise = np.random.default_rng(seed).normal(0, 1.0, img_rgb.shape).astype(np.float32)
         final_array = np.clip(img_rgb.astype(np.float32) + noise, 0, 255).astype(np.uint8)
 
         pil_img = Image.fromarray(final_array)

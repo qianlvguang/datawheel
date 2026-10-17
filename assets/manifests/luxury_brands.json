@@ -1,0 +1,915 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "国际顶级高奢品牌资产清单 (Luxury Brands Manifest)",
+  "version": "1.0.0",
+  "total_curated": 100,
+  "sectors": [
+    "Haute Couture",
+    "Horology",
+    "High Jewelry",
+    "Luxury Automotive",
+    "Fragrance"
+  ],
+  "items": [
+    {
+      "id": "lux_001_gucci",
+      "name_en": "Gucci",
+      "name_zh": "古驰",
+      "slug": "gucci",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/001_gucci.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_002_chanel",
+      "name_en": "Chanel",
+      "name_zh": "香奈儿",
+      "slug": "chanel",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/002_chanel.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_003_louis_vuitton",
+      "name_en": "Louis Vuitton",
+      "name_zh": "路易威登",
+      "slug": "louis_vuitton",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/003_louis_vuitton.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_004_prada",
+      "name_en": "Prada",
+      "name_zh": "普拉达",
+      "slug": "prada",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/004_prada.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_005_hermes",
+      "name_en": "Hermès",
+      "name_zh": "爱马仕",
+      "slug": "hermes",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/005_hermes.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_006_dior",
+      "name_en": "Christian Dior",
+      "name_zh": "迪奥",
+      "slug": "dior",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/006_dior.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_007_burberry",
+      "name_en": "Burberry",
+      "name_zh": "博柏利",
+      "slug": "burberry",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/007_burberry.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_008_balenciaga",
+      "name_en": "Balenciaga",
+      "name_zh": "巴黎世家",
+      "slug": "balenciaga",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/008_balenciaga.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_009_versace",
+      "name_en": "Versace",
+      "name_zh": "范思哲",
+      "slug": "versace",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/009_versace.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_010_fendi",
+      "name_en": "Fendi",
+      "name_zh": "芬迪",
+      "slug": "fendi",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/010_fendi.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_011_givenchy",
+      "name_en": "Givenchy",
+      "name_zh": "纪梵希",
+      "slug": "givenchy",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/011_givenchy.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_012_celine",
+      "name_en": "Celine",
+      "name_zh": "思琳",
+      "slug": "celine",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/012_celine.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_013_valentino",
+      "name_en": "Valentino",
+      "name_zh": "华伦天奴",
+      "slug": "valentino",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/013_valentino.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_014_bottega_veneta",
+      "name_en": "Bottega Veneta",
+      "name_zh": "葆蝶家",
+      "slug": "bottega_veneta",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/014_bottega_veneta.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_015_yves_saint_laurent",
+      "name_en": "Yves Saint Laurent",
+      "name_zh": "圣罗兰",
+      "slug": "yves_saint_laurent",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/015_yves_saint_laurent.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_016_balmain",
+      "name_en": "Balmain",
+      "name_zh": "巴尔曼",
+      "slug": "balmain",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/016_balmain.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_017_alexander_mcqueen",
+      "name_en": "Alexander McQueen",
+      "name_zh": "亚历山大麦昆",
+      "slug": "alexander_mcqueen",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/017_alexander_mcqueen.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_018_loewe",
+      "name_en": "Loewe",
+      "name_zh": "罗意威",
+      "slug": "loewe",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/018_loewe.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_019_kenzo",
+      "name_en": "Kenzo",
+      "name_zh": "高田贤三",
+      "slug": "kenzo",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/019_kenzo.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_020_lanvin",
+      "name_en": "Lanvin",
+      "name_zh": "浪凡",
+      "slug": "lanvin",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/020_lanvin.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_021_miu_miu",
+      "name_en": "Miu Miu",
+      "name_zh": "缪缪",
+      "slug": "miu_miu",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/021_miu_miu.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_022_moschino",
+      "name_en": "Moschino",
+      "name_zh": "莫斯奇诺",
+      "slug": "moschino",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/022_moschino.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_023_salvatore_ferragamo",
+      "name_en": "Salvatore Ferragamo",
+      "name_zh": "菲拉格慕",
+      "slug": "salvatore_ferragamo",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/023_salvatore_ferragamo.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_024_dolce_gabbana",
+      "name_en": "Dolce & Gabbana",
+      "name_zh": "杜嘉班纳",
+      "slug": "dolce_gabbana",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/024_dolce_gabbana.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_025_armani",
+      "name_en": "Giorgio Armani",
+      "name_zh": "阿玛尼",
+      "slug": "armani",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/025_armani.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_026_ralph_lauren",
+      "name_en": "Ralph Lauren",
+      "name_zh": "拉夫劳伦",
+      "slug": "ralph_lauren",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/026_ralph_lauren.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_027_ermenegildo_zegna",
+      "name_en": "Ermenegildo Zegna",
+      "name_zh": "杰尼亚",
+      "slug": "ermenegildo_zegna",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/027_ermenegildo_zegna.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_028_brioni",
+      "name_en": "Brioni",
+      "name_zh": "布里奥尼",
+      "slug": "brioni",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/028_brioni.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_029_berluti",
+      "name_en": "Berluti",
+      "name_zh": "伯尔鲁帝",
+      "slug": "berluti",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/029_berluti.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_030_moncler",
+      "name_en": "Moncler",
+      "name_zh": "盟可睐",
+      "slug": "moncler",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/030_moncler.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_031_supreme",
+      "name_en": "Supreme",
+      "name_zh": "至高无上",
+      "slug": "supreme",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/031_supreme.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_032_off_white",
+      "name_en": "Off-White",
+      "name_zh": "灰白",
+      "slug": "off_white",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/032_off_white.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_033_comme_des_garcons",
+      "name_en": "Comme des Garçons",
+      "name_zh": "川久保玲",
+      "slug": "comme_des_garcons",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/033_comme_des_garcons.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_034_issey_miyake",
+      "name_en": "Issey Miyake",
+      "name_zh": "三宅一生",
+      "slug": "issey_miyake",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/034_issey_miyake.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_035_vivienne_westwood",
+      "name_en": "Vivienne Westwood",
+      "name_zh": "西太后",
+      "slug": "vivienne_westwood",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/035_vivienne_westwood.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_036_stone_island",
+      "name_en": "Stone Island",
+      "name_zh": "石头岛",
+      "slug": "stone_island",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/036_stone_island.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_037_arc_teryx",
+      "name_en": "Arc'teryx",
+      "name_zh": "始祖鸟",
+      "slug": "arc_teryx",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/037_arc_teryx.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_038_rimowa",
+      "name_en": "Rimowa",
+      "name_zh": "日默瓦",
+      "slug": "rimowa",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/038_rimowa.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_039_calvin_klein",
+      "name_en": "Calvin Klein",
+      "name_zh": "卡尔文克莱恩",
+      "slug": "calvin_klein",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/039_calvin_klein.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_040_tommy_hilfiger",
+      "name_en": "Tommy Hilfiger",
+      "name_zh": "汤米希尔费格",
+      "slug": "tommy_hilfiger",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/040_tommy_hilfiger.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_041_diesel",
+      "name_en": "Diesel",
+      "name_zh": "迪赛",
+      "slug": "diesel",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/041_diesel.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_042_lacoste",
+      "name_en": "Lacoste",
+      "name_zh": "鳄鱼",
+      "slug": "lacoste",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/042_lacoste.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_043_coach",
+      "name_en": "Coach",
+      "name_zh": "蔻驰",
+      "slug": "coach",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/043_coach.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_044_michael_kors",
+      "name_en": "Michael Kors",
+      "name_zh": "迈克高仕",
+      "slug": "michael_kors",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/044_michael_kors.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_045_rolex",
+      "name_en": "Rolex",
+      "name_zh": "劳力士",
+      "slug": "rolex",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/045_rolex.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_046_patek_philippe",
+      "name_en": "Patek Philippe",
+      "name_zh": "百达翡丽",
+      "slug": "patek_philippe",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/046_patek_philippe.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_047_audemars_piguet",
+      "name_en": "Audemars Piguet",
+      "name_zh": "爱彼",
+      "slug": "audemars_piguet",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/047_audemars_piguet.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_048_vacheron_constantin",
+      "name_en": "Vacheron Constantin",
+      "name_zh": "江诗丹顿",
+      "slug": "vacheron_constantin",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/048_vacheron_constantin.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_049_jaeger_le_coultre",
+      "name_en": "Jaeger-LeCoultre",
+      "name_zh": "积家",
+      "slug": "jaeger_le_coultre",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/049_jaeger_le_coultre.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_050_omega",
+      "name_en": "Omega",
+      "name_zh": "欧米茄",
+      "slug": "omega",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/050_omega.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_051_iwc",
+      "name_en": "IWC Schaffhausen",
+      "name_zh": "万国表",
+      "slug": "iwc",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/051_iwc.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_052_breitling",
+      "name_en": "Breitling",
+      "name_zh": "百年灵",
+      "slug": "breitling",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/052_breitling.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_053_tag_heuer",
+      "name_en": "TAG Heuer",
+      "name_zh": "泰格豪雅",
+      "slug": "tag_heuer",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/053_tag_heuer.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_054_hublot",
+      "name_en": "Hublot",
+      "name_zh": "宇舶",
+      "slug": "hublot",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/054_hublot.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_055_officine_panerai",
+      "name_en": "Panerai",
+      "name_zh": "沛纳海",
+      "slug": "officine_panerai",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/055_officine_panerai.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_056_chopard",
+      "name_en": "Chopard",
+      "name_zh": "萧邦",
+      "slug": "chopard",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/056_chopard.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_057_breguet",
+      "name_en": "Breguet",
+      "name_zh": "宝玑",
+      "slug": "breguet",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/057_breguet.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_058_piaget",
+      "name_en": "Piaget",
+      "name_zh": "伯爵",
+      "slug": "piaget",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/058_piaget.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_059_blancpain",
+      "name_en": "Blancpain",
+      "name_zh": "宝珀",
+      "slug": "blancpain",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/059_blancpain.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_060_tudor",
+      "name_en": "Tudor",
+      "name_zh": "帝舵",
+      "slug": "tudor",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/060_tudor.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_061_longines",
+      "name_en": "Longines",
+      "name_zh": "浪琴",
+      "slug": "longines",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/061_longines.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_062_tissot",
+      "name_en": "Tissot",
+      "name_zh": "天梭",
+      "slug": "tissot",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/062_tissot.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_063_cartier",
+      "name_en": "Cartier",
+      "name_zh": "卡地亚",
+      "slug": "cartier",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/063_cartier.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_064_tiffany_co",
+      "name_en": "Tiffany & Co.",
+      "name_zh": "蒂芙尼",
+      "slug": "tiffany_co",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/064_tiffany_co.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_065_bvlgari",
+      "name_en": "Bvlgari",
+      "name_zh": "宝格丽",
+      "slug": "bvlgari",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/065_bvlgari.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_066_harry_winston",
+      "name_en": "Harry Winston",
+      "name_zh": "海瑞温斯顿",
+      "slug": "harry_winston",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/066_harry_winston.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_067_swarovski",
+      "name_en": "Swarovski",
+      "name_zh": "施华洛世奇",
+      "slug": "swarovski",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/067_swarovski.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_068_pandora",
+      "name_en": "Pandora",
+      "name_zh": "潘多拉",
+      "slug": "pandora",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/068_pandora.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_069_boucheron",
+      "name_en": "Boucheron",
+      "name_zh": "宝诗龙",
+      "slug": "boucheron",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/069_boucheron.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_070_ferrari",
+      "name_en": "Ferrari",
+      "name_zh": "法拉利",
+      "slug": "ferrari",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/070_ferrari.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_071_porsche",
+      "name_en": "Porsche",
+      "name_zh": "保时捷",
+      "slug": "porsche",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/071_porsche.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_072_lamborghini",
+      "name_en": "Lamborghini",
+      "name_zh": "兰博基尼",
+      "slug": "lamborghini",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/072_lamborghini.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_073_rolls_royce",
+      "name_en": "Rolls-Royce",
+      "name_zh": "劳斯莱斯",
+      "slug": "rolls_royce",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/073_rolls_royce.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_074_bentley",
+      "name_en": "Bentley",
+      "name_zh": "宾利",
+      "slug": "bentley",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/074_bentley.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_075_aston_martin",
+      "name_en": "Aston Martin",
+      "name_zh": "阿斯顿·马丁",
+      "slug": "aston_martin",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/075_aston_martin.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_076_bugatti",
+      "name_en": "Bugatti",
+      "name_zh": "布加迪",
+      "slug": "bugatti",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/076_bugatti.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_077_maserati",
+      "name_en": "Maserati",
+      "name_zh": "玛莎拉蒂",
+      "slug": "maserati",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/077_maserati.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_078_mclaren",
+      "name_en": "McLaren",
+      "name_zh": "迈凯伦",
+      "slug": "mclaren",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/078_mclaren.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_079_maybach",
+      "name_en": "Maybach",
+      "name_zh": "迈巴赫",
+      "slug": "maybach",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/079_maybach.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_080_pagani",
+      "name_en": "Pagani",
+      "name_zh": "帕加尼",
+      "slug": "pagani",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/080_pagani.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_081_koenigsegg",
+      "name_en": "Koenigsegg",
+      "name_zh": "科尼赛克",
+      "slug": "koenigsegg",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/081_koenigsegg.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_082_lotus",
+      "name_en": "Lotus",
+      "name_zh": "路特斯",
+      "slug": "lotus",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/082_lotus.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_083_guerlain",
+      "name_en": "Guerlain",
+      "name_zh": "娇兰",
+      "slug": "guerlain",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/083_guerlain.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_084_lancome",
+      "name_en": "Lancôme",
+      "name_zh": "兰蔻",
+      "slug": "lancome",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/084_lancome.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_085_estee_lauder",
+      "name_en": "Estée Lauder",
+      "name_zh": "雅诗兰黛",
+      "slug": "estee_lauder",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/085_estee_lauder.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_086_la_mer",
+      "name_en": "La Mer",
+      "name_zh": "海蓝之谜",
+      "slug": "la_mer",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/086_la_mer.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_087_creed",
+      "name_en": "Creed",
+      "name_zh": "恺芮得",
+      "slug": "creed",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/087_creed.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_088_montblanc",
+      "name_en": "Montblanc",
+      "name_zh": "万宝龙",
+      "slug": "montblanc",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/088_montblanc.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_089_zenith",
+      "name_en": "Zenith",
+      "name_zh": "真力时",
+      "slug": "zenith",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/089_zenith.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_090_seiko",
+      "name_en": "Seiko",
+      "name_zh": "精工",
+      "slug": "seiko",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/090_seiko.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_091_citizen",
+      "name_en": "Citizen",
+      "name_zh": "西铁城",
+      "slug": "citizen",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/091_citizen.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_092_hamilton",
+      "name_en": "Hamilton",
+      "name_zh": "汉米尔顿",
+      "slug": "hamilton",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/092_hamilton.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_093_alfa_romeo",
+      "name_en": "Alfa Romeo",
+      "name_zh": "阿尔法·罗密欧",
+      "slug": "alfa_romeo",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/093_alfa_romeo.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_094_jaguar",
+      "name_en": "Jaguar",
+      "name_zh": "捷豹",
+      "slug": "jaguar",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/094_jaguar.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_095_land_rover",
+      "name_en": "Land Rover",
+      "name_zh": "路虎",
+      "slug": "land_rover",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/095_land_rover.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_096_ray_ban",
+      "name_en": "Ray-Ban",
+      "name_zh": "雷朋",
+      "slug": "ray_ban",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/096_ray_ban.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_097_oakley",
+      "name_en": "Oakley",
+      "name_zh": "欧克利",
+      "slug": "oakley",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/097_oakley.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_098_fossil",
+      "name_en": "Fossil",
+      "name_zh": "化石表",
+      "slug": "fossil",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/098_fossil.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_099_chrysler",
+      "name_en": "Chrysler",
+      "name_zh": "克莱斯勒",
+      "slug": "chrysler",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/099_chrysler.svg",
+      "format": "svg"
+    },
+    {
+      "id": "lux_100_mizuno",
+      "name_en": "Mizuno",
+      "name_zh": "美津浓",
+      "slug": "mizuno",
+      "category": "luxury_fashion_horology_jewelry",
+      "local_path": "assets/brand_logos/luxury_100/100_mizuno.svg",
+      "format": "svg"
+    }
+  ]
+}

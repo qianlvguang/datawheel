@@ -1,0 +1,916 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "全球经典 IP 品牌资产清单 (Iconic IP Brands Manifest)",
+  "version": "1.0.0",
+  "total_curated": 100,
+  "sectors": [
+    "Gaming Giants",
+    "Gaming Franchises",
+    "Entertainment Studios",
+    "Superheroes",
+    "Anime Franchises",
+    "Toy & Pop"
+  ],
+  "items": [
+    {
+      "id": "ip_001_nintendo",
+      "name_en": "Nintendo",
+      "name_zh": "任天堂",
+      "slug": "nintendo",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/001_nintendo.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_002_playstation",
+      "name_en": "PlayStation",
+      "name_zh": "索尼互娱",
+      "slug": "playstation",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/002_playstation.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_003_xbox",
+      "name_en": "Xbox",
+      "name_zh": "微软游戏",
+      "slug": "xbox",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/003_xbox.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_004_sega",
+      "name_en": "Sega",
+      "name_zh": "世嘉",
+      "slug": "sega",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/004_sega.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_005_atari",
+      "name_en": "Atari",
+      "name_zh": "雅达利",
+      "slug": "atari",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/005_atari.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_006_capcom",
+      "name_en": "Capcom",
+      "name_zh": "卡普空",
+      "slug": "capcom",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/006_capcom.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_007_konami",
+      "name_en": "Konami",
+      "name_zh": "科乐美",
+      "slug": "konami",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/007_konami.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_008_bandai_namco",
+      "name_en": "Bandai Namco",
+      "name_zh": "万代南梦宫",
+      "slug": "bandai_namco",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/008_bandai_namco.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_009_square_enix",
+      "name_en": "Square Enix",
+      "name_zh": "史克威尔艾尼克斯",
+      "slug": "square_enix",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/009_square_enix.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_010_ubisoft",
+      "name_en": "Ubisoft",
+      "name_zh": "育碧",
+      "slug": "ubisoft",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/010_ubisoft.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_011_electronic_arts",
+      "name_en": "Electronic Arts (EA)",
+      "name_zh": "艺电",
+      "slug": "electronic_arts",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/011_electronic_arts.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_012_blizzard",
+      "name_en": "Blizzard Entertainment",
+      "name_zh": "暴雪娱乐",
+      "slug": "blizzard",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/012_blizzard.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_013_riot_games",
+      "name_en": "Riot Games",
+      "name_zh": "拳头游戏",
+      "slug": "riot_games",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/013_riot_games.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_014_epic_games",
+      "name_en": "Epic Games",
+      "name_zh": "Epic游戏",
+      "slug": "epic_games",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/014_epic_games.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_015_valve",
+      "name_en": "Valve",
+      "name_zh": "维尔福",
+      "slug": "valve",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/015_valve.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_016_steam",
+      "name_en": "Steam",
+      "name_zh": "蒸汽平台",
+      "slug": "steam",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/016_steam.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_017_rockstar",
+      "name_en": "Rockstar Games",
+      "name_zh": "R星",
+      "slug": "rockstar",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/017_rockstar.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_018_bethesda",
+      "name_en": "Bethesda",
+      "name_zh": "贝塞斯达",
+      "slug": "bethesda",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/018_bethesda.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_019_mojang",
+      "name_en": "Mojang Studios",
+      "name_zh": "魔将工作室",
+      "slug": "mojang",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/019_mojang.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_020_super_mario",
+      "name_en": "Super Mario",
+      "name_zh": "超级马力欧",
+      "slug": "super_mario",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/020_super_mario.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_021_zelda",
+      "name_en": "The Legend of Zelda",
+      "name_zh": "塞尔达传说",
+      "slug": "zelda",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/021_zelda.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_022_pokemon",
+      "name_en": "Pokémon",
+      "name_zh": "宝可梦",
+      "slug": "pokemon",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/022_pokemon.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_023_sonic",
+      "name_en": "Sonic the Hedgehog",
+      "name_zh": "刺猬索尼克",
+      "slug": "sonic",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/023_sonic.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_024_pac_man",
+      "name_en": "Pac-Man",
+      "name_zh": "吃豆人",
+      "slug": "pac_man",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/024_pac_man.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_025_street_fighter",
+      "name_en": "Street Fighter",
+      "name_zh": "街头霸王",
+      "slug": "street_fighter",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/025_street_fighter.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_026_tekken",
+      "name_en": "Tekken",
+      "name_zh": "铁拳",
+      "slug": "tekken",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/026_tekken.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_027_final_fantasy",
+      "name_en": "Final Fantasy",
+      "name_zh": "最终幻想",
+      "slug": "final_fantasy",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/027_final_fantasy.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_028_metal_gear",
+      "name_en": "Metal Gear Solid",
+      "name_zh": "合金装备",
+      "slug": "metal_gear",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/028_metal_gear.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_029_assassins_creed",
+      "name_en": "Assassin's Creed",
+      "name_zh": "刺客信条",
+      "slug": "assassins_creed",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/029_assassins_creed.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_030_grand_theft_auto",
+      "name_en": "Grand Theft Auto (GTA)",
+      "name_zh": "侠盗猎车手",
+      "slug": "grand_theft_auto",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/030_grand_theft_auto.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_031_minecraft",
+      "name_en": "Minecraft",
+      "name_zh": "我的世界",
+      "slug": "minecraft",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/031_minecraft.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_032_roblox",
+      "name_en": "Roblox",
+      "name_zh": "罗布乐思",
+      "slug": "roblox",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/032_roblox.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_033_fortnite",
+      "name_en": "Fortnite",
+      "name_zh": "堡垒之夜",
+      "slug": "fortnite",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/033_fortnite.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_034_league_of_legends",
+      "name_en": "League of Legends",
+      "name_zh": "英雄联盟",
+      "slug": "league_of_legends",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/034_league_of_legends.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_035_overwatch",
+      "name_en": "Overwatch",
+      "name_zh": "守望先锋",
+      "slug": "overwatch",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/035_overwatch.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_036_world_of_warcraft",
+      "name_en": "World of Warcraft",
+      "name_zh": "魔兽世界",
+      "slug": "world_of_warcraft",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/036_world_of_warcraft.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_037_diablo",
+      "name_en": "Diablo",
+      "name_zh": "暗黑破坏神",
+      "slug": "diablo",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/037_diablo.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_038_fallout",
+      "name_en": "Fallout",
+      "name_zh": "辐射",
+      "slug": "fallout",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/038_fallout.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_039_halo",
+      "name_en": "Halo",
+      "name_zh": "光环",
+      "slug": "halo",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/039_halo.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_040_disney",
+      "name_en": "Walt Disney",
+      "name_zh": "华特迪士尼",
+      "slug": "disney",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/040_disney.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_041_pixar",
+      "name_en": "Pixar",
+      "name_zh": "皮克斯",
+      "slug": "pixar",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/041_pixar.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_042_marvel",
+      "name_en": "Marvel",
+      "name_zh": "漫威",
+      "slug": "marvel",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/042_marvel.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_043_dc_comics",
+      "name_en": "DC Comics",
+      "name_zh": "DC漫画",
+      "slug": "dc_comics",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/043_dc_comics.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_044_star_wars",
+      "name_en": "Star Wars",
+      "name_zh": "星球大战",
+      "slug": "star_wars",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/044_star_wars.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_045_lucasfilm",
+      "name_en": "Lucasfilm",
+      "name_zh": "卢卡斯影业",
+      "slug": "lucasfilm",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/045_lucasfilm.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_046_warner_bros",
+      "name_en": "Warner Bros.",
+      "name_zh": "华纳兄弟",
+      "slug": "warner_bros",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/046_warner_bros.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_047_paramount",
+      "name_en": "Paramount Pictures",
+      "name_zh": "派拉蒙",
+      "slug": "paramount",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/047_paramount.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_048_dreamworks",
+      "name_en": "DreamWorks",
+      "name_zh": "梦工厂",
+      "slug": "dreamworks",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/048_dreamworks.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_049_metro_goldwyn_mayer",
+      "name_en": "Metro-Goldwyn-Mayer",
+      "name_zh": "米高梅",
+      "slug": "metro_goldwyn_mayer",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/049_metro_goldwyn_mayer.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_050_columbia_pictures",
+      "name_en": "Columbia Pictures",
+      "name_zh": "哥伦比亚影业",
+      "slug": "columbia_pictures",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/050_columbia_pictures.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_051_studio_ghibli",
+      "name_en": "Studio Ghibli",
+      "name_zh": "吉卜力工作室",
+      "slug": "studio_ghibli",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/051_studio_ghibli.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_052_batman",
+      "name_en": "Batman",
+      "name_zh": "蝙蝠侠",
+      "slug": "batman",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/052_batman.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_053_superman",
+      "name_en": "Superman",
+      "name_zh": "超人",
+      "slug": "superman",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/053_superman.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_054_avengers",
+      "name_en": "Avengers",
+      "name_zh": "复仇者联盟",
+      "slug": "avengers",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/054_avengers.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_055_spider_man",
+      "name_en": "Spider-Man",
+      "name_zh": "蜘蛛侠",
+      "slug": "spider_man",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/055_spider_man.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_056_iron_man",
+      "name_en": "Iron Man",
+      "name_zh": "钢铁侠",
+      "slug": "iron_man",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/056_iron_man.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_057_captain_america",
+      "name_en": "Captain America",
+      "name_zh": "美国队长",
+      "slug": "captain_america",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/057_captain_america.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_058_transformers",
+      "name_en": "Transformers",
+      "name_zh": "变形金刚",
+      "slug": "transformers",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/058_transformers.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_059_jurassic_park",
+      "name_en": "Jurassic Park",
+      "name_zh": "侏罗纪公园",
+      "slug": "jurassic_park",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/059_jurassic_park.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_060_godzilla",
+      "name_en": "Godzilla",
+      "name_zh": "哥斯拉",
+      "slug": "godzilla",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/060_godzilla.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_061_ghostbusters",
+      "name_en": "Ghostbusters",
+      "name_zh": "抓鬼敢死队",
+      "slug": "ghostbusters",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/061_ghostbusters.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_062_dragon_ball",
+      "name_en": "Dragon Ball Z",
+      "name_zh": "龙珠Z",
+      "slug": "dragon_ball",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/062_dragon_ball.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_063_bleach",
+      "name_en": "Bleach",
+      "name_zh": "死神",
+      "slug": "bleach",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/063_bleach.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_064_attack_on_titan",
+      "name_en": "Attack on Titan",
+      "name_zh": "进击的巨人",
+      "slug": "attack_on_titan",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/064_attack_on_titan.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_065_sailor_moon",
+      "name_en": "Sailor Moon",
+      "name_zh": "美少女战士",
+      "slug": "sailor_moon",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/065_sailor_moon.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_066_evangelion",
+      "name_en": "Neon Genesis Evangelion",
+      "name_zh": "新世纪福音战士",
+      "slug": "evangelion",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/066_evangelion.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_067_digimon",
+      "name_en": "Digimon",
+      "name_zh": "数码宝贝",
+      "slug": "digimon",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/067_digimon.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_068_lego",
+      "name_en": "Lego",
+      "name_zh": "乐高",
+      "slug": "lego",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/068_lego.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_069_hasbro",
+      "name_en": "Hasbro",
+      "name_zh": "孩之宝",
+      "slug": "hasbro",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/069_hasbro.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_070_mattel",
+      "name_en": "Mattel",
+      "name_zh": "美泰",
+      "slug": "mattel",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/070_mattel.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_071_barbie",
+      "name_en": "Barbie",
+      "name_zh": "芭比",
+      "slug": "barbie",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/071_barbie.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_072_hot_wheels",
+      "name_en": "Hot Wheels",
+      "name_zh": "风火轮",
+      "slug": "hot_wheels",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/072_hot_wheels.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_073_nerf",
+      "name_en": "Nerf",
+      "name_zh": "热火",
+      "slug": "nerf",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/073_nerf.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_074_playmobil",
+      "name_en": "Playmobil",
+      "name_zh": "摩比世界",
+      "slug": "playmobil",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/074_playmobil.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_075_sanrio",
+      "name_en": "Sanrio",
+      "name_zh": "三丽鸥",
+      "slug": "sanrio",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/075_sanrio.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_076_hello_kitty",
+      "name_en": "Hello Kitty",
+      "name_zh": "凯蒂猫",
+      "slug": "hello_kitty",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/076_hello_kitty.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_077_crunchyroll",
+      "name_en": "Crunchyroll",
+      "name_zh": "脆莓动漫",
+      "slug": "crunchyroll",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/077_crunchyroll.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_078_discord",
+      "name_en": "Discord",
+      "name_zh": "Discord游戏社区",
+      "slug": "discord",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/078_discord.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_079_twitch",
+      "name_en": "Twitch",
+      "name_zh": "Twitch直播",
+      "slug": "twitch",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/079_twitch.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_080_unity",
+      "name_en": "Unity Engine",
+      "name_zh": "Unity游戏引擎",
+      "slug": "unity",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/080_unity.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_081_unreal_engine",
+      "name_en": "Unreal Engine",
+      "name_zh": "虚幻引擎",
+      "slug": "unreal_engine",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/081_unreal_engine.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_082_donkey_kong",
+      "name_en": "Donkey Kong",
+      "name_zh": "大金刚",
+      "slug": "donkey_kong",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/082_donkey_kong.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_083_snk",
+      "name_en": "SNK",
+      "name_zh": "SNK电玩",
+      "slug": "snk",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/083_snk.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_084_half_life",
+      "name_en": "Half-Life",
+      "name_zh": "半条命",
+      "slug": "half_life",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/084_half_life.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_085_portal",
+      "name_en": "Portal",
+      "name_zh": "传送门",
+      "slug": "portal",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/085_portal.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_086_team_fortress",
+      "name_en": "Team Fortress",
+      "name_zh": "军团要塞",
+      "slug": "team_fortress",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/086_team_fortress.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_087_game_boy",
+      "name_en": "Game Boy",
+      "name_zh": "掌机",
+      "slug": "game_boy",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/087_game_boy.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_088_nintendo_switch",
+      "name_en": "Nintendo Switch",
+      "name_zh": "Switch主机",
+      "slug": "nintendo_switch",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/088_nintendo_switch.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_089_playstation_2",
+      "name_en": "PlayStation 2",
+      "name_zh": "PS2主机",
+      "slug": "playstation_2",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/089_playstation_2.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_090_xbox_360",
+      "name_en": "Xbox 360",
+      "name_zh": "Xbox360主机",
+      "slug": "xbox_360",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/090_xbox_360.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_091_star_trek",
+      "name_en": "Star Trek",
+      "name_zh": "星际迷航",
+      "slug": "star_trek",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/091_star_trek.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_092_doctor_who",
+      "name_en": "Doctor Who",
+      "name_zh": "神秘博士",
+      "slug": "doctor_who",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/092_doctor_who.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_093_the_simpsons",
+      "name_en": "The Simpsons",
+      "name_zh": "辛普森一家",
+      "slug": "the_simpsons",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/093_the_simpsons.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_094_family_guy",
+      "name_en": "Family Guy",
+      "name_zh": "恶搞之家",
+      "slug": "family_guy",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/094_family_guy.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_095_south_park",
+      "name_en": "South Park",
+      "name_zh": "南方公园",
+      "slug": "south_park",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/095_south_park.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_096_nickelodeon",
+      "name_en": "Nickelodeon",
+      "name_zh": "尼克儿童频道",
+      "slug": "nickelodeon",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/096_nickelodeon.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_097_cartoon_network",
+      "name_en": "Cartoon Network",
+      "name_zh": "卡通频道",
+      "slug": "cartoon_network",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/097_cartoon_network.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_098_netflix",
+      "name_en": "Netflix",
+      "name_zh": "奈飞",
+      "slug": "netflix",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/098_netflix.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_099_hulu",
+      "name_en": "Hulu",
+      "name_zh": "葫芦视频",
+      "slug": "hulu",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/099_hulu.svg",
+      "format": "svg"
+    },
+    {
+      "id": "ip_100_bilibili",
+      "name_en": "Bilibili",
+      "name_zh": "哔哩哔哩",
+      "slug": "bilibili",
+      "category": "gaming_entertainment_toy_anime",
+      "local_path": "assets/brand_logos/ip_brands_100/100_bilibili.svg",
+      "format": "svg"
+    }
+  ]
+}
