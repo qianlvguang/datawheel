@@ -57,6 +57,17 @@ split 通过实体/底板 ID 的稳定哈希分桶实现，生成时直接按配
 
 ---
 
+## 🧠 面向 Qwen3.5-27B 中训练（V6 通道）
+
+v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**（Qwen3.5-27B、ms-swift 4.3.2、V1–V5 通道、packed window 8192、GBS 32、S1/S2/S3 累计 LoRA）设计 V6 接入方案：
+
+- **数据格式**：`messages / images / enable_thinking / sample_id / cate_id / variant`，`variant=6` 由现有插件自动映射为 `loss_V6`，无需改训练代码；图片路径相对 `/data/autovision-cfs/autovision-notebook`。
+- **能力定位**：不重复 V1–V4 的通用 caption，而是补 27B 中训练最缺的**细粒度视觉证据能力**：小目标定位、多图参考匹配、相似干扰排除、证据不足拒绝、结构化描述、视觉事实一致性判断。
+- **试点集**：`output/datawheel_v6_pilot/`（≈2,500 行：单图多轮 QA 1,200 / 结构化 caption 400 / 文本一致性 250 / 多图参考匹配 650；含远端上传包与 ms-swift 校验报告）。
+- **配比方案**：见 [MID_TRAIN_DATAWHEEL_PLAN.md](MID_TRAIN_DATAWHEEL_PLAN.md)（按 S1/S2/S3 的 token 份额而非行数配比，light/balanced/aggressive 三档）。
+
+---
+
 ## 🧰 工具链
 
 | 工具 | 作用 |
@@ -68,6 +79,10 @@ split 通过实体/底板 ID 的稳定哈希分桶实现，生成时直接按配
 | [`tools/generate_datawheel_v2.py`](tools/generate_datawheel_v2.py) | v2 五阶段 10k 数据生成器（支持分片、预览、合并、报告、contact sheet） |
 | [`tools/flywheel_audit.py`](tools/flywheel_audit.py) | 数据集质检审计：schema/bbox/图片/sha/重复率/split 泄漏/分布/小目标，输出报告三件套 |
 | [`tools/export_training_data.py`](tools/export_training_data.py) | 按 split 导出 ShareGPT / ms-swift JSONL + dataset card + export manifest |
+| [`tools/build_v6_single_image.py`](tools/build_v6_single_image.py) | v2 → V6 单图训练行（多轮 QA / 结构化 JSON caption / 文本一致性） |
+| [`tools/build_v6_reference_rows.py`](tools/build_v6_reference_rows.py) | v2 stage_d → V6 多图参考匹配行（商品图 + 2~3 候选参考图，train split only） |
+| [`tools/pack_v6_pilot.py`](tools/pack_v6_pilot.py) | 合并 V6 parts、统计 token/图片、生成远端上传包 |
+| [`tools/validate_swift_v6.py`](tools/validate_swift_v6.py) | V6 数据契约校验（schema / messages / 图片 / 长度估算 / cate 分布） |
 | [`generate.py`](generate.py) | 统一 CLI：历史四维度（gallery/contrastive/density/demo）与 v2 全量（`v2` / `datawheel10k`） |
 
 ---
@@ -203,6 +218,7 @@ Coding/datawheel/
 
 ## 📎 相关文档
 
+- [Qwen3.5-27B 中训练 V6 数据方案](MID_TRAIN_DATAWHEEL_PLAN.md)
 - [资产全景台账](assets/ASSET_CATALOG.md)
 - [v2 数据集报告](output/datawheel_v2/report.md)（生成后自动创建）
 - [v1 10K 数据集报告](output/DATASET_10K_REPORT.md)（历史）
