@@ -168,6 +168,10 @@ open output/report/index.html
 页面包含：数据集总览卡片、v2/V6 样例画廊（可按数据集/阶段/cate/split 过滤，BBox 叠加标注、点击放大）、
 S1/S2/S3 中训练配比与 TRAIN_FILES 片段、质检/契约校验结论、产物索引与复现命令。
 
+- `output/report/index.html`（**自包含，约 6MB**）：所有画廊图片以 base64 内嵌，可拷到任意目录/用任意浏览器打开；
+- `output/report/index_light.html`（约 0.4MB）：图片用项目相对路径，仅适合在本项目目录内用浏览器直接打开；
+- 重新生成：默认同时产出两份；`--no-embed` 只生成轻量版。
+
 ---
 
 ## ⚡ 快速开始

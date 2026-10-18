@@ -5,7 +5,8 @@
 
 ```
 output/
-├── report/index.html          # 🖥️ 本地核验可视化（HTML，离线可开）
+├── report/index.html          # 🖥️ 本地核验可视化（自包含 ~6MB，图片内嵌，任意位置可开）
+├── report/index_light.html    # 轻量版（~0.4MB，图片用项目相对路径）
 ├── datawheel_v2/              # 主线一：10,000 条全量渲染多模态数据集
 │   ├── dataset.parquet        # 10,000 行 × 35 列（zstd）
 │   ├── images/                # 10,000 张 JPEG（640×640 / 640×840）

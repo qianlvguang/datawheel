@@ -16,4 +16,7 @@ open output/report/index.html
 
 HTML 报告包含：数据集总览、样例画廊（带 BBox 标注）、V6 配比与训练影响、质检/校验结果、产物索引与复现命令。
 
+- `output/report/index.html` 为自包含版本（图片以 base64 内嵌，~6MB），可拷到任意目录离线打开；
+- `output/report/index_light.html` 为轻量版（~0.4MB，仅适合在项目目录内用 file:// 打开）。
+
 > `output/` 默认被 `.gitignore` 忽略；`output/report/index.html` 由 `tools/build_visual_report.py` 重新生成。

@@ -15,14 +15,18 @@
 """
 from __future__ import annotations
 
+import argparse
+import base64
 import json
 import re
 import html
+import io
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
 
 import pyarrow.parquet as pq
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_HTML = ROOT / "output" / "report" / "index.html"
@@ -68,6 +72,22 @@ def human_size(n: int | float | None) -> str:
             return f"{n:.1f} {unit}" if unit != "B" else f"{n:.0f} B"
         n /= 1024
     return f"{n:.1f} GB"
+
+
+def embed_image(project_path: str, max_side: int = 560, quality: int = 80) -> str:
+    """把项目内图片压缩后转成 data URI，保证 HTML 单文件可离线/跨目录打开。"""
+    try:
+        path = Path(project_path)
+        if not path.is_absolute():
+            path = ROOT / path
+        img = Image.open(path).convert("RGB")
+        img.thumbnail((max_side, max_side), Image.Resampling.LANCZOS)
+        buf = io.BytesIO()
+        img.save(buf, format="JPEG", quality=quality, optimize=True)
+        b64 = base64.b64encode(buf.getvalue()).decode("ascii")
+        return f"data:image/jpeg;base64,{b64}"
+    except Exception:
+        return url_for(project_path)
 
 
 def url_for(path: str | Path) -> str:
@@ -687,8 +707,16 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
 # ---------------------------------------------------------------- build page
-def build_html() -> str:
+def build_html(embed_images: bool = True, max_side: int = 560, quality: int = 80) -> str:
     samples = collect_samples()["samples"]
+    if embed_images:
+        for s in samples:
+            raw = s.get("image_raw") or []
+            if not raw:
+                continue
+            s["images"] = [embed_image(raw[0], max_side=max_side, quality=quality)]
+            s["images"] += [embed_image(p, max_side=200, quality=72) for p in raw[1:]]
+        print(f"[visual] embedded {sum(len(s['images']) for s in samples)} images as data URIs")
     payload = {"samples": samples}
     data_json = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
     stats = build_stats(collect_samples())
@@ -709,7 +737,8 @@ def build_html() -> str:
 <header>
   <h1>Datawheel 数据核验报告</h1>
   <p>v2 10K 多模态数据集 · V6 × Qwen3.5-27B 中训练数据 · 生成于 {esc(generated)} ·
-  共 {esc(total_gallery)} 条画廊样本，BBox 归一化坐标 [ymin,xmin,ymax,xmax] = 0~1000</p>
+  共 {esc(total_gallery)} 条画廊样本，BBox 归一化坐标 [ymin,xmin,ymax,xmax] = 0~1000
+  {'· 图片已内嵌（单文件离线可开）' if embed_images else '· 图片使用项目相对路径 (file:// 打开)'}</p>
 </header>
 <nav>
   <a href="#overview">总览</a><a href="#datasets">数据集</a><a href="#gallery">样例画廊</a>
@@ -735,11 +764,34 @@ def build_html() -> str:
     return head
 
 
+def write_report(out_path: Path, *, embed_images: bool, max_side: int, quality: int) -> None:
+    html_text = build_html(embed_images=embed_images, max_side=max_side, quality=quality)
+    out_path.write_text(html_text, encoding="utf-8")
+    size_mb = out_path.stat().st_size / 1024 / 1024
+    print(f"[visual] wrote {out_path.relative_to(ROOT)} ({size_mb:.1f} MB)")
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description="生成 Datawheel 离线 HTML 核验报告")
+    parser.add_argument("--no-embed", action="store_true",
+                        help="不内嵌图片，生成使用项目相对路径的轻量版（仅适合 file:// 直接打开）")
+    parser.add_argument("--max-side", type=int, default=560, help="内嵌主图最长边（默认 560px）")
+    parser.add_argument("--quality", type=int, default=80, help="内嵌主图 JPEG 质量（默认 80）")
+    parser.add_argument("--light-output", type=Path, default=None,
+                        help="轻量版输出路径（默认 output/report/index_light.html）")
+    args = parser.parse_args()
+
     OUT_HTML.parent.mkdir(parents=True, exist_ok=True)
-    html_text = build_html()
-    OUT_HTML.write_text(html_text, encoding="utf-8")
-    print(f"[visual] wrote {OUT_HTML.relative_to(ROOT)} ({OUT_HTML.stat().st_size / 1024:.0f} KB)")
+    if args.no_embed:
+        out = args.light_output or OUT_HTML.with_name("index_light.html")
+        write_report(out, embed_images=False, max_side=args.max_side, quality=args.quality)
+        print(f"[visual] open: open {out.relative_to(ROOT)}")
+        return
+
+    write_report(OUT_HTML, embed_images=True, max_side=args.max_side, quality=args.quality)
+    # 同时保留一个轻量版（相对路径，便于 git 小体积分发）
+    light = args.light_output or OUT_HTML.with_name("index_light.html")
+    write_report(light, embed_images=False, max_side=args.max_side, quality=args.quality)
     print(f"[visual] open: open {OUT_HTML.relative_to(ROOT)}")
 
 

@@ -40,7 +40,7 @@
 
 | 工具 | 作用 |
 |---|---|
-| `build_visual_report.py` | 生成 `output/report/index.html`：数据集总览 / 样例画廊（BBox 标注）/ 配比与质检 / 产物索引 |
+| `build_visual_report.py` | 生成 `output/report/index.html`（自包含，图片 base64 内嵌）/ `index_light.html`：数据集总览 / 样例画廊（BBox 标注）/ 配比与质检 / 产物索引 |
 
 ## 约定
 
