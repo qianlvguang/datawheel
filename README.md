@@ -260,3 +260,4 @@ S1/S2/S3 中训练配比与 TRAIN_FILES 片段、质检/契约校验结论、产
 - [资产全景台账](assets/ASSET_CATALOG.md)
 - [v2 数据集报告](output/datawheel_v2/report.md)（生成后自动创建）
 - [v1 10K 数据集报告](output/legacy_v1/DATASET_10K_REPORT.md)（历史）
+- [Qwen-Image 2.1 图像编辑管线设计](docs/QWEN_IMAGE_2_1_PIPELINE.md)

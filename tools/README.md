@@ -36,6 +36,14 @@
 | `build_v6_balanced_reference.py` | balanced：多图参考匹配 6,707 行 |
 | `assemble_v6_balanced.py` | union 43,893 → S1/S2/S3 stage 文件 + validator + 上传包 |
 
+## 图像编辑 / Qwen-Image
+
+| 工具 | 作用 |
+|---|---|
+| `qwen_image_ops.py` | Qwen-Image 2.1 批量生成/编辑客户端（json / openai 两种协议）；支持 plan JSONL、并发、重试、保护区域像素差校验、manifest 与 verify |
+
+> 设计、prompt 模板与数据接入策略见 [docs/QWEN_IMAGE_2_1_PIPELINE.md](../docs/QWEN_IMAGE_2_1_PIPELINE.md)。
+
 ## 数据语言清理
 
 | 工具 | 作用 |
