@@ -36,6 +36,15 @@
 | `build_v6_balanced_reference.py` | balanced：多图参考匹配 6,707 行 |
 | `assemble_v6_balanced.py` | union 43,893 → S1/S2/S3 stage 文件 + validator + 上传包 |
 
+## 数据语言清理
+
+| 工具 | 作用 |
+|---|---|
+| `normalize_dataset_language.py` | 清理程序化/矢量/模式名等实现术语；重写 Stage A 的"区域名带颜色 + 又描述颜色"冗余；去掉 caption 里的场景括注、知识扩写句和 bbox；压缩拼接式品类名；V6 结构化 caption JSON 同步清理 |
+
+> v2 全量生成后由 `generate.py v2` 自动调用；V6 parts 构建后执行
+> `.venv/bin/python tools/normalize_dataset_language.py --skip-v2`，再 pack/assemble。
+
 ## 可视化
 
 | 工具 | 作用 |

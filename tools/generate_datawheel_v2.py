@@ -3,12 +3,12 @@
 
 相比 v1（10,000 条 caption + 250 张预览图）的关键迭代：
 1. 全量渲染 10,000 张图像（640x640；参考匹配阶段 640x840），图文一一对应；
-2. 五阶段课程：A 几何色块 / B 真实商品单图元 / C 多图元空间关系 /
+2. 五阶段课程：A 几何色块 / B 真实商品单图案 / C 多图案空间关系 /
    D 参考图匹配（含 hard negative、no-match、候选框）/ E 负样本与证据不足；
 3. 实体级 + 底板级 split 隔离，支持 unseen-entity / unseen-substrate 泛化评测；
 4. 正确区位词表：按商品类别生成「胸前/下摆/包盖/鞋帮/帽面」等真实工艺位置，
    不再出现「鞋子上胸前印花」这类语义错误；
-5. 图元按宽高比等比投放、深色/繁复面料使用不透明塑胶浆模式，并在记录中
+5. 图案按宽高比等比投放、深色/繁复面料使用不透明塑胶浆模式，并在记录中
    写入打印可见度、bbox 面积、底板可印性等质量指标；
 6. 每条 QA 带 answer_type / answer_bbox / evidence，支持 grounding 与
    yes/no / uncertain 监督；实体名称全部走知识扩写（无 raw code）。
@@ -86,10 +86,10 @@ STAGE_RANGES = {
     "stage_e_negative_evidence": (9001, 10000),
 }
 STAGE_TITLES = {
-    "stage_a_geometry": "阶段A：基础色块与几何图元",
-    "stage_b_single_element": "阶段B：真实商品单图元物理贴合",
-    "stage_c_multi_element": "阶段C：真实商品多图元空间排布",
-    "stage_d_reference_match": "阶段D：参考图匹配与跨域对照",
+    "stage_a_geometry": "阶段A：基础色块与颜色区域",
+    "stage_b_single_element": "阶段B：真实商品单图案展示",
+    "stage_c_multi_element": "阶段C：真实商品多图案组合",
+    "stage_d_reference_match": "阶段D：参考图匹配与实物对照",
     "stage_e_negative_evidence": "阶段E：负样本与证据不足",
 }
 SPLIT_QUOTAS = {
@@ -171,7 +171,7 @@ TECHNIQUE_ZH = {"screenprint": "高精度工业丝网胶印", "woven_label": "�
 TECHNIQUE_EN = {"screenprint": "screenprint", "woven_label": "woven label",
                 "heat_transfer": "heat transfer", "embroidery": "embroidery"}
 
-# 多图元布局：在底板可印花区内取比例矩形，保证互不重叠
+# 多图案布局：在底板可印花区内取比例矩形，保证互不重叠
 LAYOUTS = [
     {"id": "main_center_plus_left_badge", "rects": [(0.10, 0.20, 0.86, 0.84), (0.03, 0.03, 0.30, 0.30)],
      "zh": "中央主视觉 + 左上角小徽标", "en": "center main graphic plus upper-left badge"},
@@ -184,30 +184,30 @@ LAYOUTS = [
 ]
 SMALL_LAYOUTS = [
     {"id": "compact_side_by_side", "rects": [(0.02, 0.02, 0.54, 0.98), (0.58, 0.24, 0.96, 0.76)],
-     "zh": "紧凑左右双图元排布", "en": "compact side-by-side dual arrangement"},
+     "zh": "紧凑左右双图案排布", "en": "compact side-by-side dual arrangement"},
     {"id": "compact_top_bottom", "rects": [(0.02, 0.06, 0.56, 0.94), (0.60, 0.22, 0.96, 0.78)],
-     "zh": "紧凑上下双图元排布", "en": "compact stacked dual arrangement"},
+     "zh": "紧凑上下双图案排布", "en": "compact stacked dual arrangement"},
 ]
 TRIPLE_LAYOUT = {"id": "triple_triangle", "rects": [(0.04, 0.22, 0.46, 0.72), (0.56, 0.18, 0.80, 0.46),
                                                    (0.56, 0.56, 0.80, 0.84)],
-                 "zh": "三图元三角式组合", "en": "three-element triangular arrangement"}
+                 "zh": "三图案三角式组合", "en": "three-element triangular arrangement"}
 
 QUESTION_TEMPLATES = {
-    "identify": ["图中的印花图案是什么？", "请识别商品上印制/贴合的主要视觉图元。",
+    "identify": ["图中的印花图案是什么？", "请识别商品上印制/贴合的主要视觉图案。",
                  "这件商品上的图案内容是什么？"],
-    "grounding": ["请给出该图案的归一化边界框 [ymin,xmin,ymax,xmax]。",
+    "grounding": ["请给出该图案的边界框 [ymin,xmin,ymax,xmax]。",
                   "定位该图案，输出 [ymin,xmin,ymax,xmax] 相对坐标。",
                   "该图案在整图中的边界框坐标是多少？"],
     "color": ["该图案的主导颜色是什么？", "请描述该图案的主色调。",
               "印花的代表色是？"],
     "location": ["该图案位于商品的哪个工艺位置？", "印花在商品上的具体位置是？"],
     "geometry": ["该图案的几何构型属于哪一类？", "该图案的整体外形比例如何？"],
-    "count": ["图中共有几处独立印花？", "商品上共有几个主要视觉图元？"],
+    "count": ["图中共有几处独立印花？", "商品上共有几个主要视觉图案？"],
     "relation": ["{a}与{b}的相对位置关系是什么？", "{b}位于{a}的什么方位？"],
     "match_which": ["顶部候选参考图（{letters}）中，哪一张与下方商品上的印花一致？",
                     "比对候选参考图，指出与商品印花匹配的那一张。"],
     "match_exists": ["顶部候选参考图中是否有与下方商品印花一致的吗？",
-                     "候选参考图中存在与商品图案匹配的图元吗？"],
+                     "候选参考图中存在与商品图案匹配的图案吗？"],
     "candidate_bbox": ["候选{letter}参考图在整图中的位置是？", "候选{letter}的边界框坐标？"],
     "present": ["图中商品上是否存在【{name}】图案？", "商品表面能看到【{name}】的印花吗？"],
     "distractor": ["图中商品上的图案是什么？", "请识别商品上实际出现的图案。"],
@@ -554,7 +554,7 @@ class DatawheelV2Generator:
     def _render_element(self, bg: np.ndarray, lighting: np.ndarray, element: Image.Image,
                         rect: Tuple[int, int, int, int], rng: random.Random,
                         sub: Dict[str, Any], fill: float = 0.82) -> Dict[str, Any]:
-        """把单个图元等比投放到指定矩形并物理融合，返回 bbox/可见度等。"""
+        """把单个图案等比投放到指定矩形并物理融合，返回 bbox/可见度等。"""
         opaque = bool(sub.get("dark") or sub.get("difficulty") == "hard")
         mode = "opaque_screenprint" if opaque else "real_garment_screenprint"
         best = None
@@ -627,10 +627,10 @@ class DatawheelV2Generator:
             "entity_names_en": entity_names_en,
             "num_entities": int(num_entities),
             "substrate_id": sub.get("substrate_id", "procedural_canvas"),
-            "substrate_category_zh": sub.get("category_zh", "程序化几何画布"),
+            "substrate_category_zh": sub.get("category_zh", "纯色平面画布"),
             "substrate_category_en": sub.get("category_en", "Procedural Geometry Canvas"),
             "substrate_source": sub.get("source", "procedural"),
-            "scene_style_zh": sub.get("scene_style_zh", "程序化高精度平整色块底板"),
+            "scene_style_zh": sub.get("scene_style_zh", "纯色平面背景"),
             "placement_zone": placement_zone,
             "print_technique_zh": TECHNIQUE_ZH.get(technique, "高精度工业丝网胶印"),
             "bboxes_norm_1000": _json(bboxes),
@@ -754,7 +754,7 @@ class DatawheelV2Generator:
             self._qa(count_templates[combo_k % len(count_templates)],
                      f"共有 {len(regions)} 个独立分区。", "count", None,
                      "按色块边界线统计封闭区域数量。"),
-            self._qa(f"请给出「{main['name_zh']}」的归一化边界框 [ymin,xmin,ymax,xmax]。",
+            self._qa(f"请给出「{main['name_zh']}」的边界框 [ymin,xmin,ymax,xmax]。",
                      str(main["bbox"]), "bbox", main["bbox"], "直接读取该色块的四条边界。"),
             self._qa(f"「{main['name_zh']}」呈现什么颜色？", main["color_zh"], "color", None,
                      "该分区为单一纯色填充。"),
@@ -764,13 +764,13 @@ class DatawheelV2Generator:
         ]
         entities = [{"entity_type": "几何色彩分区", "entity_name_zh": r["name_zh"],
                      "entity_name_en": r["name_en"], "bbox_1000": r["bbox"],
-                     "placement_zone": mode, "visibility": "full"} for r in regions]
+                     "placement_zone": "整幅画面", "visibility": "full"} for r in regions]
         entity_ids: List[Dict[str, Any]] = []  # 几何样本无实体泄漏风险
-        caption_zh = (f"程序化几何基准样本（{mode}）：画面由 {len(regions)} 个纯色几何分区构成。"
+        caption_zh = (f"画面由 {len(regions)} 个纯色区域组成。"
                       f"其中「{main['name_zh']}」的颜色为{main['color_zh']}，边界框为 {main['bbox']}；"
                       f"「{other['name_zh']}」位于其{('中央' if mode == 'centered_disc' else self._relation_label(main['bbox'], other['bbox']))}。"
-                      f"所有分区边界笔直锐利、色彩均匀，无纹理与透视干扰。")
-        caption_en = (f"Procedural geometric baseline ({mode}) with {len(regions)} solid-color regions. "
+                      f"各颜色区域边界清晰，整体是一幅平面图案。")
+        caption_en = (f"A flat graphic composed of {len(regions)} solid-color regions. "
                       f"The {main['name_en']} is {main['color_en']} and spans [ymin,xmin,ymax,xmax]={main['bbox']}; "
                       f"the {other['name_en']} lies to its {self._relation_label(main['bbox'], other['bbox'])}.")
         rgb = np.asarray(img)
@@ -782,8 +782,8 @@ class DatawheelV2Generator:
                               technique="screenprint", bboxes=bboxes, entities=entities,
                               ref_candidates=[], match_label="not_applicable",
                               caption_zh=caption_zh, caption_en=caption_en,
-                              visual_analysis=f"模式: {mode}; 分区数: {len(regions)}; 边界锐利、无物理形变。",
-                              knowledge_expansion="标准旗帜学与几何构图基元：纯色场、分割线、向心圆盘等基础图形语义。",
+                              visual_analysis=f"画面由 {len(regions)} 个颜色区域组成，色块边界清晰。",
+                              knowledge_expansion="画面由纯色区域组成，可作为颜色识别与区域定位的练习。",
                               qa_pairs=qa, render_meta={"seed": self.seed, "mode": mode, "canvas": [CANVAS, CANVAS]},
                               quality={"print_visibility": None, "bbox_area_ratio_min": round(min(
                                   (b[2] - b[0]) * (b[3] - b[1]) / 1_000_000 for b in bboxes), 4),
@@ -791,7 +791,7 @@ class DatawheelV2Generator:
         return record, rgb
 
     # ------------------------------------------------------------------
-    # 阶段 B：单图元真实商品贴合
+    # 阶段 B：单图案真实商品贴合
     # ------------------------------------------------------------------
     def _gen_stage_b(self, idx: int, rng: random.Random, plan: Dict[str, Any]):
         stage, split = plan["stage"], plan["split"]
@@ -842,9 +842,9 @@ class DatawheelV2Generator:
             self._qa(rng.choice(QUESTION_TEMPLATES["identify"]), entity["full_title_zh"], "name", None,
                      "依据图案的轮廓、配色与内部文字/纹样判断。"),
             self._qa(rng.choice(QUESTION_TEMPLATES["grounding"]), str(bbox), "bbox", bbox,
-                     "边界框由形变后的可见 Alpha 掩模直接计算。"),
+                     "边界框由图中图案的实际可见区域确定。"),
             self._qa(rng.choice(QUESTION_TEMPLATES["color"]), entity["dominant_color_zh"], "color", None,
-                     "取图案有效像素的中位色。"),
+                     "取图案主体区域的主要颜色。"),
             self._qa(rng.choice(QUESTION_TEMPLATES["location"]), zone_zh, "location", None,
                      f"依据该图案在画面中的相对位置判断：{zone_zh}。"),
         ]
@@ -860,10 +860,10 @@ class DatawheelV2Generator:
         surface_zh = sub["surface_zh"]
         caption_zh = (f"图像为一件{surface_zh}的{sub['category_zh']}实拍商品（{sub.get('scene_style_zh', '')}），"
                       f"在{zone_zh}以{technique_zh}工艺贴附有【{entity['full_title_zh']}】。"
-                      f"构图解析：{entity['design_analysis_zh']}"
+                      f"图案特征：{entity['design_analysis_zh']}"
                       f"印花主色为{entity['dominant_color_zh']}，外形呈{entity['geometry_zh']}；"
-                      f"边缘随面料褶皱产生自然形变，与底布形成物理贴合的丝印/热转印质感。"
-                      f"该图案在整图中的归一化边界框为 {bbox}。")
+                      f"边缘随面料褶皱起伏，与底布形成自然的丝印/热转印质感。"
+                      f"该图案在整图中的边界框为 {bbox}。")
         caption_en = (f"A real product photo of a {sub['category_en']} with {sub['surface_en']}. "
                       f"Printed at the {zone_en} via {TECHNIQUE_EN[tech]} is the "
                       f"{entity['full_title_en']}. Design analysis: {entity['design_analysis_en']} "
@@ -888,7 +888,7 @@ class DatawheelV2Generator:
         return record, render["rgb"]
 
     # ------------------------------------------------------------------
-    # 阶段 C：多图元空间排布
+    # 阶段 C：多图案空间排布
     # ------------------------------------------------------------------
     def _gen_stage_c(self, idx: int, rng: random.Random, plan: Dict[str, Any]):
         stage, split = plan["stage"], plan["split"]
@@ -950,7 +950,7 @@ class DatawheelV2Generator:
                                       "visibility": round(render["visibility"], 4)})
         placed = [p for p in placed if p["area"] >= 0.001]
         if len(placed) < 2:
-            # 极小可印区的兜底：仍保留 stage_c 记录（单图元），避免阶段配额漂移
+            # 极小可印区的兜底：仍保留 stage_c 记录（单图案），避免阶段配额漂移
             rec, rgb_b = self._gen_stage_b(idx, rng, plan)
             rec["task_stage"] = stage
             rec["stage_title_zh"] = STAGE_TITLES[stage]
@@ -963,19 +963,19 @@ class DatawheelV2Generator:
         relations = [self._relation_label(main["bbox"], p["bbox"]) for p in placed[1:]]
         qa = [
             self._qa(rng.choice(QUESTION_TEMPLATES["count"]), f"共有 {len(placed)} 处独立印花/视觉元素。",
-                     "count", None, "按互不重叠的图元实例逐一计数。"),
+                     "count", None, "按互不重叠的图案实例逐一计数。"),
             self._qa(f"主视觉图案是什么？", main["entity"]["full_title_zh"], "name", None,
-                     "主图元面积最大、位于画面中心区域。"),
+                     "主图案面积最大、位于画面中心区域。"),
             self._qa(rng.choice(QUESTION_TEMPLATES["grounding"]).replace("该图案", "主视觉图案"),
-                     str(main["bbox"]), "bbox", main["bbox"], "读取主图元形变后的 Alpha 外接框。"),
+                     str(main["bbox"]), "bbox", main["bbox"], "读取主图案的实际可见边界。"),
             self._qa(f"次要图案「{placed[1]['entity']['entity_name_zh']}」的边界框坐标是多少？",
-                     str(placed[1]["bbox"]), "bbox", placed[1]["bbox"], "读取次要图元的外接框。"),
+                     str(placed[1]["bbox"]), "bbox", placed[1]["bbox"], "读取次要图案的外接框。"),
             self._qa(QUESTION_TEMPLATES["relation"][0].format(a="主视觉图案", b="次要图案"),
-                     relations[0], "relation", None, "比较两图元边界框中心点的相对方位。"),
+                     relations[0], "relation", None, "比较两图案边界框中心点的相对方位。"),
             self._qa(f"次要图案「{placed[1]['entity']['entity_name_zh']}」的主体颜色是什么？",
-                     placed[1]["entity"]["dominant_color_zh"], "color", None, "取次要图元有效像素中位色。"),
+                     placed[1]["entity"]["dominant_color_zh"], "color", None, "取次要图案有效像素中位色。"),
         ]
-        # 负样本问题：随机询问一个未出现在图中的图元
+        # 负样本问题：随机询问一个未出现在图中的图案
         absent_pool = [s for s in self.asset_domains[domain] if s not in
                        {p["entity"]["stem"] for p in placed}]
         if absent_pool and rng.random() < 0.6:
@@ -994,12 +994,12 @@ class DatawheelV2Generator:
                        "role": "primary" if i == 0 else f"secondary_{i}",
                        "name_zh": p["entity"]["entity_name_zh"], "name_en": p["entity"]["entity_name_en"]}
                       for i, p in enumerate(placed)]
-        caption_zh = (f"该{sub['category_zh']}表面采用「{layout['zh']}」的多图元组合，"
+        caption_zh = (f"该{sub['category_zh']}表面采用「{layout['zh']}」的多图案组合，"
                       f"共包含 {len(placed)} 个独立印花。主视觉图案为【{main['entity']['full_title_zh']}】"
                       f"（边界框 {main['bbox']}）；其余图案依次为 "
                       + "；".join(f"【{p['entity']['full_title_zh']}】（边界框 {p['bbox']}，位于主图的{relations[i]}）"
                                  for i, p in enumerate(placed[1:]))
-                      + "。各图元均随面料褶皱产生形变，空间上互不重叠。")
+                      + "。各图案随面料褶皱自然起伏，空间上互不重叠。")
         caption_en = (f"Multi-element composition on a {sub['category_en']} using the {layout['en']} layout "
                       f"with {len(placed)} independent prints. Primary: {main['entity']['full_title_en']} "
                       f"[ymin,xmin,ymax,xmax]={main['bbox']}. Others: "
@@ -1013,8 +1013,8 @@ class DatawheelV2Generator:
                               technique="screenprint", bboxes=bboxes, entities=entities_json,
                               ref_candidates=[], match_label="not_applicable",
                               caption_zh=caption_zh, caption_en=caption_en,
-                              visual_analysis=f"布局: {layout['zh']}; 图元数: {len(placed)}; 空间关系: {'、'.join(relations)}。",
-                              knowledge_expansion="主图元: " + main["entity"]["full_title_zh"] + "; 其余: " +
+                              visual_analysis=f"布局: {layout['zh']}; 图案数: {len(placed)}; 空间关系: {'、'.join(relations)}。",
+                              knowledge_expansion="主图案: " + main["entity"]["full_title_zh"] + "; 其余: " +
                                                   "、".join(p["entity"]["full_title_zh"] for p in placed[1:]),
                               qa_pairs=qa,
                               render_meta={"seed": self.seed, "canvas": [CANVAS, CANVAS], "stage": stage,
@@ -1122,8 +1122,8 @@ class DatawheelV2Generator:
                 self._qa(QUESTION_TEMPLATES["match_which"][0].format(letters="/".join(letters)),
                          f"候选{pos['candidate_id']}（{printed['full_title_zh']}）与商品印花一致。", "name", None,
                          "参考图与商品印花的轮廓、配色和内部结构逐项对应。"),
-                self._qa("商品上该图案的归一化边界框是多少？", str(product_box), "bbox", product_box,
-                         "由商品图区域中形变后的 Alpha 掩模计算并映射到整图坐标。"),
+                self._qa("商品上该图案的边界框是多少？", str(product_box), "bbox", product_box,
+                         "由商品图中的实际图案区域确定并映射到整图坐标。"),
                 self._qa(QUESTION_TEMPLATES["candidate_bbox"][0].format(letter=pos["candidate_id"]),
                          str(pos["bbox_1000"]), "bbox", pos["bbox_1000"], "读取候选参考图在整图中的位置。"),
             ]
@@ -1131,25 +1131,25 @@ class DatawheelV2Generator:
             qa = [
                 self._qa(QUESTION_TEMPLATES["match_exists"][0],
                          f"没有。候选参考图均与商品印花不匹配；商品上的图案为【{printed['full_title_zh']}】。",
-                         "yes_no", None, "逐张比对候选参考图，均不存在与商品印花一致的图元。"),
+                         "yes_no", None, "逐张比对候选参考图，均不存在与商品印花一致的图案。"),
                 self._qa("商品上实际出现的图案是什么？", printed["full_title_zh"], "name", None,
                          "直接识别商品图上的印花内容。"),
-                self._qa("商品上该图案的归一化边界框是多少？", str(product_box), "bbox", product_box,
+                self._qa("商品上该图案的边界框是多少？", str(product_box), "bbox", product_box,
                          "读取商品图区域中该图案的外接框。"),
             ]
-        caption_zh = (f"参考图匹配对照样本：图像顶部为 {len(candidate_entities)} 张候选参考图"
+        caption_zh = (f"参考图与商品对照：图像顶部为 {len(candidate_entities)} 张候选参考图"
                       f"（{'/'.join(letters)}），下方为一件{sub['category_zh']}实拍商品。"
                       f"商品在{zone_zh}印有【{printed['full_title_zh']}】。"
                       + (f"经比对，候选{letters[positive_idx]}与其一致（候选框 {ref_candidates[positive_idx]['bbox_1000']}，"
                          f"商品实例框 {product_box}）。" if case_match and positive_idx is not None else
                          f"经比对，所有候选参考图均不匹配；商品图案为【{printed['full_title_zh']}】（实例框 {product_box}）。")
-                      + "该任务检验模型在无畸变参考图与复杂真实商品之间的跨域身份匹配能力。")
+                      + "可用于核对同一图案在参考图与实物商品上的一致性。")
         caption_en = (f"In-context reference matching sample with {len(candidate_entities)} candidate references "
                       f"({'/'.join(letters)}) on top and a real product photo below. "
                       f"The product shows {printed['full_title_en']} at the {zone_en}. "
                       + (f"Candidate {letters[positive_idx]} matches the product instance." if case_match and positive_idx is not None
                          else f"None of the candidates matches; the printed entity is {printed['full_title_en']}.")
-                      + " This tests cross-domain identity matching between clean references and physical products.")
+                      + " This sample checks whether the same pattern appears on both the reference images and the physical product.")
         entities_json = [{"entity_type": "商品印花实例", "entity_name_zh": printed["entity_name_zh"],
                           "entity_name_en": printed["entity_name_en"], "full_title_zh": printed["full_title_zh"],
                           "bbox_1000": product_box, "placement_zone": zone_spec["id"], "visibility": "full"}]
@@ -1235,10 +1235,10 @@ class DatawheelV2Generator:
             ]
             caption_zh = (f"该{sub['category_zh']}的{zone_zh}被同色面料/遮挡物覆盖，"
                           f"无法确认是否存在【{target['full_title_zh']}】。"
-                          f"本样本用于训练模型在证据不足时拒绝臆断，而不是凭先验回答。")
+                          f"该区域没有可见图案，无法进一步确认。")
             caption_en = (f"The {zone_en} of this {sub['category_en']} is fully occluded by a matching "
                           f"fabric patch; whether {target['full_title_en']} is present is unverifiable. "
-                          f"This sample trains calibrated rejection under insufficient evidence.")
+                          f"The region shows no visible pattern, so the answer cannot be confirmed.")
             quality = {"print_visibility": None, "bbox_area_ratio_min": 0.0,
                        "substrate_print_eligible": bool(sub["print_eligible"]), "occluded": True,
                        "checks_passed": True}
@@ -1262,7 +1262,7 @@ class DatawheelV2Generator:
             bbox = render["bbox"] or [int(rect[1] * 1000 / CANVAS), int(rect[0] * 1000 / CANVAS),
                                       int(rect[3] * 1000 / CANVAS), int(rect[2] * 1000 / CANVAS)]
             bboxes = [bbox]
-            entities_json = [{"entity_type": "高相似度干扰图元", "entity_name_zh": distractor["entity_name_zh"],
+            entities_json = [{"entity_type": "高相似度干扰图案", "entity_name_zh": distractor["entity_name_zh"],
                               "entity_name_en": distractor["entity_name_en"], "full_title_zh": distractor["full_title_zh"],
                               "bbox_1000": bbox, "placement_zone": zone_spec["id"], "visibility": "full",
                               "role": "distractor"}]
@@ -1272,16 +1272,16 @@ class DatawheelV2Generator:
                          "图中实际图案与目标实体在轮廓/细节上存在差异。"),
                 self._qa(QUESTION_TEMPLATES["distractor"][0],
                          f"图中实际出现的图案为【{distractor['full_title_zh']}】（边界框 {bbox}）。",
-                         "name", None, "识别画面中真实存在的图元。"),
-                self._qa("图中实际图案的归一化边界框是多少？", str(bbox), "bbox", bbox,
-                         "读取干扰图元的外接框。"),
+                         "name", None, "识别画面中真实存在的图案。"),
+                self._qa("图中实际图案的边界框是多少？", str(bbox), "bbox", bbox,
+                         "读取干扰图案的外接框。"),
             ]
             caption_zh = (f"图中商品在{zone_spec['zh']}印有与【{target['full_title_zh']}】高度相似的"
                           f"【{distractor['full_title_zh']}】，但并非目标实体。"
-                          f"该样本用于训练模型抵抗相似图元干扰，避免仅凭粗略外观误判。")
+                          f"两处图案外形相近，需要仔细区分。")
             caption_en = (f"The product shows {distractor['full_title_en']} at the {zone_spec['en']}, which is "
                           f"visually similar to but distinct from {target['full_title_en']}. "
-                          f"This hard negative trains fine-grained discrimination.")
+                          f"The two patterns look similar and require careful discrimination.")
             entities_json[0]["is_target"] = False
             quality = {"print_visibility": round(render["visibility"], 4), "bbox_area_ratio_min": round(render["area"], 4),
                        "substrate_print_eligible": bool(sub["print_eligible"]), "distractor": True,
@@ -1305,11 +1305,11 @@ class DatawheelV2Generator:
             ]
             caption_zh = rng.choice([
                 f"该{sub_color_zh}{sub['category_zh']}（{sub['surface_zh']}，{sub.get('scene_style_zh', '')}）上未见【{target['full_title_zh']}】图案。"
-                f"本负样本训练模型正确否定不存在的目标，抑制误报。",
+                f"画面中没有出现该图案。",
                 f"这张{sub_color_zh}{sub['category_zh']}实拍画面中并不存在【{target['full_title_zh']}】，"
-                f"商品表面为{sub['surface_zh']}。该样本用于抑制模型对不存在目标的误报。",
+                f"商品表面为{sub['surface_zh']}，没有出现该图案。",
                 f"画面展示一件{sub_color_zh}{sub['category_zh']}（{sub['surface_zh']}），"
-                f"其上没有出现【{target['full_title_zh']}】。这是一个要求模型回答“不存在”的负样本。",
+                f"其上没有出现【{target['full_title_zh']}】。",
             ])
             caption_en = (f"The {sub_color_en} {sub['category_en']} ({sub['surface_en']}) shows no "
                           f"{target['full_title_en']}. This negative sample trains correct "
@@ -1545,7 +1545,7 @@ def merge_shards(out_dir: Path) -> None:
         f"- 样本数: {len(records):,}",
         f"- 图像: 全量渲染，{len(records):,} 张（640x640；参考匹配阶段 640x840），位于 `output/datawheel_v2/images/`",
         f"- 数据集: `output/datawheel_v2/dataset.parquet` (ZSTD)",
-        f"- 生成方式: 100% 离线程序化合成，0 网络流量",
+        f"- 生成方式: 100% 离线离线合成，0 网络流量",
         f"- 可印性底板: {len({r['substrate_id'] for r in records if r['substrate_id'] != 'procedural_canvas'})} 张通过质检的真实商品底板",
         "",
         "## 1. 阶段与能力分布",

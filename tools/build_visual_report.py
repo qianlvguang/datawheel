@@ -52,6 +52,27 @@ STAGE_SHORT = {
 STAGE_CN = {
     "S1": "S1 视觉感知", "S2": "S2 知识", "S3": "S3 final+回放",
 }
+DOMAIN_CN = {
+    "geometric_primitives": "色块图案",
+    "official_flags": "国旗",
+    "official_emblems": "国徽/纹章",
+    "official_regional": "地方旗帜",
+    "luxury_brands": "奢侈品",
+    "ip_brands": "IP 品牌",
+    "character_ips": "动漫角色",
+    "subculture_elements": "亚文化符号",
+}
+CATE_CN = {
+    "apparel": "服饰商品",
+    "flag-hard": "国旗国徽",
+    "ip-brand": "IP 品牌",
+    "anime-ip": "动漫角色",
+    "misleading": "否定与不确定",
+    "quantity": "计数与方位",
+    "text-compliance": "描述一致性",
+    "structured_caption": "结构化描述",
+    "reference_match": "参考图匹配",
+}
 BBOX_RE = re.compile(r"\[\s*(\d{1,4})\s*,\s*(\d{1,4})\s*,\s*(\d{1,4})\s*,\s*(\d{1,4})\s*\]")
 
 
@@ -163,11 +184,10 @@ def load_v2_samples() -> List[Dict[str, Any]]:
                 "qa": qa[:4],
                 "meta": {
                     "阶段": STAGE_SHORT.get(stage, stage),
-                    "split": r.get("split", ""),
-                    "domain": r.get("domain", ""),
-                    "difficulty": r.get("difficulty", ""),
+                    "数据划分": r.get("split", ""),
+                    "类别": DOMAIN_CN.get(r.get("domain", ""), r.get("domain", "")),
+                    "难度": r.get("difficulty", ""),
                     "画幅": f'{r.get("image_width", "?")}×{r.get("image_height", "?")}',
-                    "placement": r.get("placement_zone", ""),
                 },
             })
     return samples
@@ -190,7 +210,7 @@ def load_v6_samples(path: Path, dataset_key: str, dataset_label: str,
                 "id": r["sample_id"],
                 "dataset": dataset_key,
                 "dataset_label": dataset_label,
-                "group": f"{stage}-{cate}" if stage else cate,
+                "group": f"{stage}·{CATE_CN.get(cate, cate)}" if stage else CATE_CN.get(cate, cate),
                 "stage": stage,
                 "split": "",
                 "cate": r["cate_id"],
@@ -203,8 +223,7 @@ def load_v6_samples(path: Path, dataset_key: str, dataset_label: str,
                 "caption": last_answer,
                 "qa": [],
                 "meta": {
-                    "cate": r["cate_id"],
-                    "variant": r.get("variant", ""),
+                    "任务": CATE_CN.get(r["cate_id"], r["cate_id"]),
                     "图片数": len(r.get("images", [])),
                 },
             })
@@ -737,8 +756,9 @@ def build_html(embed_images: bool = True, max_side: int = 560, quality: int = 80
 <header>
   <h1>Datawheel 数据核验报告</h1>
   <p>v2 10K 多模态数据集 · V6 × Qwen3.5-27B 中训练数据 · 生成于 {esc(generated)} ·
-  共 {esc(total_gallery)} 条画廊样本，BBox 归一化坐标 [ymin,xmin,ymax,xmax] = 0~1000
-  {'· 图片已内嵌（单文件离线可开）' if embed_images else '· 图片使用项目相对路径 (file:// 打开)'}</p>
+  共 {esc(total_gallery)} 条画廊样本，BBox 边界框坐标 [ymin,xmin,ymax,xmax]（相对画面 0~1000）
+  {'· 图片已内嵌（单文件离线可开）' if embed_images else '· 图片使用项目相对路径 (file:// 打开)'}
+  · 文本描述以物品/名称/可见特征为主，已清理实现术语</p>
 </header>
 <nav>
   <a href="#overview">总览</a><a href="#datasets">数据集</a><a href="#gallery">样例画廊</a>

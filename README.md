@@ -66,6 +66,7 @@ v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**�
 - **试点集**：`output/datawheel_v6_pilot/`（≈2,500 行：单图多轮 QA 1,200 / 结构化 caption 400 / 文本一致性 250 / 多图参考匹配 650；含远端上传包与 ms-swift 校验报告）。
 - **balanced-v1 扩数据**：`output/datawheel_v6_balanced/`（union 43,893 行 = 单图 37,186 + 多图参考 6,707；S1 18,438 / S2 15,656 / S3 19,164；实测 token 份额 ~2.08%/2.09%/2.06%；validator critical=0；上传包 314MB）。
 - **配比方案**：见 [docs/MID_TRAIN_DATAWHEEL_PLAN.md](docs/MID_TRAIN_DATAWHEEL_PLAN.md)（按 S1/S2/S3 的 token 份额而非行数配比，light/balanced/aggressive 三档）。
+- **文本描述规范**：以真实世界的物品、名称、颜色、位置、可见特征为主；不出现"程序化/矢量/基准模式名"等实现术语，不在 caption 里重复颜色、塞 bbox 或场景括注（bbox 放在 QA 中）。`generate.py v2` 会自动调用 `tools/normalize_dataset_language.py` 做清理；V6 构建后也建议执行一次。
 
 ---
 

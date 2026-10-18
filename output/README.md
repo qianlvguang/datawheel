@@ -34,15 +34,17 @@ output/
 # v2 10k 数据集
 .venv/bin/python generate.py v2
 
-# V6 试点
+# V6 试点（构建完 parts 后先清理语言，再打包）
 .venv/bin/python tools/build_v6_single_image.py
 .venv/bin/python tools/build_v6_reference_rows.py --limit 650
+.venv/bin/python tools/normalize_dataset_language.py --skip-v2
 .venv/bin/python tools/pack_v6_pilot.py --upload
 .venv/bin/python tools/validate_swift_v6.py --dataset output/datawheel_v6_pilot/dataset.parquet
 
 # V6 balanced
 .venv/bin/python tools/build_v6_balanced_single.py
 .venv/bin/python tools/build_v6_balanced_reference.py
+.venv/bin/python tools/normalize_dataset_language.py --skip-v2
 .venv/bin/python tools/assemble_v6_balanced.py --upload
 
 # 可视化核验

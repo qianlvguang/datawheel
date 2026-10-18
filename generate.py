@@ -383,6 +383,11 @@ def generate_datawheel_v2(output_dir: Path = None, debug: bool = True, seed: Opt
         cmd += ["--seed", str(seed)]
     print(f"[v2] 启动 Datawheel v2 全量生成: start={start} end={end} shards={shards}")
     subprocess.run(cmd, check=True)
+    # 后处理：把实现术语/拼接式模板清理为真实世界语言，再重新合并 parquet/report
+    print("[v2] 清理 caption/QA 语言（去除程序化/矢量/模式名等实现术语）")
+    subprocess.run([sys.executable, str(BASE_DIR / "tools" / "normalize_dataset_language.py"),
+                    "--skip-v6"], check=True)
+    subprocess.run([sys.executable, str(script), "--merge", "--out-dir", str(base_out)], check=True)
     return {"name": "datawheel10k", "samples_count": end - start + 1,
             "images_dir": str(base_out / "images"),
             "dataset_path": str(base_out / "dataset.parquet"), "records": []}
