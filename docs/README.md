@@ -3,6 +3,7 @@
 | 文档 | 内容 |
 |---|---|
 | [MID_TRAIN_DATAWHEEL_PLAN.md](MID_TRAIN_DATAWHEEL_PLAN.md) | Qwen3.5-27B 中训练 V6 数据方案：数据种类/任务类型/token 配比、S1/S2/S3 训练影响、远端接入与验收清单 |
+| [ASSIST_PLACEMENT_OPTIMIZER_PLAN.md](ASSIST_PLACEMENT_OPTIMIZER_PLAN.md) | 自动图案摆放方案：结构解析、候选布局、视觉评分、Qwen 回退与 agent 工具契约（assist 分支） |
 | [../README.md](../README.md) | 项目总览：v2 数据集、工具链、快速开始 |
 | [../assets/ASSET_CATALOG.md](../assets/ASSET_CATALOG.md) | 资产全景台账 |
 
