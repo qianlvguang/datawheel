@@ -14,8 +14,10 @@
 |---|---|---|
 | Qwen-Image（文生图） | 只能 prompt → image | 生成**空白商品/背景/场景**，再合成图案 |
 | Qwen-Image-Edit（编辑） | 支持 image + mask + prompt | 背景替换、补光、遮挡、换材质；**冻结图案区** |
-| 只有 ComfyUI | 通常有 `/prompt` 工作流 API | 给我 workflow JSON 或 API 示例，我写 ComfyUI 适配器 |
-| Diffusers / vLLM / 自建 FastAPI | 自定义 HTTP 接口 | 按本文件第 6 节的 JSON 协议接 |
+| ComfyUI | 工作流 API | 需要 workflow JSON 或 API 示例，我写 ComfyUI 适配器 |
+| **vLLM-Omni** | `vllm serve ... --omni`，OpenAI 图像生成/编辑 API | 直接可用 `--protocol openai`，见第 6 节 |
+| **SGLang Diffusion** | OpenAI 兼容图像 API | 直接可用 `--protocol openai`，启动命令见 SGLang cookbook |
+| Diffusers / 自建 FastAPI | 自定义 HTTP 接口 | 按本文件第 6 节的 JSON 协议接 |
 
 请先确认：**模型是 T2I 还是 Edit、服务端口、一个 curl 示例、显存/并发限制**。
 
@@ -151,10 +153,42 @@ Content-Type: application/json
 → {"images": [{"b64": "..."}]}
 ```
 
-### 6.2 OpenAI 兼容协议
+### 6.2 vLLM-Omni / SGLang（推荐）
 
-- `POST {base_url}/v1/images/generations`
-- `POST {base_url}/v1/images/edits`（multipart：`image`, `mask`, `prompt`, `model`, `size`）
+Qwen-Image-2.1 目前由 **vLLM-Omni** 和 **SGLang Diffusion** 支持，注意不是普通 LLM 的 `vllm serve`：
+
+```bash
+# vLLM-Omni（每个实例一个模型）
+vllm serve Qwen/Qwen-Image-2.1 --omni --port 8091
+```
+
+启动后端点与 OpenAI Images API 兼容：
+
+- `POST http://<server>:8091/v1/images/generations`
+- `POST http://<server>:8091/v1/images/edits`（multipart）
+
+生成请求示例：
+
+```bash
+curl -X POST http://<server>:8091/v1/images/generations \
+  -H "Content-Type: application/json" \
+  -d '{"model":"Qwen/Qwen-Image-2.1","prompt":"a blank white t-shirt, no logo, no text","size":"1024x1024","num_inference_steps":40,"guidance_scale":1.0,"seed":42}'
+```
+
+编辑请求关键字段（vLLM-Omni 扩展）：
+
+| 字段 | 说明 |
+|---|---|
+| `image` | 输入图（multipart 文件或 URL） |
+| `mask_image` | 掩码；白色区域重绘（是否接受文件/URL/字符串以实际服务为准） |
+| `prompt` | 编辑指令 |
+| `negative_prompt` | 负向提示 |
+| `num_inference_steps` / `guidance_scale` / `seed` | 扩散参数 |
+| `size` / `output_format` | 输出尺寸/格式 |
+
+SGLang 使用 **SGLang Diffusion** 的 OpenAI API（cookbook：Qwen-Image-2.1），启动参数以其文档为准；客户端同样用 `--protocol openai`、`--base-url http://<server>:<port>`。
+
+> 当前 `tools/qwen_image_ops.py` 的 `openai` 协议按 vLLM-Omni 字段构造（`num_inference_steps`、`guidance_scale`、`mask_image`）。如果服务端 mask 只接受 URL/base64 而不是 multipart 文件，把实际 curl 发我，我按真实接口调整。
 
 如果服务器是 ComfyUI：给我一个工作流 JSON 或 `/prompt` 调用示例，我再加 `--protocol comfyui`。
 
@@ -170,9 +204,10 @@ Content-Type: application/json
 ```
 
 ```bash
-# 1) 批量生成空白商品底图
+# 1) 批量生成空白商品底图（vLLM-Omni / SGLang 的 OpenAI 接口）
 .venv/bin/python tools/qwen_image_ops.py generate \
-  --base-url http://<server>:8000 --protocol json \
+  --base-url http://<server>:8091 --protocol openai \
+  --model Qwen/Qwen-Image-2.1 \
   --plan plans/blank_products.jsonl \
   --out-dir output/qwen_gen/blank_products
 
@@ -183,7 +218,9 @@ Content-Type: application/json
 
 # 3) 背景/光照编辑（mask 白色=可编辑，black=保护）
 .venv/bin/python tools/qwen_image_ops.py edit \
-  --base-url http://<server>:8000 --protocol json \
+  --base-url http://<server>:8091 --protocol openai \
+  --model Qwen/Qwen-Image-2.1 \
+  --mask-field mask_image \
   --plan plans/bg_edits.jsonl \
   --out-dir output/qwen_edit/bg \
   --protect-bbox 0,0,1000,1000   # 示例：整图保护，按需换成商品区域
@@ -202,7 +239,17 @@ Content-Type: application/json
 
 真实服务只需替换 `--base-url` 与协议；如 ComfyUI 等非标准接口，需补适配器。
 
-## 9. 下一步
+## 9. 许可提醒
+
+Qwen-Image-2.1 使用 **Qwen Research License**（研究/评估用途；商用需单独授权）。如果 Datawheel 仅用于研究训练，一般可用；若要把生成资产用于商业产品或分发衍生模型，需要先确认许可条款，并按要求标注 "Built with Qwen"。
+
+资料：
+- [vLLM-Omni 图像生成 API](https://docs.vllm.com.cn/projects/vllm-omni/en/latest/serving/image_generation_api/)
+- [vLLM-Omni 图像编辑 API](https://docs.vllm.com.cn/projects/vllm-omni/en/latest/serving/image_edit_api/)
+- [SGLang Diffusion Qwen-Image-2.1](https://docs.sglang.io/cookbook/diffusion/Qwen-Image/Qwen-Image-2.1)
+- [Qwen-Image-2.1 模型卡](https://huggingface.co/Qwen/Qwen-Image-2.1)
+
+## 10. 下一步
 
 1. 确认服务协议/模型类型；
 2. 先用 20~50 条 pilot 生成空白商品，人工看质量；

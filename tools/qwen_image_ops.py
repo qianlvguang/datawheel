@@ -326,9 +326,12 @@ def process_generate(row: Dict[str, Any], args: argparse.Namespace) -> Dict[str,
             "n": 1,
             "size": f'{payload["width"]}x{payload["height"]}',
             "response_format": "b64_json",
+            "num_inference_steps": payload["steps"],
+            "guidance_scale": payload["guidance"],
+            "seed": payload["seed"],
         }
-        for key in ("negative_prompt", "steps", "guidance", "seed"):
-            body[key] = payload[key]
+        if payload.get("negative_prompt"):
+            body["negative_prompt"] = payload["negative_prompt"]
         resp = _retry(lambda: http_json(url, body, args.api_key, args.timeout), args, sid)
     else:
         url = endpoint(args.base_url, args.generate_path or "/generate")
@@ -361,15 +364,18 @@ def process_edit(row: Dict[str, Any], args: argparse.Namespace) -> Dict[str, Any
             "prompt": payload["prompt"],
             "size": row.get("size", "1024x1024"),
             "n": "1",
+            "num_inference_steps": str(payload["steps"]),
+            "guidance_scale": str(payload["guidance"]),
+            "seed": str(payload["seed"]),
+            "output_format": "png",
         }
-        for key in ("negative_prompt", "steps", "guidance", "seed"):
-            if key in payload:
-                fields[key] = str(payload[key])
+        if payload.get("negative_prompt"):
+            fields["negative_prompt"] = payload["negative_prompt"]
         files = [("image", image_path.name, image_path.read_bytes(),
                   mimetypes.guess_type(str(image_path))[0] or "image/png")]
         if row.get("mask"):
             mask_path = resolve_path(row["mask"], plan_path)
-            files.append(("mask", mask_path.name, mask_path.read_bytes(),
+            files.append((args.mask_field, mask_path.name, mask_path.read_bytes(),
                           mimetypes.guess_type(str(mask_path))[0] or "image/png"))
         resp = _retry(lambda: http_multipart(url, fields, files, args.api_key, args.timeout), args, sid)
     else:
@@ -503,6 +509,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     edit = sub.add_parser("edit")
     common(edit)
+    edit.add_argument("--mask-field", default="mask_image",
+                      help="multipart mask 字段名（vLLM-Omni 默认 mask_image；DALL-E 风格用 mask）")
     edit.add_argument("--protect-bbox", action="append", default=None,
                       help="保护区域 ymin,xmin,ymax,xmax（0~1000），可重复")
     edit.add_argument("--protect-threshold", type=float, default=0.02,
