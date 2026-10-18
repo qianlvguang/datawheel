@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """把 V6 试点集按 mid-training light 档导出为 S1/S2/S3 三份 stage parquet。
 
-背景（见 MID_TRAIN_DATAWHEEL_PLAN.md §4.3）：
+背景（见 docs/MID_TRAIN_DATAWHEEL_PLAN.md §4.3）：
 - 试点集仅 2,500 行，要达到 1% 级 token 份额（light 档）需要按阶段重复：
   S1 ×3（2 epochs → 每行 6 次曝光）、S2 ×2（4 次）、S3 ×4（1 epoch → 4 次）。
 - 重复副本 sample_id 追加 _rN 后缀，保证行级键 (sample_id, cate_id, images) 唯一。

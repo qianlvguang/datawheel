@@ -81,7 +81,7 @@ class AssetCatalogManager:
         substrates_dir_1500 = ASSETS_DIR / "commodity_substrates" / "real_1500"
         local_1500_count = len(list(substrates_dir_1500.glob("*.jpg"))) if substrates_dir_1500.exists() else 0
 
-        parquet_path = BASE_DIR / "output" / "datawheel_10k_captions.parquet"
+        parquet_path = BASE_DIR / "output" / "legacy_v1" / "datawheel_10k_captions.parquet"
         parquet_info = None
         if parquet_path.exists():
             import pyarrow.parquet as pq

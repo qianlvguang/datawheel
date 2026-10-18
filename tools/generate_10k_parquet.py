@@ -12,7 +12,7 @@ Features:
 - Encyclopedic knowledge expansion: 100% elimination of abbreviations (e.g. no raw 'cn', 'de', or slugs).
 - Realistic placement zones: center chest, left chest badge, lower hem patch, bag flap, shoe quarter.
 - Physics-based screenprint blending: Sobel gradient fold displacement + Albedo*Shading modulation + edge softening.
-- Output: `output/datawheel_10k_captions.parquet` + representative rendered images in `output/images_10k/`.
+- Output: `output/legacy_v1/datawheel_10k_captions.parquet` + representative rendered images in `output/legacy_v1/images_10k/`.
 - 100% offline, zero network traffic.
 """
 
@@ -40,8 +40,8 @@ from engine.knowledge_expander import expander_instance
 
 ASSETS_DIR = PROJECT_ROOT / "assets"
 OUTPUT_DIR = PROJECT_ROOT / "output"
-IMAGES_DIR = OUTPUT_DIR / "images_10k"
-PARQUET_PATH = OUTPUT_DIR / "datawheel_10k_captions.parquet"
+IMAGES_DIR = OUTPUT_DIR / "legacy_v1" / "images_10k"
+PARQUET_PATH = OUTPUT_DIR / "legacy_v1" / "datawheel_10k_captions.parquet"
 
 CANVAS_W = 640
 CANVAS_H = 640
@@ -241,7 +241,7 @@ class Dataset10kGenerator:
                 {"q_zh": "图中共有几个主要几何色彩分块？", "a_zh": f"共有 {len(entities)} 个主要色彩分区。"},
                 {"q_zh": "中心或主要色块的归一化坐标是多少？", "a_zh": str(bboxes[-1])}
             ], ensure_ascii=False),
-            "image_path": f"output/images_10k/{sample_id}.jpg" if sample_idx in self.preview_sample_ids else "",
+            "image_path": f"output/legacy_v1/images_10k/{sample_id}.jpg" if sample_idx in self.preview_sample_ids else "",
         }
         return record, (canvas if sample_idx in self.preview_sample_ids else None)
 
@@ -423,7 +423,7 @@ class Dataset10kGenerator:
                 {"q_zh": "该印花图案的具体边界框坐标是多少？", "a_zh": str(ground_bbox_1000)},
                 {"q_zh": "印花图案在衣物上的具体印花位置是？", "a_zh": zone_desc_zh}
             ], ensure_ascii=False),
-            "image_path": f"output/images_10k/{sample_id}.jpg" if sample_idx in self.preview_sample_ids else "",
+            "image_path": f"output/legacy_v1/images_10k/{sample_id}.jpg" if sample_idx in self.preview_sample_ids else "",
         }
         return record, final_pil
 
@@ -539,7 +539,7 @@ class Dataset10kGenerator:
                 {"q_zh": f"次要徽标【{info2['entity_name_zh']}】相对于主图案的位置关系是什么？", "a_zh": "位于主图案的左上方（左胸胸口区域）。"},
                 {"q_zh": "主图案的边界框坐标是什么？", "a_zh": str(box1)}
             ], ensure_ascii=False),
-            "image_path": f"output/images_10k/{sample_id}.jpg" if sample_idx in self.preview_sample_ids else "",
+            "image_path": f"output/legacy_v1/images_10k/{sample_id}.jpg" if sample_idx in self.preview_sample_ids else "",
         }
         return record, final_pil
 
@@ -655,7 +655,7 @@ class Dataset10kGenerator:
                 {"q_zh": "左侧与右侧的图案是否属于同一实体？", "a_zh": f"是，两边均为{info['full_title_zh']}，左侧为标准模板，右侧为印制在实物商品上的实物应用。"},
                 {"q_zh": "右侧实物商品上的印花定位坐标是多少？", "a_zh": str(right_box)}
             ], ensure_ascii=False),
-            "image_path": f"output/images_10k/{sample_id}.jpg" if sample_idx in self.preview_sample_ids else "",
+            "image_path": f"output/legacy_v1/images_10k/{sample_id}.jpg" if sample_idx in self.preview_sample_ids else "",
         }
         return record, final_pil
 
@@ -741,7 +741,7 @@ class Dataset10kGenerator:
         print(f"Successfully wrote {PARQUET_PATH} ({file_size_mb:.2f} MB, {len(arrow_table)} rows)")
 
         # 生成数据集评估与统计报告
-        report_path = OUTPUT_DIR / "DATASET_10K_REPORT.md"
+        report_path = OUTPUT_DIR / "legacy_v1" / "DATASET_10K_REPORT.md"
         self._generate_dataset_report(report_path, all_records, file_size_mb, rendered_images_count)
         print(f"Generated comprehensive report at {report_path}")
 
@@ -758,7 +758,7 @@ class Dataset10kGenerator:
             "# Datawheel 10,000-Sample Multimodal Grounding Dataset Report",
             f"\n- **Total Dataset Records**: {len(records):,} rows",
             f"- **Parquet File**: `{PARQUET_PATH.name}` ({parquet_mb:.2f} MB, ZSTD compressed)",
-            f"- **Rendered Preview Images**: {img_count} images in `output/images_10k/`",
+            f"- **Rendered Preview Images**: {img_count} images in `output/legacy_v1/images_10k/`",
             f"- **Commodity Substrate Pool**: 1,500 authentic studio packshots and editorial fashion images",
             f"- **Network Traffic Consumed**: **0.00 MB** (100% offline local generation)\n",
             "## 1. Curriculum Stage Distribution",

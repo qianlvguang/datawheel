@@ -16,7 +16,7 @@
 4. 结构完整：entity_type、entity_name_en、full_title_en 非空，英文名保留拉丁字母，
    design_analysis_zh / cultural_context_zh 均为中文表述。
 
-通过时写出 output/entity_name_coverage.md 并 exit 0；任一检查失败 exit 1。
+通过时写出 output/_debug/entity_name_coverage.md 并 exit 0；任一检查失败 exit 1。
 
 用法：
     .venv/bin/python tools/verify_entity_names.py
@@ -39,7 +39,7 @@ from engine.knowledge_expander import expander_instance  # noqa: E402
 ASSETS_DIR = PROJECT_ROOT / "assets"
 MANIFESTS_DIR = ASSETS_DIR / "manifests"
 TABLE_PATH = MANIFESTS_DIR / "entity_name_zh.json"
-REPORT_PATH = PROJECT_ROOT / "output" / "entity_name_coverage.md"
+REPORT_PATH = PROJECT_ROOT / "output" / "_debug" / "entity_name_coverage.md"
 
 # 资产域 -> 目录名
 DOMAIN_DIRS: Dict[str, str] = {

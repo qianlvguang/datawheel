@@ -16,7 +16,7 @@
 用法：
   .venv/bin/python tools/generate_datawheel_v2.py --start 1 --end 10000 \\
       --out-dir output/datawheel_v2 --images-dir output/datawheel_v2/images \\
-      --records-file output/datawheel_v2/shard_records/full.jsonl
+      --records-file output/datawheel_v2/_generation/shard_records/full.jsonl
   .venv/bin/python tools/generate_datawheel_v2.py --merge --out-dir output/datawheel_v2
   .venv/bin/python tools/generate_datawheel_v2.py --preview --out-dir /tmp/v2_preview
 """
@@ -1501,6 +1501,8 @@ def _arrow_schema() -> pa.Schema:
 def merge_shards(out_dir: Path) -> None:
     from collections import Counter
     shard_dir = out_dir / "shard_records"
+    if not shard_dir.exists():
+        shard_dir = out_dir / "_generation" / "shard_records"
     records: List[Dict[str, Any]] = []
     for f in sorted(shard_dir.glob("*.jsonl")):
         with open(f, encoding="utf-8") as fh:
@@ -1645,7 +1647,7 @@ def main() -> None:
         import math as _math
         import subprocess as _subprocess
         out_dir = args.out_dir
-        (out_dir / "logs").mkdir(parents=True, exist_ok=True)
+        (out_dir / "_generation" / "logs").mkdir(parents=True, exist_ok=True)
         total = args.end - args.start + 1
         per = _math.ceil(total / args.shards)
         procs = []
@@ -1654,7 +1656,7 @@ def main() -> None:
             e_idx = min(args.end, s_idx + per - 1)
             if s_idx > e_idx:
                 break
-            log = out_dir / "logs" / f"shard_{i + 1}.log"
+            log = out_dir / "_generation" / "logs" / f"shard_{i + 1}.log"
             cmd = [sys.executable, str(Path(__file__).resolve()), "--start", str(s_idx), "--end", str(e_idx),
                    "--out-dir", str(out_dir), "--seed", str(args.seed)]
             procs.append((_subprocess.Popen(cmd, stdout=open(log, "w"), stderr=_subprocess.STDOUT), s_idx, e_idx, log))
@@ -1671,7 +1673,7 @@ def main() -> None:
         preview(args.seed, args.out_dir)
         return
     images_dir = args.images_dir or (args.out_dir / "images")
-    records_file = args.records_file or (args.out_dir / "shard_records" / f"shard_{args.start:05d}_{args.end:05d}.jsonl")
+    records_file = args.records_file or (args.out_dir / "_generation" / "shard_records" / f"shard_{args.start:05d}_{args.end:05d}.jsonl")
     gen = DatawheelV2Generator(args.seed)
     gen.run_range(args.start, args.end, images_dir, records_file,
                   debug_dir=(args.out_dir / "debug") if args.debug_images else None,

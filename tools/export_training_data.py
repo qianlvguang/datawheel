@@ -20,7 +20,7 @@ v2 schema（``output/datawheel_v2/dataset.parquet``）关键列::
                         answer_bbox_1000, evidence_zh}]),
     image_path, image_sha256, ...
 
-v1 旧 schema（``output/datawheel_10k_captions.parquet``）无 ``split`` /
+v1 旧 schema（``output/legacy_v1/datawheel_10k_captions.parquet``）无 ``split`` /
 ``dataset_version`` 列，``qa_pairs_json`` 使用 ``q_zh`` / ``a_zh`` 键，
 且仅 250 行预览样本带 ``image_path``。本工具自动降级兼容：
 键名做别名映射，无 split 列时全部按 ``train`` 处理并告警。
@@ -57,8 +57,8 @@ ShareGPT::
 v1 降级实测::
 
     .venv/bin/python tools/export_training_data.py \
-        --dataset output/datawheel_10k_captions.parquet \
-        --out-dir output/datawheel_v2/sft_v1_preview/
+        --dataset output/legacy_v1/datawheel_10k_captions.parquet \
+        --out-dir output/legacy_v1/sft_v1_preview/
 
 约束：100% 本地离线；只读输入 parquet 与图片，只写 ``--out-dir`` 下的
 ``*_sharegpt.jsonl`` / ``*_ms_swift.jsonl`` / ``export_manifest.json`` /
@@ -466,15 +466,15 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
             "\n"
             "v1 降级实测：\n"
             "  .venv/bin/python tools/export_training_data.py \\\n"
-            "      --dataset output/datawheel_10k_captions.parquet \\\n"
-            "      --out-dir output/datawheel_v2/sft_v1_preview/\n"
+            "      --dataset output/legacy_v1/datawheel_10k_captions.parquet \\\n"
+            "      --out-dir output/legacy_v1/sft_v1_preview/\n"
         ),
     )
     parser.add_argument(
         "--dataset",
         required=True,
         help="输入 parquet 数据集（v2: output/datawheel_v2/dataset.parquet；"
-        "v1 降级: output/datawheel_10k_captions.parquet）",
+        "v1 降级: output/legacy_v1/datawheel_10k_captions.parquet）",
     )
     parser.add_argument(
         "--out-dir",

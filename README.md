@@ -65,7 +65,7 @@ v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**�
 - **能力定位**：不重复 V1–V4 的通用 caption，而是补 27B 中训练最缺的**细粒度视觉证据能力**：小目标定位、多图参考匹配、相似干扰排除、证据不足拒绝、结构化描述、视觉事实一致性判断。
 - **试点集**：`output/datawheel_v6_pilot/`（≈2,500 行：单图多轮 QA 1,200 / 结构化 caption 400 / 文本一致性 250 / 多图参考匹配 650；含远端上传包与 ms-swift 校验报告）。
 - **balanced-v1 扩数据**：`output/datawheel_v6_balanced/`（union 43,893 行 = 单图 37,186 + 多图参考 6,707；S1 18,438 / S2 15,656 / S3 19,164；实测 token 份额 ~2.08%/2.09%/2.06%；validator critical=0；上传包 314MB）。
-- **配比方案**：见 [MID_TRAIN_DATAWHEEL_PLAN.md](MID_TRAIN_DATAWHEEL_PLAN.md)（按 S1/S2/S3 的 token 份额而非行数配比，light/balanced/aggressive 三档）。
+- **配比方案**：见 [docs/MID_TRAIN_DATAWHEEL_PLAN.md](docs/MID_TRAIN_DATAWHEEL_PLAN.md)（按 S1/S2/S3 的 token 份额而非行数配比，light/balanced/aggressive 三档）。
 
 ---
 
@@ -88,6 +88,8 @@ v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**�
 | [`tools/build_v6_balanced_reference.py`](tools/build_v6_balanced_reference.py) | balanced 扩数据：6,707 行多图参考匹配行 |
 | [`tools/assemble_v6_balanced.py`](tools/assemble_v6_balanced.py) | union → S1/S2/S3 stage 文件、validator、balanced 上传包 |
 | [`tools/validate_swift_v6.py`](tools/validate_swift_v6.py) | V6 数据契约校验（schema / messages / 图片 / 长度估算 / cate 分布） |
+| [`tools/build_visual_report.py`](tools/build_visual_report.py) | 生成 `output/report/index.html`：数据集总览 + 带 BBox 标注的样例画廊 + 配比/质检/产物索引 |
+| [`tools/README.md`](tools/README.md) | 工具索引（资产构建 / v2 / V6 / 可视化） |
 | [`generate.py`](generate.py) | 统一 CLI：历史四维度（gallery/contrastive/density/demo）与 v2 全量（`v2` / `datawheel10k`） |
 
 ---
@@ -111,6 +113,10 @@ v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**�
 
 ```
 Coding/datawheel/
+├── README.md                     # 项目总览（本文件）
+├── docs/                         # 文档
+│   ├── README.md                 # 文档索引
+│   └── MID_TRAIN_DATAWHEEL_PLAN.md  # Qwen3.5-27B 中训练 V6 数据方案
 ├── assets/                       # 多模态图元与底板资产库
 │   ├── official_flags/           # 271 款 ISO 国旗 SVG
 │   ├── official_emblems/         # 121 款国徽/纹章/组织徽记 SVG
@@ -126,20 +132,41 @@ Coding/datawheel/
 │   ├── coords.py                 # 0~1000 相对坐标与 BBox 工具
 │   └── ...                       # 历史 v1 引擎（geometry/builder/density 等）
 ├── synthesizer/                  # 标注与语义合成器（v1 遗留能力）
-├── tools/                        # 资产构建、v2 生成、质检、导出工具
-│   ├── generate_datawheel_v2.py  # 🌟 v2 五阶段 10k 生成器
+├── tools/                        # 工具（索引见 tools/README.md）
+│   ├── build_visual_report.py    # 🖥️ 生成本地 HTML 核验页
+│   ├── generate_datawheel_v2.py  # v2 五阶段 10k 生成器
 │   ├── flywheel_audit.py         # 质检审计
 │   ├── export_training_data.py   # 训练数据导出
+│   ├── build_v6_*.py             # V6 中训练数据构建/组装
 │   ├── build_asset_index.py      # 图元视觉索引
 │   ├── build_substrate_quality.py# 底板可印性质检
 │   ├── build_entity_name_table.py# 官方实体中文名表
 │   └── verify_entity_names.py    # 命名覆盖率校验
-├── output/                       # 生成产物（已被 .gitignore 忽略，本地保留）
-│   └── datawheel_v2/             # 🌟 10k 图像 + dataset.parquet + report.md + sft/
+├── output/                       # 生成产物（.gitignore 忽略，本地保留；索引见 output/README.md）
+│   ├── report/index.html         # 🖥️ 本地核验可视化（双击打开）
+│   ├── datawheel_v2/             # 10k 数据集 + images + audit + sft + _generation
+│   ├── datawheel_v6_pilot/       # V6 试点 2.5k + upload + stage_files + parts + validation
+│   ├── datawheel_v6_balanced/    # V6 balanced 43,893 union + S1/S2/S3 + upload
+│   ├── legacy_v1/                # 历史 v1 演示产物与 10k caption 数据集
+│   └── _debug/                   # 调试图与命名覆盖报告
 ├── generate.py                   # 统一生成 CLI（含 v2 全量模式）
 ├── pipeline.py                   # 历史流水线入口
-└── README.md
+└── requirements.txt
 ```
+
+---
+
+## 🖥️ 本地核验可视化
+
+生成一个离线 HTML 页面，用于核对数据集统计、样例与 BBox 标注（无需服务器，双击/`open` 即可）：
+
+```bash
+.venv/bin/python tools/build_visual_report.py
+open output/report/index.html
+```
+
+页面包含：数据集总览卡片、v2/V6 样例画廊（可按数据集/阶段/cate/split 过滤，BBox 叠加标注、点击放大）、
+S1/S2/S3 中训练配比与 TRAIN_FILES 片段、质检/契约校验结论、产物索引与复现命令。
 
 ---
 
@@ -223,7 +250,7 @@ Coding/datawheel/
 
 ## 📎 相关文档
 
-- [Qwen3.5-27B 中训练 V6 数据方案](MID_TRAIN_DATAWHEEL_PLAN.md)
+- [Qwen3.5-27B 中训练 V6 数据方案](docs/MID_TRAIN_DATAWHEEL_PLAN.md)
 - [资产全景台账](assets/ASSET_CATALOG.md)
 - [v2 数据集报告](output/datawheel_v2/report.md)（生成后自动创建）
-- [v1 10K 数据集报告](output/DATASET_10K_REPORT.md)（历史）
+- [v1 10K 数据集报告](output/legacy_v1/DATASET_10K_REPORT.md)（历史）

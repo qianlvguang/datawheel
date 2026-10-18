@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """组装 V6 balanced 扩数据：union 43,893 行 → S1/S2/S3 stage 文件 + 上传包。
 
-设计（见 MID_TRAIN_DATAWHEEL_PLAN.md §4.6）：
+设计（见 docs/MID_TRAIN_DATAWHEEL_PLAN.md §4.6）：
 - 先生成跨阶段 union（每 cate 取各阶段需求的最大值，共 43,893 行）；
 - 各阶段按 profile 从 union 中抽取自己的 cate 行，组成 stage-specific parquet：
   S1 = 18,438 行（感知：apparel/flag-hard/reference/misleading）

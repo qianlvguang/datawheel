@@ -6,7 +6,7 @@ flywheel_audit.py —— Datawheel 多模态数据集独立质检审计工具
 支持两类数据集:
   * v2（Datawheel v2，output/datawheel_v2/dataset.parquet）:
       完整 35 列契约校验（schema / bbox / 图片 / 重复 / split 泄漏 / 分布配额 / 质量启发式）
-  * v1 legacy（output/datawheel_10k_captions.parquet，18 列）:
+  * v1 legacy（output/legacy_v1/datawheel_10k_captions.parquet，18 列）:
       自动识别并降级检查（缺列自动跳过，保留 v1 可验证的 bbox / 图片 / 重复 / 分布检查）
 
 用法:
@@ -2767,7 +2767,7 @@ def build_parser() -> argparse.ArgumentParser:
             "      --images-root . --out output/datawheel_v2/audit/\n\n"
             "  # v1 legacy 快速冒烟（跳过图片 IO）\n"
             "  .venv/bin/python tools/flywheel_audit.py \\\n"
-            "      --dataset output/datawheel_10k_captions.parquet \\\n"
+            "      --dataset output/legacy_v1/datawheel_10k_captions.parquet \\\n"
             "      --skip-images --out /tmp/audit_v1/\n\n"
             "退出码: 0=无 critical, 1=存在 critical, 2=运行错误"
         ),
