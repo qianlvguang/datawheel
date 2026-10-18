@@ -413,7 +413,99 @@ docs/PLACEMENT_OPTIMIZER_PLAN.md  # 本文件
 
 ---
 
-## 15. 最终判断
+## 15. Agent 参与与自迭代闭环（本 agent 也进入方案）
+
+> 这里的"本 agent"指当前会话里的 **DSH coding/visual agent（我）**：能运行脚本、读取图片、修改代码/阈值、生成报告。  
+> 不是替代人，也不是把视觉判断交给一个对话模型；我是**执行者 + 视觉检查者 + 工程迭代者**。
+
+### 15.1 角色分工
+
+| 角色 | 负责 | 不负责 |
+|---|---|---|
+| **Placement Optimizer（确定性代码）** | 生成候选、渲染、评分、输出 bbox/metrics | 不做语义判断 |
+| **本 agent（我）** | 跑 audit/optimizer；看 debug 图；定位失败原因；改 zone 模板/阈值/候选参数/代码；跑 golden set；维护状态与报告 | 不凭感觉"通过"；不以单张图替代指标 |
+| **v4.1 flash** | 在候选 ID 间做排序/解释；批量文本/语义复核；标记 uncertain | 不自由给坐标；不成为唯一裁判 |
+| **人（你）** | 定义品类/阈值/验收；审核升级项；批准上线 | 不逐条看 10k 图 |
+
+### 15.2 自迭代循环（我实际执行的步骤）
+
+```text
+Round 0: 跑 placement_audit → 拿到全局指标 + issue contact sheet
+Round 1: 我逐张看 issue 图（read_image / 打开 debug.jpg）
+         → 归类：zone 错 / 候选搜索没覆盖 / 图案太小 / 被遮挡 / 底板 mask 错
+         → 修改 placement_common 模板 / optimizer 采样范围 / 评分权重
+Round 2: 跑 golden set（含人工注入缺陷）→ 指标必须上升或不退化
+Round 3: 生成 top-3 候选 + debug 图 → agent 选择/解释；flash 仅做候选排序
+Round 4: 人工抽检升级项 → 冻结阈值与版本
+```
+
+约束：
+
+- 每轮必须留下 **metrics + debug 图 + 失败分类**，不能只留一句"看起来可以"；
+- 最多 3 轮参数迭代；仍未达阈值 → 缩小适用范围/人工 zone，不硬调；
+- 我改代码必须同步改测试/命令与文档，并在 `assist` 分支提交；
+- 任何"通过"必须同时满足硬指标和我的视觉检查；两者冲突时以硬指标为准，交人工。
+
+### 15.3 每轮观测记录（agent 交接契约）
+
+```json
+{
+  "sample_id": "comm_studio_topwear_19457",
+  "round": 2,
+  "input": {
+    "image": "assets/commodity_substrates/real_1500/comm_studio_topwear_19457.jpg",
+    "design": "assets/official_flags/fr.svg",
+    "zone_source": "substrate:center_chest_graphic"
+  },
+  "candidate_id": "c0013",
+  "metrics": {
+    "score": 0.995,
+    "inside_zone": 1.0,
+    "center_dist": 0.003,
+    "edge_clearance": 0.171,
+    "area_ratio": 0.212
+  },
+  "debug_image": "output/placement/demo_topwear/debug.jpg",
+  "visual_notes": "图案完整落在胸口中上部可印区，未压领口/下摆；透视与面料褶皱方向一致。",
+  "verdict": "pass",
+  "next_action": "none",
+  "agent": "dsh-coding-agent",
+  "timestamp": "2026-10-18T19:53:00+08:00"
+}
+```
+
+- `verdict`：`pass` / `fail` / `uncertain` / `needs_human`；
+- `next_action`：`none` / `adjust_zone` / `adjust_candidate_params` / `regen_design` / `escalate`；
+- 状态机：`pending → inspect_required → candidate_scored → accepted | rejected | needs_human`；
+- 没有 `debug_image` 与 `metrics` 的记录不允许进入 accepted。
+
+### 15.4 我具体会做什么
+
+1. **看全局**：跑 `placement_audit.py`，看 `placement_issues.jpg`，判断是系统性 zone 问题还是个别样例；
+2. **看局部**：对失败样本跑 `placement_optimizer.py`，打开 `debug.jpg`，检查蓝框（可印区）、红框（图案）、图像中心十字；
+3. **归因**：区分"zone 模板错"、"候选采样不足"、"设计图本身透明边/比例错"、"底板 mask/遮挡"；
+4. **修复**：改 `placement_common.py` 的 zone 模板、`placement_optimizer.py` 的采样/权重、或补品类配置；
+5. **回归**：跑 100 条 golden set，报告中心塌缩率、inside_zone、SSIM/面积/边缘；不退步才继续；
+6. **交接**：生成 `placement_state.json`/`placement_report.md`，标出 `needs_human` 样本；
+7. **与 flash 协同**：flash 只返回 candidate ID + 理由；我用 metrics 校验，不一致以 metrics 为准。
+
+### 15.5 为什么这样能解决"flash 懒"
+
+- flash 不再负责"逐条巡检/自由放位置"，只做**候选排序**；
+- 我负责把工具跑起来、看图、改规则；它懒不懒不影响数据正确性；
+- 所有结论有可复核的 metrics/debug/manifest；
+- 人的审核量从"10k 条"降到"升级队列 + 抽检"。
+
+### 15.6 与现有产物的关系
+
+- M1/M2 已实现：`placement_audit.py`、`placement_optimizer.py`、`placement_common.py`；
+- M3（新商品图 SAM/rembg 分割 + zone 推断）：我负责接入与看分割/可印区叠加图；
+- M4（Qwen 遮罩回退）：我负责跑 edit + 保护区域校验 + 失败回退；
+- M5（flash 工具队列）：我负责实现工具契约与状态机；flash 只做候选选择。
+
+---
+
+## 16. 最终判断
 
 **不要让模型"自己看图找位置"**。
 正确的自迭代是：
