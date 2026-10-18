@@ -40,6 +40,7 @@
 
 | 工具 | 作用 |
 |---|---|
+| `augment_v2_rotation.py` | 小角度旋转增强（默认 20%、±3°~7°，排除 D），旋转后中心裁切并用 mask 精确重算 bbox/QA 坐标；生成 `output/_debug/rotation_contact_sheet.jpg` 对照图 |
 | `normalize_dataset_language.py` | 清理程序化/矢量/模式名等实现术语；重写 Stage A 的"区域名带颜色 + 又描述颜色"冗余；去掉 caption 里的场景括注、知识扩写句和 bbox；压缩拼接式品类名；V6 结构化 caption JSON 同步清理 |
 
 > v2 全量生成后由 `generate.py v2` 自动调用；V6 parts 构建后执行

@@ -64,7 +64,8 @@ v2 数据集已按 `~/Documents/Coding/Mid_train/` 的**实际中训练方案**�
 - **数据格式**：`messages / images / enable_thinking / sample_id / cate_id / variant`，`variant=6` 由现有插件自动映射为 `loss_V6`，无需改训练代码；图片路径相对 `/data/autovision-cfs/autovision-notebook`。
 - **能力定位**：不重复 V1–V4 的通用 caption，而是补 27B 中训练最缺的**细粒度视觉证据能力**：小目标定位、多图参考匹配、相似干扰排除、证据不足拒绝、结构化描述、视觉事实一致性判断。
 - **试点集**：`output/datawheel_v6_pilot/`（≈2,500 行：单图多轮 QA 1,200 / 结构化 caption 400 / 文本一致性 250 / 多图参考匹配 650；含远端上传包与 ms-swift 校验报告）。
-- **balanced-v1 扩数据**：`output/datawheel_v6_balanced/`（union 43,893 行 = 单图 37,186 + 多图参考 6,707；S1 18,438 / S2 15,656 / S3 19,164；实测 token 份额 ~2.08%/2.09%/2.06%；validator critical=0；上传包 314MB）。
+- **balanced-v1 扩数据**：`output/datawheel_v6_balanced/`（union 43,893 行 = 单图 37,186 + 多图参考 6,707；S1 18,438 / S2 15,656 / S3 19,164；实测 token 份额 ~2.07%/2.00%/2.05%；validator critical=0；上传包 314MB）。
+- **轻微旋转增强**：20% 样本（A/B/C/E，排除参考图匹配 D）做 ±3°~7° 旋转 + 中心裁切，bbox/QA 坐标按 mask 精确重算；工具 `tools/augment_v2_rotation.py`，对照图 `output/_debug/rotation_contact_sheet.jpg`。
 - **配比方案**：见 [docs/MID_TRAIN_DATAWHEEL_PLAN.md](docs/MID_TRAIN_DATAWHEEL_PLAN.md)（按 S1/S2/S3 的 token 份额而非行数配比，light/balanced/aggressive 三档）。
 - **文本描述规范**：以真实世界的物品、名称、颜色、位置、可见特征为主；不出现"程序化/矢量/基准模式名"等实现术语，不在 caption 里重复颜色、塞 bbox 或场景括注（bbox 放在 QA 中）。`generate.py v2` 会自动调用 `tools/normalize_dataset_language.py` 做清理；V6 构建后也建议执行一次。
 
@@ -240,14 +241,14 @@ S1/S2/S3 中训练配比与 TRAIN_FILES 片段、质检/契约校验结论、产
 
 ## 🔬 验证与已知限制
 
-- **验证**：所有工具均 `py_compile` 通过；v2 生成后由 `flywheel_audit.py` 对 schema、BBox、图片 sha、split 泄漏、分布与小目标做自动审计（报告见 `output/datawheel_v2/audit/`），本轮结果：**critical = 0**，warning 4 项（562 个小目标 0.1%~0.2%、caption 完全重复 6.7%、QA 模板对重复 56.5%、程序化底板共享 info），exit code 0。
+- **验证**：所有工具均 `py_compile` 通过；v2 生成后由 `flywheel_audit.py` 对 schema、BBox、图片 sha、split 泄漏、分布与小目标做自动审计（报告见 `output/datawheel_v2/audit/`），本轮结果：**critical = 0**，warning 2 项（503 个小目标 0.1%~0.2%、QA 模板对重复 56.6%），另有 caption 完全/近重复 3.4%/3.5% 与程序化底板共享为 info，exit code 0。
 - **人工抽检**：每阶段 4 个样本的 contact sheet 见 `output/datawheel_v2/contact_sheet.jpg`；D 阶段候选框与商品实例框一致性、候选 pane 区域校验 0 异常。
 - **训练导出**：`export_training_data.py` 已产出 5 split × 2 格式（ShareGPT / ms-swift），每格式 **47,882 行**（QA 45,882 + dense caption 2,000），bbox 结构化行 12,895，全部 JSONL 逐行可解析、10,000 张图片引用 0 缺失。
 - **已知限制**：
   1. 可印底板 447 张，长尾品类（裙装/裤装/大衣）覆盖仍少于上装/箱包/鞋履；
   2. 真人上身底图无法保证"服装部位"语义，已改用画面相对位置描述；
   3. 参考图匹配的困难负样本基于 dHash 视觉近邻，尚未引入更细的属性级对比；
-  4. QA 为模板化生成，跨样本 exact pair 重复率偏高（56.5%），caption 完全重复 6.7%、归一化近重复 10.1%，后续需注入更多问法变体、样本特有细节与图片 pHash 近重复检查；
+  4. QA 为模板化生成，跨样本 exact pair 重复率偏高（56.5%），caption 完全重复 3.4%、归一化近重复 3.5%，后续需注入更多问法变体与样本特有细节；
   5. 当前数据飞轮闭环止于"生成→质检→导出"；真实 VLM 训练反馈/失败样本回流将在下一轮接入。
 - **下一轮飞轮改进门禁（计划）**：`qa_pair_dup_rate ≤ 15%` 设为硬门禁；caption/图片近重复（pHash）纳入审计；`val↔train` 泄漏与 split 配额偏差纳入 CI；按 VLM 失败样本回流定向补数据。
 

@@ -175,18 +175,19 @@ columns:
 
 | 阶段 | V6 tokens/epoch | 实际 token 份额 | Δwindows | ipe | Δ iters/epoch | 建议 SAVE_STEPS |
 |---|---:|---:|---:|---|---:|---:|
-| S1 | 14.18M | **2.08%** | +1,662 | 2,631.8→2,683.7 | +1.97% | 895 |
-| S2 | 9.99M | **2.09%** | +1,170 | 1,841.8→1,878.3 | +1.98% | 626 |
-| S3 | 19.90M | **2.06%** | +2,331 | 3,730.2→3,803.0 | +1.95% | 1,268 |
+| S1 | 14.16M | **2.07%** | +1,660 | 2,631.8→2,683.6 | +1.97% | 895 |
+| S2 | 9.56M | **2.00%** | +1,120 | 1,841.8→1,876.7 | +1.90% | 626 |
+| S3 | 19.87M | **2.05%** | +2,328 | 3,730.2→3,802.9 | +1.95% | 1,268 |
 
 **与目标的偏差与处理：**
 
-- S1/S2 精准命中 ~2% 目标；**S3 只到 2.06%，未达 3%**。原因：参考匹配行实际约 1,899 tok/行（比 mix plan
+- S1/S2 命中 ~2% 目标（2.07%/2.00%）；**S3 只到 2.05%，未达 3%**。原因：参考匹配行实际约 1,899 tok/行（比 mix plan
   推导时的假设低），而 S3 的 token 预算高度依赖 reference 行。要到 3% 需要：
   (a) 把 reference 行扩到约 9.7k（+3k 行），或 (b) 每行候选参考图 2~3 张 → 3~4 张、并增加第二轮问答，
   把单行 token 提到 ~2,800。两者都留到下一轮（先看 smoke/eval 是否值得）。
 - balanced-v1 相对试点（2,500 行）已是 **17.6× 行放大**；关键不是立刻拉满 3%，而是先跑通 smoke 与短程，
   用 eval 的 misleading / apparel / text-compliance / flag-hard 簇决定是否继续加量。
+- v2 本轮额外加入 **20% 小角度旋转增强**（A/B/C/E，排除 D；±3°~7° 旋转 + 中心裁切，bbox/QA 坐标用 mask 重算）。
 - 生成工具：`tools/build_v6_balanced_single.py`、`tools/build_v6_balanced_reference.py`、
   `tools/assemble_v6_balanced.py`（union → stage → validator → upload，一条命令可复现）。
 
@@ -261,9 +262,9 @@ SMOKE=1 bash train_sft_qwen3_5_27b_megatron_lora_h200_vis_double.sh
 1. **S3 行数口径（高）**：任务口径 1,217,530（不含 V5）vs `vis_s3.sh` 默认 1,277,530（含 V5 60k）；
    windows/iters/SAVE_STEPS 相差约 5%，发射前必须二选一。
 2. **重复/过拟合（高）**：light 档 S1/S2/S3 每行曝光 6/4/4 次；balanced-v1 已无重复（reference/misleading
-   在 S1/S3 各出现一次，属顺序训练两次曝光）。S3 实测仅 2.06% 份额，若强行拉到 3% 需加参考行/图数，
+   在 S1/S3 各出现一次，属顺序训练两次曝光）。S3 实测仅 2.05% 份额，若强行拉到 3% 需加参考行/图数，
    注意不要用简单重复去凑。
-3. **S3 份额偏差（中）**：balanced-v1 S3=2.06% vs 目标 3%；优先看评测收益再决定是否扩 reference。
+3. **S3 份额偏差（中）**：balanced-v1 S3=2.05% vs 目标 3%；优先看评测收益再决定是否扩 reference。
 4. **视觉 token 估算误差（中高）**：512 token/img、packing 折减均为假设；远端真实值可能让
    Δwindows 偏移 ±20~30%，以 smoke 实测 ipe 为准。
 5. **图片路径 base**：images 前缀 `algo4/tpz/test/datawheel_v6/…`，训练 CWD 必须是
@@ -281,7 +282,7 @@ SMOKE=1 bash train_sft_qwen3_5_27b_megatron_lora_h200_vis_double.sh
 **本轮（goal round 2）已交付：**
 
 - balanced union **43,893 行**（单图 37,186 + 多图参考 6,707），S1/S2/S3 stage 文件与 314MB 上传包；
-- 本地 validator critical=0；S1/S2 实测 token 份额 2.08%/2.09%，S3 2.06%（3% 目标留待下一轮增强）；
+- 本地 validator critical=0；S1/S2 实测 token 份额 2.07%/2.00%，S3 2.05%（3% 目标留待下一轮增强）；
 - 生成工具链 `build_v6_balanced_single.py` / `build_v6_balanced_reference.py` / `assemble_v6_balanced.py`。
 
 **上一轮（2026-10-18）已交付：**

@@ -33,6 +33,7 @@ output/
 ```bash
 # v2 10k 数据集
 .venv/bin/python generate.py v2
+.venv/bin/python tools/augment_v2_rotation.py --ratio 0.2   # 20% 小角度旋转（排除 D）
 
 # V6 试点（构建完 parts 后先清理语言，再打包）
 .venv/bin/python tools/build_v6_single_image.py
