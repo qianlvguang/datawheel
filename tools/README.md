@@ -44,6 +44,16 @@
 
 > 设计、prompt 模板与数据接入策略见 [docs/QWEN_IMAGE_2_1_PIPELINE.md](../docs/QWEN_IMAGE_2_1_PIPELINE.md)。
 
+## 图案摆放（Placement）
+
+| 工具 | 作用 |
+|---|---|
+| `placement_common.py` | 品类 zone 模板、可印区/letterbox 坐标换算 |
+| `placement_audit.py` | 现有数据摆放审计（bbox vs 可印区、中心塌缩、issues 叠加图） |
+| `placement_optimizer.py` | 候选布局 + compositor 渲染 + 视觉评分，替换"模型自由放中心" |
+
+详见 [docs/ASSIST_PLACEMENT_OPTIMIZER_PLAN.md](../docs/ASSIST_PLACEMENT_OPTIMIZER_PLAN.md)。
+
 ## 数据语言清理
 
 | 工具 | 作用 |

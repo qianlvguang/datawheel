@@ -3,6 +3,9 @@
 > 分支：`assist`（不合并/不推送 `main`）
 > 背景：生成式编辑模型倾向于把图案放在画面中心，不理解商品结构（衣身、包盖、帽冠、鞋侧、可印区、褶皱/遮挡）。
 > 目标：用**结构化定位 + 确定性渲染 + 视觉评分闭环**替代"让模型自己猜位置"，同时给 v4.1 flash 一类 agent 一套强制看图的工具契约。
+>
+> **实现状态（assist 分支，2026-10-18）**：M1 审计 + M2 确定性优化器已实现并跑通；
+> M3（新商品图分割）/ M4（Qwen 遮罩回退）/ M5（agent 工具队列）待实现。
 
 ---
 
@@ -326,7 +329,67 @@ docs/PLACEMENT_OPTIMIZER_PLAN.md  # 本文件
 
 ---
 
-## 13. 验收命令（规划）
+## 13. 已实现脚本（M1 / M2）
+
+| 文件 | 状态 | 作用 |
+|---|---|---|
+| `tools/placement_common.py` | ✅ | 品类 zone 模板、substrate 加载、letterbox/可印区坐标换算 |
+| `tools/placement_audit.py` | ✅ | 现有 v2 数据摆放审计（bbox vs 可印区、中心塌缩率、issues + 叠加图） |
+| `tools/placement_optimizer.py` | ✅ | 候选布局采样 + compositor 渲染 + 评分 + 局部精修 |
+
+### 13.1 M1 实测
+
+```bash
+.venv/bin/python tools/placement_audit.py \
+  --dataset output/datawheel_v2/dataset.parquet \
+  --out output/audit/placement
+```
+
+当前 v2 结果：
+
+| 指标 | 数值 |
+|---|---:|
+| 审计 bbox | 9,296 |
+| center collapse | 82 / 9,296 (0.88%) |
+| zone containment 中位数 | 1.0 |
+| Stage B / C / E 中心塌缩率 | 0 / 1.64% / 0 |
+
+说明：Stage C 的 `placement_zone` 是组合布局 ID，审计回退到整体可印区中心，C 的 82 个 flag 主要来自布局中心与图像中心接近的合法情况，适合作为人工复核队列而不是硬失败。
+
+### 13.2 M2 实测
+
+```bash
+# T 恤前胸
+.venv/bin/python tools/placement_optimizer.py \
+  --substrate-id comm_studio_topwear_19457 \
+  --zone-id center_chest_graphic \
+  --design assets/official_flags/fr.svg \
+  --out output/placement/demo_topwear \
+  --candidates 96 --refine-rounds 2 --refine-samples 24
+```
+
+| 品类 | score | inside_zone | center_dist | 说明 |
+|---|---:|---:|---:|---|
+| T 恤（center_chest_graphic） | 0.995 | 1.0 | 0.003 | 图案落在前胸可印区，不贴边 |
+| 包（bag_front_panel） | 0.985 | 1.0 | 0.013 | 包身正面 |
+| 鞋（shoe_lateral_quarter） | 0.980 | 1.0 | 0.024 | 鞋帮侧面 |
+| 帽（hat_front_panel） | 0.989 | 1.0 | 0.012 | 帽冠正面 |
+
+单次 96+48 候选约 2 秒；不调用扩散模型，确定性可复现。
+
+输出：
+- `best_render.jpg`：最佳渲染
+- `debug.jpg`：蓝框=可印区、红框=图案 bbox、红线=图像中心
+- `placement_metrics.json`：最佳参数/评分/bbox
+- `candidates.jsonl`：前若干候选
+
+### 13.3 已知限制
+
+- 目前只对已有 `substrate_quality.json` 可印区的商品图直接可用；
+- 任意新商品图仍需要 M3 的分割/品类 zone 推断（或人工标一次 zone）；
+- M2 没有调用 Qwen 做材质融合，极端褶皱/深色面料仍可能有贴纸感；M4 再补遮罩回退。
+
+## 14. 验收命令（规划）
 
 ```bash
 # M1 审计
@@ -350,7 +413,7 @@ docs/PLACEMENT_OPTIMIZER_PLAN.md  # 本文件
 
 ---
 
-## 14. 最终判断
+## 15. 最终判断
 
 **不要让模型"自己看图找位置"**。
 正确的自迭代是：
